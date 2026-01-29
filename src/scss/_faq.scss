@@ -1,0 +1,118 @@
+@use "utils";
+@use "media";
+
+.faq {
+  @include utils.blockWrapper;
+  margin-bottom: 8rem;
+}
+
+.faq__content {
+  @include utils.blockContent;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.faq__left {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+}
+
+.faq__heading {
+  margin-bottom: auto;
+}
+.faq__doctor {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.faq__doctor-photo-container {
+  flex-shrink: 0;
+  position: relative;
+  aspect-ratio: 1 / 1;
+  width: 12.5rem;
+  border-radius: 50%;
+  border: 1px solid #e5e5e5;
+  img {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.faq__doctor-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.faq__doctor-name {
+  font-size: 2rem;
+  font-style: normal;
+  font-weight: 900;
+  line-height: 100%;
+  letter-spacing: -0.02rem;
+  text-transform: uppercase;
+  color: #222;
+}
+
+.faq__doctor-position {
+  font-size: 1.5rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 140%;
+  color: #111;
+}
+
+.faq__contact-us {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.faq__contact-us-row {
+  display: flex;
+}
+
+.faq__contact-us-phone {
+  width: 30%;
+  flex-grow: 1;
+  font-size: 1.5rem;
+  font-style: normal;
+  font-weight: 900;
+  line-height: 100%;
+  text-transform: uppercase;
+  display: block;
+  text-align: center;
+  padding: 2.4rem 4.8rem;
+  background: var(--green-300);
+  color: #111;
+  transition:
+    color 0.2s,
+    background-color 0.2s;
+  &:link,
+  &:visited {
+    color: #111;
+  }
+}
+
+.faq__contact-us-messenger {
+  display: grid;
+  place-items: center;
+  width: 6rem;
+  flex-shrink: 0;
+  aspect-ratio: 1 / 1;
+  background: var(--text-color);
+  transition: background-color 0.2s;
+
+  svg {
+    width: 2.4rem;
+    height: 2.4rem;
+    fill: white;
+    transition: fill 0.2s;
+  }
+}

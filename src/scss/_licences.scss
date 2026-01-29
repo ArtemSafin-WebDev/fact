@@ -1,0 +1,51 @@
+@use "utils";
+@use "media";
+
+.licences {
+  @include utils.blockWrapper;
+  margin-bottom: 4rem;
+
+  @include media.breakpoint(mobile) {
+    margin-bottom: 6rem;
+  }
+}
+
+.licenses__content {
+  @include utils.blockContent;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-areas: "left right";
+  @include media.breakpoint(mobile) {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+  }
+}
+
+.licenses__left {
+  grid-area: left;
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+  @include media.breakpoint(mobile) {
+    gap: 1.5rem;
+  }
+}
+
+.licenses__right {
+  grid-area: right;
+  overflow: hidden;
+}
+
+.licenses__slider {
+  .swiper {
+    overflow: visible;
+  }
+
+  .swiper-slide {
+    width: 25.5rem;
+    @include media.breakpoint(mobile) {
+      width: 17rem;
+    }
+  }
+}
