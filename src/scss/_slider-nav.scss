@@ -19,7 +19,7 @@
 
   @include media.breakpoint(mobile) {
     width: 4rem;
-    border: 1px solid black;
+    border-color: black;
     background-color: black;
   }
 
@@ -54,4 +54,15 @@
   //   background-color: black;
   //   border-color: black;
   // }
+
+  .slider-nav--white & {
+    background-color: #fff;
+    border: none;
+    svg {
+      fill: #161616;
+    }
+    &.swiper-button-disabled {
+      background: rgba(255, 255, 255, 0.6);
+    }
+  }
 }

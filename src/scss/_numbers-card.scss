@@ -17,6 +17,10 @@
     background: var(--green-200);
   }
 
+  .swiper-slide:nth-child(even) & {
+    background: var(--green-200);
+  }
+
   @include media.breakpoint(mobile) {
     padding: 1.8rem;
 
@@ -44,12 +48,29 @@
   line-height: 100%;
   letter-spacing: -0.12rem;
   text-transform: uppercase;
+  white-space: nowrap;
+
+  &--medium {
+    font-size: 6rem;
+    font-style: normal;
+    font-weight: 900;
+    line-height: 100%;
+    letter-spacing: -0.06rem;
+  }
   @include media.breakpoint(mobile) {
     font-size: 3.2rem;
     font-style: normal;
     font-weight: 900;
     line-height: 100%;
     letter-spacing: -0.032rem;
+
+    &--amount {
+      font-size: 3.2rem;
+      font-style: normal;
+      font-weight: 900;
+      line-height: 100%;
+      letter-spacing: -0.032rem;
+    }
   }
 }
 
