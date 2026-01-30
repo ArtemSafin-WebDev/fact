@@ -20,12 +20,12 @@
 }
 
 .patients__heading {
-  margin-top: 4rem;
+  margin-top: 2.4rem;
   &:first-child {
     margin-top: 0;
   }
   @include media.breakpoint(mobile) {
-    margin-top: 1.5rem;
+    margin-top: 0.8rem;
   }
 }
 
@@ -63,6 +63,11 @@
 }
 
 .patients__slider-wrapper {
+  .swiper {
+    @include media.breakpoint(mobile) {
+      overflow: visible;
+    }
+  }
   .swiper-slide {
     display: flex;
     flex-direction: column;
@@ -73,5 +78,12 @@
     @include media.breakpoint(mobile) {
       width: 18.7rem;
     }
+  }
+}
+
+.patients__show-more {
+  margin-top: 8rem;
+  @include media.breakpoint(mobile) {
+    margin-top: 4rem;
   }
 }

@@ -14,11 +14,16 @@
   @include utils.blockContent;
   display: flex;
   flex-direction: column;
+  container-type: inline-size;
 }
 
 .equipment__slider {
   .swiper {
     overflow: visible;
+  }
+
+  .swiper-wrapper {
+    transition-timing-function: linear !important;
   }
 
   .swiper-slide {
@@ -27,6 +32,14 @@
     flex-direction: column;
     height: auto;
     box-sizing: border-box;
+
+    border: 1px solid #d3d3d3;
+
+    border-right: none;
+
+    &:last-child {
+      border-right: 1px solid #d3d3d3;
+    }
     @include media.breakpoint(mobile) {
       width: 13.4rem;
     }
@@ -35,8 +48,12 @@
 
 .equipment__large-heading {
   margin-top: 11rem;
-  font-size: 5vw;
   text-align: center;
+  font-size: 11.9cqw;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+  font-weight: 900;
+  line-height: 100%;
   @include media.breakpoint(mobile) {
     margin-top: 6rem;
   }
@@ -51,6 +68,7 @@
   line-height: 120%;
   letter-spacing: -0.02rem;
   text-transform: uppercase;
+  margin-top: 4rem;
   @include media.breakpoint(mobile) {
     font-size: 1.8rem;
     font-style: normal;
@@ -68,10 +86,30 @@
   margin-top: 12rem;
   @include media.breakpoint(mobile) {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+    margin-top: 4rem;
   }
 }
 
 .equipment__features-list-item {
   display: flex;
   flex-direction: column;
+  border: 1px solid #d3d3d3;
+
+  &:not(:nth-child(4n + 1)) {
+    margin-left: -1px;
+  }
+
+  @include media.breakpoint(mobile) {
+    &:not(:nth-child(4n + 1)) {
+      margin-left: 0;
+    }
+
+    &:nth-child(even) {
+      margin-left: -1px;
+    }
+
+    &:not(:nth-child(1)):not(:nth-child(2)) {
+      margin-top: -1px;
+    }
+  }
 }

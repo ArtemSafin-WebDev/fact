@@ -13,12 +13,23 @@
   grid-template-areas: "." "amount" "text";
   gap: 1.6rem;
 
-  @include media.breakpoint(mobile) {
-    padding: 1.8rem;
-  }
-
   li:nth-child(even) & {
     background: var(--green-200);
+  }
+
+  @include media.breakpoint(mobile) {
+    padding: 1.8rem;
+
+    li:nth-child(even) & {
+      background: var(--green-300);
+    }
+
+    li:nth-child(4n + 2) & {
+      background: var(--green-200);
+    }
+    li:nth-child(4n + 3) & {
+      background: var(--green-200);
+    }
   }
 }
 
@@ -48,6 +59,7 @@
   font-style: normal;
   font-weight: 400;
   line-height: 100%;
+  grid-area: text;
   @include media.breakpoint(mobile) {
     font-size: 1.2rem;
     font-style: normal;

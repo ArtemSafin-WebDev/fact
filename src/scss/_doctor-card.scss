@@ -15,6 +15,10 @@
   overflow: hidden;
   color: #222;
 
+  @include media.breakpoint(mobile) {
+    aspect-ratio: 187 / 214;
+  }
+
   & > img {
     position: absolute;
     left: 0;
@@ -32,28 +36,51 @@
   z-index: 5;
   display: flex;
   flex-direction: column;
+
+  @include media.breakpoint(mobile) {
+    padding: 1.6rem;
+  }
 }
 
-.doctor-card__experience {
+.doctor-card__info-item {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 1rem;
+  @include media.breakpoint(mobile) {
+    gap: 0.5rem;
+  }
 }
 
-.doctor-card__experience-value {
+.doctor-card__info-item-key {
   font-size: 2rem;
   font-style: normal;
   font-weight: 900;
   line-height: 100%;
   letter-spacing: -0.02rem;
   text-transform: uppercase;
+
+  @include media.breakpoint(mobile) {
+    font-size: 1.6rem;
+    font-style: normal;
+    font-weight: 900;
+    line-height: 100%;
+    letter-spacing: -0.016rem;
+    text-transform: uppercase;
+  }
 }
 
-.doctor-card__experience-key {
+.doctor-card__info-item-value {
   font-size: 1.5rem;
   font-style: normal;
   font-weight: 400;
   line-height: 140%;
+
+  @include media.breakpoint(mobile) {
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 100%;
+  }
 }
 
 .doctor-card__content {
@@ -62,6 +89,11 @@
   flex-grow: 1;
   padding: 4rem;
   gap: 4rem;
+
+  @include media.breakpoint(mobile) {
+    padding: 1.6rem;
+    gap: 1.5rem;
+  }
 }
 
 .doctor-card__name {
@@ -73,6 +105,14 @@
   text-transform: uppercase;
   width: min-content;
   color: #222;
+  @include media.breakpoint(mobile) {
+    font-size: 1.5rem;
+    font-style: normal;
+    font-weight: 900;
+    line-height: 100%;
+    letter-spacing: -0.015rem;
+    text-transform: uppercase;
+  }
 }
 
 .doctor-card__position {
@@ -81,17 +121,35 @@
   font-weight: 400;
   line-height: 140%;
   color: #111;
+  @include media.breakpoint(mobile) {
+    font-size: 1.2rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 140%;
+  }
 }
 
 .doctor-card__btn {
   align-self: stretch;
   margin-top: auto;
+
+  @include media.breakpoint(mobile) {
+    font-size: 0.88rem;
+    font-style: normal;
+    font-weight: 900;
+    line-height: 100%;
+    padding: 1.4rem;
+  }
 }
 
 .doctor-card__award {
   margin-top: auto;
   width: 6rem;
   height: 6rem;
+  @include media.breakpoint(mobile) {
+    width: 4rem;
+    height: 4rem;
+  }
 
   img {
     display: block;

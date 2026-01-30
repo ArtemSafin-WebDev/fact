@@ -6,6 +6,11 @@
   padding-top: 8rem;
   padding-bottom: 6rem;
   background-color: #eaeaea;
+
+  @include media.breakpoint(mobile) {
+    padding-top: 6rem;
+    padding-bottom: 0;
+  }
 }
 
 .doctors__content {
@@ -15,7 +20,11 @@
 }
 
 .doctors__subtitle {
-  margin-top: 4rem;
+  margin-top: 2rem;
+
+  @include media.breakpoint(mobile) {
+    margin-top: 0.6rem;
+  }
 }
 
 .doctors__row {
@@ -24,19 +33,55 @@
   align-items: center;
   justify-content: space-between;
   gap: 3.2rem;
+
+  @include media.breakpoint(mobile) {
+    gap: 2.4rem;
+    margin-top: 4rem;
+    align-items: stretch;
+  }
 }
 
 .doctors__tabs {
   position: relative;
   margin-top: 4rem;
+  @include media.breakpoint(mobile) {
+    margin-top: 4rem;
+  }
+}
+
+.doctors__tabs-item {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: auto;
+  visibility: hidden;
+
+  &.active {
+    visibility: inherit;
+    position: relative;
+  }
 }
 
 .doctors__slider {
+  .swiper {
+    @include media.breakpoint(mobile) {
+      overflow: visible;
+    }
+  }
   .swiper-slide {
     display: flex;
     flex-direction: column;
     height: auto;
     box-sizing: border-box;
     width: 25%;
+    border-right: 1px solid #f6f6f6;
+
+    @include media.breakpoint(mobile) {
+      width: 18.7rem;
+    }
+    &:last-child {
+      border-right: none;
+    }
   }
 }
