@@ -4,6 +4,7 @@
 .license-card {
   position: relative;
   aspect-ratio: 255 / 360;
+  display: block;
   img {
     position: absolute;
     left: 0;
@@ -17,6 +18,14 @@
 
   @media (hover: hover) and (pointer: fine) {
     &:hover {
+      img {
+        filter: grayscale(0);
+      }
+    }
+  }
+
+  @include media.breakpoint(mobile) {
+    .swiper-slide-active & {
       img {
         filter: grayscale(0);
       }

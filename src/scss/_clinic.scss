@@ -5,6 +5,11 @@
   @include utils.blockWrapper;
   isolation: isolate;
   color: white;
+  position: relative;
+  margin-bottom: 12rem;
+  @include media.breakpoint(mobile) {
+    margin-bottom: 6rem;
+  }
 }
 
 .clinic__bg {
@@ -45,6 +50,7 @@
   display: flex;
   flex-direction: column;
   padding: 8rem 0;
+  container-type: inline-size;
 
   @include media.breakpoint(mobile) {
     padding-top: 3rem;
@@ -54,7 +60,12 @@
 
 .clinic__large-heading {
   text-align: center;
-  font-size: 5vw;
+  font-size: 12.438cqw;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+  font-weight: 900;
+  line-height: 100%;
+
   @include media.breakpoint(mobile) {
     display: none;
   }
@@ -97,7 +108,7 @@
     padding: 2.4rem;
     display: flex;
     flex-direction: column;
-    gap: 2rem;
+    gap: 1.4rem;
   }
 }
 
@@ -127,6 +138,7 @@
     line-height: 100%;
     letter-spacing: -0.02rem;
     text-transform: uppercase;
+    order: -30;
   }
 }
 
@@ -138,10 +150,17 @@
   line-height: 100%;
   letter-spacing: -0.015rem;
   text-transform: uppercase;
-  max-width: 40rem;
+  max-width: 42rem;
   @include media.breakpoint(mobile) {
     max-width: none;
     margin: 0;
+
+    font-size: 1.2rem;
+    font-style: normal;
+    font-weight: 900;
+    line-height: 100%;
+    letter-spacing: -0.012rem;
+    text-transform: uppercase;
   }
 }
 
@@ -168,14 +187,20 @@
     font-weight: 400;
     line-height: 140%;
     column-count: 1;
+    display: contents;
   }
 
   p {
     break-inside: avoid;
-    margin-top: 3rem;
+    padding-top: 3rem;
 
     @include media.breakpoint(mobile) {
-      margin: 0;
+      padding: 0;
+
+      &:nth-child(1),
+      &:nth-child(2) {
+        order: -2;
+      }
     }
   }
 }

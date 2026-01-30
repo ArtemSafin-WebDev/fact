@@ -18,9 +18,9 @@
 }
 
 .blog__title {
-  margin-top: 4rem;
+  margin-top: 2rem;
   @include media.breakpoint(mobile) {
-    margin-top: 1.5rem;
+    margin-top: 0.5rem;
   }
   &:first-child {
     margin-top: 0;
@@ -34,7 +34,7 @@
   @include media.breakpoint(mobile) {
     margin-top: 4rem;
     width: 100vw;
-    position: absolute;
+    position: relative;
     left: 50%;
     transform: translateX(-50%);
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -44,10 +44,29 @@
 .blog__list-item {
   display: flex;
   flex-direction: column;
+  border-right: 1px solid #cbcbcb;
+  transition: border-color 0.2s;
 
+  &:last-child {
+    border: none;
+  }
+
+  &:nth-child(3n) {
+    border: none;
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      border-color: transparent;
+    }
+  }
   @include media.breakpoint(mobile) {
     &:not(:nth-child(-n + 2)) {
       display: none;
+    }
+
+    &:nth-child(2) {
+      border: none;
     }
   }
 }

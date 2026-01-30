@@ -4,18 +4,26 @@
 .blog-card {
   display: grid;
   grid-template-columns: minmax(0, 1fr);
-  grid-template-rows: "stack";
+  grid-template-areas: "stack";
   flex-grow: 1;
   overflow: hidden;
   isolation: isolate;
   transition: color 0.2s;
   background-color: white;
   color: var(--text-color);
-  border: 1px solid #cbcbcb;
 
   &:link,
   &:visited {
     color: var(--text-color);
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      color: white;
+      .blog-card__bg {
+        opacity: 1;
+      }
+    }
   }
   &::before {
     content: "";
@@ -31,6 +39,8 @@
 .blog-card__bg {
   grid-area: stack;
   position: relative;
+  opacity: 0;
+  transition: opacity 0.2s;
 
   img {
     position: absolute;
@@ -54,6 +64,7 @@
 
   @include media.breakpoint(mobile) {
     padding: 1.4rem 1.6rem;
+    grid-template-rows: 1fr auto 2fr;
   }
 }
 
@@ -97,6 +108,7 @@
   text-transform: uppercase;
   align-self: center;
   justify-self: center;
+  text-align: center;
   @include media.breakpoint(mobile) {
     font-size: 1.6rem;
     font-style: normal;
@@ -111,7 +123,7 @@
   align-self: flex-end;
   display: flex;
   justify-content: space-between;
-  gap: 3.2rem;
+  gap: 1.6rem;
   align-items: flex-end;
   @include media.breakpoint(mobile) {
     display: block;

@@ -14,10 +14,20 @@
   color: white;
   max-width: 100%;
   text-align: center;
+  transition:
+    background-color 0.2s,
+    color 0.2s;
 
   &:link,
   &:visited {
     color: white;
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      background-color: var(--green-300);
+      color: var(--text-color);
+    }
   }
 
   &--green {

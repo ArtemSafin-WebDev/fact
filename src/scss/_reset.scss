@@ -25,6 +25,7 @@ html {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-size: clamp(2px, 0.52vw, 125px);
+  font-size: clamp(2px, 0.54vw, 125px);
   scrollbar-gutter: stable;
   scroll-behavior: smooth;
   scroll-padding-top: 10rem;
@@ -192,7 +193,7 @@ th {
 
 ::selection {
   color: white;
-  background-color: var(--primary-color);
+  background-color: var(--green-300);
   -webkit-text-fill-color: white;
 }
 
