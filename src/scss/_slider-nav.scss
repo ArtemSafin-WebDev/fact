@@ -41,6 +41,7 @@
   &.swiper-button-disabled {
     border-color: #d3d3d3;
     background-color: transparent;
+    cursor: default;
     @include media.breakpoint(mobile) {
       border-color: #a4a4a4;
     }
@@ -48,4 +49,9 @@
       fill: #161616;
     }
   }
+
+  // &:not(.swiper-button-disabled):hover {
+  //   background-color: black;
+  //   border-color: black;
+  // }
 }

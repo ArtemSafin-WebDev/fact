@@ -9,8 +9,9 @@
   overflow: hidden;
   background-color: white;
   color: var(--text-color);
-  border: 1px solid #d3d3d3;
 
+  // border-right: none;
+  transition: opacity 0.2s;
   &:link,
   &:visited {
     color: var(--text-color);
@@ -27,6 +28,9 @@
 
   @media (hover: hover) and (pointer: fine) {
     &:hover {
+      .promo-card__bg {
+        opacity: 1;
+      }
       color: white;
     }
   }
@@ -34,6 +38,8 @@
 
 .promo-card__bg {
   grid-area: stack;
+  transition: opacity 0.2s;
+  opacity: 0;
 
   img {
     position: absolute;
@@ -52,6 +58,7 @@
   gap: 1.6rem;
   grid-template-areas: "date" "title" "bottom";
   padding: 4rem;
+  z-index: 5;
   @include media.breakpoint(mobile) {
     padding: 1.4rem 1.6rem;
   }
@@ -88,6 +95,7 @@
   align-items: flex-end;
   justify-content: space-between;
   gap: 3.2rem;
+  align-self: flex-end;
 
   @include media.breakpoint(mobile) {
     display: block;
@@ -99,6 +107,7 @@
   font-style: normal;
   font-weight: 400;
   line-height: 140%;
+  max-width: 22rem;
   @include media.breakpoint(mobile) {
     display: none;
   }

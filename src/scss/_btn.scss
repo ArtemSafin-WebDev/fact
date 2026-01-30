@@ -37,6 +37,13 @@
     &:visited {
       color: var(--text-color);
     }
+
+    @media (hover: hover) and (pointer: fine) {
+      &:hover {
+        background-color: var(--green-200);
+        color: var(--text-color);
+      }
+    }
   }
 
   @include media.breakpoint(mobile) {

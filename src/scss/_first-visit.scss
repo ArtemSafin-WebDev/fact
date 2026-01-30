@@ -5,9 +5,11 @@
   @include utils.blockWrapper;
   padding: 8rem 0;
   background-color: #eaeaea;
+  margin-bottom: 8rem;
 
   @include media.breakpoint(mobile) {
     padding: 6rem 0;
+    margin-bottom: 6rem;
   }
 }
 
@@ -24,9 +26,9 @@
 .first-visit__left {
   display: flex;
   flex-direction: column;
-  gap: 4rem;
+  gap: 2rem;
   @include media.breakpoint(mobile) {
-    gap: 1.5rem;
+    gap: 1rem;
   }
 }
 
@@ -36,6 +38,7 @@
   font-weight: 900;
   line-height: 100%;
   text-transform: uppercase;
+  margin-top: auto;
   @include media.breakpoint(mobile) {
     font-size: 1.5rem;
     font-style: normal;
@@ -43,12 +46,18 @@
     line-height: 120%;
     letter-spacing: -0.015rem;
     text-transform: uppercase;
+    margin: 0;
+    text-wrap: balance;
   }
 }
 
 .first-visit__form {
   display: flex;
   flex-direction: column;
+
+  @include media.breakpoint(mobile) {
+    margin-top: 6rem;
+  }
 }
 
 .first-visit__form-fields {
@@ -70,7 +79,7 @@
   letter-spacing: -0.06rem;
   text-transform: uppercase;
   width: 100%;
-  padding-bottom: 4rem;
+  padding-bottom: 3.2rem;
   border-bottom: 1px solid #000;
   color: #161616;
   &::placeholder {
@@ -83,7 +92,7 @@
     line-height: 100%;
     letter-spacing: -0.04rem;
     text-transform: uppercase;
-    padding-bottom: 2rem;
+    padding-bottom: 1.2rem;
   }
 }
 
