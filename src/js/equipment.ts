@@ -17,6 +17,7 @@ export default function equipment() {
       loop: true,
       centeredSlides: true,
       centeredSlidesBounds: false,
+      allowTouchMove: false,
       autoplay: {
         delay: 0,
       },
