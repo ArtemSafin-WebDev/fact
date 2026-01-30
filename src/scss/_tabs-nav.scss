@@ -1,0 +1,44 @@
+@use "utils";
+@use "media";
+
+.tabs-nav {
+  display: block;
+}
+
+.tabs-nav__list {
+  display: flex;
+}
+
+.tabs-nav__list-item {
+  flex-shrink: 0;
+  &:not(:first-child) {
+    margin-left: -1px;
+  }
+}
+
+.tabs-nav__btn {
+  display: grid;
+  place-items: center;
+  text-align: center;
+  padding: 2.4rem;
+  min-width: 22rem;
+  border: 1px solid #a4a4a4;
+  font-size: 1.5rem;
+  font-style: normal;
+  font-weight: 900;
+  line-height: 100%;
+  transition:
+    background-color 0.2s,
+    border-color 0.2s,
+    color 0.2s;
+  user-select: none;
+  color: var(--text-color);
+  cursor: pointer;
+
+  &.active {
+    background-color: var(--green-300);
+    border-color: var(--green-300);
+    color: white;
+    cursor: default;
+  }
+}

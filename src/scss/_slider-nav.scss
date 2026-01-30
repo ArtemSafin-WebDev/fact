@@ -1,0 +1,51 @@
+@use "utils";
+@use "media";
+
+.slider-nav {
+  display: flex;
+}
+
+.slider-nav__arrow {
+  aspect-ratio: 1 / 1;
+  flex-shrink: 0;
+  width: 6rem;
+  display: grid;
+  place-items: center;
+  transition:
+    background-color 0.2s,
+    border-color 0.2s;
+  border: 1px solid #3b3b3b;
+  background-color: #3b3b3b;
+
+  @include media.breakpoint(mobile) {
+    width: 4rem;
+    border: 1px solid black;
+    background-color: black;
+  }
+
+  &:not(:first-child) {
+    margin-left: -1px;
+  }
+
+  svg {
+    width: 1.2rem;
+    height: 1.9rem;
+    fill: white;
+    transition: fill 0.2s;
+    @include media.breakpoint(mobile) {
+      width: 0.8rem;
+      height: 1.2rem;
+    }
+  }
+
+  &.swiper-button-disabled {
+    border-color: #d3d3d3;
+    background-color: transparent;
+    @include media.breakpoint(mobile) {
+      border-color: #a4a4a4;
+    }
+    svg {
+      fill: #161616;
+    }
+  }
+}

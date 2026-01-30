@@ -20,6 +20,15 @@
     color: white;
   }
 
+  &--green {
+    background-color: var(--green-300);
+    color: var(--text-color);
+    &:link,
+    &:visited {
+      color: var(--text-color);
+    }
+  }
+
   @include media.breakpoint(mobile) {
     align-self: stretch;
     width: auto;

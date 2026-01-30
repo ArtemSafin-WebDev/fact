@@ -1,0 +1,73 @@
+@use "utils";
+@use "media";
+
+.rating-card {
+  flex-grow: 1;
+  background-color: #fff;
+  aspect-ratio: 1 / 1;
+  color: var(--text-color);
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  padding: 4rem;
+  grid-template-rows: 1fr auto 1fr;
+  gap: 1.6rem;
+  grid-template-areas: "stars" "amount" "source";
+
+  @include media.breakpoint(mobile) {
+    padding: 2.6rem 2rem;
+  }
+}
+
+.rating-card__stars {
+  grid-area: stars;
+  justify-self: flex-start;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+
+  svg {
+    flex-shrink: 0;
+    width: 4rem;
+    height: 4rem;
+    fill: var(--yellow-300);
+    @include media.breakpoint(mobile) {
+      width: 2.5rem;
+      height: 2.5rem;
+    }
+  }
+}
+
+.rating-card__amount {
+  align-self: center;
+  justify-self: center;
+  text-align: center;
+  grid-area: amount;
+  font-size: 6rem;
+  font-style: normal;
+  font-weight: 900;
+  line-height: 100%;
+  letter-spacing: -0.06rem;
+  text-transform: uppercase;
+  @include media.breakpoint(mobile) {
+    font-size: 3.2rem;
+    font-style: normal;
+    font-weight: 900;
+    line-height: 100%;
+    letter-spacing: -0.032rem;
+    text-transform: uppercase;
+  }
+}
+
+.rating-card__source {
+  grid-area: source;
+  height: 3rem;
+  width: auto;
+  max-width: 100%;
+  object-fit: contain;
+  object-position: left center;
+  align-self: flex-end;
+  justify-self: flex-start;
+  @include media.breakpoint(mobile) {
+    height: 1.5rem;
+  }
+}

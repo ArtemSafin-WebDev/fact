@@ -1,0 +1,39 @@
+@use "utils";
+@use "media";
+
+.promo {
+  @include utils.blockWrapper;
+  margin-bottom: 15rem;
+}
+
+.promo__content {
+  @include utils.blockContent;
+}
+
+.promo__large-heading {
+  font-size: 5vw;
+}
+
+.promo__subheading {
+  text-align: center;
+  font-size: 4.5rem;
+  font-style: normal;
+  font-weight: 900;
+  line-height: 120%;
+  letter-spacing: -0.045rem;
+  text-transform: uppercase;
+  margin-top: 4rem;
+}
+
+.promo__slider {
+  margin-top: 8rem;
+
+  .swiper-slide {
+    width: 50%;
+  }
+}
+
+.promo__slider-nav {
+  align-self: flex-end;
+  margin-bottom: 4rem;
+}

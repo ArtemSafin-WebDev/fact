@@ -1,0 +1,42 @@
+@use "utils";
+@use "media";
+
+.doctors {
+  @include utils.blockWrapper;
+  padding-top: 8rem;
+  padding-bottom: 6rem;
+  background-color: #eaeaea;
+}
+
+.doctors__content {
+  @include utils.blockContent;
+  display: flex;
+  flex-direction: column;
+}
+
+.doctors__subtitle {
+  margin-top: 4rem;
+}
+
+.doctors__row {
+  margin-top: 12rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 3.2rem;
+}
+
+.doctors__tabs {
+  position: relative;
+  margin-top: 4rem;
+}
+
+.doctors__slider {
+  .swiper-slide {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    box-sizing: border-box;
+    width: 25%;
+  }
+}

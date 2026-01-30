@@ -1,0 +1,131 @@
+@use "utils";
+@use "media";
+
+.first-visit {
+  @include utils.blockWrapper;
+  padding: 8rem 0;
+  background-color: #eaeaea;
+
+  @include media.breakpoint(mobile) {
+    padding: 6rem 0;
+  }
+}
+
+.first-visit__content {
+  @include utils.blockContent;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  @include media.breakpoint(mobile) {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.first-visit__left {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+  @include media.breakpoint(mobile) {
+    gap: 1.5rem;
+  }
+}
+
+.first-visit__remark {
+  font-size: 2rem;
+  font-style: normal;
+  font-weight: 900;
+  line-height: 100%;
+  text-transform: uppercase;
+  @include media.breakpoint(mobile) {
+    font-size: 1.5rem;
+    font-style: normal;
+    font-weight: 900;
+    line-height: 120%;
+    letter-spacing: -0.015rem;
+    text-transform: uppercase;
+  }
+}
+
+.first-visit__form {
+  display: flex;
+  flex-direction: column;
+}
+
+.first-visit__form-fields {
+  display: flex;
+  flex-direction: column;
+  gap: 6rem;
+  @include media.breakpoint(mobile) {
+    gap: 3rem;
+  }
+}
+
+.first-visit__form-input {
+  display: block;
+  height: auto;
+  font-size: 3rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 100%;
+  letter-spacing: -0.06rem;
+  text-transform: uppercase;
+  width: 100%;
+  padding-bottom: 4rem;
+  border-bottom: 1px solid #000;
+  color: #161616;
+  &::placeholder {
+    color: #161616;
+  }
+  @include media.breakpoint(mobile) {
+    font-size: 2rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 100%;
+    letter-spacing: -0.04rem;
+    text-transform: uppercase;
+    padding-bottom: 2rem;
+  }
+}
+
+.first-visit__form-policy {
+  text-wrap: balance;
+  margin-top: 6rem;
+  font-size: 1.5rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 120%;
+  text-transform: uppercase;
+  @include media.breakpoint(mobile) {
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%;
+    text-transform: uppercase;
+    margin-top: 3rem;
+  }
+
+  a {
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-decoration-skip-ink: none;
+    text-underline-offset: 1px;
+    transition:
+      color 0.2s,
+      text-decoration-color 0.2s;
+
+    @media (hover: hover) and (pointer: fine) {
+      &:hover {
+        text-decoration-color: transparent;
+      }
+    }
+  }
+}
+
+.first-visit__form-submit {
+  align-self: stretch;
+  width: auto;
+  margin-top: 6rem;
+  @include media.breakpoint(mobile) {
+    margin-top: 3rem;
+  }
+}

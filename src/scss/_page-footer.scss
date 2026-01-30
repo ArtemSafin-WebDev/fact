@@ -76,9 +76,18 @@
   text-decoration-thickness: 1px;
   text-decoration-skip-ink: none;
   text-underline-offset: 1px;
+  transition:
+    color 0.2s,
+    text-decoration-color 0.2s;
   &:link,
   &:visited {
     color: black;
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      text-decoration-color: transparent;
+    }
   }
 
   @include media.breakpoint(mobile) {
@@ -102,10 +111,22 @@
   line-height: normal;
   letter-spacing: -0.028rem;
   color: rgb(22 22 22 / 50%);
+  transition: color 0.2s;
+  text-align: left;
+  &:link,
+  &:visited {
+    color: rgb(22 22 22 / 50%);
+  }
   img {
     flex-shrink: 0;
     width: 3.6rem;
     height: auto;
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      color: rgb(22 22 22 / 100%);
+    }
   }
 
   @include media.breakpoint(mobile) {
@@ -127,11 +148,13 @@
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
   align-items: center;
+  border-top: 1px solid #eaeaea;
 
   @include media.breakpoint(mobile) {
     display: flex;
     flex-direction: column;
     align-items: stretch;
+    gap: 4rem;
   }
 }
 
@@ -203,6 +226,11 @@
       margin-left: 0;
     }
   }
+  @include media.breakpoint(mobile) {
+    &:nth-child(2) {
+      display: none;
+    }
+  }
 }
 
 .page-footer__social-write-link {
@@ -211,16 +239,29 @@
   width: 6rem;
   border: 1px solid #eaeaea;
   aspect-ratio: 1 / 1;
-
-  @include media.breakpoint(mobile) {
-    width: 5.6rem;
-  }
+  transition:
+    border-color 0.2s,
+    background-color 0.2s;
 
   svg {
     width: 2.4rem;
     height: 2.4rem;
     fill: var(--text-color);
     transition: fill 0.2s;
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      background-color: var(--text-color);
+      border-color: var(--text-color);
+      svg {
+        fill: white;
+      }
+    }
+  }
+
+  @include media.breakpoint(mobile) {
+    width: 5.6rem;
   }
 }
 
@@ -236,16 +277,22 @@
   display: grid;
   place-items: center;
   background-color: var(--text-color);
-
-  @include media.breakpoint(mobile) {
-    width: 5.6rem;
-  }
-
+  transition: background-color 0.2s;
   svg {
     width: 2.4rem;
     height: 2.4rem;
     fill: white;
     transition: fill 0.2s;
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      background-color: var(--green-300);
+    }
+  }
+
+  @include media.breakpoint(mobile) {
+    width: 5.6rem;
   }
 }
 
@@ -281,6 +328,9 @@
   line-height: 120%;
   letter-spacing: -0.02rem;
   text-transform: uppercase;
+  br {
+    display: none;
+  }
   @include media.breakpoint(mobile) {
     font-size: 2rem;
     font-style: normal;
@@ -288,6 +338,9 @@
     line-height: 120%;
     letter-spacing: -0.02rem;
     text-transform: uppercase;
+    br {
+      display: block;
+    }
   }
 }
 
@@ -295,20 +348,22 @@
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   align-items: flex-end;
+  margin-top: auto;
   @include media.breakpoint(mobile) {
     display: flex;
     flex-direction: column;
     align-items: stretch;
     gap: 4rem;
+    margin: 0;
   }
 }
 
 .page-footer__contacts-card {
   display: flex;
   flex-direction: column;
-  gap: 3rem;
+  gap: 2.4rem;
   @include media.breakpoint(mobile) {
-    gap: 1.8rem;
+    gap: 1.6rem;
   }
 }
 
@@ -337,6 +392,10 @@
   letter-spacing: -0.015rem;
   text-transform: uppercase;
   color: var(--green-300);
+  &:link,
+  &:visited {
+    color: var(--green-300);
+  }
 }
 
 .page-footer__nav {
@@ -362,6 +421,12 @@
   line-height: normal;
   letter-spacing: -0.03rem;
   text-transform: uppercase;
+
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      color: var(--green-300);
+    }
+  }
 }
 
 .page-footer__version {
@@ -372,7 +437,7 @@
   text-decoration: underline;
   text-decoration-thickness: 1px;
   text-decoration-skip-ink: none;
-  text-underline-offset: 1px;
+  text-underline-offset: 2px;
   gap: 2rem;
   display: flex;
   align-items: center;
@@ -380,14 +445,19 @@
     color 0.2s,
     text-decoration-color 0.2s;
   margin-bottom: 2rem;
-
-  @include media.breakpoint(mobile) {
-    margin-bottom: 4rem;
-  }
   svg {
     flex-shrink: 0;
     width: 1.7208rem;
     height: 1.0791rem;
     fill: currentColor;
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      text-decoration-color: transparent;
+    }
+  }
+  @include media.breakpoint(mobile) {
+    margin-bottom: 4rem;
   }
 }

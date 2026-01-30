@@ -1,0 +1,134 @@
+@use "utils";
+@use "media";
+
+.service {
+  @include utils.blockWrapper;
+  margin-bottom: 12rem;
+
+  @include media.breakpoint(mobile) {
+    margin-bottom: 6rem;
+  }
+}
+
+.service__content {
+  @include utils.blockContent;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  @include media.breakpoint(mobile) {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.service__left {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+  @include media.breakpoint(mobile) {
+    display: contents;
+  }
+}
+
+.service__btn {
+  margin-top: auto;
+  align-self: flex-start;
+  @include media.breakpoint(mobile) {
+    align-self: stretch;
+    order: 20;
+    margin-top: 4rem;
+  }
+}
+
+.service__title {
+  @include media.breakpoint(mobile) {
+    order: -20;
+  }
+}
+
+.service__subtitle {
+  @include media.breakpoint(mobile) {
+    margin-top: 1.6rem;
+  }
+}
+
+.service__right {
+  display: flex;
+  flex-direction: column;
+  @include media.breakpoint(mobile) {
+    display: contents;
+  }
+}
+
+.service__list {
+  display: flex;
+  flex-direction: column;
+  @include media.breakpoint(mobile) {
+    margin-top: 4rem;
+  }
+}
+
+.service__list-item {
+  border-bottom: 1px solid #d3d3d3;
+  &:first-child {
+    border-top: 1px solid #d3d3d3;
+  }
+}
+
+.service__card {
+  display: flex;
+  align-items: center;
+  gap: 4rem;
+  padding: 4rem 0;
+  @include media.breakpoint(mobile) {
+    padding: 1.6rem 0;
+    gap: 2.4rem;
+  }
+}
+
+.service__card-icon {
+  flex-shrink: 0;
+  width: 4rem;
+  height: 4rem;
+  object-fit: contain;
+  @include media.breakpoint(mobile) {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+}
+
+.service__card-title {
+  width: 32rem;
+  flex-shrink: 0;
+  font-size: 3rem;
+  font-style: normal;
+  font-weight: 900;
+  line-height: 100%;
+  letter-spacing: -0.03rem;
+  text-transform: uppercase;
+  color: #222;
+  @include media.breakpoint(mobile) {
+    width: 11.4rem;
+    font-size: 1.2rem;
+    font-style: normal;
+    font-weight: 900;
+    line-height: 100%;
+    letter-spacing: -0.012rem;
+    text-transform: uppercase;
+  }
+}
+
+.service__card-text {
+  width: 10%;
+  flex-grow: 1;
+  font-size: 1.8rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 140%;
+  color: #222;
+  @include media.breakpoint(mobile) {
+    font-size: 1.2rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 140%;
+  }
+}

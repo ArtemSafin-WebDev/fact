@@ -1,0 +1,136 @@
+@use "utils";
+@use "media";
+
+.ratings {
+  @include utils.blockWrapper;
+  padding-block: 8rem;
+  background-color: #eaeaea;
+
+  @include media.breakpoint(mobile) {
+    padding-block: 6rem;
+  }
+}
+
+.ratings__content {
+  @include utils.blockContent;
+  display: flex;
+  flex-direction: column;
+}
+
+.ratings__heading {
+  font-size: 2rem;
+  font-style: normal;
+  font-weight: 900;
+  line-height: 120%;
+  letter-spacing: -0.02rem;
+  text-transform: uppercase;
+  color: #111;
+
+  @include media.breakpoint(mobile) {
+    font-size: 1.8rem;
+    font-style: normal;
+    font-weight: 900;
+    line-height: 100%;
+    letter-spacing: -0.018rem;
+    text-transform: uppercase;
+    color: #222;
+    text-align: center;
+  }
+}
+
+.ratings__star {
+  display: grid;
+  grid-template-areas: "stack";
+  place-items: center;
+  margin-top: 8rem;
+  width: 40rem;
+  @include media.breakpoint(mobile) {
+    width: 17.5rem;
+    margin-top: 4rem;
+  }
+}
+
+.ratings__star-image {
+  grid-area: stack;
+  width: 100%;
+  height: auto;
+}
+
+.ratings__star-content {
+  grid-area: stack;
+  z-index: 8;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  gap: 4rem;
+  @include media.breakpoint(mobile) {
+    gap: 2rem;
+  }
+}
+
+.ratings__star-amount {
+  font-size: 12rem;
+  font-style: normal;
+  font-weight: 900;
+  line-height: 100%;
+  letter-spacing: -0.24rem;
+  text-transform: uppercase;
+  @include media.breakpoint(mobile) {
+    font-size: 5.8519rem;
+    font-style: normal;
+    font-weight: 900;
+    line-height: 100%;
+    letter-spacing: -0.117rem;
+    text-transform: uppercase;
+  }
+}
+
+.ratings__star-text {
+  font-size: 1.8rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 120%;
+  letter-spacing: -0.018rem;
+  @include media.breakpoint(mobile) {
+    font-size: 0.8778rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 120%;
+    letter-spacing: -0.0088rem;
+  }
+}
+
+.ratings__slider {
+  margin-top: 2.4rem;
+  display: flex;
+  flex-direction: column;
+  @include media.breakpoint(mobile) {
+    margin-top: 4rem;
+  }
+}
+
+.ratings__slider-nav {
+  align-self: flex-end;
+  margin-bottom: 4rem;
+  @include media.breakpoint(mobile) {
+    margin-bottom: 2rem;
+  }
+}
+
+.ratings__slider-wrapper {
+  .swiper {
+    overflow: visible;
+  }
+  .swiper-slide {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    box-sizing: border-box;
+    width: 25%;
+    transition: opacity 0.4s;
+    @include media.breakpoint(mobile) {
+      width: 18.7rem;
+    }
+  }
+}
