@@ -8,7 +8,7 @@
 .slider-nav__arrow {
   aspect-ratio: 1 / 1;
   flex-shrink: 0;
-  width: 6rem;
+  height: 6rem;
   display: grid;
   place-items: center;
   transition:
@@ -18,7 +18,7 @@
   background-color: #3b3b3b;
 
   @include media.breakpoint(mobile) {
-    width: 4rem;
+    height: 4rem;
     border-color: black;
     background-color: black;
   }
