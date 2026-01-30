@@ -8,6 +8,7 @@ import ratings from "./ratings";
 import patients from "./patients";
 import equipment from "./equipment";
 import doctors from "./doctors";
+import clinicServices from "./clinicServices";
 
 document.addEventListener("DOMContentLoaded", () => {
   fancybox();
@@ -18,6 +19,7 @@ document.addEventListener("DOMContentLoaded", () => {
   patients();
   equipment();
   doctors();
+  clinicServices();
 });
 
 window.addEventListener("load", () => {
