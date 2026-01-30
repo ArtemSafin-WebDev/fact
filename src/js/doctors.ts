@@ -28,10 +28,11 @@ export default function doctors() {
       }
 
       const container = tabsItems[index]?.querySelector<HTMLElement>(".swiper");
+      console.log("Container");
       if (!container) return;
       instance = new Swiper(container, {
         speed: 600,
-        slidesPerView: 600,
+        slidesPerView: "auto",
         modules: [Navigation],
         navigation: {
           prevEl: element.querySelector<HTMLButtonElement>(
@@ -45,5 +46,12 @@ export default function doctors() {
     };
 
     setActive(0);
+
+    tabsBtns.forEach((btn, btnIndex) => {
+      btn.addEventListener("click", (event) => {
+        event.preventDefault();
+        setActive(btnIndex);
+      });
+    });
   });
 }

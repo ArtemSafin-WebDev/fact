@@ -7,7 +7,7 @@ import promo from "./promo";
 import ratings from "./ratings";
 import patients from "./patients";
 import equipment from "./equipment";
-// import doctors from "./doctors";
+import doctors from "./doctors";
 
 document.addEventListener("DOMContentLoaded", () => {
   fancybox();
@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", () => {
   ratings();
   patients();
   equipment();
-  // doctors();
+  doctors();
 });
 
 window.addEventListener("load", () => {
