@@ -76,6 +76,10 @@ Use existing blocks when matching design sections; prefer reusing these blocks a
 - Cards: `blog-card`, `promo-card`, `rating-card`, `video-review-card`, `numbers-card`, `doctor-card`, `license-card`, `clinic-service-card`, `equipment-card`, `equipment-feature-card`
 - Sliders: `swiper`, `swiper-wrapper`, `swiper-slide`
 
+## Sliders
+
+- For all sliders, prefer using Swiper where possible.
+
 ## Known Quirks
 
 - In `clinic-services` markup there is a typo class `linic-services__horizontal-card-price` (missing "c"). If reusing this block, keep the existing class to preserve styles.
