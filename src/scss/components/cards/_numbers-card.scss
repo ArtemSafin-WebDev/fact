@@ -1,90 +1,92 @@
 @use "utils";
 @use "media";
 
-.numbers-card {
-  flex-grow: 1;
-  aspect-ratio: 1 / 1;
-  display: grid;
-  grid-template-columns: minmax(0, 1fr);
-  background-color: var(--green-300);
-  color: var(--text-color);
-  padding: 4rem;
-  grid-template-rows: 1fr auto 1fr;
-  grid-template-areas: "." "amount" "text";
-  gap: 1.6rem;
-
-  li:nth-child(even) & {
-    background: var(--green-200);
-  }
-
-  .swiper-slide:nth-child(even) & {
-    background: var(--green-200);
-  }
-
-  @include media.breakpoint(mobile) {
-    padding: 1.8rem;
+@layer components {
+  .numbers-card {
+    flex-grow: 1;
+    aspect-ratio: 1 / 1;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    background-color: var(--green-300);
+    color: var(--text-color);
+    padding: 4rem;
+    grid-template-rows: 1fr auto 1fr;
+    grid-template-areas: "." "amount" "text";
+    gap: 1.6rem;
 
     li:nth-child(even) & {
-      background: var(--green-300);
+      background: var(--green-200);
     }
 
-    li:nth-child(4n + 2) & {
+    .swiper-slide:nth-child(even) & {
       background: var(--green-200);
     }
-    li:nth-child(4n + 3) & {
-      background: var(--green-200);
+
+    @include media.breakpoint(mobile) {
+      padding: 1.8rem;
+
+      li:nth-child(even) & {
+        background: var(--green-300);
+      }
+
+      li:nth-child(4n + 2) & {
+        background: var(--green-200);
+      }
+      li:nth-child(4n + 3) & {
+        background: var(--green-200);
+      }
     }
   }
-}
 
-.numbers-card__amount {
-  grid-area: amount;
-  text-align: center;
-  align-self: center;
-  justify-self: center;
-  font-size: 12rem;
-  font-style: normal;
-  font-weight: 900;
-  line-height: 100%;
-  letter-spacing: -0.12rem;
-  text-transform: uppercase;
-  white-space: nowrap;
-
-  &--medium {
-    font-size: 6rem;
+  .numbers-card__amount {
+    grid-area: amount;
+    text-align: center;
+    align-self: center;
+    justify-self: center;
+    font-size: 12rem;
     font-style: normal;
     font-weight: 900;
     line-height: 100%;
-    letter-spacing: -0.06rem;
-  }
-  @include media.breakpoint(mobile) {
-    font-size: 3.2rem;
-    font-style: normal;
-    font-weight: 900;
-    line-height: 100%;
-    letter-spacing: -0.032rem;
+    letter-spacing: -0.12rem;
+    text-transform: uppercase;
+    white-space: nowrap;
 
-    &--amount {
+    &--medium {
+      font-size: 6rem;
+      font-style: normal;
+      font-weight: 900;
+      line-height: 100%;
+      letter-spacing: -0.06rem;
+    }
+    @include media.breakpoint(mobile) {
       font-size: 3.2rem;
       font-style: normal;
       font-weight: 900;
       line-height: 100%;
       letter-spacing: -0.032rem;
+
+      &--amount {
+        font-size: 3.2rem;
+        font-style: normal;
+        font-weight: 900;
+        line-height: 100%;
+        letter-spacing: -0.032rem;
+      }
     }
   }
-}
 
-.numbers-card__text {
-  align-self: flex-end;
-  font-size: 1.8rem;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 100%;
-  grid-area: text;
-  @include media.breakpoint(mobile) {
-    font-size: 1.2rem;
+  .numbers-card__text {
+    align-self: flex-end;
+    font-size: 1.8rem;
     font-style: normal;
     font-weight: 400;
     line-height: 100%;
+    grid-area: text;
+    @include media.breakpoint(mobile) {
+      font-size: 1.2rem;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 100%;
+    }
   }
 }

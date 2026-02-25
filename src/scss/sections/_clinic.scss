@@ -1,205 +1,207 @@
 @use "utils";
 @use "media";
 
-.clinic {
-  @include utils.blockWrapper;
-  isolation: isolate;
-  color: white;
-  position: relative;
-  margin-bottom: 12rem;
-  @include media.breakpoint(mobile) {
-    margin-bottom: 6rem;
-  }
-}
-
-.clinic__bg {
-  position: absolute;
-  inset: 0;
-  z-index: -1;
-  background-color: var(--text-color);
-  img {
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-
-  &::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(
-      0deg,
-      rgba(0, 0, 0, 0.3) 0%,
-      rgba(0, 0, 0, 0.3) 100%
-    );
+@layer sections {
+  .clinic {
+    @include utils.blockWrapper;
+    isolation: isolate;
+    color: white;
+    position: relative;
+    margin-bottom: 12rem;
     @include media.breakpoint(mobile) {
-      background: linear-gradient(
-        0deg,
-        rgba(0, 0, 0, 0.25) 0%,
-        rgba(0, 0, 0, 0.25) 100%
-      );
+      margin-bottom: 6rem;
     }
   }
-}
 
-.clinic__content {
-  @include utils.blockContent;
-  display: flex;
-  flex-direction: column;
-  padding: 8rem 0;
-  container-type: inline-size;
+  .clinic__bg {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background-color: var(--text-color);
+    img {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
 
-  @include media.breakpoint(mobile) {
-    padding-top: 3rem;
-    padding-bottom: 5.2rem;
+    &::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        0deg,
+        rgba(0, 0, 0, 0.3) 0%,
+        rgba(0, 0, 0, 0.3) 100%
+      );
+      @include media.breakpoint(mobile) {
+        background: linear-gradient(
+          0deg,
+          rgba(0, 0, 0, 0.25) 0%,
+          rgba(0, 0, 0, 0.25) 100%
+        );
+      }
+    }
   }
-}
 
-.clinic__large-heading {
-  text-align: center;
-  font-size: 12.438cqw;
-  letter-spacing: -0.02em;
-  text-transform: uppercase;
-  font-weight: 900;
-  line-height: 100%;
-
-  @include media.breakpoint(mobile) {
-    display: none;
-  }
-}
-
-.clinic__subheading {
-  font-size: 4.5rem;
-  font-style: normal;
-  font-weight: 900;
-  line-height: 100%;
-  letter-spacing: -0.045rem;
-  text-transform: uppercase;
-  margin-top: 10rem;
-  text-align: center;
-  align-self: center;
-
-  @include media.breakpoint(mobile) {
-    font-size: 1.8rem;
-    font-style: normal;
-    font-weight: 900;
-    line-height: 100%;
-    letter-spacing: -0.018rem;
-    text-transform: uppercase;
-    margin: 0;
-  }
-}
-
-.clinic__card {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  background: #fff;
-  color: var(--text-color);
-  min-height: 44rem;
-  margin-top: 25rem;
-
-  @include media.breakpoint(mobile) {
-    min-height: auto;
-    margin-top: 8.6rem;
-    display: block;
-    padding: 2.4rem;
+  .clinic__content {
+    @include utils.blockContent;
     display: flex;
     flex-direction: column;
-    gap: 1.4rem;
+    padding: 8rem 0;
+    container-type: inline-size;
+
+    @include media.breakpoint(mobile) {
+      padding-top: 3rem;
+      padding-bottom: 5.2rem;
+    }
   }
-}
 
-.clinic__card-left {
-  padding: 6rem;
-  display: flex;
-  flex-direction: column;
-  gap: 3.2rem;
+  .clinic__large-heading {
+    text-align: center;
+    font-size: 12.438cqw;
+    letter-spacing: -0.02em;
+    text-transform: uppercase;
+    font-weight: 900;
+    line-height: 100%;
 
-  @include media.breakpoint(mobile) {
-    display: contents;
+    @include media.breakpoint(mobile) {
+      display: none;
+    }
   }
-}
 
-.clinic__card-title {
-  font-size: 4.5rem;
-  font-style: normal;
-  font-weight: 900;
-  line-height: 100%;
-  letter-spacing: -0.045rem;
-  text-transform: uppercase;
-  text-wrap: balance;
-  @include media.breakpoint(mobile) {
-    font-size: 2rem;
+  .clinic__subheading {
+    font-size: 4.5rem;
     font-style: normal;
     font-weight: 900;
     line-height: 100%;
-    letter-spacing: -0.02rem;
+    letter-spacing: -0.045rem;
     text-transform: uppercase;
-    order: -30;
+    margin-top: 10rem;
+    text-align: center;
+    align-self: center;
+
+    @include media.breakpoint(mobile) {
+      font-size: 1.8rem;
+      font-style: normal;
+      font-weight: 900;
+      line-height: 100%;
+      letter-spacing: -0.018rem;
+      text-transform: uppercase;
+      margin: 0;
+    }
   }
-}
 
-.clinic__card-desc {
-  margin-top: auto;
-  font-size: 1.5rem;
-  font-style: normal;
-  font-weight: 900;
-  line-height: 100%;
-  letter-spacing: -0.015rem;
-  text-transform: uppercase;
-  max-width: 42rem;
-  @include media.breakpoint(mobile) {
-    max-width: none;
-    margin: 0;
+  .clinic__card {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    background: #fff;
+    color: var(--text-color);
+    min-height: 44rem;
+    margin-top: 25rem;
 
-    font-size: 1.2rem;
+    @include media.breakpoint(mobile) {
+      min-height: auto;
+      margin-top: 8.6rem;
+      display: block;
+      padding: 2.4rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.4rem;
+    }
+  }
+
+  .clinic__card-left {
+    padding: 6rem;
+    display: flex;
+    flex-direction: column;
+    gap: 3.2rem;
+
+    @include media.breakpoint(mobile) {
+      display: contents;
+    }
+  }
+
+  .clinic__card-title {
+    font-size: 4.5rem;
     font-style: normal;
     font-weight: 900;
     line-height: 100%;
-    letter-spacing: -0.012rem;
+    letter-spacing: -0.045rem;
     text-transform: uppercase;
+    text-wrap: balance;
+    @include media.breakpoint(mobile) {
+      font-size: 2rem;
+      font-style: normal;
+      font-weight: 900;
+      line-height: 100%;
+      letter-spacing: -0.02rem;
+      text-transform: uppercase;
+      order: -30;
+    }
   }
-}
 
-.clinic__card-right {
-  padding-bottom: 6rem;
-  padding-right: 4rem;
-  padding-top: 6rem;
-  @include media.breakpoint(mobile) {
-    display: contents;
+  .clinic__card-desc {
+    margin-top: auto;
+    font-size: 1.5rem;
+    font-style: normal;
+    font-weight: 900;
+    line-height: 100%;
+    letter-spacing: -0.015rem;
+    text-transform: uppercase;
+    max-width: 42rem;
+    @include media.breakpoint(mobile) {
+      max-width: none;
+      margin: 0;
+
+      font-size: 1.2rem;
+      font-style: normal;
+      font-weight: 900;
+      line-height: 100%;
+      letter-spacing: -0.012rem;
+      text-transform: uppercase;
+    }
   }
-}
 
-.clinic__card-text {
-  font-size: 1.5rem;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 140%;
-  margin-top: auto;
-  column-count: 2;
-  column-gap: 4rem;
-  @include media.breakpoint(mobile) {
-    font-size: 1rem;
+  .clinic__card-right {
+    padding-bottom: 6rem;
+    padding-right: 4rem;
+    padding-top: 6rem;
+    @include media.breakpoint(mobile) {
+      display: contents;
+    }
+  }
+
+  .clinic__card-text {
+    font-size: 1.5rem;
     font-style: normal;
     font-weight: 400;
     line-height: 140%;
-    column-count: 1;
-    display: contents;
-  }
-
-  p {
-    break-inside: avoid;
-    padding-top: 3rem;
-
+    margin-top: auto;
+    column-count: 2;
+    column-gap: 4rem;
     @include media.breakpoint(mobile) {
-      padding: 0;
+      font-size: 1rem;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 140%;
+      column-count: 1;
+      display: contents;
+    }
 
-      &:nth-child(1),
-      &:nth-child(2) {
-        order: -2;
+    p {
+      break-inside: avoid;
+      padding-top: 3rem;
+
+      @include media.breakpoint(mobile) {
+        padding: 0;
+
+        &:nth-child(1),
+        &:nth-child(2) {
+          order: -2;
+        }
       }
     }
   }

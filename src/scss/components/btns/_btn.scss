@@ -1,60 +1,62 @@
 @use "utils";
 @use "media";
 
-.btn {
-  font-size: 1.5rem;
-  font-style: normal;
-  font-weight: 900;
-  line-height: 100%;
-  text-transform: uppercase;
-  padding: 2.4rem 4.8rem;
-  align-self: center;
-  width: 44rem;
-  background-color: var(--text-color);
-  color: white;
-  max-width: 100%;
-  text-align: center;
-  transition:
-    background-color 0.2s,
-    color 0.2s;
-
-  &:link,
-  &:visited {
-    color: white;
-  }
-
-  @media (hover: hover) and (pointer: fine) {
-    &:hover {
-      background-color: var(--green-300);
-      color: var(--text-color);
-    }
-  }
-
-  &--green {
-    background-color: var(--green-300);
-    color: var(--text-color);
-    &:link,
-    &:visited {
-      color: var(--text-color);
-    }
-
-    @media (hover: hover) and (pointer: fine) {
-      &:hover {
-        background-color: var(--green-200);
-        color: var(--text-color);
-      }
-    }
-  }
-
-  @include media.breakpoint(mobile) {
-    align-self: stretch;
-    width: auto;
-    font-size: 1.3rem;
+@layer components {
+  .btn {
+    font-size: 1.5rem;
     font-style: normal;
     font-weight: 900;
     line-height: 100%;
     text-transform: uppercase;
     padding: 2.4rem 4.8rem;
-    max-width: none;
+    align-self: center;
+    width: 44rem;
+    background-color: var(--text-color);
+    color: white;
+    max-width: 100%;
+    text-align: center;
+    transition:
+      background-color 0.2s,
+      color 0.2s;
+
+    &:link,
+    &:visited {
+      color: white;
+    }
+
+    @media (hover: hover) and (pointer: fine) {
+      &:hover {
+        background-color: var(--green-300);
+        color: var(--text-color);
+      }
+    }
+
+    &--green {
+      background-color: var(--green-300);
+      color: var(--text-color);
+      &:link,
+      &:visited {
+        color: var(--text-color);
+      }
+
+      @media (hover: hover) and (pointer: fine) {
+        &:hover {
+          background-color: var(--green-200);
+          color: var(--text-color);
+        }
+      }
+    }
+
+    @include media.breakpoint(mobile) {
+      align-self: stretch;
+      width: auto;
+      font-size: 1.3rem;
+      font-style: normal;
+      font-weight: 900;
+      line-height: 100%;
+      text-transform: uppercase;
+      padding: 2.4rem 4.8rem;
+      max-width: none;
+    }
   }
 }

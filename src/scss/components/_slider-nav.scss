@@ -1,68 +1,70 @@
 @use "utils";
 @use "media";
 
-.slider-nav {
-  display: flex;
-}
-
-.slider-nav__arrow {
-  aspect-ratio: 1 / 1;
-  flex-shrink: 0;
-  height: 6rem;
-  display: grid;
-  place-items: center;
-  transition:
-    background-color 0.2s,
-    border-color 0.2s;
-  border: 1px solid #3b3b3b;
-  background-color: #3b3b3b;
-
-  @include media.breakpoint(mobile) {
-    height: 4rem;
-    border-color: black;
-    background-color: black;
+@layer components {
+  .slider-nav {
+    display: flex;
   }
 
-  &:not(:first-child) {
-    margin-left: -1px;
-  }
+  .slider-nav__arrow {
+    aspect-ratio: 1 / 1;
+    flex-shrink: 0;
+    height: 6rem;
+    display: grid;
+    place-items: center;
+    transition:
+      background-color 0.2s,
+      border-color 0.2s;
+    border: 1px solid #3b3b3b;
+    background-color: #3b3b3b;
 
-  svg {
-    width: 1.2rem;
-    height: 1.9rem;
-    fill: white;
-    transition: fill 0.2s;
     @include media.breakpoint(mobile) {
-      width: 0.8rem;
-      height: 1.2rem;
+      height: 4rem;
+      border-color: black;
+      background-color: black;
     }
-  }
 
-  &.swiper-button-disabled {
-    border-color: #d3d3d3;
-    background-color: transparent;
-    cursor: default;
-    @include media.breakpoint(mobile) {
-      border-color: #a4a4a4;
+    &:not(:first-child) {
+      margin-left: -1px;
     }
+
     svg {
-      fill: #161616;
+      width: 1.2rem;
+      height: 1.9rem;
+      fill: white;
+      transition: fill 0.2s;
+      @include media.breakpoint(mobile) {
+        width: 0.8rem;
+        height: 1.2rem;
+      }
     }
-  }
 
-  // &:not(.swiper-button-disabled):hover {
-  //   background-color: black;
-  //   border-color: black;
-  // }
-
-  .slider-nav--white & {
-    background-color: #fff;
-    border: none;
-    svg {
-      fill: #161616;
-    }
     &.swiper-button-disabled {
-      background: rgba(255, 255, 255, 0.6);
+      border-color: #d3d3d3;
+      background-color: transparent;
+      cursor: default;
+      @include media.breakpoint(mobile) {
+        border-color: #a4a4a4;
+      }
+      svg {
+        fill: #161616;
+      }
+    }
+
+    // &:not(.swiper-button-disabled):hover {
+    //   background-color: black;
+    //   border-color: black;
+    // }
+
+    .slider-nav--white & {
+      background-color: #fff;
+      border: none;
+      svg {
+        fill: #161616;
+      }
+      &.swiper-button-disabled {
+        background: rgba(255, 255, 255, 0.6);
+      }
     }
   }
 }
