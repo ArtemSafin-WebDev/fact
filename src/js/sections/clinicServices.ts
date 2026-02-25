@@ -1,5 +1,4 @@
 import Swiper from "swiper";
-import "swiper/css";
 import gsap from "gsap";
 
 export default function clinicServices() {

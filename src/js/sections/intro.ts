@@ -1,6 +1,4 @@
 import Swiper from "swiper";
-import "swiper/css";
-import "swiper/css/grid";
 import gsap from "gsap";
 import { Grid, Navigation } from "swiper/modules";
 
