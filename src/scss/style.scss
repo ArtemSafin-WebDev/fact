@@ -1,49 +1,7 @@
-// Base styles
-
-@use "variables";
-@use "reset";
-@use "typography";
-
-// Reusable components
-
-@use "btn";
-@use "slider-nav";
-@use "accordion";
-@use "large-btn";
-@use "tabs-nav";
-
-// Cards
-
-@use "blog-card";
-@use "rating-card";
-@use "video-review-card";
-@use "license-card";
-@use "promo-card";
-@use "equipment-card";
-@use "equipment-feature-card";
-@use "numbers-card";
-@use "doctor-card";
-@use "clinic-service-card";
-
-// Layout
-
-@use "page-footer";
-@use "page-header";
-
-// Sections
-
-@use "blog";
-@use "licenses";
-@use "clinic";
-@use "faq";
-@use "promo";
-@use "first-visit";
-@use "ratings";
-@use "patients";
-@use "equipment";
-@use "service";
-@use "about-clinic";
-@use "help";
-@use "doctors";
-@use "clinic-services";
-@use "intro";
+@use "layers";
+@use "vendor";
+@use "tokens";
+@use "base";
+@use "layout";
+@use "components";
+@use "sections";
