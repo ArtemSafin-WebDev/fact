@@ -10,26 +10,17 @@
     isolation: isolate;
     background-color: #fff;
     color: var(--text-color);
-    min-height: 65.7rem;
 
     &:link,
     &:visited {
       color: var(--text-color);
     }
-
-    @include media.breakpoint(mobile) {
-      min-height: 34rem;
-    }
   }
 
   .video-review-card__media {
     position: relative;
-    height: 43.9rem;
     overflow: hidden;
-
-    @include media.breakpoint(mobile) {
-      height: 20rem;
-    }
+    aspect-ratio: 1;
   }
 
   .video-review-card__bg,
@@ -140,7 +131,6 @@
     font-weight: 400;
     line-height: 140%;
     color: #161616;
-    min-height: 6.3rem;
     display: -webkit-box;
     -webkit-line-clamp: 3;
     line-clamp: 3;
@@ -149,7 +139,6 @@
 
     @include media.breakpoint(mobile) {
       font-size: 1.3rem;
-      min-height: auto;
     }
   }
 }
