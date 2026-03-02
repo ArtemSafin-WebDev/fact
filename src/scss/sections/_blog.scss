@@ -4,8 +4,9 @@
 @layer sections {
   .blog {
     @include utils.blockWrapper;
-    padding: 8rem 0;
+    padding: 7.85rem 0 8rem;
     background-color: #eaeaea;
+    margin-bottom: 12rem;
 
     @include media.breakpoint(mobile) {
       padding: 6rem 0;
@@ -19,19 +20,29 @@
   }
 
   .blog__title {
-    margin-top: 2rem;
+    margin: 0;
+  }
+
+  .blog__subtitle {
+    margin-top: 3rem;
+    max-width: 88rem;
+    font-size: 2rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 100%;
+
     @include media.breakpoint(mobile) {
-      margin-top: 0.5rem;
-    }
-    &:first-child {
-      margin-top: 0;
+      margin-top: 1.2rem;
+      font-size: 1.4rem;
+      line-height: 120%;
     }
   }
 
   .blog__list {
-    margin-top: 11rem;
+    margin-top: 8.8rem;
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
+
     @include media.breakpoint(mobile) {
       margin-top: 4rem;
       width: 100vw;
@@ -46,7 +57,6 @@
     display: flex;
     flex-direction: column;
     border-right: 1px solid #cbcbcb;
-    transition: border-color 0.2s;
 
     &:last-child {
       border: none;
@@ -56,11 +66,6 @@
       border: none;
     }
 
-    @media (hover: hover) and (pointer: fine) {
-      &:hover {
-        border-color: transparent;
-      }
-    }
     @include media.breakpoint(mobile) {
       &:not(:nth-child(-n + 2)) {
         display: none;
@@ -75,8 +80,12 @@
   .blog__show-all {
     margin-top: 8rem;
     align-self: center;
+    width: 43.9rem;
+    max-width: 100%;
+
     @include media.breakpoint(mobile) {
       align-self: stretch;
+      width: auto;
       margin-top: 4rem;
     }
   }
