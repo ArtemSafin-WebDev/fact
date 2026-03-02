@@ -4,8 +4,8 @@
 @layer sections {
   .first-visit {
     @include utils.blockWrapper;
-    padding: 8rem 0;
-    background-color: #eaeaea;
+    padding: 9.6rem 0;
+    background-color: var(--green-300);
     margin-bottom: 8rem;
 
     @include media.breakpoint(mobile) {
@@ -21,97 +21,98 @@
     @include media.breakpoint(mobile) {
       display: flex;
       flex-direction: column;
+      max-width: none;
     }
   }
 
   .first-visit__left {
     display: flex;
     flex-direction: column;
-    gap: 2rem;
+    gap: 4rem;
     @include media.breakpoint(mobile) {
-      gap: 1rem;
+      gap: 2rem;
     }
   }
 
-  .first-visit__remark {
-    font-size: 2rem;
+  .first-visit__title {
+    max-width: 66rem;
+  }
+
+  .first-visit__description {
+    max-width: 54rem;
+    font-size: 1.8rem;
     font-style: normal;
-    font-weight: 900;
-    line-height: 100%;
-    text-transform: uppercase;
-    margin-top: auto;
+    font-weight: 400;
+    line-height: 140%;
     @include media.breakpoint(mobile) {
-      font-size: 1.5rem;
-      font-style: normal;
-      font-weight: 900;
+      max-width: none;
+      font-size: 1.4rem;
       line-height: 120%;
-      letter-spacing: -0.015rem;
-      text-transform: uppercase;
-      margin: 0;
-      text-wrap: balance;
     }
+  }
+
+  .first-visit__right {
+    width: 100%;
+    max-width: 84rem;
   }
 
   .first-visit__form {
     display: flex;
     flex-direction: column;
-
-    @include media.breakpoint(mobile) {
-      margin-top: 6rem;
-    }
+    gap: 8rem;
   }
 
   .first-visit__form-fields {
     display: flex;
     flex-direction: column;
-    gap: 6rem;
-    @include media.breakpoint(mobile) {
-      gap: 3rem;
-    }
+    gap: 3.2rem;
+  }
+
+  .first-visit__form-field {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .first-visit__form-label {
+    font-size: 1.8rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 120%;
+    letter-spacing: -0.01rem;
+    color: var(--text-color);
   }
 
   .first-visit__form-input {
     display: block;
     height: auto;
-    font-size: 3rem;
+    font-size: 1.8rem;
     font-style: normal;
-    font-weight: 500;
+    font-weight: 6as00;
     line-height: 100%;
-    letter-spacing: -0.06rem;
-    text-transform: uppercase;
     width: 100%;
-    padding-bottom: 3.2rem;
-    border-bottom: 1px solid #000;
-    color: #161616;
-    &::placeholder {
-      color: #161616;
-    }
+    height: 4rem;
+    border-bottom: 1.5px solid rgba(22, 22, 22, 0.4);
+    color: var(--text-color);
+  }
+
+  .first-visit__form-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 3.2rem;
+
     @include media.breakpoint(mobile) {
-      font-size: 2rem;
-      font-style: normal;
-      font-weight: 500;
-      line-height: 100%;
-      letter-spacing: -0.04rem;
-      text-transform: uppercase;
-      padding-bottom: 1.2rem;
+      gap: 2rem;
     }
   }
 
   .first-visit__form-policy {
-    text-wrap: balance;
-    margin-top: 6rem;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     font-style: normal;
     font-weight: 400;
     line-height: 120%;
-    text-transform: uppercase;
     @include media.breakpoint(mobile) {
       font-size: 1rem;
-      font-style: normal;
-      font-weight: 400;
       line-height: 120%;
-      text-transform: uppercase;
-      margin-top: 3rem;
     }
 
     a {
@@ -133,10 +134,14 @@
 
   .first-visit__form-submit {
     align-self: stretch;
-    width: auto;
-    margin-top: 6rem;
-    @include media.breakpoint(mobile) {
-      margin-top: 3rem;
+    width: 100%;
+    margin-top: 0;
+    background-color: var(--text-color);
+    color: white;
+
+    &:link,
+    &:visited {
+      color: white;
     }
   }
 }
