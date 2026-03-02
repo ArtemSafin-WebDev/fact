@@ -10,7 +10,7 @@ function cssRelativePublicUrls() {
   return {
     name: "css-relative-public-urls",
     enforce: "post",
-    generateBundle(_: unknown, bundle: Record<string, { type: string; source: string }>) {
+    generateBundle(_, bundle) {
       for (const [fileName, chunk] of Object.entries(bundle)) {
         if (fileName.endsWith(".css") && chunk.type === "asset") {
           const depth = fileName.split("/").length - 1;
@@ -34,10 +34,10 @@ function flattenPagesPlugin() {
   return {
     name: "flatten-pages",
     enforce: "post",
-    configResolved(config: { build: { outDir: string } }) {
+    configResolved(config) {
       outDir = config.build.outDir;
     },
-    configureServer(server: { middlewares: { use: (fn: (req: { url?: string }, _res: unknown, next: () => void) => void) => void } }) {
+    configureServer(server) {
       server.middlewares.use((req, _res, next) => {
         if (req.url?.endsWith(".html") && !req.url.startsWith("/pages/")) {
           req.url = "/pages" + req.url;
@@ -110,13 +110,13 @@ export default {
     handlebars({
       partialDirectory: resolve(__dirname, "partials"),
       helpers: {
-        times: (n: number, block: { fn: (i: number) => string }) => {
+        times: (n, block) => {
           let accum = "";
           for (let i = 0; i < n; ++i) accum += block.fn(i);
           return accum;
         },
       },
-      context(pagePath: string) {
+      context(pagePath) {
         const normalized = pagePath.replace(/^\/pages\//, "/");
         return {
           ...globalContext,
