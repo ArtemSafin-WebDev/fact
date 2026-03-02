@@ -45,6 +45,7 @@
   }
 
   .licenses__slider {
+    --licenses-divider-color: #cbcbcb;
     margin-top: 4rem;
 
     @include media.breakpoint(mobile) {
@@ -53,18 +54,44 @@
 
     .swiper {
       overflow: hidden;
+      position: relative;
+
+      &::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+        border: 1px solid var(--licenses-divider-color);
+        z-index: 10;
+      }
     }
 
     .swiper-slide {
       width: 20%;
       box-sizing: border-box;
+      position: relative;
       display: flex;
       flex-direction: column;
       height: auto;
-      border-right: 1px solid #cbcbcb;
-      // &:last-child {
-      //   border-right: 0;
-      // }
+      border-right: none;
+
+      &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 1px;
+        height: 100%;
+        background-color: var(--licenses-divider-color);
+        pointer-events: none;
+      }
+
+      &:last-child {
+        &::after {
+          display: none;
+        }
+      }
+
       @include media.breakpoint(mobile) {
         width: 17rem;
       }
