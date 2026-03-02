@@ -107,6 +107,15 @@
   }
 
   @media (hover: hover) and (pointer: fine) {
+    .blog-card .blog-card__btn {
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+      transition:
+        opacity 0.2s,
+        visibility 0.2s;
+    }
+
     .blog-card:hover .blog-card__bg {
       opacity: 1;
     }
@@ -117,6 +126,12 @@
 
     .blog-card:hover .blog-card__bg + .blog-card__content {
       color: white;
+    }
+
+    .blog-card:hover .blog-card__btn {
+      opacity: 1;
+      visibility: visible;
+      pointer-events: auto;
     }
   }
 
