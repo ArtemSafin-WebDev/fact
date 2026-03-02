@@ -6,19 +6,42 @@ export default function patients() {
     document.querySelectorAll<HTMLElement>(".patients"),
   );
   elements.forEach((element) => {
-    const container = element.querySelector<HTMLElement>(".swiper");
-    if (!container) return;
-    new Swiper(container, {
+    const reviewsContainer = element.querySelector<HTMLElement>(
+      ".patients__reviews-swiper",
+    );
+    if (reviewsContainer) {
+      new Swiper(reviewsContainer, {
+        speed: 600,
+        slidesPerView: "auto",
+        modules: [Navigation],
+        watchSlidesProgress: true,
+        navigation: {
+          prevEl: element.querySelector<HTMLButtonElement>(
+            ".patients__reviews-nav .slider-nav__arrow--prev",
+          ),
+          nextEl: element.querySelector<HTMLButtonElement>(
+            ".patients__reviews-nav .slider-nav__arrow--next",
+          ),
+        },
+      });
+    }
+
+    const ratingsContainer = element.querySelector<HTMLElement>(
+      ".patients__ratings-swiper",
+    );
+    if (!ratingsContainer) return;
+
+    new Swiper(ratingsContainer, {
       speed: 600,
       slidesPerView: "auto",
       modules: [Navigation],
       watchSlidesProgress: true,
       navigation: {
         prevEl: element.querySelector<HTMLButtonElement>(
-          ".slider-nav__arrow--prev",
+          ".patients__ratings-nav .slider-nav__arrow--prev",
         ),
         nextEl: element.querySelector<HTMLButtonElement>(
-          ".slider-nav__arrow--next",
+          ".patients__ratings-nav .slider-nav__arrow--next",
         ),
       },
     });

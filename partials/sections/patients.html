@@ -1,17 +1,19 @@
 <section class="patients">
     <div class="patients__content">
-        <div class="h4 patients__subtitle">
-            Отзывы
+        <div class="patients__heading-block">
+            <h2 class="h2 patients__heading">
+                Пациенты о&nbsp;нас
+            </h2>
+            <div class="patients__subtitle">
+                Отзывы
+            </div>
         </div>
-        <h2 class="h2 patients__heading">
-            Пациенты о&nbsp;нас
-        </h2>
-        <div class="patients__slider">
-            <div class="patients__slider-top-row">
-                <h3 class="patients__slider-title">
+        <div class="patients__reviews">
+            <div class="patients__reviews-top-row">
+                <h3 class="patients__reviews-title">
                     Видеоотзывы
                 </h3>
-                <div class="slider-nav">
+                <div class="slider-nav patients__reviews-nav">
                     <button class="slider-nav__arrow slider-nav__arrow--prev" type="button">
                         <svg width="14" height="14" aria-hidden="true">
                             <use xlink:href="#arrow-left"></use>
@@ -24,82 +26,242 @@
                     </button>
                 </div>
             </div>
-            <div class="patients__slider-wrapper">
-                <div class="swiper">
+            <div class="patients__reviews-slider-wrapper">
+                <div class="swiper patients__reviews-swiper">
                     <div class="swiper-wrapper">
                         <div class="swiper-slide">
                             <a href="#" class="video-review-card">
-                                <div class="video-review-card__bg">
-                                    <img src="/images/patients/1.webp" alt="">
+                                <div class="video-review-card__media">
+                                    <div class="video-review-card__bg">
+                                        <img src="/images/patients/1.webp" alt="">
+                                    </div>
+                                    <div class="video-review-card__play">
+                                        <svg width="14" height="14" aria-hidden="true">
+                                            <use xlink:href="#play"></use>
+                                        </svg>
+                                    </div>
                                 </div>
-                                <div class="video-review-card__play">
-                                    <svg width="14" height="14" aria-hidden="true">
-                                        <use xlink:href="#play"></use>
-                                    </svg>
+                                <div class="video-review-card__content">
+                                    <div class="video-review-card__meta">
+                                        <div class="video-review-card__author-group">
+                                            <h4 class="video-review-card__title">
+                                                Сергей
+                                            </h4>
+                                            <div class="video-review-card__date">
+                                                18 марта 2026
+                                            </div>
+                                        </div>
+                                        <div class="video-review-card__stars" aria-hidden="true">
+                                            <svg width="14" height="14">
+                                                <use xlink:href="#star"></use>
+                                            </svg>
+                                            <svg width="14" height="14">
+                                                <use xlink:href="#star"></use>
+                                            </svg>
+                                            <svg width="14" height="14">
+                                                <use xlink:href="#star"></use>
+                                            </svg>
+                                            <svg width="14" height="14">
+                                                <use xlink:href="#star"></use>
+                                            </svg>
+                                            <svg width="14" height="14">
+                                                <use xlink:href="#star"></use>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                    <div class="video-review-card__text">
+                                        Были в клинике с сыном. Остались очень довольны. Особенно хотелось бы отметить
+                                        администратора Ангелину. Очень спокойная.
+                                    </div>
                                 </div>
-                                <h4 class="video-review-card__title">
-                                    Наталья, 57 лет
-                                </h4>
                             </a>
                         </div>
                         <div class="swiper-slide">
                             <a href="#" class="video-review-card">
-                                <div class="video-review-card__bg">
-                                    <img src="/images/patients/2.webp" alt="">
+                                <div class="video-review-card__media">
+                                    <div class="video-review-card__bg">
+                                        <img src="/images/patients/2.webp" alt="">
+                                    </div>
+                                    <div class="video-review-card__play">
+                                        <svg width="14" height="14" aria-hidden="true">
+                                            <use xlink:href="#play"></use>
+                                        </svg>
+                                    </div>
                                 </div>
-                                <div class="video-review-card__play">
-                                    <svg width="14" height="14" aria-hidden="true">
-                                        <use xlink:href="#play"></use>
-                                    </svg>
+                                <div class="video-review-card__content">
+                                    <div class="video-review-card__meta">
+                                        <div class="video-review-card__author-group">
+                                            <h4 class="video-review-card__title">
+                                                Сергей
+                                            </h4>
+                                            <div class="video-review-card__date">
+                                                18 марта 2026
+                                            </div>
+                                        </div>
+                                        <div class="video-review-card__stars" aria-hidden="true">
+                                            <svg width="14" height="14">
+                                                <use xlink:href="#star"></use>
+                                            </svg>
+                                            <svg width="14" height="14">
+                                                <use xlink:href="#star"></use>
+                                            </svg>
+                                            <svg width="14" height="14">
+                                                <use xlink:href="#star"></use>
+                                            </svg>
+                                            <svg width="14" height="14">
+                                                <use xlink:href="#star"></use>
+                                            </svg>
+                                            <svg width="14" height="14">
+                                                <use xlink:href="#star"></use>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                    <div class="video-review-card__text">
+                                        Были в клинике с сыном. Остались очень довольны. Особенно хотелось бы отметить
+                                        администратора Ангелину. Очень спокойная.
+                                    </div>
                                 </div>
-                                <h4 class="video-review-card__title">
-                                    Григорий, 32 года
-                                </h4>
                             </a>
                         </div>
                         <div class="swiper-slide">
                             <a href="#" class="video-review-card">
-                                <div class="video-review-card__bg">
-                                    <img src="/images/patients/3.webp" alt="">
+                                <div class="video-review-card__media">
+                                    <div class="video-review-card__bg">
+                                        <img src="/images/patients/3.webp" alt="">
+                                    </div>
+                                    <div class="video-review-card__play">
+                                        <svg width="14" height="14" aria-hidden="true">
+                                            <use xlink:href="#play"></use>
+                                        </svg>
+                                    </div>
                                 </div>
-                                <div class="video-review-card__play">
-                                    <svg width="14" height="14" aria-hidden="true">
-                                        <use xlink:href="#play"></use>
-                                    </svg>
+                                <div class="video-review-card__content">
+                                    <div class="video-review-card__meta">
+                                        <div class="video-review-card__author-group">
+                                            <h4 class="video-review-card__title">
+                                                Сергей
+                                            </h4>
+                                            <div class="video-review-card__date">
+                                                18 марта 2026
+                                            </div>
+                                        </div>
+                                        <div class="video-review-card__stars" aria-hidden="true">
+                                            <svg width="14" height="14">
+                                                <use xlink:href="#star"></use>
+                                            </svg>
+                                            <svg width="14" height="14">
+                                                <use xlink:href="#star"></use>
+                                            </svg>
+                                            <svg width="14" height="14">
+                                                <use xlink:href="#star"></use>
+                                            </svg>
+                                            <svg width="14" height="14">
+                                                <use xlink:href="#star"></use>
+                                            </svg>
+                                            <svg width="14" height="14">
+                                                <use xlink:href="#star"></use>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                    <div class="video-review-card__text">
+                                        Были в клинике с сыном. Остались очень довольны. Особенно хотелось бы отметить
+                                        администратора Ангелину. Очень спокойная.
+                                    </div>
                                 </div>
-                                <h4 class="video-review-card__title">
-                                    Маргарита, 29 лет
-                                </h4>
                             </a>
                         </div>
                         <div class="swiper-slide">
                             <a href="#" class="video-review-card">
-                                <div class="video-review-card__bg">
-                                    <img src="/images/patients/4.webp" alt="">
+                                <div class="video-review-card__media">
+                                    <div class="video-review-card__bg">
+                                        <img src="/images/patients/4.webp" alt="">
+                                    </div>
+                                    <div class="video-review-card__play">
+                                        <svg width="14" height="14" aria-hidden="true">
+                                            <use xlink:href="#play"></use>
+                                        </svg>
+                                    </div>
                                 </div>
-                                <div class="video-review-card__play">
-                                    <svg width="14" height="14" aria-hidden="true">
-                                        <use xlink:href="#play"></use>
-                                    </svg>
+                                <div class="video-review-card__content">
+                                    <div class="video-review-card__meta">
+                                        <div class="video-review-card__author-group">
+                                            <h4 class="video-review-card__title">
+                                                Сергей
+                                            </h4>
+                                            <div class="video-review-card__date">
+                                                18 марта 2026
+                                            </div>
+                                        </div>
+                                        <div class="video-review-card__stars" aria-hidden="true">
+                                            <svg width="14" height="14">
+                                                <use xlink:href="#star"></use>
+                                            </svg>
+                                            <svg width="14" height="14">
+                                                <use xlink:href="#star"></use>
+                                            </svg>
+                                            <svg width="14" height="14">
+                                                <use xlink:href="#star"></use>
+                                            </svg>
+                                            <svg width="14" height="14">
+                                                <use xlink:href="#star"></use>
+                                            </svg>
+                                            <svg width="14" height="14">
+                                                <use xlink:href="#star"></use>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                    <div class="video-review-card__text">
+                                        Были в клинике с сыном. Остались очень довольны. Особенно хотелось бы отметить
+                                        администратора Ангелину. Очень спокойная.
+                                    </div>
                                 </div>
-                                <h4 class="video-review-card__title">
-                                    Михаил, 63 года
-                                </h4>
                             </a>
                         </div>
                         <div class="swiper-slide">
                             <a href="#" class="video-review-card">
-                                <div class="video-review-card__bg">
-                                    <img src="/images/patients/1.webp" alt="">
+                                <div class="video-review-card__media">
+                                    <div class="video-review-card__bg">
+                                        <img src="/images/patients/1.webp" alt="">
+                                    </div>
+                                    <div class="video-review-card__play">
+                                        <svg width="14" height="14" aria-hidden="true">
+                                            <use xlink:href="#play"></use>
+                                        </svg>
+                                    </div>
                                 </div>
-                                <div class="video-review-card__play">
-                                    <svg width="14" height="14" aria-hidden="true">
-                                        <use xlink:href="#play"></use>
-                                    </svg>
+                                <div class="video-review-card__content">
+                                    <div class="video-review-card__meta">
+                                        <div class="video-review-card__author-group">
+                                            <h4 class="video-review-card__title">
+                                                Сергей
+                                            </h4>
+                                            <div class="video-review-card__date">
+                                                18 марта 2026
+                                            </div>
+                                        </div>
+                                        <div class="video-review-card__stars" aria-hidden="true">
+                                            <svg width="14" height="14">
+                                                <use xlink:href="#star"></use>
+                                            </svg>
+                                            <svg width="14" height="14">
+                                                <use xlink:href="#star"></use>
+                                            </svg>
+                                            <svg width="14" height="14">
+                                                <use xlink:href="#star"></use>
+                                            </svg>
+                                            <svg width="14" height="14">
+                                                <use xlink:href="#star"></use>
+                                            </svg>
+                                            <svg width="14" height="14">
+                                                <use xlink:href="#star"></use>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                    <div class="video-review-card__text">
+                                        Были в клинике с сыном. Остались очень довольны. Особенно хотелось бы отметить
+                                        администратора Ангелину. Очень спокойная.
+                                    </div>
                                 </div>
-                                <h4 class="video-review-card__title">
-                                    Наталья, 57 лет
-                                </h4>
                             </a>
                         </div>
                     </div>
@@ -109,5 +271,106 @@
         <a href="#" class="btn patients__show-more">
             Смотреть все отзывы
         </a>
+        <div class="patients__ratings">
+            <h3 class="patients__ratings-heading">
+                держим безупречный рейтинг более 8 лет
+            </h3>
+            <div class="patients__ratings-star">
+                <img src="/images/large-star.svg" alt="" class="patients__ratings-star-image">
+                <div class="patients__ratings-star-content">
+                    <div class="patients__ratings-star-amount">
+                        4.9
+                    </div>
+                    <div class="patients__ratings-star-text">
+                        Средний рейтинг клиники<br> на площадках
+                    </div>
+                </div>
+            </div>
+            <div class="patients__ratings-slider">
+                <div class="slider-nav patients__ratings-nav">
+                    <button class="slider-nav__arrow slider-nav__arrow--prev" type="button">
+                        <svg width="14" height="14" aria-hidden="true">
+                            <use xlink:href="#arrow-left"></use>
+                        </svg>
+                    </button>
+                    <button class="slider-nav__arrow slider-nav__arrow--next" type="button">
+                        <svg width="14" height="14" aria-hidden="true">
+                            <use xlink:href="#arrow-right"></use>
+                        </svg>
+                    </button>
+                </div>
+                <div class="patients__ratings-slider-wrapper">
+                    <div class="swiper patients__ratings-swiper">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <div class="rating-card">
+                                    <div class="rating-card__stars">
+                                        <svg width="14" height="14" aria-hidden="true">
+                                            <use xlink:href="#star"></use>
+                                        </svg>
+                                    </div>
+                                    <div class="rating-card__amount">
+                                        5.0
+                                    </div>
+                                    <img src="/images/ratings/1.webp" alt="" class="rating-card__source">
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="rating-card">
+                                    <div class="rating-card__stars">
+                                        <svg width="14" height="14" aria-hidden="true">
+                                            <use xlink:href="#star"></use>
+                                        </svg>
+                                    </div>
+                                    <div class="rating-card__amount">
+                                        4.9
+                                    </div>
+                                    <img src="/images/ratings/2.webp" alt="" class="rating-card__source">
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="rating-card">
+                                    <div class="rating-card__stars">
+                                        <svg width="14" height="14" aria-hidden="true">
+                                            <use xlink:href="#star"></use>
+                                        </svg>
+                                    </div>
+                                    <div class="rating-card__amount">
+                                        5.0
+                                    </div>
+                                    <img src="/images/ratings/3.webp" alt="" class="rating-card__source">
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="rating-card">
+                                    <div class="rating-card__stars">
+                                        <svg width="14" height="14" aria-hidden="true">
+                                            <use xlink:href="#star"></use>
+                                        </svg>
+                                    </div>
+                                    <div class="rating-card__amount">
+                                        4.7
+                                    </div>
+                                    <img src="/images/ratings/4.webp" alt="" class="rating-card__source">
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="rating-card">
+                                    <div class="rating-card__stars">
+                                        <svg width="14" height="14" aria-hidden="true">
+                                            <use xlink:href="#star"></use>
+                                        </svg>
+                                    </div>
+                                    <div class="rating-card__amount">
+                                        4.9
+                                    </div>
+                                    <img src="/images/ratings/2.webp" alt="" class="rating-card__source">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </section>
