@@ -4,7 +4,7 @@
 @layer sections {
   .licenses {
     @include utils.blockWrapper;
-    margin-bottom: 4rem;
+    margin-bottom: 20rem;
 
     @include media.breakpoint(mobile) {
       margin-bottom: 6rem;
@@ -13,44 +13,58 @@
 
   .licenses__content {
     @include utils.blockContent;
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    grid-template-areas: "left right";
-    @include media.breakpoint(mobile) {
-      display: flex;
-      flex-direction: column;
-      gap: 4rem;
-    }
-  }
-
-  .licenses__left {
-    grid-area: left;
     display: flex;
     flex-direction: column;
-    gap: 2.4rem;
+    padding-top: 0;
+
     @include media.breakpoint(mobile) {
-      gap: 0.8rem;
+      padding-top: 0;
     }
   }
 
-  .licenses__right {
-    grid-area: right;
-    overflow: hidden;
-    margin-right: calc((100svw - 100% * 2) / 2 * -1);
+  .licenses__title {
+    max-width: 70rem;
+  }
+
+  .licenses__controls {
+    margin-top: 8rem;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    min-height: 6rem;
 
     @include media.breakpoint(mobile) {
-      margin-right: 0;
-      overflow: visible;
+      margin-top: 3.2rem;
+      min-height: 4rem;
     }
+  }
+
+  .licenses__subtitle {
+    opacity: 0;
+    pointer-events: none;
   }
 
   .licenses__slider {
+    margin-top: 4rem;
+
+    @include media.breakpoint(mobile) {
+      margin-top: 2rem;
+    }
+
     .swiper {
-      overflow: visible;
+      overflow: hidden;
     }
 
     .swiper-slide {
-      width: 25.5rem;
+      width: 20%;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      height: auto;
+      border-right: 1px solid #cbcbcb;
+      // &:last-child {
+      //   border-right: 0;
+      // }
       @include media.breakpoint(mobile) {
         width: 17rem;
       }
