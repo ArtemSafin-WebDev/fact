@@ -4,20 +4,18 @@
 @layer sections {
   .first-visit {
     @include utils.blockWrapper;
-    padding: 9.6rem 0;
-    background-color: var(--green-300);
-    margin-bottom: 8rem;
 
-    @include media.breakpoint(mobile) {
-      padding: 6rem 0;
-      margin-bottom: 6rem;
-    }
+    background-color: #fff;
+    padding: 12rem 0;
   }
 
   .first-visit__content {
     @include utils.blockContent;
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
+    padding-bottom: 8rem;
+    padding-top: 8rem;
+    background-color: var(--green-300);
     @include media.breakpoint(mobile) {
       display: flex;
       flex-direction: column;
@@ -28,7 +26,8 @@
   .first-visit__left {
     display: flex;
     flex-direction: column;
-    gap: 4rem;
+    gap: 3rem;
+    padding-left: 4rem;
     @include media.breakpoint(mobile) {
       gap: 2rem;
     }

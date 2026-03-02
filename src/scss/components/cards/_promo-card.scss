@@ -108,9 +108,16 @@
     font-style: normal;
     font-weight: 400;
     line-height: 140%;
-    max-width: 22rem;
+    max-width: 32rem;
+    text-wrap: balance;
     @include media.breakpoint(mobile) {
       display: none;
     }
+  }
+
+  .promo-card__btn {
+    min-width: 27rem;
+    max-width: 100%;
+    align-self: flex-end;
   }
 }
