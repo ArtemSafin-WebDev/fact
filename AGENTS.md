@@ -60,6 +60,7 @@
 - Брейкпоинты миксинами из `src/scss/_media.scss`:
   - `laptop <=1200`, `tablet <=1024`, `small-tablet <=768`, `mobile <=640`.
 - БЭМ-нейминг классов соблюдается в partials и SCSS.
+- Для CSS Grid: не использовать проценты в `grid-template-columns`/`grid-template-rows`, использовать только единицы `fr`.
 
 ## Как расширять проект
 - Добавить новую страницу:

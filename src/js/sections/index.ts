@@ -5,6 +5,7 @@ import clinicServices from "./clinicServices";
 import patients from "./patients";
 import ratings from "./ratings";
 import promo from "./promo";
+import clinic from "./clinic";
 import licenses from "./licenses";
 
 export default function sections() {
@@ -15,5 +16,6 @@ export default function sections() {
   patients();
   ratings();
   promo();
+  clinic();
   licenses();
 }
