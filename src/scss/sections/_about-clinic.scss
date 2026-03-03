@@ -75,7 +75,7 @@
     color: #222;
     margin-top: 8.8rem;
     text-align: center;
-    max-width: 111rem;
+    max-width: 109.2rem;
     align-self: center;
     @include media.breakpoint(mobile) {
       font-size: 1.8rem;
@@ -91,6 +91,9 @@
   .about-clinic__list {
     display: grid;
     grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 1px;
+    padding: 1px;
+    background-color: #d3d3d3;
     margin-top: 8rem;
     position: relative;
     z-index: 10;
@@ -105,24 +108,6 @@
   .about-clinic__list-item {
     display: flex;
     flex-direction: column;
-    border: 1px solid #d3d3d3;
-    &:not(:nth-child(4n + 1)) {
-      margin-left: -1px;
-    }
-
-    @include media.breakpoint(mobile) {
-      &:not(:nth-child(4n + 1)) {
-        margin-left: 0;
-      }
-
-      &:nth-child(even) {
-        margin-left: -1px;
-      }
-
-      &:not(:nth-child(1)):not(:nth-child(2)) {
-        margin-top: -1px;
-      }
-    }
   }
 
   .about-clinic__card {
@@ -178,6 +163,7 @@
     line-height: 100%;
     letter-spacing: -0.03rem;
     text-transform: uppercase;
+    max-width: 35.825rem;
 
     @include media.breakpoint(mobile) {
       font-size: 1.3rem;
@@ -186,12 +172,24 @@
       line-height: 100%;
       letter-spacing: -0.013rem;
       text-transform: uppercase;
+      max-width: 100%;
     }
   }
 
   .about-clinic__card-text {
     grid-area: text;
     align-self: flex-end;
+    max-width: 32.7rem;
+    font-size: 1.5rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 140%;
+
+    @include media.breakpoint(mobile) {
+      max-width: 100%;
+      font-size: 1rem;
+      line-height: 120%;
+    }
   }
 
   .about-clinic__video {
@@ -275,8 +273,10 @@
     display: flex;
     flex-direction: column;
     gap: 4rem;
+    width: 40.2rem;
     @include media.breakpoint(mobile) {
       gap: 2rem;
+      width: auto;
     }
   }
 
