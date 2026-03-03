@@ -1,0 +1,804 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - generic [ref=e3]:
+      - generic [ref=e4]:
+        - link "Версия для слабовидящих" [ref=e6] [cursor=pointer]:
+          - /url: "#"
+          - generic [ref=e7]: Версия для слабовидящих
+          - img [ref=e8]
+        - generic [ref=e10]:
+          - paragraph [ref=e11]: Пятигорск
+          - paragraph [ref=e12]: 8:30—19:00
+        - link "8 800 333—4603" [ref=e13] [cursor=pointer]:
+          - /url: tel:+78003334603
+      - generic [ref=e14]:
+        - link [ref=e15] [cursor=pointer]:
+          - /url: /
+        - link "Услуги" [ref=e16] [cursor=pointer]:
+          - /url: "#"
+        - generic [ref=e17]:
+          - navigation [ref=e18]:
+            - list [ref=e19]:
+              - listitem [ref=e20]:
+                - link "Врачи" [ref=e21] [cursor=pointer]:
+                  - /url: "#"
+              - listitem [ref=e22]:
+                - link "Цены" [ref=e23] [cursor=pointer]:
+                  - /url: "#"
+            - list [ref=e24]:
+              - listitem [ref=e25]:
+                - link "Статьи" [ref=e26] [cursor=pointer]:
+                  - /url: "#"
+              - listitem [ref=e27]:
+                - link "О клинике" [ref=e28] [cursor=pointer]:
+                  - /url: "#"
+              - listitem [ref=e29]:
+                - link "Контакты" [ref=e30] [cursor=pointer]:
+                  - /url: "#"
+          - generic [ref=e31]:
+            - list [ref=e32]:
+              - listitem [ref=e33]:
+                - link [ref=e34] [cursor=pointer]:
+                  - /url: "#"
+                  - img [ref=e35]
+              - listitem [ref=e37]:
+                - link [ref=e38] [cursor=pointer]:
+                  - /url: "#"
+                  - img [ref=e39]
+            - link "Записаться" [ref=e41] [cursor=pointer]:
+              - /url: "#"
+  - main [ref=e42]:
+    - generic [ref=e43]:
+      - generic [ref=e46]:
+        - heading "Лучшее расставание в жизни" [level=1] [ref=e47]:
+          - text: Лучшее
+          - text: расставание
+          - text: в жизни
+        - generic [ref=e48]: Лазерная коррекция зрения
+      - generic [ref=e50]:
+        - generic [ref=e51]:
+          - link "Записаться на приём" [ref=e52] [cursor=pointer]:
+            - /url: "#"
+          - generic [ref=e53]:
+            - button [disabled] [ref=e54]:
+              - img [ref=e55]
+            - button [ref=e57] [cursor=pointer]:
+              - img [ref=e58]
+        - generic [ref=e62]:
+          - generic [ref=e64]:
+            - generic [ref=e65]: 40 000+
+            - generic [ref=e66]: проведенных операций
+          - generic [ref=e68]:
+            - generic [ref=e69]: 60 000+
+            - generic [ref=e70]: довольных пациентов
+          - generic [ref=e72]:
+            - generic [ref=e73]: 1000+
+            - generic [ref=e74]: положительных отзывов
+          - generic [ref=e76]:
+            - generic [ref=e77]: 300+
+            - generic [ref=e78]: офтальмологических услуг
+          - generic [ref=e80]:
+            - generic [ref=e81]: 40 000+
+            - generic [ref=e82]: проведенных операций
+          - generic [ref=e84]:
+            - generic [ref=e85]: 60 000+
+            - generic [ref=e86]: довольных пациентов
+    - generic [ref=e88]:
+      - heading "Услуги клиники" [level=2] [ref=e89]
+      - generic [ref=e90]:
+        - text: №1
+        - text: в КМВ по пересадке роговицы, витреоретинальной, детской хирургии
+      - generic [ref=e93]:
+        - link "от 2200 ₽ Диагностика Комплексное обследование на новейшем оборудовании Записаться" [ref=e95] [cursor=pointer]:
+          - /url: "#"
+          - generic [ref=e102]: от 2200 ₽
+          - heading "Диагностика" [level=3] [ref=e103]
+          - generic [ref=e104]:
+            - generic [ref=e105]: Комплексное обследование на новейшем оборудовании
+            - generic [ref=e106]: Записаться
+        - link "от 600 ₽ Детское отделение Диагностика и консультация ведущих детских офтальмологов РФ Записаться" [ref=e108] [cursor=pointer]:
+          - /url: "#"
+          - generic [ref=e114]: от 600 ₽
+          - heading "Детское отделение" [level=3] [ref=e115]
+          - generic [ref=e116]:
+            - generic [ref=e117]: Диагностика и консультация ведущих детских офтальмологов РФ
+            - generic [ref=e118]: Записаться
+        - link "от 27 500 ₽ Кератоконус Комплексное обследование на новейшем оборудовании с учетом возраста Записаться" [ref=e120] [cursor=pointer]:
+          - /url: "#"
+          - generic [ref=e126]: от 27 500 ₽
+          - heading "Кератоконус" [level=3] [ref=e127]
+          - generic [ref=e128]:
+            - generic [ref=e129]: Комплексное обследование на новейшем оборудовании с учетом возраста
+            - generic [ref=e130]: Записаться
+      - list [ref=e131]:
+        - listitem [ref=e132]:
+          - link "Катаракта Передовые лазерные системы от ведущих мировых производителей от 29 500 ₽" [ref=e133] [cursor=pointer]:
+            - /url: "#"
+            - heading "Катаракта" [level=3] [ref=e137]
+            - generic [ref=e138]: Передовые лазерные системы от ведущих мировых производителей
+            - generic [ref=e139]: от 29 500 ₽
+        - listitem [ref=e140]:
+          - link "Лазерная коррекция Только лучшие и безопасные технологии, проверенные опытом и временем от 27 500 ₽" [ref=e141] [cursor=pointer]:
+            - /url: "#"
+            - heading "Лазерная коррекция" [level=3] [ref=e145]
+            - generic [ref=e146]: Только лучшие и безопасные технологии, проверенные опытом и временем
+            - generic [ref=e147]: от 27 500 ₽
+        - listitem [ref=e148]:
+          - link "Глаукома Заболевание глаз, характеризующееся повышением внутриглазного давления от 10 500 ₽" [ref=e149] [cursor=pointer]:
+            - /url: "#"
+            - heading "Глаукома" [level=3] [ref=e154]
+            - generic [ref=e155]: Заболевание глаз, характеризующееся повышением внутриглазного давления
+            - generic [ref=e156]: от 10 500 ₽
+        - listitem [ref=e157]:
+          - link "Кератоконус Комплексное обследование на новейшем оборудовании с учетом возраста от 27 500 ₽" [ref=e158] [cursor=pointer]:
+            - /url: "#"
+            - heading "Кератоконус" [level=3] [ref=e163]
+            - generic [ref=e164]: Комплексное обследование на новейшем оборудовании с учетом возраста
+            - generic [ref=e165]: от 27 500 ₽
+      - link "Смотреть все услуги" [ref=e166] [cursor=pointer]:
+        - /url: "#"
+    - generic [ref=e168]:
+      - heading "Наши врачи" [level=2] [ref=e169]
+      - generic [ref=e170]: С заботой о вашем зрении
+      - generic [ref=e171]:
+        - list [ref=e173]:
+          - listitem [ref=e174]:
+            - button "Все клиники" [ref=e175]
+          - listitem [ref=e176]:
+            - button "Пятигорск" [ref=e177] [cursor=pointer]
+          - listitem [ref=e178]:
+            - button "Краснодар" [ref=e179] [cursor=pointer]
+        - generic [ref=e180]:
+          - button [disabled] [ref=e181]:
+            - img [ref=e182]
+          - button [ref=e184] [cursor=pointer]:
+            - img [ref=e185]
+      - generic [ref=e191]:
+        - link "30 лет стаж работы Михневич Константин Викторович Главный врач. Врач-офтальмолог Записаться" [ref=e193] [cursor=pointer]:
+          - /url: "#"
+          - generic [ref=e198]:
+            - generic [ref=e199]: 30 лет
+            - generic [ref=e200]: стаж работы
+          - generic [ref=e201]:
+            - heading "Михневич Константин Викторович" [level=3] [ref=e202]
+            - generic [ref=e203]:
+              - text: Главный врач.
+              - text: Врач-офтальмолог
+            - generic [ref=e204]: Записаться
+        - link "14 лет стаж работы Труфанов Сергей Владимирович Врач-офтальмолог, врач высшей категории, доктор медицинских наук Записаться" [ref=e206] [cursor=pointer]:
+          - /url: "#"
+          - generic [ref=e211]:
+            - generic [ref=e212]: 14 лет
+            - generic [ref=e213]: стаж работы
+          - generic [ref=e215]:
+            - heading "Труфанов Сергей Владимирович" [level=3] [ref=e216]
+            - generic [ref=e217]:
+              - text: Врач-офтальмолог,
+              - text: врач высшей категории, доктор
+              - text: медицинских наук
+            - generic [ref=e218]: Записаться
+        - link "18 лет стаж работы Рикс Инна Александровна Врач-офтальмолог, врач высшей категории, кандидат медицинских наук Записаться" [ref=e220] [cursor=pointer]:
+          - /url: "#"
+          - generic [ref=e225]:
+            - generic [ref=e226]: 18 лет
+            - generic [ref=e227]: стаж работы
+          - generic [ref=e228]:
+            - heading "Рикс Инна Александровна" [level=3] [ref=e229]
+            - generic [ref=e230]:
+              - text: Врач-офтальмолог,
+              - text: врач высшей категории, кандидат
+              - text: медицинских наук
+            - generic [ref=e231]: Записаться
+        - link "30 лет стаж работы Михневич Константин Викторович Главный врач. Врач-офтальмолог Записаться" [ref=e233] [cursor=pointer]:
+          - /url: "#"
+          - generic [ref=e238]:
+            - generic [ref=e239]: 30 лет
+            - generic [ref=e240]: стаж работы
+          - generic [ref=e241]:
+            - heading "Михневич Константин Викторович" [level=3] [ref=e242]
+            - generic [ref=e243]:
+              - text: Главный врач.
+              - text: Врач-офтальмолог
+            - generic [ref=e244]: Записаться
+        - link "30 лет стаж работы Михневич Константин Викторович Главный врач. Врач-офтальмолог Записаться" [ref=e246] [cursor=pointer]:
+          - /url: "#"
+          - generic [ref=e251]:
+            - generic [ref=e252]: 30 лет
+            - generic [ref=e253]: стаж работы
+          - generic [ref=e254]:
+            - heading "Михневич Константин Викторович" [level=3] [ref=e255]
+            - generic [ref=e256]:
+              - text: Главный врач.
+              - text: Врач-офтальмолог
+            - generic [ref=e257]: Записаться
+        - link "14 лет стаж работы Труфанов Сергей Владимирович Врач-офтальмолог, врач высшей категории, доктор медицинских наук Записаться" [ref=e259] [cursor=pointer]:
+          - /url: "#"
+          - generic [ref=e264]:
+            - generic [ref=e265]: 14 лет
+            - generic [ref=e266]: стаж работы
+          - generic [ref=e268]:
+            - heading "Труфанов Сергей Владимирович" [level=3] [ref=e269]
+            - generic [ref=e270]:
+              - text: Врач-офтальмолог,
+              - text: врач высшей категории, доктор
+              - text: медицинских наук
+            - generic [ref=e271]: Записаться
+    - generic [ref=e273]:
+      - heading "Помогаем в случаях, когда другие клиники бессильны" [level=2] [ref=e274]
+      - list [ref=e275]:
+        - listitem [ref=e276]:
+          - generic [ref=e277]:
+            - generic [ref=e278]: "3"
+            - generic [ref=e279]: витреоретинальных хирурга
+        - listitem [ref=e280]:
+          - generic [ref=e281]:
+            - generic [ref=e282]: "8"
+            - generic [ref=e283]: врачей высшей категории
+        - listitem [ref=e284]:
+          - generic [ref=e285]:
+            - generic [ref=e286]: "6"
+            - generic [ref=e287]: кандидатов медицинских наук
+        - listitem [ref=e288]:
+          - generic [ref=e289]:
+            - generic [ref=e290]: "2"
+            - generic [ref=e291]: доктора медицинских наук
+    - generic [ref=e293]:
+      - generic [ref=e294]:
+        - heading "Клиника факт" [level=2] [ref=e295]
+        - generic [ref=e296]: О клинике
+      - heading "Применяем передовые практики мировой офтальмологии" [level=3] [ref=e297]
+      - list [ref=e298]:
+        - listitem [ref=e299]:
+          - generic [ref=e300]:
+            - heading "кератопластика" [level=4] [ref=e302]
+            - generic [ref=e303]: Мы проводим все виды пересадки роговицы, в том числе послойную. При кератоконусе, дистрофии роговицы, травмах глаза
+        - listitem [ref=e304]:
+          - generic [ref=e305]:
+            - heading "Фемто-ФЭ" [level=4] [ref=e307]
+            - generic [ref=e308]: Метод лазерной хирургии катаракты с фемтосекундным сопровождением позволяет нам восстановить зрение пациентам в самых сложных случаях
+        - listitem [ref=e309]:
+          - generic [ref=e310]:
+            - heading "Комбинированная хирургия" [level=4] [ref=e312]
+            - generic [ref=e313]: Совмещение методов хирургии и решение нескольких проблем во время одного хирургического вмешательства
+        - listitem [ref=e314]:
+          - generic [ref=e315]:
+            - heading "Философия точного зрения" [level=4] [ref=e317]
+            - generic [ref=e318]: Наш стандарт — это углубленная диагностика, тщательный сбор анамнеза и индивидуальный выбор метода лечения для каждого пациента
+      - generic [ref=e321]:
+        - img [ref=e323]
+        - generic [ref=e325]:
+          - generic [ref=e326]:
+            - text: ролик о нашем
+            - text: подходе к работе
+          - generic [ref=e327]: 00:50
+    - generic [ref=e329]:
+      - generic [ref=e330]:
+        - generic [ref=e331]:
+          - heading "премиальный сервис" [level=2] [ref=e332]:
+            - text: премиальный
+            - text: сервис
+          - paragraph [ref=e333]: с размещением в комфортном отеле на весь период лечения, чтобы вы могли сосредоточиться на восстановлении зрения в спокойной и заботливой атмосфере
+        - link "Записаться" [ref=e334] [cursor=pointer]:
+          - /url: "#"
+      - list [ref=e336]:
+        - listitem [ref=e337]:
+          - generic [ref=e338]:
+            - heading "Сопровождение 24/7" [level=4] [ref=e339]
+            - generic [ref=e340]: Персональный медицинский координатор поможет разобраться с планом лечения и окажет поддержку
+        - listitem [ref=e341]:
+          - generic [ref=e342]:
+            - heading "Гарантии качества" [level=4] [ref=e343]
+            - generic [ref=e344]: Бесплатное сопровождение и консультации в течение 12 месяцев после операции
+        - listitem [ref=e345]:
+          - generic [ref=e346]:
+            - heading "Комфорт и забота" [level=4] [ref=e347]
+            - generic [ref=e348]: Уникальное пространство для самых маленьких превратит посещение клиники в увлекательное приключение
+        - listitem [ref=e349]:
+          - generic [ref=e350]:
+            - heading "Годовые программы" [level=4] [ref=e351]
+            - generic [ref=e352]: Медицинское сопровождение для профилактики или контроля заболевания - выгодные инвестиции с заботой о близких
+        - listitem [ref=e353]:
+          - generic [ref=e354]:
+            - heading "Собственный отель" [level=4] [ref=e355]
+            - generic [ref=e356]: Размещение в комфортном отеле на весь период лечения с палатами бизнесс-класса
+    - generic [ref=e358]:
+      - heading "Оборудование" [level=2] [ref=e386]
+      - heading "Исключительная безопасность хирургического лечения" [level=3] [ref=e387]
+      - list [ref=e388]:
+        - listitem [ref=e389]:
+          - link "Сертификаты Сертифицированное новое оборудование, регулярное проведение ТО" [ref=e390] [cursor=pointer]:
+            - /url: "#"
+            - generic [ref=e392]: Сертификаты
+            - generic [ref=e393]: Сертифицированное новое оборудование, регулярное проведение ТО
+        - listitem [ref=e394]:
+          - link "операционная Сертифицированное новое оборудование, регулярное проведение ТО" [ref=e395] [cursor=pointer]:
+            - /url: "#"
+            - generic [ref=e397]: операционная
+            - generic [ref=e398]: Сертифицированное новое оборудование, регулярное проведение ТО
+        - listitem [ref=e399]:
+          - link "одноразовые инструменты Сертифицированные одноразовые расходные инструменты" [ref=e400] [cursor=pointer]:
+            - /url: "#"
+            - generic [ref=e402]: одноразовые инструменты
+            - generic [ref=e403]: Сертифицированные одноразовые расходные инструменты
+        - listitem [ref=e404]:
+          - link "Программное обеспечение Сертифицированное программное обеспечение" [ref=e405] [cursor=pointer]:
+            - /url: "#"
+            - generic [ref=e407]: Программное обеспечение
+            - generic [ref=e408]: Сертифицированное программное обеспечение
+    - generic [ref=e410]:
+      - generic [ref=e411]:
+        - heading "Пациенты о нас" [level=2] [ref=e412]
+        - generic [ref=e413]: Отзывы
+      - generic [ref=e414]:
+        - generic [ref=e415]:
+          - heading "Видеоотзывы" [level=3] [ref=e416]
+          - generic [ref=e417]:
+            - button [disabled] [ref=e418]:
+              - img [ref=e419]
+            - button [ref=e421] [cursor=pointer]:
+              - img [ref=e422]
+        - generic [ref=e426]:
+          - link "Сергей 18 марта 2026 Были в клинике с сыном. Остались очень довольны. Особенно хотелось бы отметить администратора Ангелину. Очень спокойная." [ref=e428] [cursor=pointer]:
+            - /url: "#"
+            - img [ref=e432]
+            - generic [ref=e434]:
+              - generic [ref=e435]:
+                - generic [ref=e436]:
+                  - heading "Сергей" [level=4] [ref=e437]
+                  - generic [ref=e438]: 18 марта 2026
+                - generic [ref=e439]:
+                  - img [ref=e440]
+                  - img [ref=e442]
+                  - img [ref=e444]
+                  - img [ref=e446]
+                  - img [ref=e448]
+              - generic [ref=e450]: Были в клинике с сыном. Остались очень довольны. Особенно хотелось бы отметить администратора Ангелину. Очень спокойная.
+          - link "Сергей 18 марта 2026 Были в клинике с сыном. Остались очень довольны. Особенно хотелось бы отметить администратора Ангелину. Очень спокойная." [ref=e452] [cursor=pointer]:
+            - /url: "#"
+            - img [ref=e456]
+            - generic [ref=e458]:
+              - generic [ref=e459]:
+                - generic [ref=e460]:
+                  - heading "Сергей" [level=4] [ref=e461]
+                  - generic [ref=e462]: 18 марта 2026
+                - generic [ref=e463]:
+                  - img [ref=e464]
+                  - img [ref=e466]
+                  - img [ref=e468]
+                  - img [ref=e470]
+                  - img [ref=e472]
+              - generic [ref=e474]: Были в клинике с сыном. Остались очень довольны. Особенно хотелось бы отметить администратора Ангелину. Очень спокойная.
+          - link "Сергей 18 марта 2026 Были в клинике с сыном. Остались очень довольны. Особенно хотелось бы отметить администратора Ангелину. Очень спокойная." [ref=e476] [cursor=pointer]:
+            - /url: "#"
+            - img [ref=e480]
+            - generic [ref=e482]:
+              - generic [ref=e483]:
+                - generic [ref=e484]:
+                  - heading "Сергей" [level=4] [ref=e485]
+                  - generic [ref=e486]: 18 марта 2026
+                - generic [ref=e487]:
+                  - img [ref=e488]
+                  - img [ref=e490]
+                  - img [ref=e492]
+                  - img [ref=e494]
+                  - img [ref=e496]
+              - generic [ref=e498]: Были в клинике с сыном. Остались очень довольны. Особенно хотелось бы отметить администратора Ангелину. Очень спокойная.
+          - link "Сергей 18 марта 2026 Были в клинике с сыном. Остались очень довольны. Особенно хотелось бы отметить администратора Ангелину. Очень спокойная." [ref=e500] [cursor=pointer]:
+            - /url: "#"
+            - img [ref=e504]
+            - generic [ref=e506]:
+              - generic [ref=e507]:
+                - generic [ref=e508]:
+                  - heading "Сергей" [level=4] [ref=e509]
+                  - generic [ref=e510]: 18 марта 2026
+                - generic [ref=e511]:
+                  - img [ref=e512]
+                  - img [ref=e514]
+                  - img [ref=e516]
+                  - img [ref=e518]
+                  - img [ref=e520]
+              - generic [ref=e522]: Были в клинике с сыном. Остались очень довольны. Особенно хотелось бы отметить администратора Ангелину. Очень спокойная.
+          - link "Сергей 18 марта 2026 Были в клинике с сыном. Остались очень довольны. Особенно хотелось бы отметить администратора Ангелину. Очень спокойная." [ref=e524] [cursor=pointer]:
+            - /url: "#"
+            - img [ref=e528]
+            - generic [ref=e530]:
+              - generic [ref=e531]:
+                - generic [ref=e532]:
+                  - heading "Сергей" [level=4] [ref=e533]
+                  - generic [ref=e534]: 18 марта 2026
+                - generic [ref=e535]:
+                  - img [ref=e536]
+                  - img [ref=e538]
+                  - img [ref=e540]
+                  - img [ref=e542]
+                  - img [ref=e544]
+              - generic [ref=e546]: Были в клинике с сыном. Остались очень довольны. Особенно хотелось бы отметить администратора Ангелину. Очень спокойная.
+          - link "Сергей 18 марта 2026 Были в клинике с сыном. Остались очень довольны. Особенно хотелось бы отметить администратора Ангелину. Очень спокойная." [ref=e548] [cursor=pointer]:
+            - /url: "#"
+            - img [ref=e552]
+            - generic [ref=e554]:
+              - generic [ref=e555]:
+                - generic [ref=e556]:
+                  - heading "Сергей" [level=4] [ref=e557]
+                  - generic [ref=e558]: 18 марта 2026
+                - generic [ref=e559]:
+                  - img [ref=e560]
+                  - img [ref=e562]
+                  - img [ref=e564]
+                  - img [ref=e566]
+                  - img [ref=e568]
+              - generic [ref=e570]: Были в клинике с сыном. Остались очень довольны. Особенно хотелось бы отметить администратора Ангелину. Очень спокойная.
+          - link "Сергей 18 марта 2026 Были в клинике с сыном. Остались очень довольны. Особенно хотелось бы отметить администратора Ангелину. Очень спокойная." [ref=e572] [cursor=pointer]:
+            - /url: "#"
+            - img [ref=e576]
+            - generic [ref=e578]:
+              - generic [ref=e579]:
+                - generic [ref=e580]:
+                  - heading "Сергей" [level=4] [ref=e581]
+                  - generic [ref=e582]: 18 марта 2026
+                - generic [ref=e583]:
+                  - img [ref=e584]
+                  - img [ref=e586]
+                  - img [ref=e588]
+                  - img [ref=e590]
+                  - img [ref=e592]
+              - generic [ref=e594]: Были в клинике с сыном. Остались очень довольны. Особенно хотелось бы отметить администратора Ангелину. Очень спокойная.
+          - link "Сергей 18 марта 2026 Были в клинике с сыном. Остались очень довольны. Особенно хотелось бы отметить администратора Ангелину. Очень спокойная." [ref=e596] [cursor=pointer]:
+            - /url: "#"
+            - img [ref=e600]
+            - generic [ref=e602]:
+              - generic [ref=e603]:
+                - generic [ref=e604]:
+                  - heading "Сергей" [level=4] [ref=e605]
+                  - generic [ref=e606]: 18 марта 2026
+                - generic [ref=e607]:
+                  - img [ref=e608]
+                  - img [ref=e610]
+                  - img [ref=e612]
+                  - img [ref=e614]
+                  - img [ref=e616]
+              - generic [ref=e618]: Были в клинике с сыном. Остались очень довольны. Особенно хотелось бы отметить администратора Ангелину. Очень спокойная.
+      - link "Смотреть все отзывы" [ref=e619] [cursor=pointer]:
+        - /url: "#"
+      - generic [ref=e620]:
+        - heading "держим безупречный рейтинг более 8 лет" [level=3] [ref=e621]
+        - generic [ref=e623]:
+          - generic [ref=e624]: "4.9"
+          - generic [ref=e625]:
+            - text: Средний рейтинг клиники
+            - text: на площадках
+        - generic [ref=e626]:
+          - generic [ref=e627]:
+            - button [disabled] [ref=e628]:
+              - img [ref=e629]
+            - button [ref=e631] [cursor=pointer]:
+              - img [ref=e632]
+          - generic [ref=e636]:
+            - generic [ref=e638]:
+              - img [ref=e640]
+              - generic [ref=e642]: "5.0"
+            - generic [ref=e644]:
+              - img [ref=e646]
+              - generic [ref=e648]: "4.9"
+            - generic [ref=e650]:
+              - img [ref=e652]
+              - generic [ref=e654]: "5.0"
+            - generic [ref=e656]:
+              - img [ref=e658]
+              - generic [ref=e660]: "4.7"
+            - generic [ref=e662]:
+              - img [ref=e664]
+              - generic [ref=e666]: "4.9"
+    - generic [ref=e668]:
+      - generic [ref=e669]:
+        - heading "первичный прием" [level=2] [ref=e670]:
+          - text: первичный
+          - text: прием
+        - generic [ref=e671]:
+          - text: Один визит в клинику приблизит вас к решению проблемы.
+          - text: Запишитесь на первичный приём к офтальмологу, заполнив короткую форму
+      - generic [ref=e673]:
+        - generic [ref=e674]:
+          - generic [ref=e675]:
+            - generic [ref=e676]: Имя*
+            - textbox "Имя*" [ref=e677]
+          - generic [ref=e678]:
+            - generic [ref=e679]: Телефон*
+            - textbox "Телефон*" [ref=e680]
+        - generic [ref=e681]:
+          - generic [ref=e682]:
+            - text: Нажимая кнопку, вы соглашаетесь с условиями обработки персональных данных и
+            - link "Политикой конфиденциальности" [ref=e683] [cursor=pointer]:
+              - /url: "#"
+          - button "записаться на диагностику" [ref=e684] [cursor=pointer]
+    - generic [ref=e686]:
+      - heading "Актуальные акции" [level=2] [ref=e687]
+      - heading "в клинике факт" [level=3] [ref=e688]
+      - generic [ref=e689]:
+        - generic [ref=e690]:
+          - button [disabled] [ref=e691]:
+            - img [ref=e692]
+          - button [ref=e694] [cursor=pointer]:
+            - img [ref=e695]
+        - generic [ref=e699]:
+          - link "17 февраля 2025 - 31 декабря 2025 семейная забота о зрении Формируем новые семейные традиции – на диагностику зрения идем всей семьей, ведь забота о здоровье глаз нужна каждому. Подробнее" [ref=e701] [cursor=pointer]:
+            - /url: "#"
+            - generic [ref=e703]:
+              - generic [ref=e704]: 17 февраля 2025 - 31 декабря 2025
+              - heading "семейная забота о зрении" [level=3] [ref=e705]
+              - generic [ref=e706]:
+                - generic [ref=e707]: Формируем новые семейные традиции – на диагностику зрения идем всей семьей, ведь забота о здоровье глаз нужна каждому.
+                - generic [ref=e708]: Подробнее
+          - link "1 июня 2025 - 31 декабря 2025 Оформляйте рассрочку без переплат Только изначальная сумма, разделённая на 12 месяцев Оформить рассрочку" [ref=e710] [cursor=pointer]:
+            - /url: "#"
+            - generic [ref=e712]:
+              - generic [ref=e713]: 1 июня 2025 - 31 декабря 2025
+              - heading "Оформляйте рассрочку без переплат" [level=3] [ref=e714]
+              - generic [ref=e715]:
+                - generic [ref=e716]: Только изначальная сумма, разделённая на 12 месяцев
+                - generic [ref=e717]: Оформить рассрочку
+          - link "17 февраля 2025 - 31 декабря 2025 семейная забота о зрении Формируем новые семейные традиции – на диагностику зрения идем всей семьей, ведь забота о здоровье глаз нужна каждому. Подробнее" [ref=e719] [cursor=pointer]:
+            - /url: "#"
+            - generic [ref=e721]:
+              - generic [ref=e722]: 17 февраля 2025 - 31 декабря 2025
+              - heading "семейная забота о зрении" [level=3] [ref=e723]
+              - generic [ref=e724]:
+                - generic [ref=e725]: Формируем новые семейные традиции – на диагностику зрения идем всей семьей, ведь забота о здоровье глаз нужна каждому.
+                - generic [ref=e726]: Подробнее
+          - link "1 июня 2025 - 31 декабря 2025 Оформляйте рассрочку без переплат Только изначальная сумма, разделённая на 12 месяцев Оформить рассрочку" [ref=e728] [cursor=pointer]:
+            - /url: "#"
+            - generic [ref=e730]:
+              - generic [ref=e731]: 1 июня 2025 - 31 декабря 2025
+              - heading "Оформляйте рассрочку без переплат" [level=3] [ref=e732]
+              - generic [ref=e733]:
+                - generic [ref=e734]: Только изначальная сумма, разделённая на 12 месяцев
+                - generic [ref=e735]: Оформить рассрочку
+    - generic [ref=e737]:
+      - generic [ref=e738]:
+        - generic [ref=e739]:
+          - heading "вопрос-ответ" [level=2] [ref=e740]
+          - generic [ref=e741]: Отвечаем на самые частые вопросы наших пациентов
+        - generic [ref=e744]:
+          - generic [ref=e745]:
+            - generic [ref=e746]: Михневич Константин
+            - generic [ref=e747]: Главный врач клиники Факт
+          - generic [ref=e748]:
+            - generic [ref=e749]: Не нашли свой вопрос? Свяжитесь с нами
+            - generic [ref=e750]:
+              - link "+7 (999) 999-99-99" [ref=e751] [cursor=pointer]:
+                - /url: tel:+79999999999
+              - link "Мы во ВКонтакте" [ref=e752] [cursor=pointer]:
+                - /url: "#"
+                - img [ref=e753]
+      - list [ref=e756]:
+        - listitem [ref=e757]:
+          - generic [ref=e758]:
+            - button "Можно ли прийти на обследование в контактных линзах?" [ref=e759] [cursor=pointer]:
+              - generic [ref=e760]: Можно ли прийти на обследование в контактных линзах?
+              - img [ref=e762]
+            - generic [ref=e766]: В день обследования лучше отказаться от ношения контактных линз.
+        - listitem [ref=e767]:
+          - generic [ref=e768]:
+            - button "Если обследование проходили в другой клинике, можно ли по ним получить консультацию у вашего хирурга?" [ref=e769] [cursor=pointer]:
+              - generic [ref=e770]: Если обследование проходили в другой клинике, можно ли по ним получить консультацию у вашего хирурга?
+              - img [ref=e772]
+            - generic [ref=e774]: В день обследования лучше отказаться от ношения контактных линз.
+        - listitem [ref=e775]:
+          - generic [ref=e776]:
+            - button "Как провести диагностическое обследование, если у ребенка нарушение ЦНС и он очень беспокойно себя ведет?" [ref=e777] [cursor=pointer]:
+              - generic [ref=e778]: Как провести диагностическое обследование, если у ребенка нарушение ЦНС и он очень беспокойно себя ведет?
+              - img [ref=e780]
+            - generic [ref=e782]: В день обследования лучше отказаться от ношения контактных линз.
+        - listitem [ref=e783]:
+          - generic [ref=e784]:
+            - button "В каком возрасте можно оперировать врожденную катаракту?" [ref=e785] [cursor=pointer]:
+              - generic [ref=e786]: В каком возрасте можно оперировать врожденную катаракту?
+              - img [ref=e788]
+            - generic [ref=e790]: В день обследования лучше отказаться от ношения контактных линз.
+        - listitem [ref=e791]:
+          - generic [ref=e792]:
+            - button "Какой метод коррекции зрения самый эффективный?" [ref=e793] [cursor=pointer]:
+              - generic [ref=e794]: Какой метод коррекции зрения самый эффективный?
+              - img [ref=e796]
+            - generic [ref=e798]: В день обследования лучше отказаться от ношения контактных линз.
+        - listitem [ref=e799]:
+          - generic [ref=e800]:
+            - button "Мне 47 лет, можно ли еще проводить коррекцию зрения?" [ref=e801] [cursor=pointer]:
+              - generic [ref=e802]: Мне 47 лет, можно ли еще проводить коррекцию зрения?
+              - img [ref=e804]
+            - generic [ref=e806]: В день обследования лучше отказаться от ношения контактных линз.
+    - generic [ref=e808]:
+      - heading "ведем блог" [level=2] [ref=e809]
+      - generic [ref=e810]: Делимся многолетним опытом и практической информацией
+      - list [ref=e811]:
+        - listitem [ref=e812]:
+          - 'link "Хирургия катаракты и лечение пресбиопии # статья от врача хирургия катаракты и лечение пресбиопии В глазной клинике «ФАКТ» применяется самый современный на сегодняшний день метод хирургии" [ref=e813] [cursor=pointer]':
+            - /url: "#"
+            - img "Хирургия катаракты и лечение пресбиопии" [ref=e815]
+            - generic [ref=e816]:
+              - generic [ref=e818]: "# статья от врача"
+              - heading "хирургия катаракты и лечение пресбиопии" [level=3] [ref=e819]
+              - generic [ref=e821]: В глазной клинике «ФАКТ» применяется самый современный на сегодняшний день метод хирургии
+        - listitem [ref=e822]:
+          - 'link "Высокоточные операции на глазах доступны в Пятигорске # новости Высокоточные операции на глазах доступны в Пятигорске Сложнейшие офтальмологические операции, сравнимые с ювелирной работой, теперь выполняются ..." [ref=e823] [cursor=pointer]':
+            - /url: "#"
+            - img "Высокоточные операции на глазах доступны в Пятигорске" [ref=e825]
+            - generic [ref=e826]:
+              - generic [ref=e828]: "# новости"
+              - heading "Высокоточные операции на глазах доступны в Пятигорске" [level=3] [ref=e829]
+              - generic [ref=e831]: Сложнейшие офтальмологические операции, сравнимые с ювелирной работой, теперь выполняются ...
+        - listitem [ref=e832]:
+          - 'link "Глазная клиника «ФАКТ» — за здоровый образ жизни и спорт! # справочник Глазная клиника «ФАКТ» — за здоровый образ жизни и спорт! В минувшие выходные мы стали частью впечатляющего всероссийского забега «ЗОбег» ..." [ref=e833] [cursor=pointer]':
+            - /url: "#"
+            - img "Глазная клиника «ФАКТ» — за здоровый образ жизни и спорт!" [ref=e835]
+            - generic [ref=e836]:
+              - generic [ref=e838]: "# справочник"
+              - heading "Глазная клиника «ФАКТ» — за здоровый образ жизни и спорт!" [level=3] [ref=e839]
+              - generic [ref=e841]: В минувшие выходные мы стали частью впечатляющего всероссийского забега «ЗОбег» ...
+      - link "Смотреть все статьи" [ref=e842] [cursor=pointer]:
+        - /url: "#"
+    - generic [ref=e844]:
+      - heading "Глазная клиника «Факт»" [level=2] [ref=e845]
+      - generic [ref=e846]:
+        - generic [ref=e847]:
+          - paragraph [ref=e848]: Современный офтальмологический центр в Пятигорске, объединяющий инновационные методики лечения и профессионализм врачей. Наша клиника специализируется на диагностике, лечении и профилактике заболеваний глаз как у взрослых, так и у детей.
+          - paragraph [ref=e849]: "Врачи-офтальмологи центра Факт обладают большим опытом и постоянно совершенствуют квалификацию, внедряя в практику новейшие мировые технологии. Диагностическое отделение оснащено передовым оборудованием: оптическая когерентная томография, цифровая рефрактометрия, автотонометрия, ультразвуковая биометрия, компьютерная периметрия — все для постановки точного диагноза и индивидуального подбора лечения."
+          - paragraph [ref=e850]: В клинике Факт доступны все современные виды лазерной коррекции зрения (лазерная коррекция близорукости, дальнозоркости, астигматизма), микрохирургия катаракты с имплантацией мультифокальных и торических линз, лечение глаукомы различными лазерными и хирургическими методами. Наши офтальмологи проводят сложные витреоретинальные операции при патологиях сетчатки и стекловидного тела, выполняют пластические операции на веках, устраняют косоглазие и проводят лечение макулодистрофии.
+        - button "Показать полностью" [ref=e851] [cursor=pointer]
+    - generic [ref=e853]:
+      - heading "лицензии и сертификаты" [level=2] [ref=e854]:
+        - text: лицензии
+        - text: и сертификаты
+      - generic [ref=e855]:
+        - generic: лицензии
+        - generic [ref=e856]:
+          - button "Предыдущий слайд" [disabled] [ref=e857]:
+            - img [ref=e858]
+          - button "Следующий слайд" [ref=e860] [cursor=pointer]:
+            - img [ref=e861]
+      - generic [ref=e865]:
+        - link "Лицензия клиники Факт" [ref=e867] [cursor=pointer]:
+          - /url: /images/license-card/1.webp
+          - img "Лицензия клиники Факт" [ref=e869]
+        - link "Сертификат клиники Факт" [ref=e871] [cursor=pointer]:
+          - /url: /images/license-card/4.webp
+          - img "Сертификат клиники Факт" [ref=e873]
+        - link "Лицензия клиники Факт" [ref=e875] [cursor=pointer]:
+          - /url: /images/license-card/2.webp
+          - img "Лицензия клиники Факт" [ref=e877]
+        - link "Лицензия клиники Факт" [ref=e879] [cursor=pointer]:
+          - /url: /images/license-card/3.webp
+          - img "Лицензия клиники Факт" [ref=e881]
+        - link "Сертификат клиники Факт" [ref=e883] [cursor=pointer]:
+          - /url: /images/license-card/4.webp
+          - img "Сертификат клиники Факт" [ref=e885]
+        - link "Лицензия клиники Факт" [ref=e887] [cursor=pointer]:
+          - /url: /images/license-card/1.webp
+          - img "Лицензия клиники Факт" [ref=e889]
+  - contentinfo [ref=e890]:
+    - generic [ref=e891]:
+      - generic [ref=e892]:
+        - generic [ref=e894]:
+          - link [ref=e895] [cursor=pointer]:
+            - /url: /
+          - link "Версия для слабовидящих" [ref=e896] [cursor=pointer]:
+            - /url: "#"
+            - text: Версия для слабовидящих
+            - img [ref=e897]
+        - navigation "Навигация по сайту" [ref=e899]:
+          - generic [ref=e900]:
+            - heading "Компания" [level=3] [ref=e901]
+            - list [ref=e902]:
+              - listitem [ref=e903]:
+                - link "О клинике" [ref=e904] [cursor=pointer]:
+                  - /url: "#"
+              - listitem [ref=e905]:
+                - link "Врачи" [ref=e906] [cursor=pointer]:
+                  - /url: "#"
+              - listitem [ref=e907]:
+                - link "Цены" [ref=e908] [cursor=pointer]:
+                  - /url: "#"
+              - listitem [ref=e909]:
+                - link "Отзывы" [ref=e910] [cursor=pointer]:
+                  - /url: "#"
+              - listitem [ref=e911]:
+                - link "Статьи" [ref=e912] [cursor=pointer]:
+                  - /url: "#"
+              - listitem [ref=e913]:
+                - link "Лицензии" [ref=e914] [cursor=pointer]:
+                  - /url: "#"
+              - listitem [ref=e915]:
+                - link "Контакты" [ref=e916] [cursor=pointer]:
+                  - /url: "#"
+          - generic [ref=e917]:
+            - heading "Услуги" [level=3] [ref=e918]
+            - list [ref=e919]:
+              - listitem [ref=e920]:
+                - link "Диагностика" [ref=e921] [cursor=pointer]:
+                  - /url: "#"
+              - listitem [ref=e922]:
+                - link "Детское отделение" [ref=e923] [cursor=pointer]:
+                  - /url: "#"
+              - listitem [ref=e924]:
+                - link "Лазерная коррекция" [ref=e925] [cursor=pointer]:
+                  - /url: "#"
+              - listitem [ref=e926]:
+                - link "Глаукома" [ref=e927] [cursor=pointer]:
+                  - /url: "#"
+              - listitem [ref=e928]:
+                - link "Катаракта" [ref=e929] [cursor=pointer]:
+                  - /url: "#"
+              - listitem [ref=e930]:
+                - link "Кератоконус" [ref=e931] [cursor=pointer]:
+                  - /url: "#"
+              - listitem [ref=e932]:
+                - link "Окулопластика" [ref=e933] [cursor=pointer]:
+                  - /url: "#"
+        - generic [ref=e934]:
+          - generic [ref=e935]:
+            - heading "Свяжитесь с нами" [level=3] [ref=e936]
+            - list [ref=e937]:
+              - listitem [ref=e938]:
+                - link [ref=e939] [cursor=pointer]:
+                  - /url: "#"
+                  - img [ref=e940]
+              - listitem [ref=e942]:
+                - link [ref=e943] [cursor=pointer]:
+                  - /url: "#"
+                  - img [ref=e944]
+              - listitem [ref=e946]:
+                - link [ref=e947] [cursor=pointer]:
+                  - /url: "#"
+                  - img [ref=e948]
+          - generic [ref=e950]:
+            - heading "Мы в соц сетях:" [level=3] [ref=e951]
+            - list [ref=e952]:
+              - listitem [ref=e953]:
+                - link [ref=e954] [cursor=pointer]:
+                  - /url: "#"
+                  - img [ref=e955]
+              - listitem [ref=e957]:
+                - link [ref=e958] [cursor=pointer]:
+                  - /url: "#"
+                  - img [ref=e959]
+              - listitem [ref=e961]:
+                - link [ref=e962] [cursor=pointer]:
+                  - /url: "#"
+                  - img [ref=e963]
+              - listitem [ref=e965]:
+                - link [ref=e966] [cursor=pointer]:
+                  - /url: "#"
+                  - img [ref=e967]
+        - generic [ref=e969]:
+          - generic [ref=e970]:
+            - link "8 800 333—4603" [ref=e971] [cursor=pointer]:
+              - /url: tel:+78003334603
+            - link "Обратный звонок" [ref=e972] [cursor=pointer]:
+              - /url: tel:+78003334603
+          - generic [ref=e973]:
+            - link "mng@factmed.ru" [ref=e974] [cursor=pointer]:
+              - /url: mailto:mng@factmed.ru
+            - link "написать письмо" [ref=e975] [cursor=pointer]:
+              - /url: mailto:mng@factmed.ru
+          - generic [ref=e976]:
+            - generic [ref=e977]:
+              - text: г. Пятигорск,
+              - text: ул. Московская 105
+            - generic [ref=e978]: Ежедневно с 8:30 до 19:00
+            - link "смотреть на карте" [ref=e979] [cursor=pointer]:
+              - /url: "#"
+      - generic [ref=e980]:
+        - generic [ref=e981]:
+          - text: © ФАКТ, 2025. Все права защищены.
+          - text: Лицензия №Л041-01197-26/00380702
+        - generic [ref=e982]:
+          - link "Политика конфиденциальности" [ref=e983] [cursor=pointer]:
+            - /url: "#"
+          - link "Политика обработки персональных данных" [ref=e984] [cursor=pointer]:
+            - /url: "#"
+        - link "Mark Weber Дизайн и разработка сайта — Mark Weber" [ref=e985] [cursor=pointer]:
+          - /url: https://markweber.ru/
+          - img "Mark Weber" [ref=e986]
+          - text: Дизайн и разработка
+          - text: сайта — Mark Weber
+  - img

@@ -14,76 +14,100 @@
   .service__content {
     @include utils.blockContent;
     display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    @include media.breakpoint(mobile) {
-      display: flex;
-      flex-direction: column;
+    grid-template-columns: repeat(8, minmax(0, 1fr));
+
+    @include media.breakpoint(tablet) {
+      grid-template-columns: minmax(0, 1fr);
+      row-gap: 4rem;
     }
   }
 
   .service__left {
     display: flex;
     flex-direction: column;
-    gap: 2.4rem;
-    @include media.breakpoint(mobile) {
-      display: contents;
+    justify-content: space-between;
+    grid-column: 1 / 4;
+
+    @include media.breakpoint(tablet) {
+      gap: 4rem;
     }
   }
 
-  .service__btn {
-    margin-top: auto;
-    align-self: flex-start;
-    @include media.breakpoint(mobile) {
-      align-self: stretch;
-      order: 20;
-      margin-top: 4rem;
-    }
+  .service__top {
+    display: flex;
+    flex-direction: column;
+    gap: 3.2rem;
   }
 
   .service__title {
-    @include media.breakpoint(mobile) {
-      order: -20;
-    }
+    letter-spacing: -0.08rem;
+    text-wrap: balance;
   }
 
-  .service__subtitle {
+  .service__desc {
+    font-size: 1.8rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%;
+    letter-spacing: -0.018rem;
+    color: #161616;
+    // max-width: 64.2rem;
+    text-wrap: balance;
+  }
+
+  .service__btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-self: stretch;
+    width: 100%;
+    min-height: 6rem;
+    padding: 1.6rem 2rem;
+
+    @include media.breakpoint(tablet) {
+      max-width: 44rem;
+    }
+
     @include media.breakpoint(mobile) {
-      margin-top: 1rem;
+      max-width: none;
     }
   }
 
   .service__right {
     display: flex;
     flex-direction: column;
-    @include media.breakpoint(mobile) {
-      display: contents;
-    }
+    grid-column: 5 / -1;
   }
 
   .service__list {
     display: flex;
     flex-direction: column;
-    @include media.breakpoint(mobile) {
-      margin-top: 4rem;
-    }
+    margin: 0;
+    padding: 0;
+    list-style: none;
   }
 
   .service__list-item {
+    border-top: 1px solid #d3d3d3;
+  }
+
+  .service__list-item:last-child {
     border-bottom: 1px solid #d3d3d3;
-    &:first-child {
-      border-top: 1px solid #d3d3d3;
-    }
   }
 
   .service__card {
-    display: flex;
-    align-items: center;
-    gap: 4rem;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     padding: 4rem 0;
     @include media.breakpoint(mobile) {
       padding: 1.6rem 0;
-      gap: 2.4rem;
     }
+  }
+
+  .service__card-left {
+    display: flex;
+    align-items: center;
+    gap: 4rem;
   }
 
   .service__card-icon {
@@ -98,39 +122,55 @@
   }
 
   .service__card-title {
-    width: 32rem;
     flex-shrink: 0;
-    font-size: 3rem;
+    font-size: 2rem;
     font-style: normal;
     font-weight: 900;
     line-height: 100%;
-    letter-spacing: -0.03rem;
+    letter-spacing: -0.02rem;
     text-transform: uppercase;
-    color: #222;
+    color: #161616;
+
     @include media.breakpoint(mobile) {
-      width: 11.4rem;
       font-size: 1.2rem;
-      font-style: normal;
-      font-weight: 900;
-      line-height: 100%;
       letter-spacing: -0.012rem;
-      text-transform: uppercase;
     }
   }
 
   .service__card-text {
-    width: 10%;
-    flex-grow: 1;
+    flex: 1 1 auto;
+    min-width: 0;
     font-size: 1.8rem;
     font-style: normal;
     font-weight: 400;
     line-height: 140%;
-    color: #222;
+    color: #161616;
+
     @include media.breakpoint(mobile) {
       font-size: 1.2rem;
-      font-style: normal;
-      font-weight: 400;
-      line-height: 140%;
+    }
+  }
+
+  @include media.breakpoint(mobile) {
+    .service__content {
+      row-gap: 3.2rem;
+    }
+
+    .service__left {
+      gap: 3.2rem;
+    }
+
+    .service__top {
+      gap: 2.4rem;
+    }
+
+    .service__desc {
+      font-size: 1.2rem;
+      letter-spacing: normal;
+    }
+
+    .service__card {
+      align-items: flex-start;
     }
   }
 }
