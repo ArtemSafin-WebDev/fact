@@ -1,0 +1,58 @@
+@use "media";
+
+@layer components {
+  .breadcrumbs {
+    display: flex;
+  }
+
+  .breadcrumbs__list {
+    display: flex;
+    align-items: flex-end;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+  }
+
+  .breadcrumbs__item {
+    display: inline-flex;
+    align-items: center;
+    gap: 1.5rem;
+
+    &:not(:first-child)::before {
+      content: "";
+      flex-shrink: 0;
+      width: 0.5rem;
+      height: 0.5rem;
+      border-radius: 50%;
+      background-color: var(--green-300);
+    }
+
+    &.is-current {
+      font-weight: 900;
+    }
+
+    &.is-ghost {
+      opacity: 0;
+      pointer-events: none;
+    }
+  }
+
+  .breadcrumbs__link {
+    display: block;
+    color: var(--text-color);
+    font-size: 1.5rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 100%;
+    letter-spacing: -0.015rem;
+    text-transform: none;
+
+    .breadcrumbs__item.is-current & {
+      font-weight: 900;
+    }
+
+    @include media.breakpoint(mobile) {
+      font-size: 1.3rem;
+      letter-spacing: normal;
+    }
+  }
+}

@@ -1,0 +1,17 @@
+<nav class="breadcrumbs" aria-label="Хлебные крошки">
+    <ol class="breadcrumbs__list">
+        {{#each items}}
+        <li class="breadcrumbs__item{{#if isCurrent}} is-current{{/if}}{{#if isGhost}} is-ghost{{/if}}">
+            {{#if href}}
+            <a href="{{href}}" class="breadcrumbs__link">
+                {{title}}
+            </a>
+            {{else}}
+            <span class="breadcrumbs__link">
+                {{title}}
+            </span>
+            {{/if}}
+        </li>
+        {{/each}}
+    </ol>
+</nav>

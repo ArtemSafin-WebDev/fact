@@ -1,0 +1,68 @@
+<section class="catalog-doctors-hero">
+    <div class="catalog-doctors-hero__content">
+        {{> components/breadcrumbs items=catalogDoctors.breadcrumbs }}
+
+        <h1 class="catalog-doctors-hero__title">
+            {{catalogDoctors.title}}
+        </h1>
+
+        <div class="catalog-doctors-hero__lead">
+            {{#each catalogDoctors.leadLines}}
+            <span>{{this}}</span>
+            {{/each}}
+        </div>
+
+        <form class="catalog-doctors-hero__filters" action="#" method="get">
+            <fieldset class="tabs-nav catalog-doctors-hero__clinics">
+                <legend class="catalog-doctors-hero__legend">Фильтр по клинике</legend>
+                <ul class="tabs-nav__list">
+                    {{#each catalogDoctors.clinics}}
+                    <li class="tabs-nav__list-item">
+                        <button class="tabs-nav__btn{{#if active}} active{{/if}}" type="button">
+                            {{title}}
+                        </button>
+                    </li>
+                    {{/each}}
+                </ul>
+            </fieldset>
+
+            <div class="catalog-doctors-hero__controls">
+                <div class="catalog-doctors-hero__inputs">
+                    <label class="catalog-doctors-hero__search">
+                        <input type="search" name="doctor-name" placeholder="Введите ФИО врача" aria-label="Поиск врача по имени">
+                    </label>
+
+                    <div class="select catalog-doctors-hero__select js-select" data-placeholder="Выберите специальность">
+                        <button class="select__btn" type="button" aria-label="Выберите специальность">
+                            <span class="select__btn-text js-btn-text">Выберите специальность</span>
+                            <svg class="select__btn-arrow" width="12" height="8" aria-hidden="true">
+                                <use xlink:href="#arrow-down"></use>
+                            </svg>
+                        </button>
+                        <div class="select__dropdown">
+                            {{#each catalogDoctors.specialties}}
+                            <label class="select__option">
+                                <input type="radio" name="doctor-specialty" value="{{value}}" {{#if checked}}checked{{/if}}>
+                                <span>{{title}}</span>
+                            </label>
+                            {{/each}}
+                        </div>
+                    </div>
+                </div>
+
+                <button class="catalog-doctors-hero__reset" type="reset">
+                    <span class="catalog-doctors-hero__reset-icon" aria-hidden="true"></span>
+                    Сбросить фильтр
+                </button>
+            </div>
+        </form>
+
+        <div class="catalog-doctors-hero__cards">
+            {{#each catalogDoctors.cards}}
+            <div class="catalog-doctors-hero__card">
+                {{> components/doctor-card }}
+            </div>
+            {{/each}}
+        </div>
+    </div>
+</section>
