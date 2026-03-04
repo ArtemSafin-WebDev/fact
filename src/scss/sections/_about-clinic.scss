@@ -4,7 +4,8 @@
 @layer sections {
   .about-clinic {
     @include utils.blockWrapper;
-    margin-bottom: 8rem;
+    padding-top: 12rem;
+    margin-bottom: 12rem;
 
     @include media.breakpoint(mobile) {
       margin-bottom: 4rem;

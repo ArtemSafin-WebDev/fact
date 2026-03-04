@@ -4,7 +4,7 @@
 @layer sections {
   .catalog-doctors-hero {
     @include utils.blockWrapper;
-    padding-top: 7rem;
+    padding-top: 20.5rem;
     padding-bottom: 8rem;
     background-color: #eaeaea;
 
@@ -70,19 +70,9 @@
 
   .catalog-doctors-hero__filters {
     margin-top: 6rem;
-    display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
-    gap: 3rem;
 
-    @include media.breakpoint(tablet) {
-      flex-direction: column;
-      gap: 2rem;
-    }
-
-    @include media.breakpoint(mobile) {
-      margin-top: 3.2rem;
-    }
+    display: grid;
+    grid-template-columns: repeat(8, minmax(0, 1fr));
   }
 
   .catalog-doctors-hero__legend {
@@ -96,8 +86,7 @@
   }
 
   .catalog-doctors-hero__clinics {
-    width: 66rem;
-    max-width: 100%;
+    grid-column: 1 / 4;
     padding: 0;
     margin: 0;
     border: none;
@@ -117,47 +106,20 @@
       height: 6rem;
       padding: 0 2rem;
     }
-
-    @include media.breakpoint(mobile) {
-      .tabs-nav__btn {
-        height: 4.8rem;
-      }
-    }
   }
 
   .catalog-doctors-hero__controls {
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    gap: 3rem;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     flex-grow: 1;
     min-width: 0;
-
-    @include media.breakpoint(tablet) {
-      width: 100%;
-      justify-content: space-between;
-    }
-
-    @include media.breakpoint(small-tablet) {
-      flex-direction: column;
-      align-items: stretch;
-      gap: 1.6rem;
-    }
+    grid-column: 5 / -1;
   }
 
   .catalog-doctors-hero__inputs {
     display: grid;
-    grid-template-columns: repeat(2, minmax(0, 33rem));
-
-    @include media.breakpoint(tablet) {
-      width: 100%;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-
-    @include media.breakpoint(small-tablet) {
-      grid-template-columns: minmax(0, 1fr);
-      gap: 0.8rem;
-    }
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-column: span 2;
   }
 
   .catalog-doctors-hero__search {
@@ -207,32 +169,22 @@
     letter-spacing: -0.028rem;
     flex-shrink: 0;
     white-space: nowrap;
+    justify-self: flex-end;
   }
 
   .catalog-doctors-hero__reset-icon {
-    width: 1.2rem;
-    height: 1.2rem;
+    width: 1.8rem;
+    height: 1.8rem;
     background-color: #161616;
     position: relative;
     flex-shrink: 0;
+    display: grid;
+    place-items: center;
 
-    &::before,
-    &::after {
-      content: "";
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      width: 0.7rem;
-      height: 0.1rem;
-      background-color: #fff;
-    }
-
-    &::before {
-      transform: translate(-50%, -50%) rotate(45deg);
-    }
-
-    &::after {
-      transform: translate(-50%, -50%) rotate(-45deg);
+    svg {
+      fill: white;
+      width: 0.8rem;
+      height: 0.8rem;
     }
   }
 

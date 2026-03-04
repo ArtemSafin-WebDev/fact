@@ -6,11 +6,9 @@
     @include utils.blockWrapper;
     padding-block: 8rem;
     background-color: #eaeaea;
-    margin-bottom: 8rem;
 
     @include media.breakpoint(mobile) {
       padding-block: 6rem;
-      margin-bottom: 6rem;
     }
   }
 

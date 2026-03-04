@@ -29,20 +29,23 @@
             <div class="catalog-doctors-hero__controls">
                 <div class="catalog-doctors-hero__inputs">
                     <label class="catalog-doctors-hero__search">
-                        <input type="search" name="doctor-name" placeholder="Введите ФИО врача" aria-label="Поиск врача по имени">
+                        <input type="search" name="doctor-name" placeholder="Введите ФИО врача"
+                            aria-label="Поиск врача по имени">
                     </label>
 
-                    <div class="select catalog-doctors-hero__select js-select" data-placeholder="Выберите специальность">
+                    <div class="select catalog-doctors-hero__select js-select"
+                        data-placeholder="Выберите специальность">
                         <button class="select__btn" type="button" aria-label="Выберите специальность">
                             <span class="select__btn-text js-btn-text">Выберите специальность</span>
                             <svg class="select__btn-arrow" width="12" height="8" aria-hidden="true">
-                                <use xlink:href="#arrow-down"></use>
+                                <use xlink:href="#select-arrow"></use>
                             </svg>
                         </button>
                         <div class="select__dropdown">
                             {{#each catalogDoctors.specialties}}
                             <label class="select__option">
-                                <input type="radio" name="doctor-specialty" value="{{value}}" {{#if checked}}checked{{/if}}>
+                                <input type="radio" name="doctor-specialty" value="{{value}}" {{#if
+                                    checked}}checked{{/if}}>
                                 <span>{{title}}</span>
                             </label>
                             {{/each}}
@@ -51,7 +54,11 @@
                 </div>
 
                 <button class="catalog-doctors-hero__reset" type="reset">
-                    <span class="catalog-doctors-hero__reset-icon" aria-hidden="true"></span>
+                    <span class="catalog-doctors-hero__reset-icon" aria-hidden="true">
+                        <svg width="14" height="14" aria-hidden="true">
+                            <use xlink:href="#clear-filter"></use>
+                        </svg>
+                    </span>
                     Сбросить фильтр
                 </button>
             </div>
