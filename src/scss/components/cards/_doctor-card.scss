@@ -6,26 +6,30 @@
     display: flex;
     flex-direction: column;
     background-color: #fff;
-    flex-grow: 1;
+    height: 100%;
     color: #222222;
   }
 
   .doctor-card__image-container {
-    aspect-ratio: 438 / 328;
+    aspect-ratio: 1 / 1;
     position: relative;
     overflow: hidden;
     color: #222;
 
     @include media.breakpoint(mobile) {
-      aspect-ratio: 187 / 214;
+      aspect-ratio: 1 / 1;
     }
 
-    & > img {
+    picture,
+    img {
       position: absolute;
       left: 0;
       top: 0;
       width: 100%;
       height: 100%;
+    }
+
+    img {
       object-fit: cover;
     }
   }
@@ -37,10 +41,31 @@
     z-index: 5;
     display: flex;
     flex-direction: column;
+    justify-content: flex-end;
+    pointer-events: none;
+
+    &::after {
+      content: "";
+      width: 6rem;
+      aspect-ratio: 1 / 1;
+      background-image: url("/images/doctor-award.svg");
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+      flex-shrink: 0;
+    }
 
     @include media.breakpoint(mobile) {
       padding: 1.6rem;
+
+      &::after {
+        width: 4rem;
+      }
     }
+  }
+
+  .doctor-card__info-items {
+    display: none;
   }
 
   .doctor-card__info-item {
@@ -88,12 +113,13 @@
     display: flex;
     flex-direction: column;
     flex-grow: 1;
+    background-color: #f6f6f6;
     padding: 4rem;
     gap: 4rem;
 
     @include media.breakpoint(mobile) {
-      padding: 1.6rem;
-      gap: 1.5rem;
+      padding: 2rem 1.6rem;
+      gap: 2rem;
     }
   }
 
@@ -106,26 +132,22 @@
     text-transform: uppercase;
     width: min-content;
     color: #222;
+
     @include media.breakpoint(mobile) {
       font-size: 1.5rem;
-      font-style: normal;
-      font-weight: 900;
-      line-height: 100%;
       letter-spacing: -0.015rem;
-      text-transform: uppercase;
     }
   }
 
   .doctor-card__position {
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     font-style: normal;
     font-weight: 400;
     line-height: 140%;
     color: #111;
+
     @include media.breakpoint(mobile) {
       font-size: 1.2rem;
-      font-style: normal;
-      font-weight: 400;
       line-height: 140%;
     }
   }
@@ -133,30 +155,9 @@
   .doctor-card__btn {
     align-self: stretch;
     margin-top: auto;
-
-    @include media.breakpoint(mobile) {
-      font-size: 0.88rem;
-      font-style: normal;
-      font-weight: 900;
-      line-height: 100%;
-      padding: 1.4rem;
-    }
   }
 
   .doctor-card__award {
-    margin-top: auto;
-    width: 6rem;
-    height: 6rem;
-    @include media.breakpoint(mobile) {
-      width: 4rem;
-      height: 4rem;
-    }
-
-    img {
-      display: block;
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
-    }
+    display: none;
   }
 }

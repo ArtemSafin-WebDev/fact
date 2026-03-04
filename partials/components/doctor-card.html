@@ -1,0 +1,37 @@
+<a href="{{#if href}}{{href}}{{else}}#{{/if}}" class="doctor-card">
+    <div class="doctor-card__image-container">
+        <picture>
+            {{#if imageMobile}}
+            <source srcset="{{imageMobile}}" media="(width <= 640px)" />
+            {{/if}}
+            <img src="{{imageDesktop}}" alt="{{imageAlt}}">
+        </picture>
+        <div class="doctor-card__info">
+            <div class="doctor-card__info-items">
+                {{#each infoItems}}
+                <div class="doctor-card__info-item">
+                    <div class="doctor-card__info-item-key">
+                        {{key}}
+                    </div>
+                    <div class="doctor-card__info-item-value">
+                        {{value}}
+                    </div>
+                </div>
+                {{/each}}
+            </div>
+        </div>
+    </div>
+    <div class="doctor-card__content">
+        <h3 class="doctor-card__name">
+            {{name}}
+        </h3>
+        <div class="doctor-card__position">
+            {{#each positionLines}}
+            {{this}}{{#unless @last}}<br>{{/unless}}
+            {{/each}}
+        </div>
+        <div class="btn btn--green doctor-card__btn">
+            {{#if buttonText}}{{buttonText}}{{else}}Записаться{{/if}}
+        </div>
+    </div>
+</a>

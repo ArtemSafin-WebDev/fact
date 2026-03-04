@@ -27,11 +27,11 @@ export default function doctors() {
       }
 
       const container = tabsItems[index]?.querySelector<HTMLElement>(".swiper");
-      console.log("Container");
       if (!container) return;
       instance = new Swiper(container, {
         speed: 600,
         slidesPerView: "auto",
+        watchOverflow: true,
         modules: [Navigation],
         navigation: {
           prevEl: element.querySelector<HTMLButtonElement>(
