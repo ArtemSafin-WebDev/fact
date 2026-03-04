@@ -271,28 +271,19 @@
 
   .page-footer__contacts {
     grid-column: 8 / -1;
-    min-height: 24.8rem;
+
     align-self: start;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-
-    @include media.breakpoint(laptop) {
-      grid-column: 3 / -1;
-      min-height: 0;
-      gap: 3.2rem;
-    }
-
-    @include media.breakpoint(small-tablet) {
-      grid-column: 1 / -1;
-    }
+    gap: 3rem;
   }
 
   .page-footer__contacts-card {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    gap: 2rem;
+    gap: 1.2rem;
   }
 
   .page-footer__contacts-card-key {
