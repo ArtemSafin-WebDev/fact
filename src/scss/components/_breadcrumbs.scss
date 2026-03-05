@@ -50,6 +50,10 @@
       font-weight: 900;
     }
 
+    .breadcrumbs__item:not(.is-current) &:hover {
+      color: var(--green-300);
+    }
+
     @include media.breakpoint(mobile) {
       font-size: 1.3rem;
       letter-spacing: normal;

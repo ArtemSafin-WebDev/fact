@@ -262,7 +262,7 @@ const home = {
         cards: [
           {
             href: "#",
-            modClass: "doctor-details__article-card doctor-details__article-card--text",
+            modClass: "doctor-details__article-card",
             tag: "# методическое пособие",
             title:
               "методическое пособие: применение антиоксидантов при отслойке сетчатки у детей",
@@ -271,7 +271,8 @@ const home = {
           },
           {
             href: "#",
-            modClass: "doctor-details__article-card doctor-details__article-card--media",
+            modClass:
+              "doctor-details__article-card doctor-details__article-card--media",
             isMedia: true,
             imageDesktop: "/images/doctor-detail/article-main.webp",
             imageAlt: "Работа офтальмологического оборудования",
@@ -279,7 +280,7 @@ const home = {
           },
           {
             href: "#",
-            modClass: "doctor-details__article-card doctor-details__article-card--text",
+            modClass: "doctor-details__article-card",
             tag: "# методическое пособие",
             title:
               "методическое пособие: применение антиоксидантов при отслойке сетчатки у детей",

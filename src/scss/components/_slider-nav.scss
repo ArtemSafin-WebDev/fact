@@ -4,6 +4,10 @@
 @layer components {
   .slider-nav {
     display: flex;
+
+    &:has(.swiper-button-lock) {
+      display: none;
+    }
   }
 
   .slider-nav__arrow {

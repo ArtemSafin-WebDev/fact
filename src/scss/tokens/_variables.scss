@@ -2,7 +2,7 @@
 
 @layer tokens {
   :root {
-    --primary-color: #418dd9;
+    --primary-color: var(--green-300);
     --text-color: #161616;
     --green-300: #4ee928;
     --green-200: #74ee55;
