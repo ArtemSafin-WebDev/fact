@@ -43,12 +43,6 @@
     justify-content: space-between;
     gap: 4rem;
 
-    @include media.breakpoint(small-tablet) {
-      gap: 2.4rem;
-      align-items: stretch;
-      flex-direction: column;
-    }
-
     @include media.breakpoint(mobile) {
       margin-top: 4rem;
       gap: 2rem;
@@ -133,14 +127,6 @@
       box-sizing: border-box;
       width: calc((100% - 3px) / 4);
       border-right: 1px solid #dcdcdc;
-
-      @include media.breakpoint(laptop) {
-        width: calc((100% - 2px) / 3);
-      }
-
-      @include media.breakpoint(tablet) {
-        width: calc((100% - 1px) / 2);
-      }
 
       @include media.breakpoint(mobile) {
         width: 18.7rem;

@@ -16,10 +16,6 @@
     display: grid;
     grid-template-columns: repeat(8, minmax(0, 1fr));
 
-    @include media.breakpoint(tablet) {
-      grid-template-columns: minmax(0, 1fr);
-      row-gap: 4rem;
-    }
   }
 
   .service__left {
@@ -28,9 +24,6 @@
     justify-content: space-between;
     grid-column: 1 / 4;
 
-    @include media.breakpoint(tablet) {
-      gap: 4rem;
-    }
   }
 
   .service__top {
@@ -63,10 +56,6 @@
     width: 100%;
     min-height: 6rem;
     padding: 1.6rem 2rem;
-
-    @include media.breakpoint(tablet) {
-      max-width: 44rem;
-    }
 
     @include media.breakpoint(mobile) {
       max-width: none;

@@ -15,8 +15,8 @@
     @include utils.blockContent;
     display: flex;
     flex-direction: column;
+    gap: 2.9rem;
     padding: 2.4rem 0;
-    gap: 3rem;
 
     @include media.breakpoint(mobile) {
       padding: 1.8rem 0;
@@ -25,6 +25,7 @@
       gap: 2rem;
       grid-template-areas: "phone schedule" "divider divider" "logo btns";
       align-items: center;
+
       &::before {
         content: "";
         height: 1px;
@@ -37,7 +38,7 @@
   .page-header__top {
     display: grid;
     grid-template-columns: repeat(4, minmax(0, 1fr));
-    align-items: center;
+    align-items: start;
 
     @include media.breakpoint(mobile) {
       display: contents;
@@ -46,6 +47,7 @@
 
   .page-header__btns {
     display: contents;
+
     @include media.breakpoint(mobile) {
       display: flex;
       align-items: center;
@@ -57,6 +59,7 @@
 
   .page-header__burger {
     display: none;
+
     @include media.breakpoint(mobile) {
       display: grid;
       place-items: center;
@@ -76,9 +79,10 @@
   }
 
   .page-header__version {
-    display: flex;
+    display: inline-flex;
     align-items: center;
-    gap: 1.6rem;
+    gap: 3.6rem;
+    width: max-content;
     font-size: 1.5rem;
     font-style: normal;
     font-weight: 400;
@@ -88,8 +92,8 @@
     svg {
       flex-shrink: 0;
       fill: currentColor;
-      width: 1.7208rem;
-      height: 1.0791rem;
+      width: 2rem;
+      height: 1.2rem;
     }
 
     @media (hover: hover) and (pointer: fine) {
@@ -118,12 +122,15 @@
 
   .page-header__schedule {
     grid-column: 2 / 3;
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
     font-size: 1.5rem;
     font-style: normal;
     font-weight: 400;
     line-height: 100%;
+    max-width: 30rem;
 
     @include media.breakpoint(mobile) {
       all: revert;
@@ -175,14 +182,22 @@
     grid-template-columns: repeat(4, minmax(0, 1fr));
     align-items: center;
 
+    @include media.breakpoint(laptop) {
+      display: grid;
+      grid-template-columns:
+        minmax(14rem, 18rem) minmax(22rem, 30.1rem) minmax(0, 1fr)
+        auto;
+      gap: 2rem;
+    }
+
     @include media.breakpoint(mobile) {
       display: contents;
     }
   }
 
   .page-header__logo {
+    flex-shrink: 0;
     grid-column: 1 / 2;
-    justify-self: flex-start;
 
     @include media.breakpoint(mobile) {
       grid-area: logo;
@@ -199,11 +214,21 @@
     }
   }
 
+  .page-header__bottom-wrapper {
+    grid-column: 2 / -1;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.6rem;
+  }
+
   .page-header__services-link {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-right: 4rem;
+    flex-shrink: 0;
+    width: 30rem;
+
     font-size: 1.5rem;
     font-style: normal;
     font-weight: 900;
@@ -213,10 +238,15 @@
     background-color: var(--green-300);
     color: var(--text-color);
     gap: 1.6rem;
-    grid-column: 2 / 3;
     transition:
       background-color 0.2s,
       color 0.2s;
+
+    @include media.breakpoint(laptop) {
+      width: 100%;
+      margin-left: 0;
+      min-width: 22rem;
+    }
 
     &::after {
       content: "";
@@ -244,10 +274,17 @@
   }
 
   .page-header__wrapper {
-    grid-column: 3 / -1;
+    margin-left: 5.8rem;
+    min-width: 0;
+    flex: 1;
     display: flex;
     align-items: center;
-    gap: 4rem;
+    justify-content: space-between;
+
+    @include media.breakpoint(laptop) {
+      margin-left: 0;
+      gap: 2rem;
+    }
 
     @include media.breakpoint(mobile) {
       display: none;
@@ -255,18 +292,22 @@
   }
 
   .page-header__nav {
-    width: 30%;
-    flex-grow: 1;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 4rem;
+    flex-shrink: 0;
+
+    @include media.breakpoint(laptop) {
+      width: auto;
+      flex: 1;
+    }
   }
 
   .page-header__nav-list {
     display: flex;
     align-items: center;
     gap: 2rem;
+
+    @include media.breakpoint(laptop) {
+      gap: 1.2rem;
+    }
   }
 
   .page-header__nav-link {
@@ -276,6 +317,11 @@
     font-weight: 900;
     line-height: 100%;
     text-transform: uppercase;
+    white-space: nowrap;
+
+    @include media.breakpoint(laptop) {
+      font-size: 1.3rem;
+    }
 
     @media (hover: hover) and (pointer: fine) {
       &:hover {
@@ -285,29 +331,35 @@
   }
 
   .page-header__right-wrapper {
+    flex-shrink: 0;
     display: flex;
     gap: 1px;
+
+    @include media.breakpoint(laptop) {
+      width: auto;
+    }
   }
 
   .page-header__social-list {
-    display: flex;
-    align-items: center;
+    flex-shrink: 0;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 1px;
   }
 
   .page-header__social-link {
+    width: 6rem;
     height: 6rem;
-    aspect-ratio: 1 / 1;
     display: grid;
     place-items: center;
     background-color: var(--text-color);
     transition: background-color 0.2s;
 
     svg {
-      width: 2.4rem;
-      height: 2.4rem;
       fill: white;
       transition: fill 0.2s;
+      width: 2.4rem;
+      height: 2.4rem;
     }
 
     @media (hover: hover) and (pointer: fine) {
@@ -318,21 +370,10 @@
   }
 
   .page-header__callback-btn {
-    display: block;
-    text-align: center;
-    font-size: 1.5rem;
-    font-style: normal;
-    font-weight: 900;
-    line-height: 100%;
-    text-transform: uppercase;
-    background-color: var(--green-300);
-    color: var(--text-color);
-    transition:
-      color 0.2s,
-      background-color 0.2s;
-    padding: 2rem 2rem;
-    display: grid;
-    place-items: center;
+    @include media.breakpoint(laptop) {
+      width: auto;
+      min-width: 18rem;
+    }
 
     &:link,
     &:visited {
