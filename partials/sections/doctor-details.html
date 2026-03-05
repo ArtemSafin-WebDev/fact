@@ -1,0 +1,265 @@
+<section class="doctor-details">
+    <div class="doctor-details__content">
+        {{> components/breadcrumbs items=doctorDetails.breadcrumbs}}
+
+        <div class="doctor-details__top">
+            <div class="doctor-details__media-column">
+                <div class="doctor-details__photo">
+                    <picture>
+                        {{#if doctorDetails.photoMobile}}
+                        <source srcset="{{doctorDetails.photoMobile}}" media="(width <= 640px)" />
+                        {{/if}}
+                        <img src="{{doctorDetails.photoDesktop}}" alt="{{doctorDetails.photoAlt}}">
+                    </picture>
+                    <button class="doctor-details__video-btn" type="button" aria-label="Смотреть видео о враче">
+                        <svg width="28" height="28" aria-hidden="true">
+                            <use xlink:href="#play"></use>
+                        </svg>
+                    </button>
+                </div>
+                <a href="{{doctorDetails.cta.href}}" class="btn btn--green doctor-details__cta">
+                    {{doctorDetails.cta.text}}
+                </a>
+            </div>
+
+            <div class="doctor-details__info-column">
+                <div class="doctor-details__meta-row">
+                    <div class="doctor-details__clinics">
+                        {{#each doctorDetails.clinics}}
+                        <div class="doctor-details__clinic{{#if active}} is-active{{/if}}">
+                            <svg width="12" height="16" aria-hidden="true">
+                                <use xlink:href="#location"></use>
+                            </svg>
+                            {{title}}
+                        </div>
+                        {{/each}}
+                    </div>
+                    <div class="doctor-details__rating">
+                        <img src="{{doctorDetails.rating.logo}}" alt="Рейтинг врача на Продокторов">
+                        <svg width="20" height="20" aria-hidden="true">
+                            <use xlink:href="#star"></use>
+                        </svg>
+                        <span>{{doctorDetails.rating.value}}</span>
+                    </div>
+                </div>
+
+                <div class="doctor-details__name-block">
+                    <div class="doctor-details__award" aria-hidden="true"></div>
+                    <h1 class="doctor-details__name">
+                        {{#each doctorDetails.nameLines}}
+                        <span>{{this}}</span>
+                        {{/each}}
+                    </h1>
+                </div>
+
+                <p class="doctor-details__position">
+                    {{doctorDetails.position}}
+                </p>
+
+                <div class="doctor-details__achievements">
+                    {{#each doctorDetails.achievements}}
+                    <p>{{this}}</p>
+                    {{/each}}
+                </div>
+
+                <div class="doctor-details__stats">
+                    {{#each doctorDetails.stats}}
+                    <div class="doctor-details__stat">
+                        <div class="doctor-details__stat-label">{{label}}</div>
+                        <div class="doctor-details__stat-value">{{value}}</div>
+                    </div>
+                    {{/each}}
+                </div>
+
+                <div class="doctor-details__info-block doctor-details__info-block--services">
+                    <h2 class="doctor-details__block-title">{{doctorDetails.servicesTitle}}</h2>
+                    <ul class="doctor-details__services-list">
+                        {{#each doctorDetails.services}}
+                        <li class="doctor-details__services-item">
+                            <a href="{{href}}">{{title}}</a>
+                        </li>
+                        {{/each}}
+                    </ul>
+                </div>
+
+                <div class="doctor-details__info-block" data-doctor-foldable>
+                    <h2 class="doctor-details__block-title">{{doctorDetails.specialization.title}}</h2>
+                    <ul class="doctor-details__bullet-list">
+                        {{#each doctorDetails.specialization.items}}
+                        <li class="doctor-details__bullet-item" {{#if hidden}}data-doctor-hidden hidden{{/if}}>{{text}}</li>
+                        {{/each}}
+                    </ul>
+                    <button class="doctor-details__toggle" type="button" data-doctor-toggle
+                        data-default-text="Показать полностью" data-expanded-text="Скрыть" aria-expanded="false">
+                        Показать полностью
+                    </button>
+                </div>
+
+                <div class="doctor-details__info-block" data-doctor-foldable>
+                    <h2 class="doctor-details__block-title">{{doctorDetails.education.title}}</h2>
+                    <ul class="doctor-details__plain-list">
+                        {{#each doctorDetails.education.items}}
+                        <li class="doctor-details__plain-item" {{#if hidden}}data-doctor-hidden hidden{{/if}}>{{text}}</li>
+                        {{/each}}
+                    </ul>
+                    <button class="doctor-details__toggle" type="button" data-doctor-toggle
+                        data-default-text="Показать полностью" data-expanded-text="Скрыть" aria-expanded="false">
+                        Показать полностью
+                    </button>
+                </div>
+
+                <div class="doctor-details__info-block" data-doctor-foldable>
+                    <h2 class="doctor-details__block-title">{{doctorDetails.experience.title}}</h2>
+                    <ul class="doctor-details__plain-list">
+                        {{#each doctorDetails.experience.items}}
+                        <li class="doctor-details__plain-item" {{#if hidden}}data-doctor-hidden hidden{{/if}}>{{text}}</li>
+                        {{/each}}
+                    </ul>
+                    <button class="doctor-details__toggle" type="button" data-doctor-toggle
+                        data-default-text="Показать полностью" data-expanded-text="Скрыть" aria-expanded="false">
+                        Показать полностью
+                    </button>
+                </div>
+
+                <div class="doctor-details__info-block" data-doctor-foldable>
+                    <h2 class="doctor-details__block-title">{{doctorDetails.papers.title}}</h2>
+                    <ul class="doctor-details__bullet-list doctor-details__bullet-list--long">
+                        {{#each doctorDetails.papers.items}}
+                        <li class="doctor-details__bullet-item" {{#if hidden}}data-doctor-hidden hidden{{/if}}>{{text}}</li>
+                        {{/each}}
+                    </ul>
+                    <button class="doctor-details__toggle" type="button" data-doctor-toggle
+                        data-default-text="Показать полностью" data-expanded-text="Скрыть" aria-expanded="false">
+                        Показать полностью
+                    </button>
+                </div>
+
+                <div class="doctor-details__info-block doctor-details__info-block--licenses">
+                    <h2 class="doctor-details__block-title">{{doctorDetails.licenses.title}}</h2>
+                    <div class="doctor-details__licenses-grid">
+                        {{#each doctorDetails.licenses.items}}
+                        <a href="{{src}}" class="license-card" data-fancybox="doctor-licenses">
+                            <span class="license-card__media">
+                                <img src="{{src}}" alt="{{alt}}">
+                            </span>
+                        </a>
+                        {{/each}}
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="doctor-details__articles">
+            <div class="doctor-details__section-head">
+                <h2 class="doctor-details__section-title">{{doctorDetails.articles.title}}</h2>
+                <div class="slider-nav doctor-details__slider-nav">
+                    <button class="slider-nav__arrow slider-nav__arrow--prev" type="button" aria-label="Предыдущая статья">
+                        <svg width="14" height="14" aria-hidden="true">
+                            <use xlink:href="#arrow-left"></use>
+                        </svg>
+                    </button>
+                    <button class="slider-nav__arrow slider-nav__arrow--next" type="button" aria-label="Следующая статья">
+                        <svg width="14" height="14" aria-hidden="true">
+                            <use xlink:href="#arrow-right"></use>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+            <div class="doctor-details__articles-slider">
+                <div class="swiper">
+                    <div class="swiper-wrapper">
+                        {{#each doctorDetails.articles.cards}}
+                        <div class="swiper-slide">
+                            {{> components/blog-card }}
+                        </div>
+                        {{/each}}
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="doctor-details__reviews">
+            <div class="doctor-details__section-head">
+                <h2 class="doctor-details__section-title">{{doctorDetails.reviews.title}}</h2>
+                <div class="slider-nav doctor-details__slider-nav">
+                    <button class="slider-nav__arrow slider-nav__arrow--prev" type="button" aria-label="Предыдущий отзыв">
+                        <svg width="14" height="14" aria-hidden="true">
+                            <use xlink:href="#arrow-left"></use>
+                        </svg>
+                    </button>
+                    <button class="slider-nav__arrow slider-nav__arrow--next" type="button" aria-label="Следующий отзыв">
+                        <svg width="14" height="14" aria-hidden="true">
+                            <use xlink:href="#arrow-right"></use>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+            <div class="doctor-details__reviews-slider">
+                <div class="swiper">
+                    <div class="swiper-wrapper">
+                        {{#each doctorDetails.reviews.cards}}
+                        <div class="swiper-slide">
+                            <article class="doctor-details__review-card">
+                                <div class="doctor-details__review-head">
+                                    <div>
+                                        <h3 class="doctor-details__review-name">{{name}}</h3>
+                                        <div class="doctor-details__review-date">{{date}}</div>
+                                    </div>
+                                    <div class="doctor-details__review-stars" aria-label="5 из 5">
+                                        <svg width="14" height="14" aria-hidden="true">
+                                            <use xlink:href="#star"></use>
+                                        </svg>
+                                        <svg width="14" height="14" aria-hidden="true">
+                                            <use xlink:href="#star"></use>
+                                        </svg>
+                                        <svg width="14" height="14" aria-hidden="true">
+                                            <use xlink:href="#star"></use>
+                                        </svg>
+                                        <svg width="14" height="14" aria-hidden="true">
+                                            <use xlink:href="#star"></use>
+                                        </svg>
+                                        <svg width="14" height="14" aria-hidden="true">
+                                            <use xlink:href="#star"></use>
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div class="doctor-details__review-text">{{text}}</div>
+                                <a href="{{href}}" class="large-btn doctor-details__review-btn">{{buttonText}}</a>
+                            </article>
+                        </div>
+                        {{/each}}
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="doctor-details__colleagues">
+            <div class="doctor-details__section-head">
+                <h2 class="doctor-details__section-title">{{doctorDetails.colleagues.title}}</h2>
+                <div class="slider-nav doctor-details__slider-nav">
+                    <button class="slider-nav__arrow slider-nav__arrow--prev" type="button" aria-label="Предыдущий врач">
+                        <svg width="14" height="14" aria-hidden="true">
+                            <use xlink:href="#arrow-left"></use>
+                        </svg>
+                    </button>
+                    <button class="slider-nav__arrow slider-nav__arrow--next" type="button" aria-label="Следующий врач">
+                        <svg width="14" height="14" aria-hidden="true">
+                            <use xlink:href="#arrow-right"></use>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+            <div class="doctor-details__colleagues-slider">
+                <div class="swiper">
+                    <div class="swiper-wrapper">
+                        {{#each doctorDetails.colleagues.cards}}
+                        <div class="swiper-slide">
+                            {{> components/doctor-card }}
+                        </div>
+                        {{/each}}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

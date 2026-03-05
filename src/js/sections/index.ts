@@ -6,8 +6,10 @@ import patients from "./patients";
 import promo from "./promo";
 import clinic from "./clinic";
 import licenses from "./licenses";
+import doctorDetails from "./doctorDetails";
 
 export default function sections() {
+  doctorDetails();
   intro();
   doctors();
   equipment();
