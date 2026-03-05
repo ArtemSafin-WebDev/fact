@@ -4,7 +4,7 @@
 
         <div class="doctor-details__top">
             <div class="doctor-details__media-column">
-                <div class="doctor-details__photo">
+                <a href="#" class="doctor-details__photo">
                     <picture>
                         {{#if doctorDetails.photoMobile}}
                         <source srcset="{{doctorDetails.photoMobile}}" media="(width <= 640px)" />
@@ -16,7 +16,7 @@
                             <use xlink:href="#play"></use>
                         </svg>
                     </button>
-                </div>
+                </a>
                 <a href="{{doctorDetails.cta.href}}" class="btn btn--green doctor-details__cta">
                     {{doctorDetails.cta.text}}
                 </a>

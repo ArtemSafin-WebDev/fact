@@ -230,6 +230,7 @@
   .clinic-services__show-more {
     align-self: center;
     margin-top: 8rem;
+    width: 44rem;
 
     @include media.breakpoint(mobile) {
       align-self: stretch;

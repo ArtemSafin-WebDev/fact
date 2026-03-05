@@ -101,8 +101,14 @@
       box-sizing: border-box;
       width: 25%;
       border-right: 1px solid #f3f3f3;
+      transition: border-color 0.2s;
+
+      &:nth-last-child(1 of .swiper-slide-visible) {
+        border-color: transparent;
+      }
+
       &:last-child {
-        border-right: none;
+        border-color: transparent;
       }
 
       @include media.breakpoint(mobile) {
@@ -232,16 +238,30 @@
       height: auto;
       box-sizing: border-box;
       width: 25%;
-      transition: opacity 0.4s;
+      transition:
+        opacity 0.4s,
+        border-color 0.2s;
       border-right: 1px solid #dcdcdc;
+
+      transition:
+        border-color 0.2s,
+        opacity 0.4s;
+
+      &:nth-last-child(1 of .swiper-slide-visible) {
+        border-color: transparent;
+      }
+
+      &:last-child {
+        border-color: transparent;
+      }
 
       &:not(.swiper-slide-visible) {
         opacity: 0.3;
       }
 
-      &:last-child {
-        border-right: none;
-      }
+      // &:last-child {
+      //   border-right: none;
+      // }
 
       @include media.breakpoint(mobile) {
         width: 18.7rem;
