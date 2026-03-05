@@ -439,11 +439,16 @@
 
   .doctor-details__reviews-slider {
     .swiper-slide {
-      width: calc((100% - 3px) / 4);
       border-right: 1px solid #cbcbcb;
+      width: 25%;
+      transition: border-color 0.2s;
+
+      &:nth-last-child(1 of .swiper-slide-visible) {
+        border-color: white;
+      }
 
       &:last-child {
-        border-right: none;
+        border-color: white;
       }
     }
   }

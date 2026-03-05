@@ -5,7 +5,7 @@
   .doctors {
     @include utils.blockWrapper;
     padding-top: 8rem;
-    padding-bottom: 8rem;
+    padding-bottom: 6rem;
     background-color: #eaeaea;
 
     @include media.breakpoint(mobile) {
@@ -125,15 +125,19 @@
       flex-direction: column;
       height: auto;
       box-sizing: border-box;
-      width: calc((100% - 3px) / 4);
-      border-right: 1px solid #dcdcdc;
+      width: 25%;
+      border-right: 1px solid #eaeaea;
 
-      @include media.breakpoint(mobile) {
-        width: 18.7rem;
-        border-right: none;
+      &:nth-last-child(1 of .swiper-slide-visible) {
+        border-color: transparent;
       }
 
       &:last-child {
+        border-color: transparent;
+      }
+
+      @include media.breakpoint(mobile) {
+        width: 18.7rem;
         border-right: none;
       }
     }

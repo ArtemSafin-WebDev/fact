@@ -4,7 +4,8 @@
 @layer sections {
   .help {
     @include utils.blockWrapper;
-    padding-block: 8rem;
+    padding-bottom: 8rem;
+    padding-top: 6rem;
     background-color: #eaeaea;
 
     @include media.breakpoint(mobile) {
@@ -43,7 +44,7 @@
   .help__list {
     display: grid;
     grid-template-columns: repeat(4, minmax(0, 1fr));
-    margin-top: 13.2rem;
+    margin-top: 8rem;
     @include media.breakpoint(mobile) {
       grid-template-columns: repeat(2, minmax(0, 1fr));
       margin-top: 4rem;

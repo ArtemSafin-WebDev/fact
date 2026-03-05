@@ -33,6 +33,7 @@ export default function doctors() {
         slidesPerView: "auto",
         watchOverflow: true,
         modules: [Navigation],
+        watchSlidesProgress: true,
         navigation: {
           prevEl: element.querySelector<HTMLButtonElement>(
             ".slider-nav__arrow--prev",

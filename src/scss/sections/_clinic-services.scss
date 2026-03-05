@@ -25,11 +25,12 @@
     text-transform: uppercase;
     font-weight: 900;
     line-height: 100%;
+    color: #161616;
   }
 
   .clinic-services__subtitle {
     text-align: center;
-    margin-top: 10rem;
+    margin-top: 7rem;
     font-size: 4.5rem;
     font-style: normal;
     font-weight: 900;
@@ -37,8 +38,9 @@
     letter-spacing: -0.045rem;
     text-transform: uppercase;
     color: #222;
-    max-width: 50ch;
+
     align-self: center;
+    text-wrap: balance;
 
     @include media.breakpoint(mobile) {
       font-size: 1.8rem;
@@ -52,7 +54,7 @@
   }
 
   .clinic-services__slider {
-    margin-top: 10rem;
+    margin-top: 8rem;
 
     @include media.breakpoint(mobile) {
       margin-top: 4rem;
@@ -91,7 +93,7 @@
   .clinic-services__list {
     margin-top: 3.2rem;
     display: grid;
-    grid-template-columns: auto 1fr 1.4fr auto;
+    grid-template-columns: auto 1fr 1.23fr auto;
 
     @include media.breakpoint(mobile) {
       margin-top: 0;

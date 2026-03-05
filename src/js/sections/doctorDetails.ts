@@ -13,9 +13,14 @@ function initSlider(root: HTMLElement, selector: string) {
     slidesPerView: "auto",
     watchOverflow: true,
     modules: [Navigation],
+    watchSlidesProgress: true,
     navigation: {
-      prevEl: section.querySelector<HTMLButtonElement>(".slider-nav__arrow--prev"),
-      nextEl: section.querySelector<HTMLButtonElement>(".slider-nav__arrow--next"),
+      prevEl: section.querySelector<HTMLButtonElement>(
+        ".slider-nav__arrow--prev",
+      ),
+      nextEl: section.querySelector<HTMLButtonElement>(
+        ".slider-nav__arrow--next",
+      ),
     },
   });
 }
@@ -26,7 +31,9 @@ function initFoldableBlocks(root: HTMLElement) {
   );
 
   blocks.forEach((block) => {
-    const toggle = block.querySelector<HTMLButtonElement>("[data-doctor-toggle]");
+    const toggle = block.querySelector<HTMLButtonElement>(
+      "[data-doctor-toggle]",
+    );
     const hiddenItems = Array.from(
       block.querySelectorAll<HTMLElement>("[data-doctor-hidden]"),
     );
