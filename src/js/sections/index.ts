@@ -8,6 +8,7 @@ import clinic from "./clinic";
 import licenses from "./licenses";
 import doctorDetails from "./doctorDetails";
 import blog from "./blog";
+import aboutClinic from "./aboutClinic";
 
 export default function sections() {
   doctorDetails();
@@ -19,5 +20,6 @@ export default function sections() {
   promo();
   blog();
   clinic();
+  aboutClinic();
   licenses();
 }

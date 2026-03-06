@@ -8,6 +8,7 @@
     margin-bottom: 12rem;
 
     @include media.breakpoint(mobile) {
+      padding-top: 6rem;
       margin-bottom: 4rem;
     }
   }
@@ -33,6 +34,12 @@
     font-weight: 900;
     line-height: 100%;
     grid-area: stack;
+
+    @include media.breakpoint(mobile) {
+      font-size: 12.4cqw;
+      text-align: left;
+      white-space: nowrap;
+    }
   }
 
   .about-clinic__circle {
@@ -56,7 +63,7 @@
 
     @include media.breakpoint(mobile) {
       width: 10rem;
-      margin-top: 2.8rem;
+      margin-top: 2.7rem;
       font-size: 1.2rem;
       font-style: normal;
       font-weight: 900;
@@ -79,13 +86,59 @@
     max-width: 109.2rem;
     align-self: center;
     @include media.breakpoint(mobile) {
-      font-size: 1.8rem;
+      text-wrap: initial;
+      align-self: flex-start;
+      font-size: 1.6rem;
       font-style: normal;
       font-weight: 900;
       line-height: 100%;
-      letter-spacing: -0.018rem;
+      letter-spacing: -0.016rem;
       text-transform: uppercase;
-      margin-top: 4rem;
+      margin-top: 3.5rem;
+      text-align: left;
+      max-width: none;
+    }
+  }
+
+  .about-clinic__subheading-mobile-break {
+    display: none;
+
+    @include media.breakpoint(mobile) {
+      display: block;
+    }
+  }
+
+  .about-clinic__controls {
+    display: none;
+
+    @include media.breakpoint(mobile) {
+      margin-top: 3.9rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.6rem;
+    }
+  }
+
+  .about-clinic__slider-nav {
+    .slider-nav__arrow {
+      background-color: transparent;
+      border-color: #d3d3d3;
+    }
+
+    .slider-nav__arrow svg {
+      fill: #161616;
+    }
+
+    .slider-nav__arrow.swiper-button-disabled {
+      border-color: #d3d3d3;
+    }
+  }
+
+  .about-clinic__slider {
+    @include media.breakpoint(mobile) {
+      margin-top: 2rem;
+      overflow: visible;
     }
   }
 
@@ -100,15 +153,28 @@
     z-index: 10;
     margin-bottom: -8rem;
     @include media.breakpoint(mobile) {
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      margin-top: 4rem;
-      margin-bottom: -6rem;
+      display: flex;
+      gap: 0;
+      padding: 0;
+      background: transparent;
+      margin-top: 0;
+      margin-bottom: 0;
+      z-index: 2;
     }
   }
 
   .about-clinic__list-item {
     display: flex;
     flex-direction: column;
+
+    @include media.breakpoint(mobile) {
+      width: 34.2rem;
+      border: 1px solid #d3d3d3;
+      border-right: none;
+      &:last-child {
+        border-right: 1px solid #d3d3d3;
+      }
+    }
   }
 
   .about-clinic__card {
@@ -123,9 +189,12 @@
     flex-grow: 1;
     padding: 4rem;
     @include media.breakpoint(mobile) {
-      padding: 1.4rem 1rem;
-      aspect-ratio: 172 / 220;
-      grid-template-rows: 1fr auto 2fr;
+      padding: 2rem;
+      aspect-ratio: auto;
+      height: 17.5rem;
+
+      gap: 1.2rem;
+      grid-template-rows: auto auto 1fr;
     }
   }
 
@@ -167,11 +236,11 @@
     max-width: 35.825rem;
 
     @include media.breakpoint(mobile) {
-      font-size: 1.3rem;
+      font-size: 1.6rem;
       font-style: normal;
       font-weight: 900;
       line-height: 100%;
-      letter-spacing: -0.013rem;
+      letter-spacing: -0.016rem;
       text-transform: uppercase;
       max-width: 100%;
     }
@@ -188,8 +257,12 @@
 
     @include media.breakpoint(mobile) {
       max-width: 100%;
-      font-size: 1rem;
+      font-size: 1.4rem;
       line-height: 120%;
+      display: -webkit-box;
+      -webkit-line-clamp: 4;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
     }
   }
 
@@ -205,6 +278,7 @@
 
     @include media.breakpoint(mobile) {
       aspect-ratio: 375 / 500;
+      margin-top: -9.1rem;
     }
   }
 
@@ -233,6 +307,20 @@
         rgba(0, 0, 0, 0.3) 0%,
         rgba(0, 0, 0, 0.3) 100%
       );
+
+      @include media.breakpoint(mobile) {
+        background:
+          linear-gradient(
+            90deg,
+            rgba(0, 0, 0, 0.3) 0%,
+            rgba(0, 0, 0, 0.3) 100%
+          ),
+          linear-gradient(
+            180deg,
+            rgb(189, 190, 192) 5.9%,
+            rgba(89, 89, 90, 0) 34.13%
+          );
+      }
     }
   }
 
@@ -243,7 +331,6 @@
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
     row-gap: 4rem;
-
     @include media.breakpoint(mobile) {
       row-gap: 2rem;
     }
@@ -276,8 +363,8 @@
     gap: 4rem;
     width: 40.2rem;
     @include media.breakpoint(mobile) {
+      width: 11.7rem;
       gap: 2rem;
-      width: auto;
     }
   }
 
@@ -296,6 +383,7 @@
       line-height: 100%;
       letter-spacing: -0.016rem;
       text-transform: uppercase;
+      text-wrap: balance;
     }
   }
 
@@ -306,7 +394,7 @@
     line-height: 100%;
     text-transform: uppercase;
     @include media.breakpoint(mobile) {
-      font-size: 1.2rem;
+      font-size: 1.4rem;
       font-style: normal;
       font-weight: 900;
       line-height: 100%;
