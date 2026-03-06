@@ -76,65 +76,88 @@
         <a href="#" class="btn equipment__all-btn">
             Смотреть все оборудование
         </a>
-        <ul class="equipment__features-list">
-            <li class="equipment__features-list-item">
-                <a href="#" class="equipment-feature-card">
-                    <div class="equipment-feature-card__bg">
-                        <img src="/images/equipment/feature.webp" alt="">
-                    </div>
-                    <div class="equipment-feature-card__title">
-                        Сертификаты
-                    </div>
-                    <div class="equipment-feature-card__desc">
-                        Сертифицированное новое оборудование, регулярное проведение ТО
-                    </div>
-                </a>
-            </li>
-            <li class="equipment__features-list-item">
-                <a href="#" class="equipment-feature-card">
-                    <div class="equipment-feature-card__bg">
-                        <img src="/images/equipment/feature.webp" alt="">
-                    </div>
-                    <div class="equipment-feature-card__title">
-                        операционная
-                    </div>
-                    <div class="equipment-feature-card__desc">
-                        <p>
-                            Оборудование и технологии мирового класса.
-                        </p>
-                        <p>
-                            Наша клиника оснащена новейшей аппаратурой и лазерными
-                            системами для самого безопасного и эффективного лечения
-                        </p>
-                    </div>
-                </a>
-            </li>
-            <li class="equipment__features-list-item">
-                <a href="#" class="equipment-feature-card">
-                    <div class="equipment-feature-card__bg">
-                        <img src="/images/equipment/feature.webp" alt="">
-                    </div>
-                    <div class="equipment-feature-card__title">
-                        одноразовые инструменты
-                    </div>
-                    <div class="equipment-feature-card__desc">
-                        Сертифицированные одноразовые расходные инструменты
-                    </div>
-                </a>
-            </li>
-            <li class="equipment__features-list-item">
-                <a href="#" class="equipment-feature-card">
-                    <div class="equipment-feature-card__bg">
-                        <img src="/images/equipment/feature.webp" alt="">
-                    </div>
-                    <div class="equipment-feature-card__title">
-                        Программное обеспечение
-                    </div>
-                    <div class="equipment-feature-card__desc">
-                        Сертифицированное программное обеспечение
-                    </div>
-                </a>
-            </li>
-        </ul>
+        <div class="equipment__features">
+            <div class="equipment__features-controls">
+                <div class="equipment__features-fraction" aria-live="polite"></div>
+                <div class="slider-nav equipment__features-slider-nav">
+                    <button class="slider-nav__arrow slider-nav__arrow--prev" type="button"
+                        aria-label="Предыдущее преимущество">
+                        <svg width="14" height="14" aria-hidden="true">
+                            <use xlink:href="#arrow-left"></use>
+                        </svg>
+                    </button>
+                    <button class="slider-nav__arrow slider-nav__arrow--next" type="button"
+                        aria-label="Следующее преимущество">
+                        <svg width="14" height="14" aria-hidden="true">
+                            <use xlink:href="#arrow-right"></use>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+            <div class="equipment__features-slider">
+                <div class="swiper">
+                    <ul class="equipment__features-list swiper-wrapper">
+                        <li class="equipment__features-list-item swiper-slide">
+                            <a href="#" class="equipment-feature-card">
+                                <div class="equipment-feature-card__bg">
+                                    <img src="/images/equipment/feature.webp" alt="">
+                                </div>
+                                <div class="equipment-feature-card__title">
+                                    Сертификаты
+                                </div>
+                                <div class="equipment-feature-card__desc">
+                                    Сертифицированное новое оборудование, регулярное проведение ТО
+                                </div>
+                            </a>
+                        </li>
+                        <li class="equipment__features-list-item swiper-slide">
+                            <a href="#" class="equipment-feature-card">
+                                <div class="equipment-feature-card__bg">
+                                    <img src="/images/equipment/feature.webp" alt="">
+                                </div>
+                                <div class="equipment-feature-card__title">
+                                    операционная
+                                </div>
+                                <div class="equipment-feature-card__desc">
+                                    <p>
+                                        Оборудование и технологии мирового класса.
+                                    </p>
+                                    <p>
+                                        Наша клиника оснащена новейшей аппаратурой и лазерными
+                                        системами для самого безопасного и эффективного лечения
+                                    </p>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="equipment__features-list-item swiper-slide">
+                            <a href="#" class="equipment-feature-card">
+                                <div class="equipment-feature-card__bg">
+                                    <img src="/images/equipment/feature.webp" alt="">
+                                </div>
+                                <div class="equipment-feature-card__title">
+                                    одноразовые инструменты
+                                </div>
+                                <div class="equipment-feature-card__desc">
+                                    Сертифицированные одноразовые расходные инструменты
+                                </div>
+                            </a>
+                        </li>
+                        <li class="equipment__features-list-item swiper-slide">
+                            <a href="#" class="equipment-feature-card">
+                                <div class="equipment-feature-card__bg">
+                                    <img src="/images/equipment/feature.webp" alt="">
+                                </div>
+                                <div class="equipment-feature-card__title">
+                                    Программное обеспечение
+                                </div>
+                                <div class="equipment-feature-card__desc">
+                                    Сертифицированное программное обеспечение
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
     </div>
 </section>

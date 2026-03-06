@@ -5,6 +5,10 @@
   .equipment {
     @include utils.blockWrapper;
     margin-bottom: 8rem;
+
+    @include media.breakpoint(mobile) {
+      margin-bottom: 6rem;
+    }
   }
 
   .equipment__content {
@@ -16,8 +20,23 @@
 
   .equipment__slider {
     margin-top: 8rem;
+
+    @include media.breakpoint(mobile) {
+      margin-top: 4rem;
+      width: calc(100vw + 2px);
+      position: relative;
+      left: 50%;
+      transform: translateX(-50%);
+      border-top: 1px solid #d3d3d3;
+      border-bottom: 1px solid #d3d3d3;
+    }
+
     .swiper {
       overflow: visible;
+
+      @include media.breakpoint(mobile) {
+        overflow: hidden;
+      }
     }
 
     .swiper-wrapper {
@@ -38,6 +57,12 @@
       &:last-child {
         border-right: 1px solid #d3d3d3;
       }
+
+      @include media.breakpoint(mobile) {
+        width: 13.4rem;
+        border-top: none;
+        border-bottom: none;
+      }
     }
   }
 
@@ -46,7 +71,12 @@
     margin-top: 8rem;
     width: 44rem;
     max-width: 100%;
+
+    @include media.breakpoint(mobile) {
+      display: none;
+    }
   }
+
   .equipment__large-heading {
     text-align: center;
     font-size: 11.9cqw;
@@ -66,16 +96,94 @@
     letter-spacing: -0.02rem;
     text-transform: uppercase;
     margin-top: 4rem;
+
+    @include media.breakpoint(mobile) {
+      margin-top: 3.2rem;
+      text-align: left;
+      font-size: 1.8rem;
+      line-height: 100%;
+      letter-spacing: -0.018rem;
+    }
+  }
+
+  .equipment__features {
+    margin-top: 12rem;
+    display: flex;
+    flex-direction: column;
+
+    @include media.breakpoint(mobile) {
+      margin-top: 4.6rem;
+    }
+  }
+
+  .equipment__features-controls {
+    display: none;
+
+    @include media.breakpoint(mobile) {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+  }
+
+  .equipment__features-controls .swiper-pagination-fraction {
+    display: none;
+
+    @include media.breakpoint(mobile) {
+      display: flex;
+    }
+  }
+
+  .equipment__features-slider {
+    @include media.breakpoint(mobile) {
+      margin-top: 2rem;
+    }
+
+    .swiper {
+      overflow: hidden;
+      @include media.breakpoint(mobile) {
+        overflow: visible;
+      }
+    }
+  }
+
+  .equipment__features-slider-nav {
+    .slider-nav__arrow {
+      @include media.breakpoint(mobile) {
+        border-color: #cbcbcb;
+        background-color: #fff;
+
+        svg {
+          fill: #161616;
+        }
+      }
+
+      &.swiper-button-disabled {
+        @include media.breakpoint(mobile) {
+          border-color: #cbcbcb;
+          background-color: #fff;
+
+          svg {
+            opacity: 0.45;
+          }
+        }
+      }
+    }
   }
 
   .equipment__features-list {
     display: grid;
     grid-template-columns: repeat(4, minmax(0, 1fr));
-    margin-top: 12rem;
+    margin-top: 0;
+
+    @include media.breakpoint(mobile) {
+      display: flex;
+    }
   }
 
   .equipment__features-list-item {
     display: flex;
     flex-direction: column;
+    height: auto;
   }
 }
