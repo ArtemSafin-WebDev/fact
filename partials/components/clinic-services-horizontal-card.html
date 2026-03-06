@@ -1,0 +1,21 @@
+<a
+    href="{{#if href}}{{href}}{{else}}#{{/if}}"
+    class="clinic-services-horizontal-card"
+>
+    <div class="clinic-services-horizontal-card__doctors">
+        {{#each doctors}}
+        <div class="clinic-services-horizontal-card__doctor">
+            <img src="{{src}}" alt="{{#if alt}}{{alt}}{{/if}}">
+        </div>
+        {{/each}}
+    </div>
+    <h3 class="clinic-services-horizontal-card__title">
+        {{title}}
+    </h3>
+    <div class="clinic-services-horizontal-card__text">
+        {{description}}
+    </div>
+    <div class="clinic-services-horizontal-card__price">
+        {{price}}
+    </div>
+</a>
