@@ -1,5 +1,5 @@
 import Swiper from "swiper";
-import { Navigation } from "swiper/modules";
+import { Navigation, Pagination } from "swiper/modules";
 
 export default function doctors() {
   const elements = Array.from(
@@ -14,6 +14,18 @@ export default function doctors() {
     );
 
     let instance: Swiper | null = null;
+    const fractionElement =
+      element.querySelector<HTMLElement>(".doctors__fraction");
+
+    const fractionConfig = fractionElement
+      ? {
+          el: fractionElement,
+          type: "fraction" as const,
+          renderFraction: (currentClass: string, totalClass: string) =>
+            `<span class="${currentClass}"></span><span class="${totalClass}"></span>`,
+          formatFractionTotal: (total: number) => `/ ${total}`,
+        }
+      : undefined;
 
     const setActive = (index: number) => {
       tabsBtns.forEach((btn) => btn.classList.remove("active"));
@@ -32,7 +44,7 @@ export default function doctors() {
         speed: 600,
         slidesPerView: "auto",
         watchOverflow: true,
-        modules: [Navigation],
+        modules: [Navigation, Pagination],
         watchSlidesProgress: true,
         navigation: {
           prevEl: element.querySelector<HTMLButtonElement>(
@@ -42,6 +54,7 @@ export default function doctors() {
             ".slider-nav__arrow--next",
           ),
         },
+        pagination: fractionConfig,
       });
     };
 

@@ -30,9 +30,10 @@
     text-transform: none;
 
     @include media.breakpoint(mobile) {
-      margin-top: 0.6rem;
-      font-size: 1.3rem;
-      letter-spacing: normal;
+      margin-top: 1.5rem;
+      font-size: 1.4rem;
+      line-height: 120%;
+      letter-spacing: -0.014rem;
     }
   }
 
@@ -44,14 +45,61 @@
     gap: 4rem;
 
     @include media.breakpoint(mobile) {
-      margin-top: 4rem;
-      gap: 2rem;
+      margin-top: 4.5rem;
+      flex-direction: column;
+      align-items: stretch;
+      gap: 3rem;
+    }
+  }
+
+  .doctors__controls {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+    gap: 2rem;
+
+    @include media.breakpoint(mobile) {
+      margin-left: 0;
+      width: 100%;
+      justify-content: space-between;
+      gap: 1.6rem;
+    }
+  }
+
+  .doctors__fraction {
+    display: none;
+
+    @include media.breakpoint(mobile) {
+      display: flex;
+      align-items: baseline;
+      gap: 0.3rem;
+      font-size: 1.5rem;
+      font-style: normal;
+      font-weight: 900;
+      line-height: 120%;
+      letter-spacing: -0.015rem;
+      color: #161616;
+      white-space: nowrap;
+    }
+
+    .swiper-pagination-current {
+      color: #161616;
+    }
+
+    .swiper-pagination-total {
+      color: #d3d3d3;
+      font-size: 0.9675rem;
+      letter-spacing: -0.0097rem;
     }
   }
 
   .doctors__tabs-nav {
     width: 66rem;
     max-width: 100%;
+
+    @include media.breakpoint(mobile) {
+      width: 100%;
+    }
 
     .tabs-nav__list {
       width: 100%;
@@ -69,6 +117,9 @@
 
       @include media.breakpoint(mobile) {
         height: 4rem;
+        padding: 0 1rem;
+        font-size: 1.4rem;
+        letter-spacing: -0.014rem;
       }
     }
   }
@@ -81,6 +132,20 @@
       @include media.breakpoint(mobile) {
         width: 4rem;
         height: 4rem;
+        border-color: #a4a4a4;
+        background-color: transparent;
+      }
+
+      @include media.breakpoint(mobile) {
+        svg {
+          fill: #161616;
+        }
+      }
+
+      &.swiper-button-disabled {
+        @include media.breakpoint(mobile) {
+          opacity: 0.5;
+        }
       }
     }
   }
@@ -88,8 +153,9 @@
   .doctors__tabs {
     position: relative;
     margin-top: 4rem;
+
     @include media.breakpoint(mobile) {
-      margin-top: 4rem;
+      margin-top: 3rem;
     }
   }
 
@@ -128,17 +194,18 @@
       width: 25%;
       border-right: 1px solid #eaeaea;
 
-      &:nth-last-child(1 of .swiper-slide-visible) {
-        border-color: transparent;
-      }
+      @media (width > 640px) {
+        &:nth-last-child(1 of .swiper-slide-visible) {
+          border-color: transparent;
+        }
 
-      &:last-child {
-        border-color: transparent;
+        &:last-child {
+          border-color: transparent;
+        }
       }
 
       @include media.breakpoint(mobile) {
-        width: 18.7rem;
-        border-right: none;
+        width: 16.5rem;
       }
     }
   }
@@ -146,16 +213,11 @@
   .doctors__all-link {
     width: 44rem;
     max-width: 100%;
-    height: 6rem;
-    display: grid;
-    place-items: center;
     margin-top: 8rem;
     align-self: center;
-    padding: 0 2rem;
 
     @include media.breakpoint(mobile) {
       width: 100%;
-      height: 4.8rem;
       margin-top: 4rem;
     }
   }
