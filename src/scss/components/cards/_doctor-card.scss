@@ -16,10 +16,6 @@
     overflow: hidden;
     color: #222;
 
-    @include media.breakpoint(mobile) {
-      aspect-ratio: 1 / 1;
-    }
-
     picture,
     img {
       position: absolute;
@@ -118,8 +114,8 @@
     gap: 4rem;
 
     @include media.breakpoint(mobile) {
-      padding: 2rem 1.6rem;
-      gap: 2rem;
+      padding: 1.7rem 1.6rem;
+      gap: 1rem;
     }
   }
 
@@ -136,6 +132,7 @@
     @include media.breakpoint(mobile) {
       font-size: 1.5rem;
       letter-spacing: -0.015rem;
+      width: 100%;
     }
   }
 
@@ -147,14 +144,19 @@
     color: #111;
 
     @include media.breakpoint(mobile) {
-      font-size: 1.2rem;
-      line-height: 140%;
+      font-size: 1.4rem;
+      line-height: 120%;
     }
   }
 
   .doctor-card__btn {
     align-self: stretch;
     margin-top: auto;
+
+    @include media.breakpoint(mobile) {
+      margin-top: 0;
+      padding: 1.55rem 2rem;
+    }
   }
 
   .doctor-card__award {

@@ -20,6 +20,12 @@
     flex-direction: column;
   }
 
+  .catalog-doctors-hero .breadcrumbs {
+    @include media.breakpoint(mobile) {
+      display: none;
+    }
+  }
+
   .catalog-doctors-hero__title {
     margin-top: 4rem;
     font-size: 8rem;
@@ -30,9 +36,9 @@
     text-transform: uppercase;
 
     @include media.breakpoint(mobile) {
-      margin-top: 2.4rem;
+      margin-top: 0;
       font-size: 4rem;
-      letter-spacing: -0.04rem;
+      letter-spacing: -0.1rem;
     }
   }
 
@@ -51,11 +57,12 @@
     letter-spacing: -0.05rem;
 
     @include media.breakpoint(mobile) {
-      margin-top: 3.2rem;
-      font-size: 2.6rem;
-      letter-spacing: -0.026rem;
+      margin-top: 4rem;
+      font-size: 1.8rem;
+      letter-spacing: -0.018rem;
       align-items: flex-start;
       text-align: left;
+      gap: 0;
     }
   }
 
@@ -64,6 +71,13 @@
 
     display: grid;
     grid-template-columns: repeat(8, minmax(0, 1fr));
+
+    @include media.breakpoint(mobile) {
+      margin-top: 4rem;
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
   }
 
   .catalog-doctors-hero__legend {
@@ -94,8 +108,16 @@
     .tabs-nav__btn {
       min-width: 0;
       width: 100%;
-      height: 6rem;
-      padding: 0 2rem;
+      padding: 2.25rem 2rem;
+    }
+
+    @include media.breakpoint(mobile) {
+      grid-column: 1 / -1;
+
+      .tabs-nav__btn {
+        padding: 1.5rem 1rem;
+        font-size: 1rem;
+      }
     }
   }
 
@@ -105,12 +127,24 @@
     flex-grow: 1;
     min-width: 0;
     grid-column: 5 / -1;
+
+    @include media.breakpoint(mobile) {
+      grid-template-columns: minmax(0, 1fr);
+      gap: 1.1rem;
+      grid-column: 1 / -1;
+    }
   }
 
   .catalog-doctors-hero__inputs {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
     grid-column: span 2;
+
+    @include media.breakpoint(mobile) {
+      grid-template-columns: minmax(0, 1fr);
+      gap: 0.1rem;
+      grid-column: 1 / -1;
+    }
   }
 
   .catalog-doctors-hero__search {
@@ -135,10 +169,14 @@
       }
     }
 
-  }
-
-  .catalog-doctors-hero__select {
-    width: 100%;
+    @include media.breakpoint(mobile) {
+      input {
+        height: 4rem;
+        padding: 0 1.2rem;
+        border-right: none;
+        font-size: 1rem;
+      }
+    }
   }
 
   .catalog-doctors-hero__reset {
@@ -154,6 +192,14 @@
     flex-shrink: 0;
     white-space: nowrap;
     justify-self: flex-end;
+
+    @include media.breakpoint(mobile) {
+      justify-self: flex-start;
+      gap: 0.5rem;
+      font-size: 1rem;
+      letter-spacing: -0.02rem;
+      line-height: 1;
+    }
   }
 
   .catalog-doctors-hero__reset-icon {
@@ -170,18 +216,32 @@
       width: 0.8rem;
       height: 0.8rem;
     }
+
+    @include media.breakpoint(mobile) {
+      width: 1.4rem;
+      height: 1.4rem;
+
+      svg {
+        width: 0.6rem;
+        height: 0.6rem;
+      }
+    }
   }
 
   .catalog-doctors-hero__cards {
     margin-top: 4rem;
-    background-color: #dcdcdc;
+    background-color: #eaeaea;
     display: grid;
-    gap: 0.1rem;
+    gap: 0.2rem;
     grid-template-columns: repeat(4, minmax(0, 1fr));
 
     @include media.breakpoint(mobile) {
-      margin-top: 3.2rem;
-      grid-template-columns: minmax(0, 1fr);
+      margin-top: 2rem;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      margin-left: calc(var(--content-padding) * -1);
+      margin-right: calc(var(--content-padding) * -1);
+      row-gap: 0;
+      column-gap: 0.2rem;
     }
   }
 
