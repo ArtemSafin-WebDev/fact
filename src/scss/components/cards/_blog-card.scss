@@ -206,13 +206,12 @@
 
   .blog-card__btn-icon {
     display: none;
-    width: 1.4rem;
-    height: 1.4rem;
+    width: 1.3rem;
+    height: 1.3rem;
     fill: currentColor;
 
     @include media.breakpoint(mobile) {
       display: block;
-      transform: rotate(-45deg);
     }
   }
 
