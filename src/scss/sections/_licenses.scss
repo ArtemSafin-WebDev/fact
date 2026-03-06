@@ -3,6 +3,7 @@
 
 @layer sections {
   .licenses {
+    --licenses-divider-color: #cbcbcb;
     @include utils.blockWrapper;
     margin-bottom: 20rem;
 
@@ -24,6 +25,10 @@
 
   .licenses__title {
     max-width: 70rem;
+
+    @include media.breakpoint(mobile) {
+      max-width: 35.3rem;
+    }
   }
 
   .licenses__controls {
@@ -36,16 +41,34 @@
     @include media.breakpoint(mobile) {
       margin-top: 3.2rem;
       min-height: 4rem;
+      align-items: center;
     }
   }
 
   .licenses__subtitle {
     opacity: 0;
     pointer-events: none;
+    display: flex;
+    align-items: baseline;
+    gap: 0.3rem;
+
+    @include media.breakpoint(mobile) {
+      opacity: 1;
+      pointer-events: auto;
+    }
+  }
+
+  .licenses__subtitle .swiper-pagination-current {
+    color: #161616;
+  }
+
+  .licenses__subtitle .swiper-pagination-total {
+    color: #d3d3d3;
+    font-size: 0.9675rem;
+    letter-spacing: -0.0097rem;
   }
 
   .licenses__slider {
-    --licenses-divider-color: #cbcbcb;
     margin-top: 4rem;
 
     @include media.breakpoint(mobile) {
@@ -63,6 +86,13 @@
         pointer-events: none;
         border: 1px solid var(--licenses-divider-color);
         z-index: 10;
+      }
+
+      @include media.breakpoint(mobile) {
+        overflow: visible;
+        &::after {
+          display: none;
+        }
       }
     }
 
@@ -93,7 +123,42 @@
       }
 
       @include media.breakpoint(mobile) {
-        width: 17rem;
+        width: 17.5rem;
+        border: 1px solid var(--licenses-divider-color);
+        border-right-color: transparent;
+        &::after {
+          display: none;
+        }
+
+        &:last-child {
+          border-right-color: var(--licenses-divider-color);
+        }
+      }
+    }
+  }
+
+  .licenses__slider-nav {
+    .slider-nav__arrow {
+      @include media.breakpoint(mobile) {
+        background-color: #fff;
+        border-color: var(--licenses-divider-color);
+      }
+
+      @include media.breakpoint(mobile) {
+        svg {
+          fill: #161616;
+        }
+      }
+
+      &.swiper-button-disabled {
+        @include media.breakpoint(mobile) {
+          background-color: #fff;
+          border-color: var(--licenses-divider-color);
+
+          svg {
+            opacity: 0.45;
+          }
+        }
       }
     }
   }

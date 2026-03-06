@@ -31,10 +31,4 @@
       filter: grayscale(0);
     }
   }
-
-  @include media.breakpoint(mobile) {
-    .swiper-slide-active .license-card .license-card__media img {
-      filter: grayscale(0);
-    }
-  }
 }
