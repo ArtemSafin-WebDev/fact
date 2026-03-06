@@ -8,18 +8,21 @@ export default function clinic() {
 
   elements.forEach((element) => {
     const toggle = element.querySelector<HTMLButtonElement>("[data-clinic-toggle]");
-    const hiddenText = element.querySelector<HTMLElement>("[data-clinic-hidden]");
+    const shortText = element.querySelector<HTMLElement>("[data-clinic-short]");
+    const fullText = element.querySelector<HTMLElement>("[data-clinic-full]");
 
-    if (!toggle || !hiddenText) return;
+    if (!toggle || !shortText || !fullText) return;
 
     const defaultText = toggle.dataset.defaultText || "Показать полностью";
     const expandedText = toggle.dataset.expandedText || "Скрыть";
 
     toggle.addEventListener("click", () => {
-      const isExpanded = element.classList.toggle("is-expanded");
-      hiddenText.hidden = !isExpanded;
-      toggle.textContent = isExpanded ? expandedText : defaultText;
-      toggle.setAttribute("aria-expanded", String(isExpanded));
+      const isExpanded = !fullText.hidden;
+
+      shortText.hidden = !isExpanded;
+      fullText.hidden = isExpanded;
+      toggle.textContent = isExpanded ? defaultText : expandedText;
+      toggle.setAttribute("aria-expanded", String(!isExpanded));
 
       requestAnimationFrame(() => {
         ScrollTrigger.refresh();
