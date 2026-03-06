@@ -2,11 +2,23 @@ name: Deploy to Timeweb (FTP)
 
 on:
   push:
-    branches: ["master"]
+    branches:
+      - master
+      - main
+  workflow_dispatch:
+
+concurrency:
+  group: deploy-timeweb-${{ github.ref }}
+  cancel-in-progress: true
 
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    env:
+      FTP_PORT: ${{ secrets.FTP_PORT }}
+      FTP_PROTOCOL: ${{ secrets.FTP_PROTOCOL }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -14,8 +26,9 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 22
           cache: npm
+          cache-dependency-path: package-lock.json
 
       - name: Install dependencies
         run: npm ci
@@ -23,17 +36,28 @@ jobs:
       - name: Build
         run: npm run build
 
+      - name: Resolve FTP defaults
+        id: ftp-vars
+        shell: bash
+        run: |
+          echo "port=${FTP_PORT:-21}" >> "$GITHUB_OUTPUT"
+          echo "protocol=${FTP_PROTOCOL:-ftp}" >> "$GITHUB_OUTPUT"
+
+      - name: Verify build output
+        run: ls -la dist
+
       - name: Deploy via FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
           server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          port: ${{ secrets.FTP_PORT || 21 }}
-          protocol: ${{ secrets.FTP_PROTOCOL || 'ftp' }}
-          local-dir: dist/
+          port: ${{ steps.ftp-vars.outputs.port }}
+          protocol: ${{ steps.ftp-vars.outputs.protocol }}
+          local-dir: ./dist/
           server-dir: /fact-frontend/public_html/
           exclude: |
+            **/.DS_Store
             **/.git*
             **/node_modules/**
             **/src/**

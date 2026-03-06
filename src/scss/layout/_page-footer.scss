@@ -21,6 +21,12 @@
     grid-template-columns: repeat(8, minmax(0, 1fr));
     column-gap: 0;
     padding: 8rem 0 8rem;
+
+    @include media.breakpoint(mobile) {
+      display: flex;
+      flex-direction: column;
+      padding: 0;
+    }
   }
 
   .page-footer__split {
@@ -31,6 +37,10 @@
     width: 1px;
     background-color: #eaeaea;
     transform: translateX(-0.5px);
+
+    @include media.breakpoint(mobile) {
+      display: none;
+    }
   }
 
   .page-footer__brand {
@@ -40,6 +50,13 @@
     flex-direction: column;
     justify-content: space-between;
     align-items: flex-start;
+
+    @include media.breakpoint(mobile) {
+      order: 1;
+      width: 100%;
+      min-height: auto;
+      justify-content: flex-start;
+    }
   }
 
   .page-footer__logo {
@@ -47,6 +64,10 @@
       display: block;
       width: 18rem;
       height: auto;
+    }
+
+    @include media.breakpoint(mobile) {
+      display: none;
     }
   }
 
@@ -90,8 +111,13 @@
     align-self: start;
 
     @include media.breakpoint(mobile) {
-      grid-template-columns: 1fr;
-      row-gap: 3.2rem;
+      order: 3;
+      width: 100%;
+
+      gap: 2rem;
+      margin-top: 4rem;
+      padding-top: 4rem;
+      border-top: 1px solid #eaeaea;
     }
   }
 
@@ -101,7 +127,20 @@
     gap: 4rem;
 
     @include media.breakpoint(mobile) {
-      gap: 2.4rem;
+      gap: 3rem;
+      flex-shrink: 0;
+    }
+
+    &:first-child {
+      @include media.breakpoint(mobile) {
+        width: 8.8rem;
+      }
+    }
+
+    &:last-child {
+      @include media.breakpoint(mobile) {
+        width: 13.8rem;
+      }
     }
   }
 
@@ -119,6 +158,10 @@
     display: flex;
     flex-direction: column;
     gap: 1.6rem;
+
+    @include media.breakpoint(mobile) {
+      gap: 3rem;
+    }
   }
 
   .page-footer__nav-link {
@@ -143,6 +186,15 @@
     flex-direction: column;
     gap: 4rem;
     padding-left: 7.4rem;
+
+    @include media.breakpoint(mobile) {
+      order: 4;
+      width: 100%;
+      padding-left: 0;
+      margin-top: 4rem;
+      padding-top: 4rem;
+      border-top: 1px solid #eaeaea;
+    }
   }
 
   .page-footer__social-group {
@@ -152,6 +204,10 @@
 
     &:nth-child(2) {
       margin-top: auto;
+
+      @include media.breakpoint(mobile) {
+        margin-top: 0;
+      }
     }
   }
 
@@ -231,6 +287,15 @@
     flex-direction: column;
     justify-content: space-between;
     gap: 3rem;
+
+    @include media.breakpoint(mobile) {
+      order: 2;
+      width: 100%;
+      gap: 4rem;
+      margin-top: 4rem;
+      padding-top: 4rem;
+      border-top: 1px solid #eaeaea;
+    }
   }
 
   .page-footer__contacts-card {
@@ -238,6 +303,10 @@
     flex-direction: column;
     align-items: flex-start;
     gap: 1.2rem;
+
+    @include media.breakpoint(mobile) {
+      gap: 2rem;
+    }
   }
 
   .page-footer__contacts-card-key {
@@ -261,6 +330,12 @@
     font-weight: 400;
     line-height: 120%;
     letter-spacing: -0.024rem;
+
+    @include media.breakpoint(mobile) {
+      margin-top: 0;
+      font-size: 1.4rem;
+      letter-spacing: -0.014rem;
+    }
   }
 
   .page-footer__contacts-card-value {
@@ -283,6 +358,16 @@
     display: grid;
     grid-template-columns: repeat(8, minmax(0, 1fr));
     align-items: end;
+
+    @include media.breakpoint(mobile) {
+      padding-top: 4rem;
+      padding-bottom: 0;
+      margin-top: 4rem;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 2rem;
+    }
   }
 
   .page-footer__copyright {
@@ -293,6 +378,11 @@
     line-height: 140%;
     letter-spacing: -0.024rem;
     color: black;
+
+    @include media.breakpoint(mobile) {
+      font-size: 1.4rem;
+      letter-spacing: -0.028rem;
+    }
   }
 
   .page-footer__links {
@@ -300,6 +390,13 @@
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
     align-items: center;
+
+    @include media.breakpoint(mobile) {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 2rem;
+    }
   }
 
   .page-footer__link {
@@ -327,6 +424,12 @@
       &:hover {
         text-decoration-color: transparent;
       }
+    }
+
+    @include media.breakpoint(mobile) {
+      font-size: 1.4rem;
+      letter-spacing: -0.028rem;
+      text-align: left;
     }
   }
 
@@ -360,6 +463,14 @@
       &:hover {
         color: rgb(22 22 22 / 100%);
       }
+    }
+
+    @include media.breakpoint(mobile) {
+      grid-column: auto;
+      justify-self: auto;
+      gap: 2rem;
+      font-size: 1.4rem;
+      letter-spacing: -0.028rem;
     }
   }
 }

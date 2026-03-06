@@ -1,17 +1,5 @@
 @mixin breakpoint($class) {
-  @if $class == laptop {
-    @media (width <= 1200px) {
-      @content;
-    }
-  } @else if $class == tablet {
-    @media (width <= 1024px) {
-      @content;
-    }
-  } @else if $class == small-tablet {
-    @media (width <= 768px) {
-      @content;
-    }
-  } @else if $class == mobile {
+  @if $class == mobile {
     @media (width <= 640px) {
       @content;
     }
@@ -19,19 +7,7 @@
 }
 
 @mixin breakpointMF($class) {
-  @if $class == laptop {
-    @media (width > 1200px) {
-      @content;
-    }
-  } @else if $class == tablet {
-    @media (width > 1024px) {
-      @content;
-    }
-  } @else if $class == small-tablet {
-    @media (width > 768px) {
-      @content;
-    }
-  } @else if $class == mobile {
+  @if $class == mobile {
     @media (width > 640px) {
       @content;
     }
