@@ -143,27 +143,11 @@
     }
   }
 
-  .promo__fraction {
+  .promo__controls .swiper-pagination-fraction {
     display: none;
 
     @include media.breakpoint(mobile) {
       display: flex;
-      align-items: baseline;
-      font-style: normal;
-      font-weight: 900;
-      line-height: 120%;
-      letter-spacing: -0.015rem;
-      text-transform: uppercase;
-      color: #161616;
-      font-size: 1.5rem;
-    }
-  }
-
-  .promo__fraction .swiper-pagination-total {
-    @include media.breakpoint(mobile) {
-      color: #d3d3d3;
-      font-size: 0.9675rem;
-      letter-spacing: -0.0097rem;
     }
   }
 }

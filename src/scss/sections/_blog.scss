@@ -52,28 +52,6 @@
     }
   }
 
-  .blog__fraction {
-    @include media.breakpoint(mobile) {
-      display: flex;
-      align-items: baseline;
-      gap: 0.3rem;
-    }
-  }
-
-  .blog__fraction .swiper-pagination-current {
-    @include media.breakpoint(mobile) {
-      color: #161616;
-    }
-  }
-
-  .blog__fraction .swiper-pagination-total {
-    @include media.breakpoint(mobile) {
-      color: #d3d3d3;
-      font-size: 0.9675rem;
-      letter-spacing: -0.0097rem;
-    }
-  }
-
   .blog__slider {
     margin-top: 8.8rem;
 

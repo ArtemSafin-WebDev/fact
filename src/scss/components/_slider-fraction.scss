@@ -1,0 +1,24 @@
+@layer components {
+  .swiper-pagination-fraction {
+    display: flex;
+    align-items: baseline;
+    gap: 0.3rem;
+    font-size: 1.5rem;
+    font-style: normal;
+    font-weight: 900;
+    line-height: 120%;
+    letter-spacing: -0.015rem;
+    text-transform: uppercase;
+    color: #161616;
+  }
+
+  .swiper-pagination-fraction .swiper-pagination-current {
+    color: #161616;
+  }
+
+  .swiper-pagination-fraction .swiper-pagination-total {
+    color: #d3d3d3;
+    font-size: 0.9675rem;
+    letter-spacing: -0.0097rem;
+  }
+}
