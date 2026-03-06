@@ -5,11 +5,10 @@
   .about-clinic {
     @include utils.blockWrapper;
     padding-top: 12rem;
-    margin-bottom: 12rem;
 
     @include media.breakpoint(mobile) {
       padding-top: 6rem;
-      margin-bottom: 4rem;
+      margin-bottom: 0;
     }
   }
 

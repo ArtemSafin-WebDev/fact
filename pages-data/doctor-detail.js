@@ -154,7 +154,7 @@ const doctorDetailPageData = {
           {
             href: "#",
             modClass:
-              "doctor-details__article-card doctor-details__article-card--media",
+              "doctor-details__article-card blog-card--media",
             isMedia: true,
             imageDesktop: "/images/doctor-detail/article-main.webp",
             imageAlt: "Работа офтальмологического оборудования",

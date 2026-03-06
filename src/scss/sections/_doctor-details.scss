@@ -326,16 +326,29 @@
     text-decoration-thickness: 0.05rem;
   }
 
-  .doctor-details__licenses-grid {
+  .doctor-details__licenses-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+  }
+
+  .doctor-details__licenses-nav {
+    display: none;
+  }
+
+  .doctor-details__licenses-slider {
     margin-top: 4rem;
+  }
+
+  .doctor-details__licenses-grid {
     display: grid;
     grid-template-columns: repeat(4, minmax(0, 1fr));
   }
 
   .doctor-details__info-block--licenses {
     .license-card {
-      border: 1px solid #cbcbcb;
-      width: auto;
+      width: 100%;
       margin: -1px;
       background-color: #eaeaea;
     }
@@ -373,7 +386,8 @@
 
   .doctor-details__articles-slider,
   .doctor-details__reviews-slider,
-  .doctor-details__colleagues-slider {
+  .doctor-details__colleagues-slider,
+  .doctor-details__licenses-slider {
     .swiper {
       overflow: hidden;
 
@@ -406,49 +420,20 @@
     }
   }
 
-  .doctor-details__article-card--media {
-    .blog-card__bg {
-      opacity: 1;
-
-      &::after {
-        opacity: 1;
-        background: rgba(22, 22, 22, 0.5);
-      }
-    }
-
-    .blog-card__play {
-      position: absolute;
-      left: 50%;
-      top: 50%;
-      transform: translate(-50%, -50%);
-      width: 10rem;
-      height: 10rem;
-      border-radius: 50%;
-      background-color: var(--green-300);
-      display: grid;
-      place-items: center;
-      z-index: 2;
-
-      svg {
-        width: 100%;
-        height: 100%;
-        fill: #111;
-      }
-    }
-  }
-
   .doctor-details__reviews-slider {
     .swiper-slide {
       border-right: 1px solid #eaeaea;
       width: 25%;
       transition: border-color 0.2s;
 
-      &:nth-last-child(1 of .swiper-slide-visible) {
-        border-color: white;
-      }
+      @media (width > 640) {
+        &:nth-last-child(1 of .swiper-slide-visible) {
+          border-color: white;
+        }
 
-      &:last-child {
-        border-color: white;
+        &:last-child {
+          border-color: white;
+        }
       }
     }
   }
@@ -523,13 +508,16 @@
     .swiper-slide {
       width: 25%;
       transition: border-color 0.2s;
-      border-right: 1px solid #eaeaea;
-      &:nth-last-child(1 of .swiper-slide-visible) {
-        border-color: white;
-      }
 
-      &:last-child {
-        border-color: white;
+      @media (width > 640px) {
+        border-right: 1px solid #eaeaea;
+        &:nth-last-child(1 of .swiper-slide-visible) {
+          border-color: white;
+        }
+
+        &:last-child {
+          border-color: white;
+        }
       }
     }
   }
@@ -580,8 +568,8 @@
       height: 7.5rem;
 
       svg {
-        width: 2.4rem;
-        height: 2.4rem;
+        width: 100%;
+        height: 100%;
       }
     }
 
@@ -757,31 +745,49 @@
     }
 
     .doctor-details__licenses-grid {
-      margin-top: 2rem;
       display: flex;
       flex-wrap: nowrap;
-      overflow-x: auto;
+      gap: 0;
       width: 100%;
+    }
+
+    .doctor-details__licenses-head {
+      margin-bottom: 2rem;
+    }
+
+    .doctor-details__licenses-nav {
+      display: flex;
+      flex-shrink: 0;
+    }
+
+    .doctor-details__licenses-slider {
+      margin-top: 0;
+    }
+
+    .doctor-details__licenses-slider .swiper-slide {
+      width: 17.5rem;
+      border: 1px solid #cbcbcb;
+      border-right: none;
+      &:last-child {
+        border-right: 1px solid #cbcbcb;
+      }
     }
 
     .doctor-details__info-block--licenses {
       .license-card {
-        flex: 0 0 17.5rem;
-        width: 17.5rem;
-        margin: 0 0 0 -1px;
+        width: 100%;
+        margin: 0;
       }
+    }
 
-      .license-card:first-child {
-        margin-left: 0;
-      }
+    .doctor-details__articles,
+    .doctor-details__reviews,
+    .doctor-details__colleagues {
+      margin-top: 6rem;
     }
 
     .doctor-details__articles {
       margin-top: 5rem;
-    }
-
-    .doctor-details__reviews {
-      margin-top: 6rem;
     }
 
     .doctor-details__colleagues {
@@ -803,64 +809,13 @@
     }
 
     .doctor-details__articles-slider,
-    .doctor-details__reviews-slider,
-    .doctor-details__colleagues-slider {
-      .swiper-wrapper {
-        gap: 0.2rem;
-      }
-    }
-
-    .doctor-details__articles-slider {
-      .swiper-slide {
-        width: 34.3rem;
-        border-right: none;
-      }
-
-      .blog-card {
-        .blog-card__content {
-          padding: 2.5rem 1.6rem;
-          gap: 2rem;
-        }
-
-        .blog-card__tags {
-          margin-top: 0;
-        }
-
-        .blog-card__tag {
-          font-size: 1.4rem;
-          letter-spacing: -0.014rem;
-        }
-
-        .blog-card__title {
-          margin-top: 0;
-          font-size: 2rem;
-          letter-spacing: -0.02rem;
-        }
-
-        .blog-card__desc {
-          max-inline-size: none;
-          font-size: 1.4rem;
-          line-height: 120%;
-        }
-      }
-    }
-
-    .doctor-details__article-card--media {
-      .blog-card__play {
-        width: 7.5rem;
-        height: 7.5rem;
-
-        svg {
-          width: 2.4rem;
-          height: 2.4rem;
-        }
-      }
-    }
-
     .doctor-details__reviews-slider {
       .swiper-slide {
-        width: 34.3rem;
-        border-right: none;
+        width: 100%;
+        border-right: 1px solid #eaeaea;
+        &:last-child {
+          border-right: none;
+        }
       }
     }
 
@@ -914,35 +869,10 @@
     .doctor-details__colleagues-slider {
       .swiper-slide {
         width: 16.5rem;
-        border-right: none;
-      }
-
-      .doctor-card__info {
-        padding: 1.3rem;
-
-        &::after {
-          width: 6rem;
+        border-right: 1px solid #eaeaea;
+        &:last-child {
+          border-right: none;
         }
-      }
-
-      .doctor-card__content {
-        padding: 1rem 1.5rem 1.5rem;
-        gap: 1rem;
-      }
-
-      .doctor-card__name {
-        font-size: 1.5rem;
-        letter-spacing: -0.015rem;
-      }
-
-      .doctor-card__position {
-        font-size: 1.4rem;
-        line-height: 120%;
-      }
-
-      .doctor-card__btn {
-        margin-top: 0.5rem;
-        padding: 1.55rem 1rem;
       }
     }
   }

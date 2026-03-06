@@ -54,6 +54,50 @@ function initFoldableBlocks(root: HTMLElement) {
   });
 }
 
+function initLicensesSlider(root: HTMLElement) {
+  const block = root.querySelector<HTMLElement>(
+    ".doctor-details__info-block--licenses",
+  );
+  if (!block) return;
+
+  const container = block.querySelector<HTMLElement>(".swiper");
+  if (!container) return;
+
+  const mediaQuery = window.matchMedia("(max-width: 640px)");
+  let slider: Swiper | null = null;
+
+  const toggleSlider = () => {
+    if (mediaQuery.matches) {
+      if (slider) return;
+
+      slider = new Swiper(container, {
+        speed: 600,
+        slidesPerView: "auto",
+        watchOverflow: true,
+        spaceBetween: 0,
+        modules: [Navigation],
+        watchSlidesProgress: true,
+        navigation: {
+          prevEl: block.querySelector<HTMLButtonElement>(
+            ".slider-nav__arrow--prev",
+          ),
+          nextEl: block.querySelector<HTMLButtonElement>(
+            ".slider-nav__arrow--next",
+          ),
+        },
+      });
+      return;
+    }
+
+    if (!slider) return;
+    slider.destroy(true, true);
+    slider = null;
+  };
+
+  toggleSlider();
+  mediaQuery.addEventListener("change", toggleSlider);
+}
+
 export default function doctorDetails() {
   const sections = Array.from(
     document.querySelectorAll<HTMLElement>(".doctor-details"),
@@ -63,6 +107,7 @@ export default function doctorDetails() {
     initSlider(section, ".doctor-details__articles");
     initSlider(section, ".doctor-details__reviews");
     initSlider(section, ".doctor-details__colleagues");
+    initLicensesSlider(section);
     initFoldableBlocks(section);
   });
 }

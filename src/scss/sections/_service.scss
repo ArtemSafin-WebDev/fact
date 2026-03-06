@@ -5,9 +5,11 @@
   .service {
     @include utils.blockWrapper;
     margin-bottom: 12rem;
+    padding-top: 12rem;
 
     @include media.breakpoint(mobile) {
       margin-bottom: 6rem;
+      padding-top: 4rem;
     }
   }
 
