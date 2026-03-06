@@ -47,6 +47,28 @@
       }
     }
 
+    &.btn--mobile-large {
+      @include media.breakpoint(mobile) {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 2.3rem 3rem;
+        font-size: 1.4rem;
+        font-style: normal;
+        font-weight: 900;
+        line-height: 100%;
+        text-transform: uppercase;
+        white-space: nowrap;
+        background-color: var(--text-color);
+        color: white;
+
+        &:link,
+        &:visited {
+          color: white;
+        }
+      }
+    }
+
     @include media.breakpoint(mobile) {
       align-self: stretch;
       width: auto;

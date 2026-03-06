@@ -185,25 +185,5 @@
     align-self: stretch;
     width: 100%;
     margin-top: 0;
-    background-color: var(--text-color);
-    color: white;
-
-    @include media.breakpoint(mobile) {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      height: 6rem;
-      padding: 0 1rem;
-      font-size: 1.5rem;
-      font-weight: 900;
-      line-height: 100%;
-      text-transform: uppercase;
-      white-space: nowrap;
-    }
-
-    &:link,
-    &:visited {
-      color: white;
-    }
   }
 }

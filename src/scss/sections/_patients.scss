@@ -135,16 +135,10 @@
     margin-top: 8rem;
     align-self: center;
     width: 43.9rem;
-    min-height: 6rem;
-    display: grid;
-    place-items: center;
 
     @include media.breakpoint(mobile) {
       margin-top: 4rem;
       width: 100%;
-      min-height: 6rem;
-      padding: 2.3rem 3rem;
-      text-transform: uppercase;
     }
   }
 
