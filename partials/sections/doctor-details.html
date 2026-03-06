@@ -232,7 +232,14 @@
                                     </div>
                                 </div>
                                 <div class="doctor-details__review-text">{{text}}</div>
-                                <a href="{{href}}" class="large-btn doctor-details__review-btn">{{buttonText}}</a>
+                                <a href="{{href}}" class="large-btn doctor-details__review-btn">
+                                    <span class="doctor-details__review-btn-text">{{buttonText}}</span>
+                                    <svg class="doctor-details__review-btn-icon" width="13" height="13" viewBox="0 0 13 13"
+                                        aria-hidden="true">
+                                        <path
+                                            d="M12.5605 11.5H9.56055V5.12109L2.12109 12.5605L0 10.4395L7.43945 3H1.06055V0H12.5605V11.5Z" />
+                                    </svg>
+                                </a>
                             </article>
                         </div>
                         {{/each}}
