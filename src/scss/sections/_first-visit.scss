@@ -7,6 +7,11 @@
 
     background-color: #fff;
     margin-bottom: 12rem;
+
+    @include media.breakpoint(mobile) {
+      margin-bottom: 6rem;
+      background-color: var(--green-300);
+    }
   }
 
   .first-visit__content {
@@ -17,9 +22,11 @@
     padding-top: 8rem;
     background-color: var(--green-300);
     @include media.breakpoint(mobile) {
-      display: flex;
-      flex-direction: column;
-      max-width: none;
+      grid-template-columns: minmax(0, 1fr);
+      row-gap: 2.3rem;
+      padding-top: 5rem;
+      padding-bottom: 6rem;
+      background: transparent;
     }
   }
 
@@ -28,13 +35,20 @@
     flex-direction: column;
     gap: 3rem;
     padding-left: 4rem;
+
     @include media.breakpoint(mobile) {
-      gap: 2rem;
+      gap: 1.5rem;
+      padding-left: 0;
+      max-width: 27.2rem;
     }
   }
 
   .first-visit__title {
     max-width: 66rem;
+
+    @include media.breakpoint(mobile) {
+      max-width: 27.2rem;
+    }
   }
 
   .first-visit__description {
@@ -43,28 +57,44 @@
     font-style: normal;
     font-weight: 400;
     line-height: 140%;
+
     @include media.breakpoint(mobile) {
-      max-width: none;
+      max-width: 27.2rem;
       font-size: 1.4rem;
       line-height: 120%;
+      letter-spacing: -0.014rem;
+      br {
+        display: none;
+      }
     }
   }
 
   .first-visit__right {
     width: 100%;
     max-width: 84rem;
+
+    @include media.breakpoint(mobile) {
+      max-width: 34.3rem;
+    }
   }
 
   .first-visit__form {
     display: flex;
     flex-direction: column;
     gap: 8rem;
+
+    @include media.breakpoint(mobile) {
+      gap: 2rem;
+    }
   }
 
   .first-visit__form-fields {
     display: flex;
     flex-direction: column;
-    gap: 3.2rem;
+    gap: 4rem;
+    @include media.breakpoint(mobile) {
+      gap: 2rem;
+    }
   }
 
   .first-visit__form-field {
@@ -79,6 +109,13 @@
     line-height: 120%;
     letter-spacing: -0.01rem;
     color: var(--text-color);
+
+    @include media.breakpoint(mobile) {
+      font-size: 1.4rem;
+      font-weight: 500;
+      line-height: 100%;
+      letter-spacing: -0.028rem;
+    }
   }
 
   .first-visit__form-input {
@@ -86,12 +123,24 @@
     height: auto;
     font-size: 1.8rem;
     font-style: normal;
-    font-weight: 6as00;
+    font-weight: 600;
     line-height: 100%;
     width: 100%;
-    height: 4rem;
     border-bottom: 1.5px solid rgba(22, 22, 22, 0.4);
     color: var(--text-color);
+    padding-bottom: 3.2rem;
+    padding-top: 0;
+    &::placeholder {
+      color: var(--text-color);
+    }
+
+    @include media.breakpoint(mobile) {
+      font-size: 1.4rem;
+      padding-bottom: 2rem;
+      line-height: 100%;
+      font-weight: 500;
+      border-bottom-width: 1px;
+    }
   }
 
   .first-visit__form-actions {
@@ -109,9 +158,10 @@
     font-style: normal;
     font-weight: 400;
     line-height: 120%;
+
     @include media.breakpoint(mobile) {
       font-size: 1rem;
-      line-height: 120%;
+      max-width: 34.3rem;
     }
 
     a {
@@ -137,6 +187,19 @@
     margin-top: 0;
     background-color: var(--text-color);
     color: white;
+
+    @include media.breakpoint(mobile) {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 6rem;
+      padding: 0 1rem;
+      font-size: 1.5rem;
+      font-weight: 900;
+      line-height: 100%;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
 
     &:link,
     &:visited {
