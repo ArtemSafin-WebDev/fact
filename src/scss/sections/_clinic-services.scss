@@ -38,33 +38,32 @@
     letter-spacing: -0.045rem;
     text-transform: uppercase;
     color: #222;
-
     align-self: center;
     text-wrap: balance;
 
     @include media.breakpoint(mobile) {
+      margin-top: 4rem;
+      max-width: 34.3rem;
+      align-self: stretch;
+      text-wrap: unset;
+      text-align: left;
       font-size: 1.8rem;
-      font-style: normal;
-      font-weight: 900;
       line-height: 100%;
       letter-spacing: -0.018rem;
-      text-transform: uppercase;
-      margin-top: 4rem;
+    }
+  }
+
+  .clinic-services__subtitle-break {
+    display: none;
+
+    @include media.breakpoint(mobile) {
+      display: block;
     }
   }
 
   .clinic-services__slider {
     margin-top: 8rem;
 
-    @include media.breakpoint(mobile) {
-      margin-top: 4rem;
-      width: calc(100vw + 2px);
-      position: relative;
-      left: 50%;
-      transform: translateX(-50%);
-      border-top: 1px solid #cbcbcb;
-      border-bottom: 1px solid #cbcbcb;
-    }
     .swiper-slide {
       display: flex;
       flex-direction: column;
@@ -77,15 +76,29 @@
       &:last-child {
         border-right: 1px solid #cbcbcb;
       }
+    }
 
-      @include media.breakpoint(mobile) {
-        width: 50%;
+    @include media.breakpoint(mobile) {
+      margin-top: 4rem;
+      margin-left: calc(-1 * var(--content-padding));
+      margin-right: calc(-1 * var(--content-padding));
+
+      .swiper {
+        overflow: visible;
+      }
+
+      .swiper-wrapper {
+        display: block;
+        transform: none !important;
+      }
+
+      .swiper-slide {
+        width: 100%;
         border: none;
-        border-right: 1px solid #cbcbcb;
-        border-left: none;
-        &:last-child {
-          border-right: none;
-        }
+      }
+
+      .swiper-slide + .swiper-slide {
+        border-top: 0.05rem solid #8d8d8d;
       }
     }
   }
@@ -96,8 +109,8 @@
     grid-template-columns: auto 1fr 1.23fr auto;
 
     @include media.breakpoint(mobile) {
-      margin-top: 0;
-      grid-template-columns: auto 1fr auto;
+      margin-top: 2rem;
+      grid-template-columns: minmax(0, 1fr);
     }
   }
 
@@ -106,6 +119,11 @@
     grid-column: 1 / -1;
     display: grid;
     grid-template-columns: subgrid;
+
+    @include media.breakpoint(mobile) {
+      display: block;
+    }
+
     &:last-child {
       border: none;
     }
@@ -117,6 +135,7 @@
     width: 44rem;
 
     @include media.breakpoint(mobile) {
+      width: auto;
       align-self: stretch;
       margin-top: 4rem;
     }
