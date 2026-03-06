@@ -10,6 +10,7 @@
 
     @include media.breakpoint(mobile) {
       padding: 6rem 0;
+      margin-bottom: 6rem;
     }
   }
 
@@ -38,18 +39,83 @@
     }
   }
 
-  .blog__list {
+  .blog__controls {
+    display: none;
+
+    @include media.breakpoint(mobile) {
+      margin-top: 4rem;
+      min-height: 4rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.6rem;
+    }
+  }
+
+  .blog__fraction {
+    @include media.breakpoint(mobile) {
+      display: flex;
+      align-items: baseline;
+      gap: 0.3rem;
+    }
+  }
+
+  .blog__fraction .swiper-pagination-current {
+    @include media.breakpoint(mobile) {
+      color: #161616;
+    }
+  }
+
+  .blog__fraction .swiper-pagination-total {
+    @include media.breakpoint(mobile) {
+      color: #d3d3d3;
+      font-size: 0.9675rem;
+      letter-spacing: -0.0097rem;
+    }
+  }
+
+  .blog__slider {
     margin-top: 8.8rem;
+
+    @include media.breakpoint(mobile) {
+      margin-top: 2rem;
+    }
+  }
+
+  .blog__slider .swiper {
+    overflow: hidden;
+
+    @include media.breakpoint(mobile) {
+      overflow: visible;
+    }
+  }
+
+  .blog__slider-nav .slider-nav__arrow {
+    @include media.breakpoint(mobile) {
+      background-color: #fff;
+      border-color: #cbcbcb;
+
+      svg {
+        fill: #161616;
+      }
+
+      &.swiper-button-disabled {
+        background-color: #fff;
+        border-color: #cbcbcb;
+
+        svg {
+          opacity: 0.45;
+        }
+      }
+    }
+  }
+
+  .blog__list {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
 
     @include media.breakpoint(mobile) {
-      margin-top: 4rem;
-      width: 100vw;
-      position: relative;
-      left: 50%;
-      transform: translateX(-50%);
-      grid-template-columns: repeat(2, minmax(0, 1fr));
+      display: flex;
     }
   }
 
@@ -67,13 +133,8 @@
     }
 
     @include media.breakpoint(mobile) {
-      &:not(:nth-child(-n + 2)) {
-        display: none;
-      }
-
-      &:nth-child(2) {
-        border: none;
-      }
+      width: 34.3rem;
+      border: none;
     }
   }
 

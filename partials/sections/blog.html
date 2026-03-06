@@ -6,91 +6,65 @@
         <div class="blog__subtitle">
             Делимся многолетним опытом и практической информацией
         </div>
-        <ul class="blog__list">
-            <li class="blog__list-item">
-                <a href="#" class="blog-card">
-                    <div class="blog-card__bg">
-                        <img src="/images/doctor-detail/article-main.webp"
-                            alt="Хирургия катаракты и лечение пресбиопии">
-                    </div>
-                    <div class="blog-card__content">
-                        <div class="blog-card__tags">
-                            <div class="blog-card__tag">
-                                # статья от врача
-                            </div>
-                        </div>
-                        <h3 class="h3 blog-card__title">
-                            хирургия катаракты
-                            и&nbsp;лечение пресбиопии
-                        </h3>
-                        <div class="blog-card__bottom">
-                            <div class="blog-card__desc">
-                                В глазной клинике «ФАКТ» применяется самый современный на сегодняшний день метод
-                                хирургии
-                            </div>
-                            <div class="large-btn blog-card__btn">
-                                ЧИТАТЬ
-                            </div>
-                        </div>
-                    </div>
-                </a>
-            </li>
-            <li class="blog__list-item">
-                <a href="#" class="blog-card">
-                    <div class="blog-card__bg">
-                        <img src="/images/doctor-detail/article-main.webp"
-                            alt="Высокоточные операции на глазах доступны в Пятигорске">
-                    </div>
-                    <div class="blog-card__content">
-                        <div class="blog-card__tags">
-                            <div class="blog-card__tag">
-                                # новости
-                            </div>
-                        </div>
-                        <h3 class="h3 blog-card__title">
-                            Высокоточные операции
-                            на глазах доступны
-                            в Пятигорске
-                        </h3>
-                        <div class="blog-card__bottom">
-                            <div class="blog-card__desc">
-                                Сложнейшие офтальмологические операции, сравнимые с ювелирной работой, теперь
-                                выполняются ...
-                            </div>
-                            <div class="large-btn blog-card__btn">
-                                ЧИТАТЬ
-                            </div>
-                        </div>
-                    </div>
-                </a>
-            </li>
-            <li class="blog__list-item">
-                <a href="#" class="blog-card">
-                    <div class="blog-card__bg">
-                        <img src="/images/doctor-detail/article-main.webp"
-                            alt="Глазная клиника «ФАКТ» — за здоровый образ жизни и спорт!">
-                    </div>
-                    <div class="blog-card__content">
-                        <div class="blog-card__tags">
-                            <div class="blog-card__tag">
-                                # справочник
-                            </div>
-                        </div>
-                        <h3 class="h3 blog-card__title">
-                            Глазная клиника «ФАКТ» — за здоровый образ жизни и спорт!
-                        </h3>
-                        <div class="blog-card__bottom">
-                            <div class="blog-card__desc">
-                                В минувшие выходные мы стали частью впечатляющего всероссийского забега «ЗОбег» ...
-                            </div>
-                            <div class="large-btn blog-card__btn">
-                                ЧИТАТЬ
-                            </div>
-                        </div>
-                    </div>
-                </a>
-            </li>
-        </ul>
+        <div class="blog__controls">
+            <span class="h4 blog__fraction" aria-live="polite"></span>
+            <div class="slider-nav blog__slider-nav">
+                <button class="slider-nav__arrow slider-nav__arrow--prev" type="button"
+                    aria-label="Предыдущая статья">
+                    <svg width="14" height="14" aria-hidden="true">
+                        <use xlink:href="#arrow-left"></use>
+                    </svg>
+                </button>
+                <button class="slider-nav__arrow slider-nav__arrow--next" type="button"
+                    aria-label="Следующая статья">
+                    <svg width="14" height="14" aria-hidden="true">
+                        <use xlink:href="#arrow-right"></use>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <div class="blog__slider">
+            <div class="swiper">
+                <ul class="swiper-wrapper blog__list">
+                    <li class="swiper-slide blog__list-item">
+                        {{> components/blog-card
+                        href="#"
+                        imageDesktop="/images/doctor-detail/article-main.webp"
+                        imageAlt="Хирургия катаракты и лечение пресбиопии"
+                        tag="# статья от врача"
+                        title="хирургия катаракты и лечение пресбиопии"
+                        description="Формируем новые семейные традиции — на диагностику зрения идем всей семьей"
+                        showButton=true
+                        buttonText="Читать"
+                        }}
+                    </li>
+                    <li class="swiper-slide blog__list-item">
+                        {{> components/blog-card
+                        href="#"
+                        imageDesktop="/images/doctor-detail/article-main.webp"
+                        imageAlt="Высокоточные операции на глазах доступны в Пятигорске"
+                        tag="# новости"
+                        title="Высокоточные операции на глазах доступны в Пятигорске"
+                        description="Сложнейшие офтальмологические операции, сравнимые с ювелирной работой, теперь выполняются в Пятигорске."
+                        showButton=true
+                        buttonText="Читать"
+                        }}
+                    </li>
+                    <li class="swiper-slide blog__list-item">
+                        {{> components/blog-card
+                        href="#"
+                        imageDesktop="/images/doctor-detail/article-main.webp"
+                        imageAlt="Глазная клиника «ФАКТ» — за здоровый образ жизни и спорт!"
+                        tag="# справочник"
+                        title="Глазная клиника «ФАКТ» — за здоровый образ жизни и спорт!"
+                        description="В минувшие выходные мы стали частью впечатляющего всероссийского забега «ЗОбег»."
+                        showButton=true
+                        buttonText="Читать"
+                        }}
+                    </li>
+                </ul>
+            </div>
+        </div>
         <a href="#" class="btn blog__show-all">
             Смотреть все статьи
         </a>
