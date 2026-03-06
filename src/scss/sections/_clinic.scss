@@ -22,7 +22,7 @@
     @include media.breakpoint(mobile) {
       display: flex;
       flex-direction: column;
-      gap: 1.6rem;
+      gap: 2rem;
     }
   }
 
@@ -43,7 +43,7 @@
     gap: 2.1rem;
 
     @include media.breakpoint(mobile) {
-      gap: 1.6rem;
+      gap: 2rem;
     }
   }
 
@@ -54,13 +54,21 @@
     line-height: 140%;
 
     @include media.breakpoint(mobile) {
-      font-size: 1.2rem;
+      font-size: 1.4rem;
     }
 
     p {
       margin-top: 2.1rem;
       &:first-child {
         margin-top: 0;
+      }
+    }
+  }
+
+  .clinic__text--short {
+    p + p {
+      @include media.breakpoint(mobile) {
+        display: none;
       }
     }
   }
