@@ -9,8 +9,8 @@
     margin-bottom: 12rem;
 
     @include media.breakpoint(mobile) {
-      padding-top: 6rem;
-      padding-bottom: 6rem;
+      padding-block: 6rem;
+      margin-bottom: 8rem;
     }
   }
 
@@ -24,6 +24,10 @@
     display: flex;
     flex-direction: column;
     gap: 3rem;
+
+    @include media.breakpoint(mobile) {
+      gap: 1.5rem;
+    }
   }
 
   .patients__subtitle {
@@ -32,14 +36,16 @@
     font-weight: 400;
     line-height: 100%;
     color: #161616;
+
+    @include media.breakpoint(mobile) {
+      font-size: 1.5rem;
+      line-height: 120%;
+      letter-spacing: -0.015rem;
+    }
   }
 
   .patients__heading {
     margin: 0;
-
-    @include media.breakpoint(mobile) {
-      margin-top: 0;
-    }
   }
 
   .patients__reviews {
@@ -58,7 +64,7 @@
     margin-bottom: 4rem;
 
     @include media.breakpoint(mobile) {
-      margin-bottom: 2rem;
+      gap: 1.6rem;
     }
   }
 
@@ -73,18 +79,24 @@
     opacity: 0;
 
     @include media.breakpoint(mobile) {
-      font-size: 1.5rem;
-      font-style: normal;
-      font-weight: 900;
-      line-height: 120%;
-      letter-spacing: -0.015rem;
-      text-transform: uppercase;
-      opacity: 1;
+      display: none;
+    }
+  }
+
+  .patients__reviews-fraction {
+    display: none;
+
+    @include media.breakpoint(mobile) {
+      display: flex;
     }
   }
 
   .patients__reviews-nav {
     margin-left: auto;
+
+    @include media.breakpoint(mobile) {
+      margin-left: 0;
+    }
   }
 
   .patients__reviews-slider-wrapper {
@@ -100,20 +112,21 @@
       height: auto;
       box-sizing: border-box;
       width: 25%;
-      border-right: 1px solid #f3f3f3;
+      border-right: 1px solid #eaeaea;
       transition: border-color 0.2s;
 
-      &:nth-last-child(1 of .swiper-slide-visible) {
-        border-color: transparent;
-      }
+      @media (width > 640px) {
+        &:nth-last-child(1 of .swiper-slide-visible) {
+          border-color: transparent;
+        }
 
-      &:last-child {
-        border-color: transparent;
+        &:last-child {
+          border-color: transparent;
+        }
       }
 
       @include media.breakpoint(mobile) {
-        width: 26rem;
-        border-right: none;
+        width: 16.5rem;
       }
     }
   }
@@ -123,11 +136,15 @@
     align-self: center;
     width: 43.9rem;
     min-height: 6rem;
+    display: grid;
+    place-items: center;
 
     @include media.breakpoint(mobile) {
       margin-top: 4rem;
       width: 100%;
-      min-height: 5rem;
+      min-height: 6rem;
+      padding: 2.3rem 3rem;
+      text-transform: uppercase;
     }
   }
 
@@ -135,6 +152,10 @@
     margin-top: 8rem;
     display: flex;
     flex-direction: column;
+
+    @include media.breakpoint(mobile) {
+      margin-top: 5rem;
+    }
   }
 
   .patients__ratings-heading {
@@ -145,6 +166,13 @@
     letter-spacing: -0.02rem;
     text-transform: uppercase;
     color: #111;
+
+    @include media.breakpoint(mobile) {
+      font-size: 1.8rem;
+      line-height: 100%;
+      letter-spacing: -0.018rem;
+      text-wrap: balance;
+    }
   }
 
   .patients__ratings-star {
@@ -156,8 +184,8 @@
     align-self: center;
 
     @include media.breakpoint(mobile) {
-      width: 20rem;
       margin-top: 4rem;
+      width: auto;
     }
   }
 
@@ -165,6 +193,9 @@
     grid-area: stack;
     width: 100%;
     height: auto;
+    @include media.breakpoint(mobile) {
+      width: 19rem;
+    }
   }
 
   .patients__ratings-star-content {
@@ -178,6 +209,7 @@
 
     @include media.breakpoint(mobile) {
       gap: 0.6rem;
+      width: 17.5rem;
     }
   }
 
@@ -204,11 +236,10 @@
     letter-spacing: -0.018rem;
 
     @include media.breakpoint(mobile) {
-      font-size: 0.8778rem;
-      font-style: normal;
+      font-size: 1.4rem;
       font-weight: 600;
-      line-height: 120%;
-      letter-spacing: -0.0088rem;
+      letter-spacing: -0.014rem;
+      width: 25rem;
     }
   }
 
@@ -216,15 +247,33 @@
     margin-top: 8rem;
     display: flex;
     flex-direction: column;
+
+    @include media.breakpoint(mobile) {
+      margin-top: 4rem;
+    }
   }
 
-  .patients__ratings-nav {
-    align-self: flex-end;
+  .patients__ratings-controls {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
     margin-bottom: 4rem;
 
     @include media.breakpoint(mobile) {
-      margin-bottom: 2rem;
+      justify-content: space-between;
     }
+  }
+
+  .patients__ratings-fraction {
+    display: none;
+
+    @include media.breakpoint(mobile) {
+      display: flex;
+    }
+  }
+
+  .patients__ratings-nav {
+    margin-left: auto;
   }
 
   .patients__ratings-slider-wrapper {
@@ -241,7 +290,7 @@
       transition:
         opacity 0.4s,
         border-color 0.2s;
-      border-right: 1px solid #dcdcdc;
+      border-right: 1px solid #eaeaea;
 
       transition:
         border-color 0.2s,
@@ -259,13 +308,8 @@
         opacity: 0.3;
       }
 
-      // &:last-child {
-      //   border-right: none;
-      // }
-
       @include media.breakpoint(mobile) {
         width: 18.7rem;
-
         &:not(.swiper-slide-visible) {
           opacity: 1;
         }
@@ -273,47 +317,22 @@
     }
   }
 
-  .patients__ratings-slider-wrapper .rating-card {
-    min-height: 44rem;
-    padding: 4rem;
-    gap: 2rem;
-    grid-template-rows: auto 1fr auto;
-
+  .patients__reviews-nav .slider-nav__arrow,
+  .patients__ratings-nav .slider-nav__arrow {
     @include media.breakpoint(mobile) {
-      min-height: 18.7rem;
-      padding: 2rem;
-      gap: 1rem;
+      background-color: transparent;
+      border-color: #d3d3d3;
+
+      svg {
+        fill: #161616;
+      }
     }
   }
 
-  .patients__ratings-slider-wrapper .rating-card__stars svg {
-    width: 2rem;
-    height: 2rem;
-
+  .patients__reviews-nav .slider-nav__arrow.swiper-button-disabled,
+  .patients__ratings-nav .slider-nav__arrow.swiper-button-disabled {
     @include media.breakpoint(mobile) {
-      width: 1.4rem;
-      height: 1.4rem;
-    }
-  }
-
-  .patients__ratings-slider-wrapper .rating-card__amount {
-    font-size: 6rem;
-    font-style: normal;
-    font-weight: 900;
-    line-height: 100%;
-    letter-spacing: -0.06rem;
-
-    @include media.breakpoint(mobile) {
-      font-size: 3.2rem;
-      letter-spacing: -0.032rem;
-    }
-  }
-
-  .patients__ratings-slider-wrapper .rating-card__source {
-    height: 3.2rem;
-
-    @include media.breakpoint(mobile) {
-      height: 1.5rem;
+      border-color: #d3d3d3;
     }
   }
 }

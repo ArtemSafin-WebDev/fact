@@ -15,6 +15,10 @@
     &:visited {
       color: var(--text-color);
     }
+
+    @include media.breakpoint(mobile) {
+      background-color: #e3e1de;
+    }
   }
 
   .video-review-card__media {
@@ -49,17 +53,17 @@
     display: grid;
     place-items: center;
 
-    @include media.breakpoint(mobile) {
-      width: 6rem;
-      height: 6rem;
-      left: 2rem;
-      bottom: 2rem;
-    }
-
     svg {
       width: 100%;
       height: 100%;
       fill: var(--text-color);
+    }
+
+    @include media.breakpoint(mobile) {
+      bottom: 1.7rem;
+      left: 1.7rem;
+      width: 4rem;
+      height: 4rem;
     }
   }
 
@@ -69,10 +73,14 @@
     flex-direction: column;
     gap: 4rem;
     flex-grow: 1;
+    background-color: #fff;
 
     @include media.breakpoint(mobile) {
-      padding: 2rem;
-      gap: 1.6rem;
+      padding: 3.2rem 2rem;
+
+      gap: 1rem;
+
+      background-color: #f6f6f6;
     }
   }
 
@@ -81,12 +89,23 @@
     align-items: flex-start;
     justify-content: space-between;
     gap: 1.6rem;
+
+    @include media.breakpoint(mobile) {
+      flex-direction: column-reverse;
+      align-items: flex-start;
+      justify-content: flex-start;
+      gap: 1rem;
+    }
   }
 
   .video-review-card__author-group {
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
+
+    @include media.breakpoint(mobile) {
+      gap: 0.4rem;
+    }
   }
 
   .video-review-card__title {
@@ -99,8 +118,8 @@
     color: #161616;
 
     @include media.breakpoint(mobile) {
-      font-size: 1.6rem;
-      letter-spacing: -0.016rem;
+      font-size: 1.5rem;
+      letter-spacing: -0.015rem;
     }
   }
 
@@ -110,6 +129,11 @@
     font-weight: 400;
     line-height: 140%;
     color: #161616;
+
+    @include media.breakpoint(mobile) {
+      font-size: 1rem;
+      line-height: 120%;
+    }
   }
 
   .video-review-card__stars {
@@ -117,11 +141,20 @@
     align-items: center;
     gap: 0.3rem;
 
+    @include media.breakpoint(mobile) {
+      gap: 0.1rem;
+    }
+
     svg {
       width: 1.8rem;
       height: 1.8rem;
       fill: var(--yellow-300);
       flex-shrink: 0;
+
+      @include media.breakpoint(mobile) {
+        width: 1.6rem;
+        height: 1.6rem;
+      }
     }
   }
 
@@ -138,7 +171,8 @@
     overflow: hidden;
 
     @include media.breakpoint(mobile) {
-      font-size: 1.3rem;
+      font-size: 1.4rem;
+      line-height: 120%;
     }
   }
 }
