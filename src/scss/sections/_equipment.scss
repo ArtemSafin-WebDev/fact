@@ -5,10 +5,6 @@
   .equipment {
     @include utils.blockWrapper;
     margin-bottom: 8rem;
-
-    @include media.breakpoint(mobile) {
-      margin-bottom: 6rem;
-    }
   }
 
   .equipment__content {
@@ -42,9 +38,6 @@
       &:last-child {
         border-right: 1px solid #d3d3d3;
       }
-      @include media.breakpoint(mobile) {
-        width: 13.4rem;
-      }
     }
   }
 
@@ -73,25 +66,12 @@
     letter-spacing: -0.02rem;
     text-transform: uppercase;
     margin-top: 4rem;
-    @include media.breakpoint(mobile) {
-      font-size: 1.8rem;
-      font-style: normal;
-      font-weight: 900;
-      line-height: 100%;
-      letter-spacing: -0.018rem;
-      text-transform: uppercase;
-      margin-top: 4rem;
-    }
   }
 
   .equipment__features-list {
     display: grid;
     grid-template-columns: repeat(4, minmax(0, 1fr));
     margin-top: 12rem;
-    @include media.breakpoint(mobile) {
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      margin-top: 4rem;
-    }
   }
 
   .equipment__features-list-item {
