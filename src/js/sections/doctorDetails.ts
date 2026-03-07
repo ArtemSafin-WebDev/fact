@@ -1,3 +1,4 @@
+import gsap from "gsap";
 import Swiper from "swiper";
 import { Navigation } from "swiper/modules";
 
@@ -63,39 +64,30 @@ function initLicensesSlider(root: HTMLElement) {
   const container = block.querySelector<HTMLElement>(".swiper");
   if (!container) return;
 
-  const mediaQuery = window.matchMedia("(max-width: 640px)");
-  let slider: Swiper | null = null;
+  const mm = gsap.matchMedia();
 
-  const toggleSlider = () => {
-    if (mediaQuery.matches) {
-      if (slider) return;
+  mm.add("(max-width: 640px)", () => {
+    const slider = new Swiper(container, {
+      speed: 600,
+      slidesPerView: "auto",
+      watchOverflow: true,
+      spaceBetween: 0,
+      modules: [Navigation],
+      watchSlidesProgress: true,
+      navigation: {
+        prevEl: block.querySelector<HTMLButtonElement>(
+          ".slider-nav__arrow--prev",
+        ),
+        nextEl: block.querySelector<HTMLButtonElement>(
+          ".slider-nav__arrow--next",
+        ),
+      },
+    });
 
-      slider = new Swiper(container, {
-        speed: 600,
-        slidesPerView: "auto",
-        watchOverflow: true,
-        spaceBetween: 0,
-        modules: [Navigation],
-        watchSlidesProgress: true,
-        navigation: {
-          prevEl: block.querySelector<HTMLButtonElement>(
-            ".slider-nav__arrow--prev",
-          ),
-          nextEl: block.querySelector<HTMLButtonElement>(
-            ".slider-nav__arrow--next",
-          ),
-        },
-      });
-      return;
-    }
-
-    if (!slider) return;
-    slider.destroy(true, true);
-    slider = null;
-  };
-
-  toggleSlider();
-  mediaQuery.addEventListener("change", toggleSlider);
+    return () => {
+      slider.destroy(true, true);
+    };
+  });
 }
 
 export default function doctorDetails() {

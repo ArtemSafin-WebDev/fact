@@ -16,27 +16,28 @@
     padding: 4rem;
     grid-template-areas: "top" "title" "bottom";
     gap: 1.6rem;
+
     &:link,
     &:visited {
       color: var(--text-color);
     }
 
-    @media (hover: hover) and (pointer: fine) {
-      &:hover {
-        color: white;
-        .clinic-service-card__bg {
-          opacity: 1;
-        }
-      }
-    }
-
     @include media.breakpoint(mobile) {
       padding: 1.5rem 1.6rem 1.8rem;
-
       aspect-ratio: 375 / 235;
       grid-template-rows: auto 1fr auto;
       gap: 0.8rem;
       background-color: #eaeaea;
+    }
+
+    @media (hover: hover) and (pointer: fine) {
+      &:hover {
+        color: white;
+      }
+
+      &:hover .clinic-service-card__bg {
+        opacity: 1;
+      }
     }
   }
 
@@ -47,18 +48,18 @@
     transition: opacity 0.2s;
     opacity: 0;
 
-    img {
-      position: absolute;
-      left: 0;
-      top: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
     @include media.breakpoint(mobile) {
       display: none;
     }
+  }
+
+  .clinic-service-card__bg img {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
   }
 
   .clinic-service-card__top {
@@ -79,6 +80,7 @@
     align-items: center;
     gap: 0.5rem;
     grid-area: doctors;
+
     @include media.breakpoint(mobile) {
       gap: 0.16rem;
     }
@@ -92,24 +94,24 @@
     position: relative;
     border: 1px solid rgba(0, 0, 0, 0.1);
     overflow: hidden;
+
     @include media.breakpoint(mobile) {
       width: 2.5rem;
       height: 2.5rem;
     }
+  }
 
-    img {
-      position: absolute;
-      left: 0;
-      top: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
+  .clinic-service-card__doctor img {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
   }
 
   .clinic-service-card__price {
     grid-area: price;
-
     font-size: 2rem;
     font-style: normal;
     font-weight: 900;
@@ -169,6 +171,7 @@
     font-style: normal;
     font-weight: 400;
     line-height: 140%;
+
     @include media.breakpoint(mobile) {
       font-size: 1.4rem;
       font-style: normal;
@@ -179,6 +182,7 @@
 
   .clinic-service-card__btn {
     width: 27rem;
+
     @include media.breakpoint(mobile) {
       width: 100%;
       height: 4.5rem;

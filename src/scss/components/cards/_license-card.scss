@@ -8,27 +8,27 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #ffffff;
   }
 
   .license-card__media {
     width: 64.2%;
     aspect-ratio: 1;
-
     overflow: hidden;
-
-    img {
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
-      filter: grayscale(100%);
-      transition: filter 0.2s;
-    }
   }
 
-  @media (hover: hover) and (pointer: fine) {
-    .license-card:hover .license-card__media img {
-      filter: grayscale(0);
+  .license-card__media img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    filter: grayscale(100%);
+    transition: filter 0.2s;
+  }
+
+  .license-card {
+    @media (hover: hover) and (pointer: fine) {
+      &:hover .license-card__media img {
+        filter: grayscale(0);
+      }
     }
   }
 }

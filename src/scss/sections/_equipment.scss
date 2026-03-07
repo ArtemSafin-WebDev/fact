@@ -147,30 +147,6 @@
     }
   }
 
-  .equipment__features-slider-nav {
-    .slider-nav__arrow {
-      @include media.breakpoint(mobile) {
-        border-color: #cbcbcb;
-        background-color: #fff;
-
-        svg {
-          fill: #161616;
-        }
-      }
-
-      &.swiper-button-disabled {
-        @include media.breakpoint(mobile) {
-          border-color: #cbcbcb;
-          background-color: #fff;
-
-          svg {
-            opacity: 0.45;
-          }
-        }
-      }
-    }
-  }
-
   .equipment__features-list {
     display: grid;
     grid-template-columns: repeat(4, minmax(0, 1fr));

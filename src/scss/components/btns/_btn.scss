@@ -47,7 +47,19 @@
       }
     }
 
-    &.btn--mobile-large {
+    @include media.breakpoint(mobile) {
+      align-self: stretch;
+      width: auto;
+      font-size: 1.4rem;
+      font-style: normal;
+      font-weight: 900;
+      line-height: 100%;
+      max-width: none;
+      padding: 1.5rem 3.2rem;
+      text-transform: none;
+    }
+
+    &--mobile-large {
       @include media.breakpoint(mobile) {
         display: flex;
         align-items: center;
@@ -67,18 +79,6 @@
           color: white;
         }
       }
-    }
-
-    @include media.breakpoint(mobile) {
-      align-self: stretch;
-      width: auto;
-      font-size: 1.4rem;
-      font-style: normal;
-      font-weight: 900;
-      line-height: 100%;
-      max-width: none;
-      padding: 1.5rem 3.2rem;
-      text-transform: none;
     }
   }
 }

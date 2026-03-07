@@ -229,39 +229,4 @@
     }
   }
 
-  .faq .accordion {
-    @include media.breakpoint(mobile) {
-      padding: 2rem 0;
-      border-bottom-color: #d9d9d9;
-    }
-  }
-
-  .faq__list-item:last-child .accordion {
-    @include media.breakpoint(mobile) {
-      padding-bottom: 2rem;
-      border-bottom: 1px solid #d9d9d9;
-    }
-  }
-
-  .faq .accordion__btn {
-    @include media.breakpoint(mobile) {
-      gap: 0.7rem;
-    }
-  }
-
-  .faq .accordion__btn-text {
-    @include media.breakpoint(mobile) {
-      align-self: flex-start;
-      font-size: 1.5rem;
-      line-height: 120%;
-      letter-spacing: -0.03rem;
-    }
-  }
-
-  .faq .accordion__text {
-    @include media.breakpoint(mobile) {
-      font-size: 1.4rem;
-      line-height: 120%;
-    }
-  }
 }

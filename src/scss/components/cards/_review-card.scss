@@ -1,0 +1,117 @@
+@use "media";
+
+@layer components {
+  .doctor-details__review-card {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+    aspect-ratio: 4 / 3;
+    padding: 4rem;
+    background-color: #fff;
+    color: #111;
+
+    @include media.breakpoint(mobile) {
+      aspect-ratio: 343 / 220;
+      padding: 2rem 2.15rem;
+      gap: 3rem;
+      background-color: #f6f6f6;
+    }
+  }
+
+  .doctor-details__review-head {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 2rem;
+  }
+
+  .doctor-details__review-name {
+    font-size: 2rem;
+    font-weight: 900;
+    line-height: 100%;
+    letter-spacing: -0.02rem;
+    text-transform: uppercase;
+
+    @include media.breakpoint(mobile) {
+      font-size: 1.5rem;
+      letter-spacing: -0.015rem;
+    }
+  }
+
+  .doctor-details__review-date {
+    margin-top: 1rem;
+    font-size: 1.2rem;
+    font-weight: 400;
+    line-height: 140%;
+
+    @include media.breakpoint(mobile) {
+      font-size: 1rem;
+      line-height: 120%;
+    }
+  }
+
+  .doctor-details__review-stars {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+
+    @include media.breakpoint(mobile) {
+      gap: 0.2rem;
+    }
+  }
+
+  .doctor-details__review-stars svg {
+    width: 1.8rem;
+    height: 1.8rem;
+    fill: var(--yellow-300);
+
+    @include media.breakpoint(mobile) {
+      width: 1.4rem;
+      height: 1.4rem;
+    }
+  }
+
+  .doctor-details__review-text {
+    font-size: 1.5rem;
+    font-weight: 400;
+    line-height: 140%;
+
+    @include media.breakpoint(mobile) {
+      font-size: 1.4rem;
+      line-height: 120%;
+    }
+  }
+
+  .doctor-details__review-btn {
+    margin-top: auto;
+    width: 100%;
+    padding: 0 2rem;
+    height: 6rem;
+    display: grid;
+    place-items: center;
+
+    @include media.breakpoint(mobile) {
+      width: 4.5rem;
+      height: 4.5rem;
+      margin-left: auto;
+      padding: 0;
+    }
+  }
+
+  .doctor-details__review-btn-text {
+    @include media.breakpoint(mobile) {
+      display: none;
+    }
+  }
+
+  .doctor-details__review-btn-icon {
+    display: none;
+    width: 1.3rem;
+    height: 1.3rem;
+    fill: currentColor;
+
+    @include media.breakpoint(mobile) {
+      display: block;
+    }
+  }
+}

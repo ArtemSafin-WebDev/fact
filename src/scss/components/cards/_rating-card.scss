@@ -27,16 +27,17 @@
     align-items: center;
     gap: 0.4rem;
     align-self: flex-start;
+  }
 
-    svg {
-      flex-shrink: 0;
-      width: 2rem;
-      height: 2rem;
-      fill: var(--yellow-300);
-      @include media.breakpoint(mobile) {
-        width: 2.5rem;
-        height: 2.5rem;
-      }
+  .rating-card__stars svg {
+    flex-shrink: 0;
+    width: 2rem;
+    height: 2rem;
+    fill: var(--yellow-300);
+
+    @include media.breakpoint(mobile) {
+      width: 2.5rem;
+      height: 2.5rem;
     }
   }
 
@@ -51,6 +52,7 @@
     line-height: 100%;
     letter-spacing: -0.06rem;
     text-transform: uppercase;
+
     @include media.breakpoint(mobile) {
       font-size: 3.2rem;
       font-style: normal;
@@ -70,6 +72,7 @@
     object-position: left center;
     align-self: flex-end;
     justify-self: flex-start;
+
     @include media.breakpoint(mobile) {
       height: 1.5rem;
     }

@@ -185,5 +185,12 @@
     align-self: stretch;
     width: 100%;
     margin-top: 0;
+
+    @media (hover: hover) and (pointer: fine) {
+      &:hover {
+        background-color: var(--text-color);
+        color: white;
+      }
+    }
   }
 }

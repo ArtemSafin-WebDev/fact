@@ -11,14 +11,14 @@
     background-color: #fff;
     color: var(--text-color);
 
-    &:link,
-    &:visited {
-      color: var(--text-color);
-    }
-
     @include media.breakpoint(mobile) {
       background-color: #e3e1de;
     }
+  }
+
+  .video-review-card:link,
+  .video-review-card:visited {
+    color: var(--text-color);
   }
 
   .video-review-card__media {
@@ -27,19 +27,26 @@
     aspect-ratio: 1;
   }
 
-  .video-review-card__bg,
+  .video-review-card__bg {
+    position: absolute;
+    inset: 0;
+  }
+
+  .video-review-card__bg img {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
   .video-review-card__media > img {
     position: absolute;
     inset: 0;
-
-    img {
-      position: absolute;
-      left: 0;
-      top: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
   }
 
   .video-review-card__play {
@@ -53,18 +60,18 @@
     display: grid;
     place-items: center;
 
-    svg {
-      width: 100%;
-      height: 100%;
-      fill: var(--text-color);
-    }
-
     @include media.breakpoint(mobile) {
       bottom: 1.7rem;
       left: 1.7rem;
       width: 4rem;
       height: 4rem;
     }
+  }
+
+  .video-review-card__play svg {
+    width: 100%;
+    height: 100%;
+    fill: var(--text-color);
   }
 
   .video-review-card__content {
@@ -77,9 +84,7 @@
 
     @include media.breakpoint(mobile) {
       padding: 3.2rem 2rem;
-
       gap: 1rem;
-
       background-color: #f6f6f6;
     }
   }
@@ -144,17 +149,17 @@
     @include media.breakpoint(mobile) {
       gap: 0.1rem;
     }
+  }
 
-    svg {
-      width: 1.8rem;
-      height: 1.8rem;
-      fill: var(--yellow-300);
-      flex-shrink: 0;
+  .video-review-card__stars svg {
+    width: 1.8rem;
+    height: 1.8rem;
+    fill: var(--yellow-300);
+    flex-shrink: 0;
 
-      @include media.breakpoint(mobile) {
-        width: 1.6rem;
-        height: 1.6rem;
-      }
+    @include media.breakpoint(mobile) {
+      width: 1.6rem;
+      height: 1.6rem;
     }
   }
 

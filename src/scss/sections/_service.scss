@@ -5,7 +5,6 @@
   .service {
     @include utils.blockWrapper;
     margin-bottom: 12rem;
-    padding-top: 12rem;
 
     @include media.breakpoint(mobile) {
       margin-bottom: 6rem;
@@ -17,6 +16,12 @@
     @include utils.blockContent;
     display: grid;
     grid-template-columns: repeat(8, minmax(0, 1fr));
+
+    @include media.breakpoint(mobile) {
+      display: flex;
+      flex-direction: column;
+      gap: 4rem;
+    }
   }
 
   .service__left {
@@ -24,17 +29,31 @@
     flex-direction: column;
     justify-content: space-between;
     grid-column: 1 / 4;
+
+    @include media.breakpoint(mobile) {
+      display: contents;
+    }
   }
 
   .service__top {
     display: flex;
     flex-direction: column;
     gap: 3.2rem;
+
+    @include media.breakpoint(mobile) {
+      order: 1;
+      gap: 1.5rem;
+    }
   }
 
   .service__title {
     letter-spacing: -0.08rem;
     text-wrap: balance;
+
+    @include media.breakpoint(mobile) {
+      letter-spacing: -0.04rem;
+      text-wrap: initial;
+    }
   }
 
   .service__desc {
@@ -46,6 +65,14 @@
     color: #161616;
     // max-width: 64.2rem;
     text-wrap: balance;
+
+    @include media.breakpoint(mobile) {
+      max-width: 32.4rem;
+      font-size: 1.4rem;
+      line-height: 120%;
+      letter-spacing: -0.014rem;
+      text-wrap: initial;
+    }
   }
 
   .service__btn {
@@ -54,12 +81,21 @@
     justify-content: center;
     align-self: stretch;
     width: 100%;
+
+    @include media.breakpoint(mobile) {
+      order: 3;
+    }
   }
 
   .service__right {
     display: flex;
     flex-direction: column;
     grid-column: 5 / -1;
+
+    @include media.breakpoint(mobile) {
+      order: 2;
+      grid-column: auto;
+    }
   }
 
   .service__list {
@@ -85,6 +121,9 @@
 
     @include media.breakpoint(mobile) {
       padding: 1.6rem 0;
+      grid-template-columns: 2.5rem minmax(0, 1fr);
+      column-gap: 1.8rem;
+      align-items: flex-start;
     }
   }
 
@@ -92,6 +131,10 @@
     display: flex;
     align-items: center;
     gap: 4rem;
+
+    @include media.breakpoint(mobile) {
+      display: contents;
+    }
   }
 
   .service__card-icon {
@@ -99,9 +142,13 @@
     width: 4rem;
     height: 4rem;
     object-fit: contain;
+
     @include media.breakpoint(mobile) {
       width: 2.5rem;
       height: 2.5rem;
+      grid-column: 1;
+      grid-row: 1 / 3;
+      align-self: center;
     }
   }
 
@@ -118,6 +165,8 @@
     @include media.breakpoint(mobile) {
       font-size: 1.6rem;
       letter-spacing: -0.016rem;
+      grid-column: 2;
+      margin-bottom: 1.5rem;
     }
   }
 
@@ -133,69 +182,6 @@
     @include media.breakpoint(mobile) {
       font-size: 1.4rem;
       line-height: 140%;
-    }
-  }
-
-  @include media.breakpoint(mobile) {
-    .service__content {
-      display: flex;
-      flex-direction: column;
-      gap: 4rem;
-    }
-
-    .service__left {
-      display: contents;
-    }
-
-    .service__top {
-      order: 1;
-      gap: 1.5rem;
-    }
-
-    .service__desc {
-      max-width: 32.4rem;
-      font-size: 1.4rem;
-      line-height: 120%;
-      letter-spacing: -0.014rem;
-      text-wrap: initial;
-    }
-
-    .service__title {
-      letter-spacing: -0.04rem;
-      text-wrap: initial;
-    }
-
-    .service__right {
-      order: 2;
-      grid-column: auto;
-    }
-
-    .service__btn {
-      order: 3;
-    }
-
-    .service__card {
-      grid-template-columns: 2.5rem minmax(0, 1fr);
-      column-gap: 1.8rem;
-      align-items: flex-start;
-    }
-
-    .service__card-left {
-      display: contents;
-    }
-
-    .service__card-icon {
-      grid-column: 1;
-      grid-row: 1 / 3;
-      align-self: center;
-    }
-
-    .service__card-title {
-      grid-column: 2;
-      margin-bottom: 1.5rem;
-    }
-
-    .service__card-text {
       grid-column: 2;
     }
   }

@@ -73,17 +73,6 @@
         border-right: none;
       }
     }
-
-    @include media.breakpoint(mobile) {
-      .swiper-slide-active .promo-card {
-        color: white;
-        border-color: transparent;
-      }
-
-      .swiper-slide-active .promo-card__bg {
-        opacity: 1;
-      }
-    }
   }
 
   .promo__slider-wrapper {
@@ -118,28 +107,6 @@
       align-items: center;
       justify-content: space-between;
       margin-bottom: 2rem;
-    }
-  }
-
-  .promo__slider-nav {
-    @include media.breakpoint(mobile) {
-      .slider-nav__arrow {
-        border-color: #cbcbcb;
-        background-color: white;
-
-        svg {
-          fill: #161616;
-        }
-
-        &.swiper-button-disabled {
-          border-color: #cbcbcb;
-          background-color: white;
-
-          svg {
-            opacity: 0.45;
-          }
-        }
-      }
     }
   }
 

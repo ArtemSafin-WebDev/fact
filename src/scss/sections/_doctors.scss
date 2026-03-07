@@ -124,32 +124,6 @@
     }
   }
 
-  .doctors__slider-nav {
-    .slider-nav__arrow {
-      width: 6rem;
-      height: 6rem;
-
-      @include media.breakpoint(mobile) {
-        width: 4rem;
-        height: 4rem;
-        border-color: #a4a4a4;
-        background-color: transparent;
-      }
-
-      @include media.breakpoint(mobile) {
-        svg {
-          fill: #161616;
-        }
-      }
-
-      &.swiper-button-disabled {
-        @include media.breakpoint(mobile) {
-          opacity: 0.5;
-        }
-      }
-    }
-  }
-
   .doctors__tabs {
     position: relative;
     margin-top: 4rem;

@@ -14,22 +14,21 @@
     }
   }
 
-  .catalog-doctors-hero__content {
-    @include utils.blockContent;
-    display: flex;
-    flex-direction: column;
-  }
-
   .catalog-doctors-hero .breadcrumbs {
     @include media.breakpoint(mobile) {
       display: none;
     }
   }
 
+  .catalog-doctors-hero__content {
+    @include utils.blockContent;
+    display: flex;
+    flex-direction: column;
+  }
+
   .catalog-doctors-hero__title {
     margin-top: 4rem;
     font-size: 8rem;
-    font-style: normal;
     font-weight: 900;
     line-height: 100%;
     letter-spacing: -0.08rem;
@@ -51,7 +50,6 @@
     text-align: center;
     text-transform: uppercase;
     font-size: 4.5rem;
-    font-style: normal;
     font-weight: 900;
     line-height: 100%;
     letter-spacing: -0.05rem;
@@ -68,7 +66,6 @@
 
   .catalog-doctors-hero__filters {
     margin-top: 6rem;
-
     display: grid;
     grid-template-columns: repeat(8, minmax(0, 1fr));
 
@@ -97,6 +94,10 @@
     border: none;
     min-width: 0;
 
+    @include media.breakpoint(mobile) {
+      grid-column: 1 / -1;
+    }
+
     .tabs-nav__list {
       width: 100%;
     }
@@ -109,12 +110,8 @@
       min-width: 0;
       width: 100%;
       padding: 2.25rem 2rem;
-    }
 
-    @include media.breakpoint(mobile) {
-      grid-column: 1 / -1;
-
-      .tabs-nav__btn {
+      @include media.breakpoint(mobile) {
         padding: 1.5rem 1rem;
         font-size: 1rem;
       }
@@ -159,7 +156,6 @@
       background-color: #fff;
       color: var(--text-color);
       font-size: 1.5rem;
-      font-style: normal;
       font-weight: 500;
       line-height: 100%;
 
@@ -167,10 +163,8 @@
         color: var(--text-color);
         opacity: 1;
       }
-    }
 
-    @include media.breakpoint(mobile) {
-      input {
+      @include media.breakpoint(mobile) {
         height: 4rem;
         padding: 0 1.2rem;
         border-right: none;
@@ -185,7 +179,6 @@
     gap: 1rem;
     color: #222;
     font-size: 1.4rem;
-    font-style: normal;
     font-weight: 500;
     line-height: 120%;
     letter-spacing: -0.028rem;
@@ -211,17 +204,17 @@
     display: grid;
     place-items: center;
 
+    @include media.breakpoint(mobile) {
+      width: 1.4rem;
+      height: 1.4rem;
+    }
+
     svg {
       fill: white;
       width: 0.8rem;
       height: 0.8rem;
-    }
 
-    @include media.breakpoint(mobile) {
-      width: 1.4rem;
-      height: 1.4rem;
-
-      svg {
+      @include media.breakpoint(mobile) {
         width: 0.6rem;
         height: 0.6rem;
       }

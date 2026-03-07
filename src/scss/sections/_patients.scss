@@ -310,23 +310,4 @@
       }
     }
   }
-
-  .patients__reviews-nav .slider-nav__arrow,
-  .patients__ratings-nav .slider-nav__arrow {
-    @include media.breakpoint(mobile) {
-      background-color: transparent;
-      border-color: #d3d3d3;
-
-      svg {
-        fill: #161616;
-      }
-    }
-  }
-
-  .patients__reviews-nav .slider-nav__arrow.swiper-button-disabled,
-  .patients__ratings-nav .slider-nav__arrow.swiper-button-disabled {
-    @include media.breakpoint(mobile) {
-      border-color: #d3d3d3;
-    }
-  }
 }

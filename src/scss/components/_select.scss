@@ -97,11 +97,11 @@
       font-weight: 900;
       background-color: #f6f6f6;
     }
-  }
 
-  @media (hover: hover) and (pointer: fine) {
-    .select__option:hover span {
-      background-color: #f6f6f6;
+    @media (hover: hover) and (pointer: fine) {
+      &:hover span {
+        background-color: #f6f6f6;
+      }
     }
   }
 

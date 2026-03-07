@@ -126,30 +126,4 @@
       }
     }
   }
-
-  .licenses__slider-nav {
-    .slider-nav__arrow {
-      @include media.breakpoint(mobile) {
-        background-color: #fff;
-        border-color: var(--licenses-divider-color);
-      }
-
-      @include media.breakpoint(mobile) {
-        svg {
-          fill: #161616;
-        }
-      }
-
-      &.swiper-button-disabled {
-        @include media.breakpoint(mobile) {
-          background-color: #fff;
-          border-color: var(--licenses-divider-color);
-
-          svg {
-            opacity: 0.45;
-          }
-        }
-      }
-    }
-  }
 }

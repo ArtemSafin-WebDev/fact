@@ -6,6 +6,11 @@
     padding: 4rem 0;
     border-bottom: 1px solid #e6e6e6;
 
+    @include media.breakpoint(mobile) {
+      padding: 2rem 0;
+      border-bottom-color: #d9d9d9;
+    }
+
     li:first-child & {
       padding-top: 0;
     }
@@ -13,6 +18,11 @@
     li:last-child & {
       padding-bottom: 0;
       border: none;
+
+      @include media.breakpoint(mobile) {
+        padding-bottom: 2rem;
+        border-bottom: 1px solid #d9d9d9;
+      }
     }
   }
 
@@ -23,6 +33,10 @@
     align-items: flex-start;
     gap: 2rem;
     justify-content: space-between;
+
+    @include media.breakpoint(mobile) {
+      gap: 0.7rem;
+    }
   }
 
   .accordion__btn-text {
@@ -35,13 +49,12 @@
     font-size: 2rem;
     line-height: 140%;
     letter-spacing: -0.04rem;
+
     @include media.breakpoint(mobile) {
-      font-size: 1.6rem;
-      font-style: normal;
-      font-weight: 900;
-      line-height: 100%;
-      letter-spacing: -0.032rem;
-      text-transform: uppercase;
+      align-self: flex-start;
+      font-size: 1.5rem;
+      line-height: 120%;
+      letter-spacing: -0.03rem;
     }
   }
 
@@ -118,7 +131,8 @@
     color: #161616;
 
     @include media.breakpoint(mobile) {
-      font-size: 1.6rem;
+      font-size: 1.4rem;
+      line-height: 120%;
     }
   }
 }

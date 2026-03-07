@@ -68,26 +68,6 @@
     }
   }
 
-  .blog__slider-nav .slider-nav__arrow {
-    @include media.breakpoint(mobile) {
-      background-color: #fff;
-      border-color: #cbcbcb;
-
-      svg {
-        fill: #161616;
-      }
-
-      &.swiper-button-disabled {
-        background-color: #fff;
-        border-color: #cbcbcb;
-
-        svg {
-          opacity: 0.45;
-        }
-      }
-    }
-  }
-
   .blog__list {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));

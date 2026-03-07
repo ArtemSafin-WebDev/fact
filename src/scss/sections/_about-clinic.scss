@@ -5,6 +5,7 @@
   .about-clinic {
     @include utils.blockWrapper;
     padding-top: 12rem;
+    margin-bottom: 12rem;
 
     @include media.breakpoint(mobile) {
       padding-top: 6rem;
@@ -116,21 +117,6 @@
       align-items: center;
       justify-content: space-between;
       gap: 1.6rem;
-    }
-  }
-
-  .about-clinic__slider-nav {
-    .slider-nav__arrow {
-      background-color: transparent;
-      border-color: #d3d3d3;
-    }
-
-    .slider-nav__arrow svg {
-      fill: #161616;
-    }
-
-    .slider-nav__arrow.swiper-button-disabled {
-      border-color: #d3d3d3;
     }
   }
 
