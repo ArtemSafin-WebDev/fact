@@ -55,6 +55,56 @@ function initFoldableBlocks(root: HTMLElement) {
   });
 }
 
+function initMobileFoldableBlocks(root: HTMLElement) {
+  const blocks = Array.from(
+    root.querySelectorAll<HTMLElement>("[data-doctor-mobile-foldable]"),
+  );
+
+  blocks.forEach((block) => {
+    const toggle = block.querySelector<HTMLButtonElement>(
+      "[data-doctor-mobile-toggle]",
+    );
+    const list = block.querySelector<HTMLElement>("[data-doctor-mobile-items]");
+    const items = list
+      ? Array.from(list.querySelectorAll<HTMLElement>("p"))
+      : [];
+
+    if (!toggle || items.length < 2) {
+      if (toggle) toggle.hidden = true;
+      return;
+    }
+
+    const mediaQuery = window.matchMedia("(max-width: 640px)");
+    const defaultText = toggle.dataset.defaultText || "Показать полностью";
+    const expandedText = toggle.dataset.expandedText || "Скрыть";
+
+    const applyState = () => {
+      if (mediaQuery.matches) {
+        block.classList.remove("is-mobile-expanded");
+        toggle.hidden = false;
+        toggle.textContent = defaultText;
+        toggle.setAttribute("aria-expanded", "false");
+        return;
+      }
+
+      block.classList.add("is-mobile-expanded");
+      toggle.hidden = true;
+      toggle.setAttribute("aria-expanded", "true");
+    };
+
+    toggle.addEventListener("click", () => {
+      if (!mediaQuery.matches) return;
+
+      const isExpanded = block.classList.toggle("is-mobile-expanded");
+      toggle.textContent = isExpanded ? expandedText : defaultText;
+      toggle.setAttribute("aria-expanded", String(isExpanded));
+    });
+
+    mediaQuery.addEventListener("change", applyState);
+    applyState();
+  });
+}
+
 function initLicensesSlider(root: HTMLElement) {
   const block = root.querySelector<HTMLElement>(
     ".doctor-details__info-block--licenses",
@@ -101,5 +151,6 @@ export default function doctorDetails() {
     initSlider(section, ".doctor-details__colleagues");
     initLicensesSlider(section);
     initFoldableBlocks(section);
+    initMobileFoldableBlocks(section);
   });
 }

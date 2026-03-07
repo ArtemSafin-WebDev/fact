@@ -56,10 +56,17 @@
                     {{doctorDetails.position}}
                 </p>
 
-                <div class="doctor-details__achievements">
-                    {{#each doctorDetails.achievements}}
-                    <p>{{this}}</p>
-                    {{/each}}
+                <div class="doctor-details__achievements" data-doctor-mobile-foldable>
+                    <div class="doctor-details__achievements-list" data-doctor-mobile-items>
+                        {{#each doctorDetails.achievements}}
+                        <p>{{this}}</p>
+                        {{/each}}
+                    </div>
+                    <button class="doctor-details__toggle doctor-details__toggle--mobile" type="button"
+                        data-doctor-mobile-toggle data-default-text="Показать полностью" data-expanded-text="Скрыть"
+                        aria-expanded="false">
+                        Показать полностью
+                    </button>
                 </div>
 
                 <div class="doctor-details__stats">

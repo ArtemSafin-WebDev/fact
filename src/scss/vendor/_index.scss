@@ -1,2 +1,9 @@
 @import "swiper/css" layer(vendor);
 @import "swiper/css/grid" layer(vendor);
+
+.swiper-slide {
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  box-sizing: border-box;
+}
