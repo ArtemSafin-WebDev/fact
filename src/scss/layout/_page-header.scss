@@ -22,12 +22,13 @@
     padding: 2.4rem 0;
 
     @include media.breakpoint(mobile) {
-      padding: 1.8rem 0;
+      padding: 1.6rem 0;
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 2rem;
       grid-template-areas: "phone schedule" "divider divider" "logo btns";
       align-items: center;
+      row-gap: 1.6rem;
 
       &::before {
         content: "";
@@ -114,6 +115,7 @@
       width: 4rem;
       height: 4rem;
       background-color: #fff;
+      color: var(--text-color);
     }
   }
 
