@@ -33,9 +33,18 @@
             <div class="page-header__bottom-wrapper">
 
 
-                <a href="#" class="page-header__services-link">
-                    Услуги
-                </a>
+                <button
+                    class="page-header__services-link"
+                    type="button"
+                    data-services-menu-toggle
+                    aria-expanded="false"
+                    aria-controls="header-services-menu"
+                >
+                    <span>Услуги</span>
+                    <svg class="page-header__services-link-arrow" width="16" height="8" aria-hidden="true">
+                        <use xlink:href="#arrow-down"></use>
+                    </svg>
+                </button>
                 <nav class="page-header__nav">
                     <ul class="page-header__nav-list">
                         <li class="page-header__nav-list-item">
@@ -93,6 +102,140 @@
                 </div>
             </div>
 
+        </div>
+    </div>
+    <div class="page-header__services-menu" id="header-services-menu" data-services-menu aria-hidden="true">
+        <div class="page-header__services-menu-content">
+            <div class="page-header__services-menu-grid">
+                <div class="page-header__services-menu-left">
+                    <ul class="page-header__services-menu-list">
+                        <li class="page-header__services-menu-item">
+                            <button
+                                class="page-header__services-menu-btn is-active"
+                                type="button"
+                                data-services-menu-tab="diagnostics"
+                            >
+                                Диагностика
+                            </button>
+                        </li>
+                        <li class="page-header__services-menu-item">
+                            <button
+                                class="page-header__services-menu-btn"
+                                type="button"
+                                data-services-menu-tab="children"
+                            >
+                                Детское отделение
+                            </button>
+                        </li>
+                        <li class="page-header__services-menu-item">
+                            <button
+                                class="page-header__services-menu-btn"
+                                type="button"
+                                data-services-menu-tab="laser"
+                            >
+                                Лазерная коррекция
+                            </button>
+                        </li>
+                        <li class="page-header__services-menu-item">
+                            <button
+                                class="page-header__services-menu-btn"
+                                type="button"
+                                data-services-menu-tab="glaucoma"
+                            >
+                                Глаукома
+                            </button>
+                        </li>
+                        <li class="page-header__services-menu-item">
+                            <button
+                                class="page-header__services-menu-btn"
+                                type="button"
+                                data-services-menu-tab="cataract"
+                            >
+                                Катаракта
+                            </button>
+                        </li>
+                        <li class="page-header__services-menu-item">
+                            <button
+                                class="page-header__services-menu-btn"
+                                type="button"
+                                data-services-menu-tab="keratoconus"
+                            >
+                                Кератоконус
+                            </button>
+                        </li>
+                        <li class="page-header__services-menu-item">
+                            <button
+                                class="page-header__services-menu-btn"
+                                type="button"
+                                data-services-menu-tab="oculoplastic"
+                            >
+                                Окулопластика
+                            </button>
+                        </li>
+                    </ul>
+                </div>
+                <div class="page-header__services-menu-right">
+                    <div
+                        class="page-header__services-menu-pane is-active"
+                        data-services-menu-pane="diagnostics"
+                    >
+                        <p class="page-header__services-menu-description">
+                            Современная диагностика и консультация офтальмолога за один визит
+                        </p>
+                        <figure class="page-header__services-menu-media">
+                            <img src="/images/equipment/feature.webp" alt="Диагностика" loading="lazy">
+                        </figure>
+                    </div>
+                    <div class="page-header__services-menu-pane" data-services-menu-pane="children">
+                        <p class="page-header__services-menu-description">
+                            Диагностика и лечение зрения у детей с бережным сопровождением родителей
+                        </p>
+                        <figure class="page-header__services-menu-media">
+                            <img src="/images/doctors/2.webp" alt="Детское отделение" loading="lazy">
+                        </figure>
+                    </div>
+                    <div class="page-header__services-menu-pane" data-services-menu-pane="laser">
+                        <p class="page-header__services-menu-description">
+                            Лазерная коррекция зрения с персональным подбором методики
+                        </p>
+                        <figure class="page-header__services-menu-media">
+                            <img src="/images/equipment/2.webp" alt="Лазерная коррекция" loading="lazy">
+                        </figure>
+                    </div>
+                    <div class="page-header__services-menu-pane" data-services-menu-pane="glaucoma">
+                        <p class="page-header__services-menu-description">
+                            Контроль внутриглазного давления и программы лечения глаукомы
+                        </p>
+                        <figure class="page-header__services-menu-media">
+                            <img src="/images/equipment/4.webp" alt="Лечение глаукомы" loading="lazy">
+                        </figure>
+                    </div>
+                    <div class="page-header__services-menu-pane" data-services-menu-pane="cataract">
+                        <p class="page-header__services-menu-description">
+                            Операции при катаракте и подбор интраокулярной линзы
+                        </p>
+                        <figure class="page-header__services-menu-media">
+                            <img src="/images/equipment/3.webp" alt="Лечение катаракты" loading="lazy">
+                        </figure>
+                    </div>
+                    <div class="page-header__services-menu-pane" data-services-menu-pane="keratoconus">
+                        <p class="page-header__services-menu-description">
+                            Диагностика кератоконуса и современные методы стабилизации роговицы
+                        </p>
+                        <figure class="page-header__services-menu-media">
+                            <img src="/images/equipment/6.webp" alt="Лечение кератоконуса" loading="lazy">
+                        </figure>
+                    </div>
+                    <div class="page-header__services-menu-pane" data-services-menu-pane="oculoplastic">
+                        <p class="page-header__services-menu-description">
+                            Эстетическая и реконструктивная окулопластика периорбитальной зоны
+                        </p>
+                        <figure class="page-header__services-menu-media">
+                            <img src="/images/about-clinic/preview.webp" alt="Окулопластика" loading="lazy">
+                        </figure>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </header>

@@ -6,13 +6,16 @@
     position: absolute;
     left: 0;
     top: 0;
-    z-index: 5;
+    z-index: 100;
+    isolation: isolate;
     width: 100%;
     @include utils.blockWrapper;
   }
 
   .page-header__content {
     @include utils.blockContent;
+    position: relative;
+    z-index: 2;
     display: flex;
     flex-direction: column;
     gap: 2.9rem;
@@ -220,33 +223,21 @@
     justify-content: space-between;
     flex-shrink: 0;
     width: 30rem;
+    cursor: pointer;
+    border: none;
 
     font-size: 1.5rem;
     font-style: normal;
     font-weight: 900;
     line-height: 100%;
     text-transform: uppercase;
-    padding: 2.4rem 2rem;
+    padding: 2rem 2rem;
     background-color: var(--green-300);
     color: var(--text-color);
     gap: 1.6rem;
     transition:
       background-color 0.2s,
       color 0.2s;
-
-    &::after {
-      content: "";
-      width: 1rem;
-      height: 1rem;
-      border-radius: 50%;
-      background-color: currentColor;
-      flex-shrink: 0;
-    }
-
-    &:link,
-    &:visited {
-      color: var(--text-color);
-    }
 
     @media (hover: hover) and (pointer: fine) {
       &:hover {
@@ -257,6 +248,141 @@
     @include media.breakpoint(mobile) {
       display: none;
     }
+  }
+
+  .page-header__services-link-arrow {
+    flex-shrink: 0;
+    width: 2rem;
+    height: 2rem;
+    fill: currentColor;
+    transition: transform 0.2s;
+  }
+
+  .page-header.is-services-open .page-header__services-link {
+    background-color: var(--text-color);
+    color: #fff;
+  }
+
+  .page-header.is-services-open .page-header__services-link-arrow {
+    transform: rotate(180deg);
+  }
+
+  .page-header__services-menu {
+    @include utils.blockWrapper;
+    position: fixed;
+    inset: 0;
+    z-index: 1;
+    background-color: #f0f0f0;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    overflow-y: auto;
+    transition:
+      opacity 0.25s ease,
+      visibility 0.25s ease;
+
+    @include media.breakpoint(mobile) {
+      display: none;
+    }
+  }
+
+  .page-header.is-services-open .page-header__services-menu {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+  }
+
+  .page-header__services-menu-content {
+    @include utils.blockContent;
+    height: 100vh;
+    padding-top: 22.5rem;
+    padding-bottom: 6rem;
+  }
+
+  .page-header__services-menu-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .page-header__services-menu-left {
+    grid-column: 2 / 3;
+    border-right: 1px solid rgb(22 22 22 / 10%);
+  }
+
+  .page-header__services-menu-list {
+    display: flex;
+    flex-direction: column;
+    gap: 4.9rem;
+    padding-right: 3rem;
+  }
+
+  .page-header__services-menu-btn {
+    border: none;
+    background: transparent;
+    width: max-content;
+    color: var(--text-color);
+    font-size: 3rem;
+    font-style: normal;
+    font-weight: 900;
+    line-height: 100%;
+    letter-spacing: -0.03rem;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: color 0.2s;
+    text-align: left;
+  }
+
+  .page-header__services-menu-btn.is-active {
+    color: var(--green-300);
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    .page-header__services-menu-btn:hover {
+      color: var(--green-300);
+    }
+  }
+
+  .page-header__services-menu-right {
+    grid-column: 3 / -1;
+    padding-left: 11rem;
+    display: grid;
+  }
+
+  .page-header__services-menu-pane {
+    grid-area: 1 / 1;
+    display: grid;
+    grid-template-columns: 1fr 44rem;
+    align-items: start;
+    gap: 5.4rem;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 0.25s ease;
+  }
+
+  .page-header__services-menu-pane.is-active {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+  }
+
+  .page-header__services-menu-description {
+    font-size: 1.5rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 140%;
+  }
+
+  .page-header__services-menu-media {
+    width: 44rem;
+    aspect-ratio: 1;
+  }
+
+  .page-header__services-menu-media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
   }
 
   .page-header__wrapper {
@@ -280,7 +406,6 @@
     display: flex;
     align-items: center;
     gap: 2rem;
-
   }
 
   .page-header__nav-link {
