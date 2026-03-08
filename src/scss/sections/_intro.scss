@@ -14,7 +14,6 @@
     position: relative;
     z-index: 1;
     aspect-ratio: 1920 / 1032;
-    overflow: hidden;
 
     @include media.breakpoint(mobile) {
       aspect-ratio: 375 / 770;
@@ -41,9 +40,11 @@
     display: flex;
     flex-direction: column;
     padding-top: 22.5rem;
+    gap: 3rem;
 
     @include media.breakpoint(mobile) {
       padding-top: 16.5rem;
+      gap: 2.4rem;
     }
   }
 
@@ -69,13 +70,12 @@
     font-style: normal;
     font-weight: 400;
     line-height: 100%;
-    margin-top: 2rem;
+
     @include media.breakpoint(mobile) {
       font-size: 1.4rem;
       font-style: normal;
       font-weight: 500;
       line-height: 140%;
-      margin-top: 3rem;
     }
   }
 
@@ -103,13 +103,13 @@
 
   .intro__bottom {
     @include utils.blockWrapper;
-    margin-top: -18rem;
+    margin-top: -8.4rem;
     position: relative;
     position: relative;
     z-index: 10;
 
     @include media.breakpoint(mobile) {
-      margin-top: -20rem;
+      margin-top: -5rem;
     }
   }
 
@@ -117,23 +117,37 @@
     @include utils.blockContent;
   }
 
-  .intro__bottom-row {
+  .intro__wrapper {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    margin-bottom: 4rem;
+    margin-top: auto;
+    margin-bottom: 12rem;
     @include media.breakpoint(mobile) {
-      margin-bottom: 1.8rem;
-      display: flex;
+      margin-bottom: 7rem;
+      margin-top: 0;
+      flex-grow: 1;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      grid-template-rows: 1fr auto;
+      grid-template-areas: "arrows ." "cta social";
       align-items: flex-end;
-      justify-content: space-between;
     }
   }
 
-  .intro__bottom-btn {
+  .intro__callback-btn {
     justify-self: stretch;
     width: auto;
+
     @include media.breakpoint(mobile) {
-      display: none;
+      justify-self: flex-start;
+      grid-area: cta;
+      align-self: flex-end;
+      font-size: 1.3rem;
+      font-style: normal;
+      font-weight: 900;
+      line-height: 100%;
+      text-transform: uppercase;
+      padding: 1.85rem 3rem;
     }
   }
 
@@ -153,8 +167,9 @@
   .intro__slider-nav {
     justify-self: flex-end;
     @include media.breakpoint(mobile) {
+      grid-area: arrows;
       justify-self: flex-start;
-      margin-right: auto;
+      align-self: flex-start;
     }
   }
 
@@ -164,7 +179,8 @@
     @include media.breakpoint(mobile) {
       display: flex;
       flex-direction: column;
-      margin-left: auto;
+      grid-area: social;
+      justify-self: flex-end;
       gap: 1px;
     }
   }
