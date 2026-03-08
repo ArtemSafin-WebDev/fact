@@ -362,7 +362,7 @@
 
   .page-header__services-menu-pane.is-active {
     opacity: 1;
-    visibility: visible;
+    visibility: inherit;
     pointer-events: auto;
   }
 
