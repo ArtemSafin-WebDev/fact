@@ -38,8 +38,18 @@
       fill: white;
       transition: fill 0.2s;
       @include media.breakpoint(mobile) {
-        width: 0.8rem;
-        height: 1.2rem;
+        display: none;
+      }
+    }
+
+    .slider-nav__arrow-icon--bold {
+      display: none;
+      fill: white;
+      transition: fill 0.2s;
+      @include media.breakpoint(mobile) {
+        display: block;
+        width: 0.9182rem;
+        height: 1.4121rem;
       }
     }
 
@@ -50,7 +60,8 @@
       @include media.breakpoint(mobile) {
         border-color: #a4a4a4;
       }
-      svg {
+      svg,
+      .slider-nav__arrow-icon--bold {
         fill: #161616;
       }
     }
@@ -63,7 +74,8 @@
     .slider-nav--white & {
       background-color: #fff;
       border: none;
-      svg {
+      svg,
+      .slider-nav__arrow-icon--bold {
         fill: #161616;
       }
       &.swiper-button-disabled {
