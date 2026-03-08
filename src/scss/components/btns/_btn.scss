@@ -71,13 +71,6 @@
         line-height: 100%;
         text-transform: uppercase;
         white-space: nowrap;
-        background-color: var(--text-color);
-        color: white;
-
-        &:link,
-        &:visited {
-          color: white;
-        }
       }
     }
   }

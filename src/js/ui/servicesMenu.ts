@@ -1,5 +1,3 @@
-import syncMenuScrollLock from "./menuScrollLock";
-
 type ServicesMenuTab = HTMLButtonElement & {
   dataset: DOMStringMap & { servicesMenuTab?: string };
 };
@@ -26,6 +24,14 @@ export default function servicesMenu() {
 
   if (!toggle || !menu || !tabs.length || !panes.length) return;
 
+  const syncBodyMenuState = () => {
+    document.body.classList.toggle(
+      "menu-open",
+      header.classList.contains("is-mobile-menu-open") ||
+        header.classList.contains("is-services-open"),
+    );
+  };
+
   const setActiveTab = (target?: string) => {
     if (!target) return;
 
@@ -43,14 +49,14 @@ export default function servicesMenu() {
 
   const openMenu = () => {
     header.classList.add("is-services-open");
-    syncMenuScrollLock(header);
+    syncBodyMenuState();
     toggle.setAttribute("aria-expanded", "true");
     menu.setAttribute("aria-hidden", "false");
   };
 
   const closeMenu = () => {
     header.classList.remove("is-services-open");
-    syncMenuScrollLock(header);
+    syncBodyMenuState();
     toggle.setAttribute("aria-expanded", "false");
     menu.setAttribute("aria-hidden", "true");
   };

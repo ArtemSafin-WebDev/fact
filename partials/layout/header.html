@@ -10,13 +10,8 @@
                         <use xlink:href="#eye"></use>
                     </svg>
                 </a>
-                <button
-                    class="page-header__burger"
-                    type="button"
-                    aria-label="Открыть меню"
-                    aria-expanded="false"
-                    aria-controls="header-mobile-menu"
-                >
+                <button class="page-header__burger" type="button" aria-label="Открыть меню" aria-expanded="false"
+                    aria-controls="header-mobile-menu">
                     <span aria-hidden="true"></span>
                     <span aria-hidden="true"></span>
                     <span aria-hidden="true"></span>
@@ -36,16 +31,11 @@
             <a href="/" class="page-header__logo">
                 <img src="/images/logo.svg" alt="" class="page-header__logo-image">
             </a>
-            <div class="page-header__bottom-wrapper" id="header-mobile-menu">
+            <div class="page-header__bottom-wrapper">
 
 
-                <button
-                    class="page-header__services-link"
-                    type="button"
-                    data-services-menu-toggle
-                    aria-expanded="false"
-                    aria-controls="header-services-menu"
-                >
+                <button class="page-header__services-link" type="button" data-services-menu-toggle aria-expanded="false"
+                    aria-controls="header-services-menu">
                     <span>Услуги</span>
                     <svg class="page-header__services-link-arrow" width="16" height="8" aria-hidden="true">
                         <use xlink:href="#arrow-down"></use>
@@ -110,81 +100,128 @@
 
         </div>
     </div>
+    <div class="page-header__mobile-menu" id="header-mobile-menu" data-mobile-menu aria-hidden="true">
+        <div class="page-header__mobile-menu-content">
+            <div class="page-header__mobile-meta">
+                <a href="tel:+78003334603" class="page-header__mobile-phone">8 800 333—4603</a>
+                <p class="page-header__mobile-time">8:30—19:00</p>
+            </div>
+            <div class="page-header__mobile-divider"></div>
+            <div class="page-header__mobile-top">
+                <a href="/" class="page-header__mobile-logo">
+                    <img src="/images/logo.svg" alt="" class="page-header__logo-image">
+                </a>
+                <div class="page-header__mobile-btns">
+                    <a href="#" class="page-header__mobile-version">
+                        <svg width="14" height="14" aria-hidden="true">
+                            <use xlink:href="#eye"></use>
+                        </svg>
+                    </a>
+                    <button class="page-header__mobile-close" type="button" data-mobile-menu-close
+                        aria-label="Закрыть меню">
+                        <span aria-hidden="true"></span>
+                        <span aria-hidden="true"></span>
+                    </button>
+                </div>
+            </div>
+            <p class="page-header__mobile-city">Пятигорск</p>
+            <div class="page-header__mobile-menu-body">
+                <button class="page-header__services-link" type="button">
+                    <span>Услуги</span>
+                    <svg class="page-header__services-link-arrow" width="16" height="8" aria-hidden="true">
+                        <use xlink:href="#arrow-down"></use>
+                    </svg>
+                </button>
+                <nav class="page-header__nav">
+                    <ul class="page-header__nav-list">
+                        <li class="page-header__nav-list-item">
+                            <a href="#" class="page-header__nav-link">
+                                Врачи
+                            </a>
+                        </li>
+                        <li class="page-header__nav-list-item">
+                            <a href="#" class="page-header__nav-link">
+                                Цены
+                            </a>
+                        </li>
+                        <li class="page-header__nav-list-item">
+                            <a href="#" class="page-header__nav-link">
+                                Статьи
+                            </a>
+                        </li>
+                        <li class="page-header__nav-list-item">
+                            <a href="#" class="page-header__nav-link">
+                                О клинике
+                            </a>
+                        </li>
+                        <li class="page-header__nav-list-item">
+                            <a href="#" class="page-header__nav-link">
+                                Контакты
+                            </a>
+                        </li>
+                        <li class="page-header__nav-list-item">
+                            <a href="#" class="page-header__nav-link">
+                                Клиника года
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+                <a href="#" class="btn btn--mobile-large btn--green page-header__callback-btn">
+                    Записаться
+                </a>
+            </div>
+        </div>
+    </div>
     <div class="page-header__services-menu" id="header-services-menu" data-services-menu aria-hidden="true">
         <div class="page-header__services-menu-content">
             <div class="page-header__services-menu-grid">
                 <div class="page-header__services-menu-left">
                     <ul class="page-header__services-menu-list">
                         <li class="page-header__services-menu-item">
-                            <button
-                                class="page-header__services-menu-btn is-active"
-                                type="button"
-                                data-services-menu-tab="diagnostics"
-                            >
+                            <button class="page-header__services-menu-btn is-active" type="button"
+                                data-services-menu-tab="diagnostics">
                                 Диагностика
                             </button>
                         </li>
                         <li class="page-header__services-menu-item">
-                            <button
-                                class="page-header__services-menu-btn"
-                                type="button"
-                                data-services-menu-tab="children"
-                            >
+                            <button class="page-header__services-menu-btn" type="button"
+                                data-services-menu-tab="children">
                                 Детское отделение
                             </button>
                         </li>
                         <li class="page-header__services-menu-item">
-                            <button
-                                class="page-header__services-menu-btn"
-                                type="button"
-                                data-services-menu-tab="laser"
-                            >
+                            <button class="page-header__services-menu-btn" type="button" data-services-menu-tab="laser">
                                 Лазерная коррекция
                             </button>
                         </li>
                         <li class="page-header__services-menu-item">
-                            <button
-                                class="page-header__services-menu-btn"
-                                type="button"
-                                data-services-menu-tab="glaucoma"
-                            >
+                            <button class="page-header__services-menu-btn" type="button"
+                                data-services-menu-tab="glaucoma">
                                 Глаукома
                             </button>
                         </li>
                         <li class="page-header__services-menu-item">
-                            <button
-                                class="page-header__services-menu-btn"
-                                type="button"
-                                data-services-menu-tab="cataract"
-                            >
+                            <button class="page-header__services-menu-btn" type="button"
+                                data-services-menu-tab="cataract">
                                 Катаракта
                             </button>
                         </li>
                         <li class="page-header__services-menu-item">
-                            <button
-                                class="page-header__services-menu-btn"
-                                type="button"
-                                data-services-menu-tab="keratoconus"
-                            >
+                            <button class="page-header__services-menu-btn" type="button"
+                                data-services-menu-tab="keratoconus">
                                 Кератоконус
                             </button>
                         </li>
                         <li class="page-header__services-menu-item">
-                            <button
-                                class="page-header__services-menu-btn"
-                                type="button"
-                                data-services-menu-tab="oculoplastic"
-                            >
+                            <button class="page-header__services-menu-btn" type="button"
+                                data-services-menu-tab="oculoplastic">
                                 Окулопластика
                             </button>
                         </li>
                     </ul>
                 </div>
                 <div class="page-header__services-menu-right">
-                    <div
-                        class="page-header__services-menu-pane is-active"
-                        data-services-menu-pane="diagnostics"
-                    >
+                    <div class="page-header__services-menu-pane is-active" data-services-menu-pane="diagnostics">
                         <p class="page-header__services-menu-description">
                             Современная диагностика и консультация офтальмолога за один визит
                         </p>
