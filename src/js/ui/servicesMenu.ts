@@ -1,3 +1,5 @@
+import syncMenuScrollLock from "./menuScrollLock";
+
 type ServicesMenuTab = HTMLButtonElement & {
   dataset: DOMStringMap & { servicesMenuTab?: string };
 };
@@ -9,6 +11,7 @@ type ServicesMenuPane = HTMLElement & {
 export default function servicesMenu() {
   const header = document.querySelector<HTMLElement>(".page-header");
   if (!header) return;
+  const mobileMediaQuery = window.matchMedia("(width <= 640px)");
 
   const toggle = header.querySelector<HTMLButtonElement>(
     "[data-services-menu-toggle]",
@@ -40,14 +43,14 @@ export default function servicesMenu() {
 
   const openMenu = () => {
     header.classList.add("is-services-open");
-    document.body.classList.add("menu-open");
+    syncMenuScrollLock(header);
     toggle.setAttribute("aria-expanded", "true");
     menu.setAttribute("aria-hidden", "false");
   };
 
   const closeMenu = () => {
     header.classList.remove("is-services-open");
-    document.body.classList.remove("menu-open");
+    syncMenuScrollLock(header);
     toggle.setAttribute("aria-expanded", "false");
     menu.setAttribute("aria-hidden", "true");
   };
@@ -56,6 +59,8 @@ export default function servicesMenu() {
   setActiveTab(initialTab?.dataset.servicesMenuTab ?? tabs[0].dataset.servicesMenuTab);
 
   toggle.addEventListener("click", () => {
+    if (mobileMediaQuery.matches) return;
+
     if (header.classList.contains("is-services-open")) {
       closeMenu();
       return;
@@ -82,6 +87,12 @@ export default function servicesMenu() {
 
   document.addEventListener("keydown", (event) => {
     if (event.key === "Escape" && header.classList.contains("is-services-open")) {
+      closeMenu();
+    }
+  });
+
+  mobileMediaQuery.addEventListener("change", (event) => {
+    if (event.matches) {
       closeMenu();
     }
   });

@@ -10,10 +10,16 @@
                         <use xlink:href="#eye"></use>
                     </svg>
                 </a>
-                <button class="page-header__burger" type="button">
-                    <svg width="14" height="14" aria-hidden="true">
-                        <use xlink:href="#burger"></use>
-                    </svg>
+                <button
+                    class="page-header__burger"
+                    type="button"
+                    aria-label="Открыть меню"
+                    aria-expanded="false"
+                    aria-controls="header-mobile-menu"
+                >
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
                 </button>
             </div>
             <div class="page-header__schedule">
@@ -30,7 +36,7 @@
             <a href="/" class="page-header__logo">
                 <img src="/images/logo.svg" alt="" class="page-header__logo-image">
             </a>
-            <div class="page-header__bottom-wrapper">
+            <div class="page-header__bottom-wrapper" id="header-mobile-menu">
 
 
                 <button
