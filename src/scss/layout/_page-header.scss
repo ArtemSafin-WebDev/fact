@@ -7,7 +7,6 @@
     left: 0;
     top: 0;
     z-index: 100;
-    isolation: isolate;
     width: 100%;
     @include utils.blockWrapper;
   }
