@@ -168,7 +168,7 @@
       width: 25%;
       border-right: 1px solid #eaeaea;
 
-      @media (width > 640px) {
+      @include media.breakpointMF(above-mobile) {
         &:nth-last-child(1 of .swiper-slide-visible) {
           border-color: transparent;
         }

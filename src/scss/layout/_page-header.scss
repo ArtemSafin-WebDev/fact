@@ -131,7 +131,7 @@
       height: 1.2rem;
     }
 
-    @media (hover: hover) and (pointer: fine) {
+    @include media.hover {
       &:hover {
         color: var(--green-300);
       }
@@ -196,7 +196,7 @@
     letter-spacing: -0.015rem;
     transition: color 0.2s;
 
-    @media (hover: hover) and (pointer: fine) {
+    @include media.hover {
       &:hover {
         color: var(--green-300);
       }
@@ -500,7 +500,7 @@
       background-color 0.2s,
       color 0.2s;
 
-    @media (hover: hover) and (pointer: fine) {
+    @include media.hover {
       &:hover {
         background-color: var(--green-200);
       }
@@ -640,7 +640,7 @@
     color: var(--green-300);
   }
 
-  @media (hover: hover) and (pointer: fine) {
+  @include media.hover {
     .page-header__services-menu-btn:hover {
       color: var(--green-300);
     }
@@ -737,7 +737,7 @@
       padding-left: 2rem;
     }
 
-    @media (hover: hover) and (pointer: fine) {
+    @include media.hover {
       &:hover {
         color: var(--green-300);
       }
@@ -782,7 +782,7 @@
       height: 2.4rem;
     }
 
-    @media (hover: hover) and (pointer: fine) {
+    @include media.hover {
       &:hover {
         background-color: var(--green-300);
       }
@@ -799,7 +799,7 @@
       margin-top: auto;
     }
 
-    @media (hover: hover) and (pointer: fine) {
+    @include media.hover {
       &:hover {
         background-color: var(--green-200);
       }

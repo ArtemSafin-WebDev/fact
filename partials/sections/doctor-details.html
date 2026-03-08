@@ -7,7 +7,7 @@
                 <a href="#" class="doctor-details__photo">
                     <picture>
                         {{#if doctorDetails.photoMobile}}
-                        <source srcset="{{doctorDetails.photoMobile}}" media="(width <= 640px)" />
+                        <source srcset="{{doctorDetails.photoMobile}}" media="(max-width: 640px)" />
                         {{/if}}
                         <img src="{{doctorDetails.photoDesktop}}" alt="{{doctorDetails.photoAlt}}">
                     </picture>

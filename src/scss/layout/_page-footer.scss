@@ -99,7 +99,7 @@
       fill: currentColor;
     }
 
-    @media (hover: hover) and (pointer: fine) {
+    @include media.hover {
       &:hover {
         text-decoration-color: transparent;
       }
@@ -175,7 +175,7 @@
     line-height: 100%;
     letter-spacing: -0.03rem;
 
-    @media (hover: hover) and (pointer: fine) {
+    @include media.hover {
       &:hover {
         color: var(--green-300);
       }
@@ -254,7 +254,7 @@
       fill: var(--text-color);
     }
 
-    @media (hover: hover) and (pointer: fine) {
+    @include media.hover {
       &:hover {
         background-color: var(--text-color);
         border-color: var(--text-color);
@@ -275,7 +275,7 @@
       fill: white;
     }
 
-    @media (hover: hover) and (pointer: fine) {
+    @include media.hover {
       &:hover {
         background-color: var(--green-300);
       }
@@ -423,7 +423,7 @@
       color: black;
     }
 
-    @media (hover: hover) and (pointer: fine) {
+    @include media.hover {
       &:hover {
         text-decoration-color: transparent;
       }
@@ -462,7 +462,7 @@
       height: auto;
     }
 
-    @media (hover: hover) and (pointer: fine) {
+    @include media.hover {
       &:hover {
         color: rgb(22 22 22 / 100%);
       }

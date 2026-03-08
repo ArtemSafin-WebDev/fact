@@ -2,7 +2,7 @@
     <div class="doctor-card__image-container">
         <picture>
             {{#if imageMobile}}
-            <source srcset="{{imageMobile}}" media="(width <= 640px)" />
+            <source srcset="{{imageMobile}}" media="(max-width: 640px)" />
             {{/if}}
             <img src="{{imageDesktop}}" alt="{{imageAlt}}">
         </picture>

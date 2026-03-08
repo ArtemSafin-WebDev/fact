@@ -1,15 +1,21 @@
 @mixin breakpoint($class) {
   @if $class == mobile {
-    @media (width <= 640px) {
+    @media (max-width: 640px) {
       @content;
     }
   }
 }
 
 @mixin breakpointMF($class) {
-  @if $class == mobile {
-    @media (width > 640px) {
+  @if $class == above-mobile {
+    @media (min-width: 641px) {
       @content;
     }
+  }
+}
+
+@mixin hover {
+  @media (hover: hover) and (pointer: fine) {
+    @content;
   }
 }

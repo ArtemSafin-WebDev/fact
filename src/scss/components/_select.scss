@@ -98,7 +98,7 @@
       background-color: #f6f6f6;
     }
 
-    @media (hover: hover) and (pointer: fine) {
+    @include media.hover {
       &:hover span {
         background-color: #f6f6f6;
       }

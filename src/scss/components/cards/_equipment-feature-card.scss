@@ -22,7 +22,7 @@
       padding: 2rem;
     }
 
-    @media (hover: hover) and (pointer: fine) {
+    @include media.hover {
       &:hover {
         color: white;
       }

@@ -21,7 +21,7 @@
       grid-template-areas: "doctors title price";
     }
 
-    @media (hover: hover) and (pointer: fine) {
+    @include media.hover {
       &:hover {
         background-color: var(--green-300);
       }

@@ -683,7 +683,7 @@
     width: 25%;
     transition: border-color 0.2s;
 
-    @media (width > 640px) {
+    @include media.breakpointMF(above-mobile) {
       &:nth-last-child(1 of .swiper-slide-visible) {
         border-color: white;
       }
@@ -706,7 +706,7 @@
     width: 25%;
     transition: border-color 0.2s;
 
-    @media (width > 640px) {
+    @include media.breakpointMF(above-mobile) {
       border-right: 1px solid #eaeaea;
 
       &:nth-last-child(1 of .swiper-slide-visible) {

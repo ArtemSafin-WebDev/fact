@@ -16,7 +16,7 @@
       border: 1px solid #cbcbcb;
     }
 
-    @media (hover: hover) and (pointer: fine) {
+    @include media.hover {
       &:hover .promo-card__bg {
         opacity: 1;
       }
