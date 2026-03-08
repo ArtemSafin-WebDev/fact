@@ -1,0 +1,119 @@
+<section class="catalog-services">
+    <div class="catalog-services__content">
+        {{> components/breadcrumbs items=catalogServices.breadcrumbs }}
+
+        <h1 class="catalog-services__title">
+            {{#each catalogServices.titleLines}}
+            <span>{{this}}</span>
+            {{/each}}
+        </h1>
+
+        <p class="catalog-services__lead">
+            {{catalogServices.lead}}
+        </p>
+
+        <div class="tabs-nav catalog-services__tabs-nav" data-services-tabs-nav>
+            <ul class="tabs-nav__list">
+                {{#each catalogServices.tabs}}
+                <li class="tabs-nav__list-item">
+                    <button
+                        class="tabs-nav__btn{{#if active}} active{{/if}}"
+                        type="button"
+                        data-services-tab-btn="{{target}}"
+                    >
+                        {{title}}
+                    </button>
+                </li>
+                {{/each}}
+            </ul>
+        </div>
+
+        <section class="catalog-services__group catalog-services__panel is-active" data-services-panel="popular">
+            <h2 class="catalog-services__group-title">{{catalogServices.popular.title}}</h2>
+
+            <div class="catalog-services__cards">
+                {{#each catalogServices.popular.cards}}
+                <div class="catalog-services__cards-item">
+                    {{> components/clinic-service-card }}
+                </div>
+                {{/each}}
+            </div>
+
+            <ul class="catalog-services__list">
+                {{#each catalogServices.popular.list}}
+                <li class="catalog-services__list-item">
+                    {{> components/clinic-services-horizontal-card }}
+                </li>
+                {{/each}}
+            </ul>
+        </section>
+
+        <section class="catalog-services__group catalog-services__panel" data-services-panel="expert">
+            <h2 class="catalog-services__group-title">{{catalogServices.expert.title}}</h2>
+
+            <div class="catalog-services__cards">
+                {{#each catalogServices.expert.cards}}
+                <div class="catalog-services__cards-item">
+                    {{> components/clinic-service-card }}
+                </div>
+                {{/each}}
+            </div>
+
+            <ul class="catalog-services__list">
+                {{#each catalogServices.expert.list}}
+                <li class="catalog-services__list-item">
+                    {{> components/clinic-services-horizontal-card }}
+                </li>
+                {{/each}}
+            </ul>
+        </section>
+
+        <section class="catalog-services__group catalog-services__group--full catalog-services__panel" data-services-panel="full">
+            <h2 class="catalog-services__group-title">{{catalogServices.full.title}}</h2>
+
+            <ul class="catalog-services__full-list">
+                {{#each catalogServices.full.items}}
+                <li class="catalog-services__full-item{{#if expanded}} is-expanded{{/if}}" data-services-item>
+                    {{#if subservices}}
+                    <button
+                        class="catalog-services__full-toggle"
+                        type="button"
+                        data-services-expand-toggle
+                        aria-expanded="{{#if expanded}}true{{else}}false{{/if}}"
+                    >
+                    {{else}}
+                    <div class="catalog-services__full-toggle catalog-services__full-toggle--static">
+                    {{/if}}
+                        <div class="catalog-services__full-doctors">
+                            {{#each doctors}}
+                            <div class="catalog-services__full-doctor">
+                                <img src="{{src}}" alt="{{#if alt}}{{alt}}{{/if}}">
+                            </div>
+                            {{/each}}
+                        </div>
+                        <h3 class="catalog-services__full-title">{{title}}</h3>
+                        {{#if subservices}}
+                        <div class="catalog-services__full-subservices" data-services-subservices>
+                            <div class="catalog-services__full-subservices-inner">
+                            {{#each subservices}}
+                            <span>{{this}}</span>
+                            {{/each}}
+                            </div>
+                        </div>
+                        {{/if}}
+                        <span class="catalog-services__full-icon" aria-hidden="true">
+                            <svg width="16" height="16" aria-hidden="true">
+                                <use xlink:href="#select-arrow"></use>
+                            </svg>
+                        </span>
+                    {{#if subservices}}
+                    </button>
+                    {{else}}
+                    </div>
+                    {{/if}}
+                </li>
+                {{/each}}
+            </ul>
+        </section>
+    </div>
+</section>

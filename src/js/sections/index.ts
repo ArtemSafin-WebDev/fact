@@ -1,5 +1,6 @@
 import intro from "./intro";
 import doctors from "./doctors";
+import catalogServices from "./catalogServices";
 import equipment from "./equipment";
 import patients from "./patients";
 import promo from "./promo";
@@ -12,6 +13,7 @@ import aboutClinic from "./aboutClinic";
 
 export default function sections() {
   doctorDetails();
+  catalogServices();
   intro();
   doctors();
   equipment();

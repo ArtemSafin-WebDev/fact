@@ -7,7 +7,7 @@ const indexPageData = {
       sliderCards: [
         {
           href: "#",
-          bgImage: "/images/clinic-service-card/1.webp",
+          bgImage: "/images/doctor-detail/article-main.webp",
           bgImageAlt: "",
           doctors: [
             { src: "/images/clinic-service-card/doctors/1.webp", alt: "" },
@@ -21,7 +21,7 @@ const indexPageData = {
         },
         {
           href: "#",
-          bgImage: "/images/clinic-service-card/1.webp",
+          bgImage: "/images/doctor-detail/article-main.webp",
           bgImageAlt: "",
           doctors: [
             { src: "/images/clinic-service-card/doctors/1.webp", alt: "" },
@@ -35,7 +35,7 @@ const indexPageData = {
         },
         {
           href: "#",
-          bgImage: "/images/clinic-service-card/1.webp",
+          bgImage: "/images/doctor-detail/article-main.webp",
           bgImageAlt: "",
           doctors: [
             { src: "/images/clinic-service-card/doctors/1.webp", alt: "" },

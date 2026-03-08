@@ -1,0 +1,239 @@
+@use "utils";
+
+@layer sections {
+  .catalog-services {
+    @include utils.blockWrapper;
+    padding-top: 20.4rem;
+    padding-bottom: 8rem;
+    background-color: #eaeaea;
+  }
+
+  .catalog-services .breadcrumbs {
+    max-width: 100%;
+  }
+
+  .catalog-services__content {
+    @include utils.blockContent;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .catalog-services__title {
+    margin-top: 4rem;
+    max-width: 100%;
+    font-size: 8rem;
+    font-weight: 900;
+    line-height: 100%;
+    letter-spacing: -0.08rem;
+    text-transform: uppercase;
+    color: #161616;
+
+    span {
+      display: block;
+    }
+  }
+
+  .catalog-services__lead {
+    margin-top: 4rem;
+    font-size: 1.8rem;
+    font-weight: 400;
+    line-height: 120%;
+    letter-spacing: -0.018rem;
+    color: #161616;
+  }
+
+  .catalog-services__tabs-nav {
+    display: none;
+  }
+
+  .catalog-services__group {
+    margin-top: 12rem;
+  }
+
+  .catalog-services__group-title {
+    font-size: 4.5rem;
+    font-weight: 900;
+    line-height: 100%;
+    letter-spacing: -0.045rem;
+    text-transform: uppercase;
+    color: #161616;
+  }
+
+  .catalog-services__cards {
+    margin-top: 8rem;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .catalog-services__cards-item {
+    border: 1px solid #cbcbcb;
+    border-right: none;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .catalog-services__cards-item:last-child {
+    border-right: 1px solid #cbcbcb;
+  }
+
+  .catalog-services__cards-item .clinic-service-card {
+    height: 100%;
+  }
+
+  .catalog-services__list {
+    margin-top: 8rem;
+    display: grid;
+    grid-template-columns: auto 1fr 1.23fr auto;
+  }
+
+  .catalog-services__list-item {
+    border-top: 1px solid #d3d3d3;
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: subgrid;
+  }
+
+  .catalog-services__group--full .catalog-services__group-title {
+    margin-bottom: 0;
+  }
+
+  .catalog-services__full-list {
+    margin-top: 8rem;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .catalog-services__full-item {
+    border-top: 1px solid #cbcbcb;
+    color: #161616;
+    transition: background-color 0.2s;
+  }
+
+  .catalog-services__full-item:last-child {
+    border-bottom: 1px solid #cbcbcb;
+  }
+
+  .catalog-services__full-item.is-expanded {
+    background-color: var(--green-300);
+  }
+
+  .catalog-services__full-toggle {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 18rem 62rem minmax(0, 1fr) auto;
+    align-items: center;
+    gap: 4rem;
+    padding: 4rem 0;
+    text-align: left;
+    color: inherit;
+    cursor: pointer;
+  }
+
+  .catalog-services__full-toggle--static {
+    cursor: default;
+  }
+
+  .catalog-services__full-doctors {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    min-width: 0;
+  }
+
+  .catalog-services__full-doctor {
+    width: 5.6rem;
+    height: 5.6rem;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    position: relative;
+    flex-shrink: 0;
+  }
+
+  .catalog-services__full-doctor img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .catalog-services__full-title {
+    grid-column: 2;
+    font-size: 3rem;
+    font-weight: 900;
+    line-height: 100%;
+    letter-spacing: -0.03rem;
+    text-transform: uppercase;
+  }
+
+  .catalog-services__full-subservices {
+    grid-column: 3;
+    min-width: 0;
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 800ms;
+    transition-timing-function: cubic-bezier(0.12, 0, 0.39, 0);
+  }
+
+  .catalog-services__full-subservices-inner {
+    grid-row: 1 / 2;
+    overflow: hidden;
+    display: grid;
+    gap: 4rem;
+    align-content: center;
+    font-size: 1.8rem;
+    font-weight: 400;
+    line-height: 140%;
+    opacity: 0;
+
+    transition:
+      opacity 0.2s ease,
+      transform 0.35s ease;
+  }
+
+  .catalog-services__full-item.is-expanded .catalog-services__full-subservices {
+    grid-template-rows: 1fr;
+    transition-timing-function: cubic-bezier(0.5, 1, 0.89, 1);
+  }
+
+  .catalog-services__full-item.is-expanded
+    .catalog-services__full-subservices-inner {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.4s ease 0.4s;
+  }
+
+  .catalog-services__full-icon {
+    grid-column: 4;
+    width: 6rem;
+    height: 6rem;
+    display: inline-grid;
+    place-items: center;
+    color: #161616;
+    background-color: transparent;
+    transition:
+      background-color 0.2s,
+      color 0.2s,
+      transform 0.6s;
+  }
+
+  .catalog-services__full-icon svg {
+    width: 1.6rem;
+    height: 1.6rem;
+    fill: currentColor;
+    transform: rotate(0deg);
+    transition: transform 0.25s ease;
+  }
+
+  .catalog-services__full-item.is-expanded .catalog-services__full-icon {
+    background-color: #161616;
+    color: #fff;
+    transform: translateX(-4rem);
+    transition: transform 0.5s ease 0.2s;
+  }
+
+  .catalog-services__full-item.is-expanded .catalog-services__full-icon svg {
+    transform: rotate(180deg);
+  }
+}
