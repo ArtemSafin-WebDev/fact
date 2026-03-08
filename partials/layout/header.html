@@ -37,6 +37,7 @@
                 <button class="page-header__services-link" type="button" data-services-menu-toggle aria-expanded="false"
                     aria-controls="header-services-menu">
                     <span>Услуги</span>
+                    <span class="page-header__services-link-dot" aria-hidden="true"></span>
                     <svg class="page-header__services-link-arrow" width="16" height="8" aria-hidden="true">
                         <use xlink:href="#arrow-down"></use>
                     </svg>
@@ -126,13 +127,15 @@
             </div>
             <p class="page-header__mobile-city">Пятигорск</p>
             <div class="page-header__mobile-menu-body">
-                <button class="page-header__services-link" type="button">
+                <button class="page-header__services-link" type="button" data-mobile-services-toggle aria-expanded="false"
+                    aria-controls="header-mobile-services-list">
                     <span>Услуги</span>
+                    <span class="page-header__services-link-dot" aria-hidden="true"></span>
                     <svg class="page-header__services-link-arrow" width="16" height="8" aria-hidden="true">
                         <use xlink:href="#arrow-down"></use>
                     </svg>
                 </button>
-                <nav class="page-header__nav">
+                <nav class="page-header__nav page-header__mobile-nav" data-mobile-primary-nav>
                     <ul class="page-header__nav-list">
                         <li class="page-header__nav-list-item">
                             <a href="#" class="page-header__nav-link">
@@ -162,6 +165,46 @@
                         <li class="page-header__nav-list-item">
                             <a href="#" class="page-header__nav-link">
                                 Клиника года
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+                <nav class="page-header__mobile-services" id="header-mobile-services-list" data-mobile-services-list
+                    aria-hidden="true">
+                    <ul class="page-header__mobile-services-list">
+                        <li class="page-header__mobile-services-item">
+                            <a href="#" class="page-header__mobile-services-link">
+                                Диагностика
+                            </a>
+                        </li>
+                        <li class="page-header__mobile-services-item">
+                            <a href="#" class="page-header__mobile-services-link">
+                                Детское отделение
+                            </a>
+                        </li>
+                        <li class="page-header__mobile-services-item">
+                            <a href="#" class="page-header__mobile-services-link">
+                                Лазерная коррекция
+                            </a>
+                        </li>
+                        <li class="page-header__mobile-services-item">
+                            <a href="#" class="page-header__mobile-services-link">
+                                Глаукома
+                            </a>
+                        </li>
+                        <li class="page-header__mobile-services-item">
+                            <a href="#" class="page-header__mobile-services-link">
+                                Катаракта
+                            </a>
+                        </li>
+                        <li class="page-header__mobile-services-item">
+                            <a href="#" class="page-header__mobile-services-link">
+                                Кератоконус
+                            </a>
+                        </li>
+                        <li class="page-header__mobile-services-item">
+                            <a href="#" class="page-header__mobile-services-link">
+                                Окулопластика
                             </a>
                         </li>
                     </ul>
