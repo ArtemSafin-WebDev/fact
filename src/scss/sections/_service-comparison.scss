@@ -6,12 +6,14 @@
     @include utils.blockWrapper;
     background-color: #fff;
     margin-bottom: 12rem;
+
+    @include media.breakpoint(mobile) {
+      margin-bottom: 6rem;
+    }
   }
 
   .service-comparison__content {
     @include utils.blockContent;
-    padding-top: 12rem;
-    padding-bottom: 12rem;
   }
 
   .service-comparison__title {
@@ -176,7 +178,7 @@
     display: none;
 
     @include media.breakpoint(mobile) {
-      margin-top: 0.6rem;
+      margin-top: 2rem;
       display: inline-flex;
       align-items: center;
       gap: 0.5rem;
@@ -191,16 +193,13 @@
     @include media.breakpoint(mobile) {
       display: inline-flex;
       align-items: center;
-      gap: 0.2rem;
-      color: #161616;
     }
   }
 
   .service-comparison__scroll-hint-icon svg {
     @include media.breakpoint(mobile) {
-      width: 0.45rem;
-      height: 0.8rem;
-      fill: currentColor;
+      width: 1.5rem;
+      height: 1.5rem;
       flex-shrink: 0;
     }
   }
