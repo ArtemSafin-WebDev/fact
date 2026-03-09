@@ -1,0 +1,96 @@
+@use "utils";
+
+@layer sections {
+  .service-indications {
+    @include utils.blockWrapper;
+    background-color: #eaeaea;
+    margin-bottom: 12rem;
+    padding-top: 8rem;
+    padding-bottom: 8rem;
+  }
+
+  .service-indications__content {
+    @include utils.blockContent;
+  }
+
+  .service-indications__title {
+    color: #161616;
+    max-width: 88rem;
+  }
+
+  .service-indications__list {
+    margin-top: 8rem;
+    padding: 1px;
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 1px;
+    background-color: #d3d3d3;
+  }
+
+  .service-indications__item {
+    display: flex;
+  }
+
+  .service-indications__card {
+    width: 100%;
+    aspect-ratio: 439 / 256;
+    padding: 4rem;
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+  }
+
+  .service-indications__card-head {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  .service-indications__icon {
+    width: 4rem;
+    height: 4rem;
+    display: grid;
+    place-items: center;
+    flex-shrink: 0;
+    border-radius: 50%;
+    background-color: var(--green-300);
+  }
+
+  .service-indications__icon svg {
+    width: 1.7rem;
+    height: 1.2713rem;
+    color: #161616;
+  }
+
+  .service-indications__card-title {
+    margin: 0;
+    color: #161616;
+    font-size: 1.8rem;
+    font-weight: 900;
+    line-height: 100%;
+    letter-spacing: -0.018rem;
+  }
+
+  .service-indications__card-body {
+    margin-top: auto;
+  }
+
+  .service-indications__text {
+    margin-bottom: 0;
+    color: #161616;
+    font-size: 1.5rem;
+    font-weight: 400;
+    line-height: 140%;
+  }
+
+  .service-indications__points {
+    margin: 0;
+    padding-left: 2.25rem;
+    list-style: disc;
+    color: #161616;
+    font-size: 1.5rem;
+    font-weight: 400;
+    line-height: 140%;
+  }
+}
