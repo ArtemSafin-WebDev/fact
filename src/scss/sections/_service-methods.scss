@@ -1,0 +1,245 @@
+@use "utils";
+
+@layer sections {
+  .service-methods {
+    @include utils.blockWrapper;
+    margin-bottom: 12rem;
+    background-color: #fff;
+  }
+
+  .service-methods__content {
+    @include utils.blockContent;
+    display: flex;
+    flex-direction: column;
+    color: #161616;
+    container-type: inline-size;
+  }
+
+  .service-methods__title {
+    font-size: 9.15cqw;
+    font-weight: 900;
+    line-height: 100%;
+    letter-spacing: -0.02em;
+    text-transform: uppercase;
+    text-align: center;
+  }
+
+  .service-methods__intro {
+    margin-top: 6rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .service-methods__subtitle {
+    font-size: 2rem;
+    font-style: normal;
+    font-weight: 900;
+    line-height: 120%;
+    letter-spacing: -0.02rem;
+    text-transform: uppercase;
+  }
+
+  .service-methods__description {
+    margin-top: 2.2rem;
+    max-width: 128.7rem;
+    font-size: 1.8rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 140%;
+  }
+
+  .service-methods__tabs {
+    margin-top: 12rem;
+  }
+
+  .service-methods__tabs-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    align-items: stretch;
+    width: 110rem;
+  }
+
+  .service-methods__tabs-item {
+    display: flex;
+    flex: 1 1 22rem;
+  }
+
+  .service-methods__tabs-item + .service-methods__tabs-item {
+    margin-left: -1px;
+  }
+
+  .service-methods__tab-btn {
+    width: 100%;
+    height: 6rem;
+    padding: 0.8rem 2rem;
+    border: 1px solid rgb(0 0 0 / 30%);
+    background-color: transparent;
+    color: #161616;
+    font-size: 1.5rem;
+    font-style: normal;
+    font-weight: 900;
+    line-height: 100%;
+    text-align: center;
+    cursor: pointer;
+    transition:
+      background-color 0.2s,
+      border-color 0.2s;
+  }
+
+  .service-methods__tab-btn.active {
+    background-color: var(--green-300);
+    border-color: var(--green-300);
+    cursor: default;
+    position: relative;
+    z-index: 1;
+  }
+
+  .service-methods__tab-label,
+  .service-methods__tab-note {
+    display: block;
+  }
+
+  .service-methods__tab-note {
+    margin-top: 0.4rem;
+  }
+
+  .service-methods__panels {
+    margin-top: 8rem;
+  }
+
+  .service-methods__panel {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    border: 1px solid #cbcbcb;
+  }
+
+  .service-methods__panel[hidden] {
+    display: none;
+  }
+
+  .service-methods__media {
+    border-right: 1px solid #cbcbcb;
+
+    aspect-ratio: 88 / 60;
+  }
+
+  .service-methods__media img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .service-methods__info {
+    padding: 4rem;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .service-methods__method-title {
+    font-size: 4.5rem;
+    font-style: normal;
+    font-weight: 900;
+    line-height: 100%;
+    letter-spacing: -0.045rem;
+    text-transform: uppercase;
+  }
+
+  .service-methods__method-description {
+    margin-top: 4rem;
+    max-width: 50.2rem;
+    font-size: 1.8rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 140%;
+  }
+
+  .service-methods__indications {
+    margin-top: 4rem;
+  }
+
+  .service-methods__indications-title {
+    font-size: 1.5rem;
+    font-style: normal;
+    font-weight: 900;
+    line-height: 100%;
+    letter-spacing: -0.015rem;
+    text-transform: uppercase;
+    color: var(--green-300);
+  }
+
+  .service-methods__indications-list {
+    margin: 4rem 0 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    gap: 4rem;
+    flex-wrap: wrap;
+  }
+
+  .service-methods__indications-item {
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+  }
+
+  .service-methods__indications-name {
+    font-size: 2rem;
+    font-style: normal;
+    font-weight: 900;
+    line-height: 100%;
+    letter-spacing: -0.02rem;
+    text-transform: uppercase;
+  }
+
+  .service-methods__indications-value {
+    font-size: 1.5rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 140%;
+  }
+
+  .service-methods__bottom {
+    margin-top: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  .service-methods__cta {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50rem;
+    flex-shrink: 1;
+  }
+
+  .service-methods__price {
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .service-methods__price-value {
+    font-size: 2rem;
+    font-style: normal;
+    font-weight: 900;
+    line-height: 100%;
+    letter-spacing: -0.02rem;
+    text-transform: uppercase;
+  }
+
+  .service-methods__price-label {
+    font-size: 1.5rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 140%;
+  }
+}

@@ -1,0 +1,67 @@
+<section class="service-methods">
+    <div class="service-methods__content">
+        <h2 class="service-methods__title">{{serviceMethods.title}}</h2>
+
+        <div class="service-methods__intro">
+            <p class="service-methods__subtitle">{{serviceMethods.subtitle}}</p>
+            <p class="service-methods__description">{{serviceMethods.description}}</p>
+        </div>
+
+        <div class="service-methods__tabs" role="tablist" aria-label="Методы лазерной коррекции">
+            <ul class="service-methods__tabs-list">
+                {{#each serviceMethods.tabs}}
+                <li class="service-methods__tabs-item">
+                    <button class="service-methods__tab-btn{{#if isActive}} active{{/if}}" type="button"
+                        data-service-methods-tab-btn="{{id}}" id="service-methods-tab-{{id}}" role="tab"
+                        aria-controls="service-methods-panel-{{id}}"
+                        aria-selected="{{#if isActive}}true{{else}}false{{/if}}">
+                        <span class="service-methods__tab-label">{{label}}</span>
+                        {{#if note}}
+                        <span class="service-methods__tab-note">{{note}}</span>
+                        {{/if}}
+                    </button>
+                </li>
+                {{/each}}
+            </ul>
+        </div>
+
+        <div class="service-methods__panels">
+            {{#each serviceMethods.items}}
+            <article class="service-methods__panel{{#if isActive}} is-active{{/if}}" data-service-methods-panel="{{id}}"
+                id="service-methods-panel-{{id}}" role="tabpanel" aria-labelledby="service-methods-tab-{{id}}"
+                {{#unless isActive}}hidden{{/unless}}>
+                <div class="service-methods__media">
+                    <img src="{{image}}" alt="{{imageAlt}}" loading="lazy">
+                </div>
+
+                <div class="service-methods__info">
+                    <h3 class="service-methods__method-title">{{title}}</h3>
+                    <p class="service-methods__method-description">{{description}}</p>
+
+                    <div class="service-methods__indications">
+                        <h4 class="service-methods__indications-title">Показано при:</h4>
+                        <ul class="service-methods__indications-list">
+                            {{#each indications}}
+                            <li class="service-methods__indications-item">
+                                <div class="service-methods__indications-name">{{title}}</div>
+                                <div class="service-methods__indications-value">{{value}}</div>
+                            </li>
+                            {{/each}}
+                        </ul>
+                    </div>
+
+                    <div class="service-methods__bottom">
+                        <a href="{{../serviceMethods.cta.href}}" class="btn btn--green service-methods__cta">
+                            {{../serviceMethods.cta.label}}
+                        </a>
+                        <div class="service-methods__price">
+                            <div class="service-methods__price-value">{{price}}</div>
+                            <div class="service-methods__price-label">{{priceLabel}}</div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+            {{/each}}
+        </div>
+    </div>
+</section>
