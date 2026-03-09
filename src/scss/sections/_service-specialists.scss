@@ -138,6 +138,21 @@
     overflow: hidden;
   }
 
+  .service-specialists__featured-media::after {
+    content: "";
+    position: absolute;
+    left: 4rem;
+    bottom: 4rem;
+    width: 6rem;
+    aspect-ratio: 1 / 1;
+    background-image: url("/images/doctor-award.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    pointer-events: none;
+    z-index: 2;
+  }
+
   .service-specialists__featured-media::before {
     content: "";
     display: block;
