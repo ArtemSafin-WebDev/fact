@@ -1,0 +1,93 @@
+@use "utils";
+@use "media";
+
+@layer sections {
+  .service-comparison {
+    @include utils.blockWrapper;
+    background-color: #fff;
+    margin-bottom: 12rem;
+  }
+
+  .service-comparison__content {
+    @include utils.blockContent;
+    padding-top: 12rem;
+    padding-bottom: 12rem;
+  }
+
+  .service-comparison__title {
+    color: #161616;
+    text-wrap: balance;
+  }
+
+  .service-comparison__subtitle {
+    margin-top: 4rem;
+    font-size: 1.8rem;
+    font-weight: 400;
+    line-height: 140%;
+    color: #161616;
+  }
+
+  .service-comparison__table-scroll {
+    margin-top: 8rem;
+    width: 100%;
+
+    @include media.breakpoint(mobile) {
+      overflow-x: auto;
+    }
+  }
+
+  .service-comparison__table {
+    width: 100%;
+    min-width: 0;
+    border-collapse: collapse;
+    table-layout: fixed;
+  }
+
+  .service-comparison__table th,
+  .service-comparison__table td {
+    width: 20%;
+    border-right: 1px solid #fff;
+    border-bottom: 1px solid #fff;
+    color: #161616;
+  }
+
+  .service-comparison__table th {
+    height: 7.5rem;
+    padding: 1.6rem 2.4rem;
+    vertical-align: middle;
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 900;
+    line-height: 100%;
+    letter-spacing: -0.02rem;
+    text-transform: uppercase;
+  }
+
+  .service-comparison__table td {
+    height: 7.5rem;
+    padding: 1.8rem 2.4rem;
+    vertical-align: middle;
+    text-align: left;
+    font-size: 1.8rem;
+    font-weight: 400;
+    line-height: 140%;
+  }
+
+  .service-comparison__table thead th:nth-child(odd) {
+    background-color: var(--green-300);
+  }
+
+  .service-comparison__table thead th:nth-child(even) {
+    background-color: var(--green-200);
+  }
+
+  .service-comparison__row--gray td {
+    background-color: #eaeaea;
+    border-color: #fff;
+  }
+
+  .service-comparison__row--white td {
+    background-color: #fff;
+    border-color: #eaeaea;
+  }
+}
