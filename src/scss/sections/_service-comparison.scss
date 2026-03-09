@@ -41,6 +41,10 @@
     min-width: 0;
     border-collapse: collapse;
     table-layout: fixed;
+
+    @include media.breakpoint(mobile) {
+      min-width: 176rem;
+    }
   }
 
   .service-comparison__table th,
@@ -81,12 +85,12 @@
     background-color: var(--green-200);
   }
 
-  .service-comparison__row--gray td {
+  .service-comparison__table tbody tr:nth-child(odd) td {
     background-color: #eaeaea;
     border-color: #fff;
   }
 
-  .service-comparison__row--white td {
+  .service-comparison__table tbody tr:nth-child(even) td {
     background-color: #fff;
     border-color: #eaeaea;
   }
