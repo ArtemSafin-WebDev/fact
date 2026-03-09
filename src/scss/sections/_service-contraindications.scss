@@ -1,4 +1,5 @@
 @use "utils";
+@use "media";
 
 @layer sections {
   .service-contraindications {
@@ -14,6 +15,27 @@
     margin: 0;
     color: #161616;
     text-wrap: balance;
+
+    @include media.breakpoint(mobile) {
+      max-width: 33.8rem;
+      text-wrap: initial;
+    }
+  }
+
+  .service-contraindications__title-mobile {
+    display: none;
+
+    @include media.breakpoint(mobile) {
+      display: block;
+    }
+  }
+
+  .service-contraindications__title-desktop {
+    display: block;
+
+    @include media.breakpoint(mobile) {
+      display: none;
+    }
   }
 
   .service-contraindications__list {
@@ -25,10 +47,27 @@
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 1px;
     background-color: #d3d3d3;
+
+    @include media.breakpoint(mobile) {
+      margin-top: 4rem;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      background-color: transparent;
+      gap: 0;
+    }
   }
 
   .service-contraindications__item {
     display: flex;
+
+    @include media.breakpoint(mobile) {
+      border: 1px solid #d3d3d3;
+
+      &:not(:first-child) {
+        margin-top: -1px;
+      }
+    }
   }
 
   .service-contraindications__card {
@@ -38,6 +77,11 @@
     flex-direction: column;
     background-color: #fff;
     gap: 4rem;
+
+    @include media.breakpoint(mobile) {
+      padding: 2.5rem 2rem;
+      gap: 3.2rem;
+    }
   }
 
   .service-contraindications__card-head {
@@ -45,6 +89,12 @@
     display: flex;
     align-items: center;
     gap: 2rem;
+
+    @include media.breakpoint(mobile) {
+      height: auto;
+      justify-content: space-between;
+      gap: 1.6rem;
+    }
   }
 
   .service-contraindications__icon {
@@ -55,6 +105,11 @@
     flex-shrink: 0;
     border-radius: 50%;
     background-color: #d80027;
+
+    @include media.breakpoint(mobile) {
+      width: 3rem;
+      height: 3rem;
+    }
   }
 
   .service-contraindications__icon svg {
@@ -70,6 +125,12 @@
     font-weight: 900;
     line-height: 100%;
     letter-spacing: -0.018rem;
+
+    @include media.breakpoint(mobile) {
+      font-size: 1.3rem;
+      letter-spacing: -0.013rem;
+      text-align: right;
+    }
   }
 
   .service-contraindications__points {
@@ -82,11 +143,18 @@
     grid-template-columns: repeat(2, minmax(0, 1fr));
 
     column-gap: 4rem;
-    row-gap: 1.6rem;
     color: #161616;
     font-size: 1.5rem;
     font-weight: 400;
     line-height: 120%;
     row-gap: 1rem;
+
+    @include media.breakpoint(mobile) {
+      padding-left: 2.1rem;
+      grid-template-columns: minmax(0, 1fr);
+      column-gap: 0;
+      row-gap: 1.2rem;
+      font-size: 1.4rem;
+    }
   }
 }
