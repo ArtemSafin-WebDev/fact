@@ -91,7 +91,8 @@
     border: 1px solid #cbcbcb;
 
     @include media.breakpoint(mobile) {
-      border: 0;
+      border: none;
+      overflow: visible;
     }
   }
 
@@ -102,6 +103,13 @@
 
   .service-equipment__slide {
     position: relative;
+    @include media.breakpoint(mobile) {
+      border: 1px solid #cbcbcb;
+      border-right: none;
+      &:last-child {
+        border-right: 1px solid #cbcbcb;
+      }
+    }
   }
 
   .service-equipment__slide::before {
