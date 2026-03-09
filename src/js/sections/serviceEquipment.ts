@@ -1,5 +1,5 @@
 import Swiper from "swiper";
-import { Navigation } from "swiper/modules";
+import { Navigation, Pagination } from "swiper/modules";
 
 export default function serviceEquipment() {
   const elements = Array.from(
@@ -10,13 +10,22 @@ export default function serviceEquipment() {
     const container = element.querySelector<HTMLElement>(
       ".service-equipment__slider .swiper",
     );
+    const fraction = element.querySelector<HTMLElement>(
+      ".service-equipment__fraction",
+    );
+
     if (!container) return;
 
     new Swiper(container, {
       speed: 600,
-      slidesPerView: 2,
+      slidesPerView: 1,
       watchSlidesProgress: true,
-      modules: [Navigation],
+      modules: [Navigation, Pagination],
+      breakpoints: {
+        641: {
+          slidesPerView: 2,
+        },
+      },
       navigation: {
         prevEl: element.querySelector<HTMLButtonElement>(
           ".service-equipment__slider-nav .slider-nav__arrow--prev",
@@ -25,6 +34,15 @@ export default function serviceEquipment() {
           ".service-equipment__slider-nav .slider-nav__arrow--next",
         ),
       },
+      pagination: fraction
+        ? {
+            el: fraction,
+            type: "fraction",
+            renderFraction: (currentClass, totalClass) =>
+              `<span class="${currentClass}"></span><span class="${totalClass}"></span>`,
+            formatFractionTotal: (total) => `/ ${total}`,
+          }
+        : undefined,
     });
   });
 }
