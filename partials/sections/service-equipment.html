@@ -8,53 +8,117 @@
         </p>
 
         <div class="service-equipment__controls">
-            <button class="service-equipment__control service-equipment__control--prev" type="button"
-                aria-label="Предыдущее оборудование">
-                <img src="/images/service-equipment/arrow-prev.svg" alt="">
-            </button>
-            <button class="service-equipment__control service-equipment__control--next" type="button"
-                aria-label="Следующее оборудование">
-                <img src="/images/service-equipment/arrow-next.svg" alt="">
-            </button>
+            <div class="slider-nav service-equipment__slider-nav">
+                <button class="slider-nav__arrow slider-nav__arrow--prev" type="button"
+                    aria-label="Предыдущее оборудование">
+                    <svg width="14" height="14" aria-hidden="true">
+                        <use xlink:href="#arrow-left"></use>
+                    </svg>
+                    <svg class="slider-nav__arrow-icon--bold" aria-hidden="true">
+                        <use xlink:href="#arrow-left-bold"></use>
+                    </svg>
+                </button>
+                <button class="slider-nav__arrow slider-nav__arrow--next" type="button"
+                    aria-label="Следующее оборудование">
+                    <svg width="14" height="14" aria-hidden="true">
+                        <use xlink:href="#arrow-right"></use>
+                    </svg>
+                    <svg class="slider-nav__arrow-icon--bold" aria-hidden="true">
+                        <use xlink:href="#arrow-right-bold"></use>
+                    </svg>
+                </button>
+            </div>
         </div>
 
-        <div class="service-equipment__cards">
-            <article class="service-equipment__card service-equipment__card--dark">
-                <img class="service-equipment__card-bg" src="/images/service-equipment/card-bg.jpg" alt=""
-                    loading="lazy">
-                <img class="service-equipment__card-icon" src="/images/service-equipment/plus-icon.svg" alt=""
-                    loading="lazy">
-                <h3 class="service-equipment__card-title">
-                    FEMTO LDV Z8<br>
-                    (Ziemmer, Швейцария)
-                </h3>
-                <ul class="service-equipment__card-list">
-                    <li>передовое решение для качественной и щадящей коррекции зрения</li>
-                    <li>
-                        сочетание низкого уровня энергии с высокой частотой импульсов гарантирует безопасность
-                        коррекции даже в самых сложных случаях
-                    </li>
-                    <li>позволяет создавать персонализированную программу операции для каждого пациента</li>
-                </ul>
-            </article>
+        <div class="service-equipment__slider">
+            <div class="swiper">
+                <div class="service-equipment__cards swiper-wrapper">
+                    <div class="service-equipment__slide swiper-slide">
+                        <article class="service-equipment__card service-equipment__card--dark">
+                            <img class="service-equipment__card-bg" src="/images/service-equipment/card-bg.jpg" alt=""
+                                loading="lazy">
+                            <img class="service-equipment__card-icon" src="/images/service-equipment/plus-icon.svg"
+                                alt="" loading="lazy">
+                            <h3 class="service-equipment__card-title">
+                                FEMTO LDV Z8<br>
+                                (Ziemmer, Швейцария)
+                            </h3>
+                            <ul class="service-equipment__card-list">
+                                <li>передовое решение для качественной и щадящей коррекции зрения</li>
+                                <li>
+                                    сочетание низкого уровня энергии с высокой частотой импульсов гарантирует
+                                    безопасность
+                                    коррекции даже в самых сложных случаях
+                                </li>
+                                <li>позволяет создавать персонализированную программу операции для каждого пациента</li>
+                            </ul>
+                        </article>
+                    </div>
 
-            <article class="service-equipment__card service-equipment__card--light">
-                <img class="service-equipment__card-bg" src="/images/service-equipment/card-bg.jpg" alt=""
-                    loading="lazy">
-                <img class="service-equipment__card-icon" src="/images/service-equipment/de-flag.svg" alt=""
-                    loading="lazy">
-                <h3 class="service-equipment__card-title">
-                    WAVELIGHT EX500<br>
-                    (Alcon, Германия)
-                </h3>
-                <ul class="service-equipment__card-list">
-                    <li>самая быстрая лазерная система в мире</li>
-                    <li>
-                        позволяет выполнять лазерную коррекцию даже в самых сложных случаях, при которых ранее
-                        операция была невозможна
-                    </li>
-                </ul>
-            </article>
+                    <div class="service-equipment__slide swiper-slide">
+                        <article class="service-equipment__card service-equipment__card--light">
+                            <img class="service-equipment__card-bg" src="/images/service-equipment/card-bg.jpg" alt=""
+                                loading="lazy">
+                            <img class="service-equipment__card-icon" src="/images/service-equipment/de-flag.svg" alt=""
+                                loading="lazy">
+                            <h3 class="service-equipment__card-title">
+                                WAVELIGHT EX500<br>
+                                (Alcon, Германия)
+                            </h3>
+                            <ul class="service-equipment__card-list">
+                                <li>самая быстрая лазерная система в мире</li>
+                                <li>
+                                    позволяет выполнять лазерную коррекцию даже в самых сложных случаях, при которых
+                                    ранее
+                                    операция была невозможна
+                                </li>
+                            </ul>
+                        </article>
+                    </div>
+                    <div class="service-equipment__slide swiper-slide">
+                        <article class="service-equipment__card service-equipment__card--dark">
+                            <img class="service-equipment__card-bg" src="/images/service-equipment/card-bg.jpg" alt=""
+                                loading="lazy">
+                            <img class="service-equipment__card-icon" src="/images/service-equipment/plus-icon.svg"
+                                alt="" loading="lazy">
+                            <h3 class="service-equipment__card-title">
+                                FEMTO LDV Z8<br>
+                                (Ziemmer, Швейцария)
+                            </h3>
+                            <ul class="service-equipment__card-list">
+                                <li>передовое решение для качественной и щадящей коррекции зрения</li>
+                                <li>
+                                    сочетание низкого уровня энергии с высокой частотой импульсов гарантирует
+                                    безопасность
+                                    коррекции даже в самых сложных случаях
+                                </li>
+                                <li>позволяет создавать персонализированную программу операции для каждого пациента</li>
+                            </ul>
+                        </article>
+                    </div>
+
+                    <div class="service-equipment__slide swiper-slide">
+                        <article class="service-equipment__card service-equipment__card--light">
+                            <img class="service-equipment__card-bg" src="/images/service-equipment/card-bg.jpg" alt=""
+                                loading="lazy">
+                            <img class="service-equipment__card-icon" src="/images/service-equipment/de-flag.svg" alt=""
+                                loading="lazy">
+                            <h3 class="service-equipment__card-title">
+                                WAVELIGHT EX500<br>
+                                (Alcon, Германия)
+                            </h3>
+                            <ul class="service-equipment__card-list">
+                                <li>самая быстрая лазерная система в мире</li>
+                                <li>
+                                    позволяет выполнять лазерную коррекцию даже в самых сложных случаях, при которых
+                                    ранее
+                                    операция была невозможна
+                                </li>
+                            </ul>
+                        </article>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </section>
