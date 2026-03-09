@@ -8,6 +8,16 @@
     padding-bottom: 6rem;
     padding-top: 6rem;
     margin-bottom: 12rem;
+
+    @include media.breakpoint(mobile) {
+      margin-bottom: 6rem;
+      padding-bottom: 3.2rem;
+      padding-top: 3.2rem;
+    }
+
+    &:has(~ .service-specialists) {
+      margin-bottom: 0;
+    }
   }
 
   .service-contraindications__content {

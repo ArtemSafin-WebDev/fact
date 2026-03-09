@@ -70,8 +70,8 @@ function initMobileCardsSlider(section: HTMLElement) {
 
     slider = new Swiper(container, {
       speed: 600,
-      slidesPerView: 1.08,
-      spaceBetween: 0,
+      slidesPerView: "auto",
+      spaceBetween: 1,
       watchOverflow: true,
     });
   };

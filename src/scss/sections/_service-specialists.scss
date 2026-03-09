@@ -4,7 +4,16 @@
 @layer sections {
   .service-specialists {
     @include utils.blockWrapper;
+    padding-bottom: 8rem;
     margin-bottom: 12rem;
+    padding-top: 6rem;
+    background-color: #eaeaea;
+
+    @include media.breakpoint(mobile) {
+      padding-top: 3.2rem;
+      padding-bottom: 6rem;
+      margin-bottom: 6rem;
+    }
   }
 
   .service-specialists__content {
@@ -54,6 +63,10 @@
     font-weight: 900;
     line-height: 140%;
     letter-spacing: -0.018rem;
+
+    @include media.breakpoint(mobile) {
+      margin-top: 3.2rem;
+    }
   }
 
   .service-specialists__featured-description {
@@ -61,6 +74,10 @@
     display: flex;
     flex-direction: column;
     gap: 2rem;
+    @include media.breakpoint(mobile) {
+      margin-top: 3.2rem;
+      gap: 1.2rem;
+    }
   }
 
   .service-specialists__description-short[hidden],
@@ -190,6 +207,113 @@
     .service-specialists__cards .swiper-slide {
       width: auto;
       height: auto;
+    }
+  }
+
+  @include media.breakpoint(mobile) {
+    .service-specialists {
+      margin-bottom: 6rem;
+    }
+
+    .service-specialists__title {
+      font-size: 4rem;
+      letter-spacing: -0.04rem;
+    }
+
+    .service-specialists__featured {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .service-specialists__featured-info {
+      order: 2;
+      padding: 4rem 3.2rem;
+    }
+
+    .service-specialists__featured-name {
+      font-size: 3rem;
+      letter-spacing: -0.03rem;
+    }
+
+    .service-specialists__featured-position {
+      margin-top: 2rem;
+      font-size: 1.4rem;
+      letter-spacing: -0.014rem;
+    }
+
+    .service-specialists__description-short p,
+    .service-specialists__description-full p {
+      font-size: 1.4rem;
+      letter-spacing: -0.014rem;
+    }
+
+    .service-specialists__stats {
+      flex-wrap: nowrap;
+      gap: 2rem;
+    }
+
+    .service-specialists__stat {
+      gap: 1rem;
+    }
+
+    .service-specialists__stat:nth-child(n + 3) {
+      display: none;
+    }
+
+    .service-specialists__stat-label {
+      font-size: 1.5rem;
+      letter-spacing: -0.015rem;
+    }
+
+    .service-specialists__stat-value {
+      font-size: 3rem;
+      letter-spacing: -0.03rem;
+    }
+
+    .service-specialists__featured-media {
+      order: 1;
+    }
+
+    .service-specialists__featured-media::before {
+      padding-top: 100%;
+    }
+
+    .service-specialists__featured-media::after {
+      left: 1.6rem;
+      bottom: 2rem;
+    }
+
+    .service-specialists__cards {
+      margin-top: 2rem;
+      margin-inline: -1.6rem;
+    }
+
+    .service-specialists__cards .swiper-wrapper {
+      align-items: stretch;
+    }
+
+    .service-specialists__cards .swiper-slide {
+      width: calc((100% - 1px) / 2);
+      display: flex;
+      height: auto;
+    }
+
+    .service-specialists .doctor-card {
+      height: auto;
+    }
+
+    .service-specialists .doctor-card__info {
+      padding: 0 0 1.3rem 1.6rem;
+    }
+
+    .service-specialists .doctor-card__content {
+      height: 17rem;
+      padding: 1rem 1.6rem;
+    }
+
+    .service-specialists .doctor-card__btn {
+      margin-top: auto;
+      padding: 1.55rem 1rem;
     }
   }
 }

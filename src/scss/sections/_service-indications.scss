@@ -9,13 +9,14 @@
     padding-bottom: 6rem;
     margin-bottom: 12rem;
 
-    &:has(+ .service-contraindications) {
-      margin-bottom: 0;
-    }
-
     @include media.breakpoint(mobile) {
       padding-top: 3.2rem;
       padding-bottom: 3.2rem;
+      margin-bottom: 6rem;
+    }
+
+    &:has(+ .service-contraindications) {
+      margin-bottom: 0;
     }
   }
 
