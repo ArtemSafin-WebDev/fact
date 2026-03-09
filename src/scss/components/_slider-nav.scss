@@ -64,11 +64,15 @@
       }
     }
 
-    &:not(.swiper-button-disabled):hover {
-      background-color: var(--green-300);
-      border-color: var(--green-300);
-      svg {
-        fill: black;
+    &:not(.swiper-button-disabled) {
+      @include media.hover {
+        &:hover {
+          background-color: var(--green-300);
+          border-color: var(--green-300);
+          svg {
+            fill: black;
+          }
+        }
       }
     }
 
