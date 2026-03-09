@@ -1,0 +1,42 @@
+<div class="feedback-modal js-modal" id="feedback-modal" aria-hidden="true">
+    <div class="feedback-modal__inner" role="dialog" aria-modal="true" aria-labelledby="feedback-modal-title">
+        <button class="feedback-modal__close js-modal-close" type="button" aria-label="Закрыть окно">
+            <svg width="14" height="14" aria-hidden="true">
+                <use xlink:href="#modal-close"></use>
+            </svg>
+
+        </button>
+        <div class="feedback-modal__content">
+            <div class="feedback-modal__left">
+                <h2 class="feedback-modal__title" id="feedback-modal-title">
+                    Запишитесь<br>
+                    на прием
+                </h2>
+                <p class="feedback-modal__description">
+                    Заполните форму и мы свяжемся<br>
+                    с вами в ближайшее время
+                </p>
+            </div>
+            <form action="/" method="POST" class="feedback-modal__form">
+                <div class="feedback-modal__fields">
+                    <div class="feedback-modal__field">
+                        <input type="text" class="feedback-modal__input first-visit__form-input" name="modal-name"
+                            autocomplete="name" aria-label="Имя" placeholder="Имя*" required>
+                    </div>
+                    <div class="feedback-modal__field">
+                        <input type="tel" class="feedback-modal__input first-visit__form-input" name="modal-phone"
+                            autocomplete="tel" aria-label="Телефон" placeholder="Телефон*" required>
+                    </div>
+                </div>
+                <div class="feedback-modal__actions">
+                    <p class="feedback-modal__policy">
+                        Нажимая кнопку, вы соглашаетесь с условиями обработки персональных данных и <a
+                            href="#">Политикой
+                            конфиденциальности</a>
+                    </p>
+                    <button class="btn feedback-modal__submit" type="submit">записаться</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

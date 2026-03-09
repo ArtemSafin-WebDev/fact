@@ -22,7 +22,7 @@ const doctorDetailPageData = {
       photoMobile: "/images/doctor-detail/doctor-main.webp",
       photoAlt: "Сергиенко Алексей Анатольевич",
       cta: {
-        href: "#",
+        href: "#feedback-modal",
         text: "Записаться",
       },
       clinics: [

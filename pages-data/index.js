@@ -6,7 +6,7 @@ const indexPageData = {
     clinicServices: {
       sliderCards: [
         {
-          href: "#",
+          href: "#feedback-modal",
           bgImage: "/images/doctor-detail/article-main.webp",
           bgImageAlt: "",
           doctors: [
@@ -20,7 +20,7 @@ const indexPageData = {
           buttonText: "Записаться",
         },
         {
-          href: "#",
+          href: "#feedback-modal",
           bgImage: "/images/doctor-detail/article-main.webp",
           bgImageAlt: "",
           doctors: [
@@ -34,7 +34,7 @@ const indexPageData = {
           buttonText: "Записаться",
         },
         {
-          href: "#",
+          href: "#feedback-modal",
           bgImage: "/images/doctor-detail/article-main.webp",
           bgImageAlt: "",
           doctors: [

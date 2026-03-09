@@ -1,0 +1,138 @@
+@use "utils";
+@use "media";
+
+@layer sections {
+  .feedback-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 500;
+    display: flex;
+    padding: var(--content-padding);
+    background-color: rgb(0 0 0 / 50%);
+    overflow-y: auto;
+    overscroll-behavior-y: contain;
+    -webkit-overflow-scrolling: touch;
+    opacity: 0;
+    visibility: hidden;
+    transition:
+      opacity 0.4s,
+      visibility 0s linear 0.4s;
+  }
+
+  .feedback-modal.active {
+    opacity: 1;
+    visibility: visible;
+    transition:
+      opacity 0.4s,
+      visibility 0.4s;
+  }
+
+  .feedback-modal__inner {
+    position: relative;
+    margin: auto;
+    width: 100%;
+    max-width: 100rem;
+    padding: 5.7rem 4rem 4rem;
+    background-color: var(--green-300);
+    color: var(--text-color);
+  }
+
+  .feedback-modal__content {
+    display: grid;
+    grid-template-columns: 38fr 48fr;
+    justify-content: space-between;
+    align-items: start;
+    column-gap: 4rem;
+  }
+
+  .feedback-modal__close {
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 1;
+    display: grid;
+    place-items: center;
+    width: 4rem;
+    height: 4rem;
+    background: #161616;
+
+    svg {
+      width: 1.5rem;
+      height: 1.5rem;
+      fill: white;
+    }
+  }
+
+  .feedback-modal__left {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+  }
+
+  .feedback-modal__title {
+    font-size: 4.5rem;
+    font-style: normal;
+    font-weight: 900;
+    line-height: 100%;
+    letter-spacing: -0.09rem;
+    text-transform: uppercase;
+  }
+
+  .feedback-modal__description {
+    max-width: 32rem;
+    font-size: 1.8rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 140%;
+  }
+
+  .feedback-modal__form {
+    display: flex;
+    flex-direction: column;
+    gap: 8rem;
+  }
+
+  .feedback-modal__fields {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+  }
+
+  .feedback-modal__field {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .feedback-modal__input {
+    padding-bottom: 3.2rem;
+  }
+
+  .feedback-modal__actions {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+  }
+
+  .feedback-modal__policy {
+    font-size: 1.2rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%;
+  }
+
+  .feedback-modal__policy a {
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 1px;
+  }
+
+  .feedback-modal__submit {
+    width: 100%;
+    align-self: stretch;
+
+    @include media.hover {
+      background-color: var(--text-color);
+      color: white;
+    }
+  }
+}

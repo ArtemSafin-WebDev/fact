@@ -33,7 +33,7 @@ const catalogServicesPageData = {
         title: "Популярные услуги",
         cards: [
           {
-            href: "#",
+            href: "#feedback-modal",
             bgImage: "/images/catalog-services/bg.webp",
             bgImageAlt: "Диагностическое оборудование в клинике Факт",
             doctors: [
@@ -47,7 +47,7 @@ const catalogServicesPageData = {
             buttonText: "Записаться",
           },
           {
-            href: "#",
+            href: "#feedback-modal",
             bgImage: "/images/catalog-services/bg.webp",
             bgImageAlt: "",
             doctors: [
@@ -61,7 +61,7 @@ const catalogServicesPageData = {
             buttonText: "Записаться",
           },
           {
-            href: "#",
+            href: "#feedback-modal",
             bgImage: "/images/catalog-services/bg.webp",
             bgImageAlt: "",
             doctors: [
@@ -128,7 +128,7 @@ const catalogServicesPageData = {
         title: "Экспертная хирургия",
         cards: [
           {
-            href: "#",
+            href: "#feedback-modal",
             bgImage: "/images/catalog-services/bg.webp",
             bgImageAlt: "Диагностическое оборудование в клинике Факт",
             doctors: [
@@ -142,7 +142,7 @@ const catalogServicesPageData = {
             buttonText: "Записаться",
           },
           {
-            href: "#",
+            href: "#feedback-modal",
             bgImage: "/images/catalog-services/bg.webp",
             bgImageAlt: "",
             doctors: [
@@ -156,7 +156,7 @@ const catalogServicesPageData = {
             buttonText: "Записаться",
           },
           {
-            href: "#",
+            href: "#feedback-modal",
             bgImage: "/images/catalog-services/bg.webp",
             bgImageAlt: "",
             doctors: [
