@@ -77,8 +77,8 @@
     z-index: 3;
   }
 
-  .service-equipment__slide.swiper-slide-visible +
-    .service-equipment__slide.swiper-slide-visible::before {
+  .service-equipment__slide.swiper-slide-visible
+    + .service-equipment__slide.swiper-slide-visible::before {
     opacity: 1;
   }
 
@@ -95,12 +95,13 @@
     content: "";
     position: absolute;
     inset: 0;
-    background: linear-gradient(
-      180deg,
-      rgba(13, 24, 45, 0.08) 0%,
-      rgba(9, 17, 33, 0.74) 73.5%,
-      rgba(9, 17, 33, 0.86) 100%
-    );
+    // background: linear-gradient(
+    //   180deg,
+    //   rgba(13, 24, 45, 0.08) 0%,
+    //   rgba(9, 17, 33, 0.74) 73.5%,
+    //   rgba(9, 17, 33, 0.86) 100%
+    // );
+    background-color: rgba(black, 0.6);
     pointer-events: none;
     opacity: 0;
     transition: opacity 0.3s ease;
