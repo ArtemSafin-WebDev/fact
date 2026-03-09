@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  {{> layout/meta }}
+</head>
+
+<body>
+  {{> layout/header }}
+  <main class="page-main">
+    {{> sections/service-intro }}
+    {{> sections/about-clinic }}
+    {{> sections/service }}
+    {{> sections/patients }}
+    {{> sections/promo }}
+    {{> sections/faq }}
+    {{> sections/blog }}
+    {{> sections/licenses }}
+  </main>
+  {{> layout/footer }}
+  {{> layout/feedback-modal }}
+
+  <script type="module" src="/src/js/main.ts"></script>
+</body>
+
+</html>
