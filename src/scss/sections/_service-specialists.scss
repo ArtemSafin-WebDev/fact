@@ -1,0 +1,180 @@
+@use "utils";
+@use "media";
+
+@layer sections {
+  .service-specialists {
+    @include utils.blockWrapper;
+    margin-bottom: 12rem;
+  }
+
+  .service-specialists__content {
+    @include utils.blockContent;
+    display: flex;
+    flex-direction: column;
+    container-type: inline-size;
+  }
+
+  .service-specialists__title {
+    color: #161616;
+    font-size: 8rem;
+    font-style: normal;
+    font-weight: 900;
+    line-height: 100%;
+    letter-spacing: -0.16rem;
+    text-transform: uppercase;
+  }
+
+  .service-specialists__featured {
+    margin-top: 4rem;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .service-specialists__featured-info {
+    padding: 4rem;
+    display: flex;
+    flex-direction: column;
+    background-color: #f6f6f6;
+    color: #161616;
+  }
+
+  .service-specialists__featured-name {
+    display: flex;
+    flex-direction: column;
+    font-size: 4.5rem;
+    font-weight: 900;
+    line-height: 100%;
+    letter-spacing: -0.045rem;
+    text-transform: uppercase;
+  }
+
+  .service-specialists__featured-position {
+    margin-top: 4rem;
+    font-size: 1.8rem;
+    font-weight: 900;
+    line-height: 140%;
+    letter-spacing: -0.018rem;
+  }
+
+  .service-specialists__featured-description {
+    margin-top: 4rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .service-specialists__description-short[hidden],
+  .service-specialists__description-full[hidden] {
+    display: none;
+  }
+
+  .service-specialists__description-full {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .service-specialists__description-short p,
+  .service-specialists__description-full p {
+    font-size: 1.8rem;
+    font-weight: 400;
+    line-height: 140%;
+    letter-spacing: -0.018rem;
+  }
+
+  .service-specialists__toggle {
+    align-self: flex-start;
+    border: none;
+    background: none;
+    padding: 0;
+    color: #161616;
+    font-size: 1.5rem;
+    font-weight: 900;
+    line-height: 100%;
+    letter-spacing: -0.015rem;
+    text-decoration-line: underline;
+    text-underline-offset: 0.2rem;
+    text-transform: uppercase;
+    cursor: pointer;
+  }
+
+  .service-specialists__toggle[hidden] {
+    display: none;
+  }
+
+  .service-specialists__stats {
+    margin-top: 4rem;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    gap: 8rem;
+  }
+
+  .service-specialists__stat {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+
+  .service-specialists__stat-label {
+    font-size: 2rem;
+    font-weight: 900;
+    line-height: 100%;
+    letter-spacing: -0.02rem;
+  }
+
+  .service-specialists__stat-value {
+    font-size: 3rem;
+    font-weight: 900;
+    line-height: 100%;
+    letter-spacing: -0.03rem;
+  }
+
+  .service-specialists__featured-media {
+    position: relative;
+    background-color: #e3e1de;
+    overflow: hidden;
+  }
+
+  .service-specialists__featured-media::before {
+    content: "";
+    display: block;
+    padding-top: calc(546 / 878 * 100%);
+  }
+
+  .service-specialists__featured-media picture,
+  .service-specialists__featured-media img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .service-specialists__featured-media img {
+    object-fit: cover;
+  }
+
+  .service-specialists__cards {
+    margin-top: 4rem;
+    background-color: #eaeaea;
+  }
+
+  .service-specialists__cards .swiper {
+    overflow: hidden;
+  }
+
+  @include media.breakpointMF(above-mobile) {
+    .service-specialists__cards .swiper-wrapper {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 1px;
+    }
+
+    .service-specialists__cards .swiper-slide {
+      width: auto;
+      height: auto;
+    }
+  }
+}

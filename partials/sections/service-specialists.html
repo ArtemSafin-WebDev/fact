@@ -1,0 +1,67 @@
+<section class="service-specialists">
+    <div class="service-specialists__content">
+        <h2 class="service-specialists__title">
+            {{serviceSpecialists.title}}
+        </h2>
+
+        <article class="service-specialists__featured">
+            <div class="service-specialists__featured-info">
+                <h3 class="service-specialists__featured-name">
+                    {{#each serviceSpecialists.featuredDoctor.nameLines}}
+                    <span>{{this}}</span>
+                    {{/each}}
+                </h3>
+
+                <p class="service-specialists__featured-position">
+                    {{serviceSpecialists.featuredDoctor.position}}
+                </p>
+
+                <div class="service-specialists__featured-description" data-service-specialists-foldable>
+                    <div class="service-specialists__description-short" data-service-specialists-short hidden>
+                        <p>{{serviceSpecialists.featuredDoctor.shortDescription}}</p>
+                    </div>
+                    <div class="service-specialists__description-full" data-service-specialists-full>
+                        {{#each serviceSpecialists.featuredDoctor.fullDescription}}
+                        <p>{{this}}</p>
+                        {{/each}}
+                    </div>
+                    <button class="service-specialists__toggle" type="button" data-service-specialists-toggle
+                        data-default-text="Показать полностью" data-expanded-text="Скрыть" aria-expanded="false" hidden>
+                        Показать полностью
+                    </button>
+                </div>
+
+                <div class="service-specialists__stats">
+                    {{#each serviceSpecialists.featuredDoctor.stats}}
+                    <div class="service-specialists__stat">
+                        <div class="service-specialists__stat-label">{{label}}</div>
+                        <div class="service-specialists__stat-value">{{value}}</div>
+                    </div>
+                    {{/each}}
+                </div>
+            </div>
+
+            <div class="service-specialists__featured-media">
+                <picture>
+                    {{#if serviceSpecialists.featuredDoctor.imageMobile}}
+                    <source srcset="{{serviceSpecialists.featuredDoctor.imageMobile}}" media="(max-width: 640px)" />
+                    {{/if}}
+                    <img src="{{serviceSpecialists.featuredDoctor.imageDesktop}}"
+                        alt="{{serviceSpecialists.featuredDoctor.imageAlt}}">
+                </picture>
+            </div>
+        </article>
+
+        <div class="service-specialists__cards">
+            <div class="swiper">
+                <div class="swiper-wrapper">
+                    {{#each serviceSpecialists.cards}}
+                    <div class="swiper-slide">
+                        {{> components/doctor-card }}
+                    </div>
+                    {{/each}}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

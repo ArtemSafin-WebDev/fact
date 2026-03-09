@@ -13,6 +13,7 @@ import aboutClinic from "./aboutClinic";
 import serviceBenefits from "./serviceBenefits";
 import serviceStages from "./serviceStages";
 import serviceEquipment from "./serviceEquipment";
+import serviceSpecialists from "./serviceSpecialists";
 
 export default function sections() {
   doctorDetails();
@@ -25,6 +26,7 @@ export default function sections() {
   blog();
   clinic();
   aboutClinic();
+  serviceSpecialists();
   serviceStages();
   serviceBenefits();
   serviceEquipment();
