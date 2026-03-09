@@ -5,6 +5,9 @@
   .service-contraindications {
     @include utils.blockWrapper;
     background-color: #eaeaea;
+    padding-bottom: 6rem;
+    padding-top: 6rem;
+    margin-bottom: 12rem;
   }
 
   .service-contraindications__content {

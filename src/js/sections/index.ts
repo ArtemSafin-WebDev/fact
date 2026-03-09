@@ -11,6 +11,7 @@ import doctorDetails from "./doctorDetails";
 import blog from "./blog";
 import aboutClinic from "./aboutClinic";
 import serviceBenefits from "./serviceBenefits";
+import serviceStages from "./serviceStages";
 
 export default function sections() {
   doctorDetails();
@@ -23,6 +24,7 @@ export default function sections() {
   blog();
   clinic();
   aboutClinic();
+  serviceStages();
   serviceBenefits();
   licenses();
   ratings();

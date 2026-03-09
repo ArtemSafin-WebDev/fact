@@ -1,0 +1,54 @@
+<section class="service-stages">
+    <div class="service-stages__content">
+        <h2 class="service-stages__title">{{serviceStages.title}}</h2>
+
+        <div class="service-stages__tabs" role="tablist" aria-label="Этапы проведения лазерной коррекции">
+            <ul class="service-stages__tabs-list">
+                {{#each serviceStages.items}}
+                <li class="service-stages__tab-item">
+                    <button class="service-stages__tab-btn{{#if isActive}} active{{/if}}" type="button"
+                        data-service-stages-tab-btn="{{id}}" id="service-stages-tab-{{id}}" role="tab"
+                        aria-controls="service-stages-panel-{{id}}" aria-selected="{{#if isActive}}true{{else}}false{{/if}}">
+                        {{tabLabel}}
+                    </button>
+                </li>
+                {{/each}}
+            </ul>
+        </div>
+
+        <div class="service-stages__panels">
+            {{#each serviceStages.items}}
+            <article class="service-stages__panel{{#if isActive}} is-active{{/if}}" data-service-stages-panel="{{id}}"
+                id="service-stages-panel-{{id}}" role="tabpanel" aria-labelledby="service-stages-tab-{{id}}"
+                {{#unless isActive}}hidden{{/unless}}>
+                <div class="service-stages__media">
+                    <picture class="service-stages__picture">
+                        <img src="{{image}}" alt="{{imageAlt}}" loading="lazy">
+                    </picture>
+                </div>
+                <div class="service-stages__info">
+                    <ul class="service-stages__meta" aria-label="Параметры этапа">
+                        <li class="service-stages__meta-item">
+                            <div class="service-stages__meta-value">{{duration}}</div>
+                            <div class="service-stages__meta-label">{{durationLabel}}</div>
+                        </li>
+                        <li class="service-stages__meta-item">
+                            <div class="service-stages__meta-value">{{price}}</div>
+                            <div class="service-stages__meta-label">{{priceLabel}}</div>
+                        </li>
+                    </ul>
+
+                    <h3 class="service-stages__stage-title">{{title}}</h3>
+
+                    <div class="service-stages__bottom">
+                        <p class="service-stages__description">{{description}}</p>
+                        <a href="{{../serviceStages.cta.href}}" class="btn btn--green service-stages__cta">
+                            {{../serviceStages.cta.label}}
+                        </a>
+                    </div>
+                </div>
+            </article>
+            {{/each}}
+        </div>
+    </div>
+</section>

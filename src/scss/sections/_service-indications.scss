@@ -5,9 +5,13 @@
   .service-indications {
     @include utils.blockWrapper;
     background-color: #eaeaea;
-
     padding-top: 8rem;
-    padding-bottom: 8rem;
+    padding-bottom: 6rem;
+    margin-bottom: 12rem;
+
+    &:has(+ .service-contraindications) {
+      margin-bottom: 0;
+    }
 
     @include media.breakpoint(mobile) {
       padding-top: 3.2rem;
