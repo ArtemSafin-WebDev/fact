@@ -1,4 +1,5 @@
 @use "utils";
+@use "media";
 
 @layer sections {
   .service-equipment {
@@ -69,17 +70,16 @@
     overflow: hidden;
     aspect-ratio: 879 / 499;
     border-right: 1px solid #cbcbcb;
+    color: #161616;
+    background-color: #fff;
+    transition: color 0.3s ease;
   }
 
   .service-equipment__card:last-child {
     border-right: none;
   }
 
-  .service-equipment__card--dark {
-    color: #fff;
-  }
-
-  .service-equipment__card--dark::after {
+  .service-equipment__card::after {
     content: "";
     position: absolute;
     inset: 0;
@@ -90,6 +90,8 @@
       rgba(9, 17, 33, 0.86) 100%
     );
     pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.3s ease;
   }
 
   .service-equipment__card-bg {
@@ -98,6 +100,8 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
+    opacity: 0;
+    transition: opacity 0.3s ease;
   }
 
   .service-equipment__card-icon {
@@ -118,6 +122,19 @@
     width: 4.2rem;
     height: 4.2rem;
     object-fit: contain;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  @include media.hover {
+    .service-equipment__card:hover {
+      color: #fff;
+    }
+
+    .service-equipment__card:hover::after,
+    .service-equipment__card:hover .service-equipment__card-bg {
+      opacity: 1;
+    }
   }
 
   .service-equipment__card-title {
