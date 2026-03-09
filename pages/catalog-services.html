@@ -6,10 +6,12 @@
 </head>
 
 <body>
+  {{> layout/header }}
   <main class="page-main">
     {{> sections/catalog-services }}
     {{> sections/first-visit }}
   </main>
+  {{> layout/footer }}
   {{> layout/feedback-modal }}
 
   <script type="module" src="/src/js/main.ts"></script>
