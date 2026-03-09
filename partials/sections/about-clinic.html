@@ -94,28 +94,6 @@
                 </li>
             </ul>
         </div>
-        <a href="#" class="about-clinic__video">
-            <div class="about-clinic__video-preview">
-                <picture>
-                    <source srcset="/images/about-clinic/preview-mobile.webp" media="(max-width: 640px)" />
-                    <img src="/images/about-clinic/preview.webp" alt="">
-                </picture>
-            </div>
-            <div class="about-clinic__video-info">
-                <div class="about-clinic__video-play">
-                    <svg width="14" height="14" aria-hidden="true">
-                        <use xlink:href="#play"></use>
-                    </svg>
-                </div>
-                <div class="about-clinic__video-info-text-content">
-                    <div class="about-clinic__video-title">
-                        ролик о&nbsp;нашем<br> подходе к&nbsp;работе
-                    </div>
-                    <div class="about-clinic__video-duration">
-                        00:50
-                    </div>
-                </div>
-            </div>
-        </a>
+        {{> components/video-preview }}
     </div>
 </section>

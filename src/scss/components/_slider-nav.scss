@@ -19,13 +19,11 @@
     transition:
       background-color 0.2s,
       border-color 0.2s;
-    border: 1px solid #3b3b3b;
-    background-color: #3b3b3b;
+    border: 1px solid #000000;
+    background-color: #000000;
 
     @include media.breakpoint(mobile) {
       height: 4rem;
-      // border-color: black;
-      // background-color: black;
     }
 
     &:not(:first-child) {
@@ -66,10 +64,13 @@
       }
     }
 
-    // &:not(.swiper-button-disabled):hover {
-    //   background-color: black;
-    //   border-color: black;
-    // }
+    &:not(.swiper-button-disabled):hover {
+      background-color: var(--green-300);
+      border-color: var(--green-300);
+      svg {
+        fill: black;
+      }
+    }
 
     .slider-nav--white & {
       background-color: #fff;
