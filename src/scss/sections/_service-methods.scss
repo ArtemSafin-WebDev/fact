@@ -1,4 +1,5 @@
 @use "utils";
+@use "media";
 
 @layer sections {
   .service-methods {
@@ -60,12 +61,11 @@
     list-style: none;
     display: flex;
     align-items: stretch;
-    width: 110rem;
   }
 
   .service-methods__tabs-item {
     display: flex;
-    flex: 1 1 22rem;
+    flex: 0 1 22rem;
   }
 
   .service-methods__tabs-item + .service-methods__tabs-item {
@@ -241,5 +241,160 @@
     font-style: normal;
     font-weight: 400;
     line-height: 140%;
+  }
+
+  @include media.breakpoint(mobile) {
+    .service-methods {
+      margin-bottom: 6rem;
+    }
+
+    .service-methods__title {
+      font-size: 9.15cqw;
+      text-align: left;
+    }
+
+    .service-methods__intro {
+      margin-top: 4rem;
+      gap: 2rem;
+    }
+
+    .service-methods__subtitle {
+      font-size: 1.5rem;
+      line-height: 120%;
+      letter-spacing: -0.015rem;
+    }
+
+    .service-methods__description {
+      margin-top: 0;
+      font-size: 1.4rem;
+      line-height: 140%;
+    }
+
+    .service-methods__tabs {
+      margin-top: 2rem;
+    }
+
+    .service-methods__tabs-list {
+      width: 100%;
+      display: grid;
+      grid-template-columns: 80fr 60fr 83fr 60fr 60fr;
+    }
+
+    .service-methods__tabs-item {
+      min-width: 0;
+    }
+
+    .service-methods__tabs-item + .service-methods__tabs-item {
+      margin-left: 0;
+    }
+
+    .service-methods__tab-btn {
+      height: 4rem;
+      padding: 0.6rem;
+      border-width: 0.5px;
+      font-size: 1rem;
+      line-height: 100%;
+      letter-spacing: -0.01rem;
+      text-transform: none;
+    }
+
+    .service-methods__tab-note {
+      display: none;
+    }
+
+    .service-methods__panels {
+      margin-top: 2rem;
+    }
+
+    .service-methods__panel {
+      grid-template-columns: minmax(0, 1fr);
+      border: 0;
+    }
+
+    .service-methods__media {
+      border-right: 0;
+      aspect-ratio: 343 / 234;
+    }
+
+    .service-methods__info {
+      padding: 1.6rem 1.6rem 0;
+      border-left: 0.5px solid #cbcbcb;
+      border-right: 0.5px solid #cbcbcb;
+      border-bottom: 0.5px solid #cbcbcb;
+    }
+
+    .service-methods__method-title {
+      font-size: 1.5rem;
+      letter-spacing: -0.015rem;
+    }
+
+    .service-methods__method-description {
+      margin-top: 1.6rem;
+      font-size: 1.4rem;
+      line-height: 140%;
+      max-width: none;
+    }
+
+    .service-methods__indications {
+      margin-top: 2rem;
+    }
+
+    .service-methods__indications-title {
+      font-size: 1.4rem;
+      letter-spacing: -0.014rem;
+    }
+
+    .service-methods__indications-list {
+      margin-top: 1.6rem;
+      gap: 1.6rem;
+      flex-wrap: nowrap;
+    }
+
+    .service-methods__indications-item {
+      gap: 0.8rem;
+      min-width: 0;
+      flex: 1 1 0;
+    }
+
+    .service-methods__indications-name {
+      font-size: 1.4rem;
+      letter-spacing: -0.014rem;
+    }
+
+    .service-methods__indications-value {
+      font-size: 1.4rem;
+    }
+
+    .service-methods__bottom {
+      margin-top: 4rem;
+      flex-direction: column-reverse;
+      align-items: flex-start;
+      gap: 1.6rem;
+    }
+
+    .service-methods__cta {
+      width: calc(100% + 3.2rem);
+      margin-left: -1.6rem;
+      margin-right: -1.6rem;
+      padding: 1.65rem 2.4rem;
+      font-size: 1.4rem;
+      line-height: 100%;
+      text-transform: uppercase;
+      flex-shrink: 0;
+    }
+
+    .service-methods__price {
+      gap: 0.8rem;
+      width: 100%;
+    }
+
+    .service-methods__price-value {
+      font-size: 3rem;
+      letter-spacing: -0.02rem;
+    }
+
+    .service-methods__price-label {
+      font-size: 1.4rem;
+    }
   }
 }
