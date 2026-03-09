@@ -10,7 +10,10 @@
 
     @include media.breakpoint(mobile) {
       padding-block: 6rem;
-      margin-bottom: 0;
+      margin-bottom: 6rem;
+      &:has(~ .first-visit) {
+        margin-bottom: 0;
+      }
     }
   }
 
