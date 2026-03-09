@@ -1,4 +1,5 @@
 @use "utils";
+@use "media";
 
 @layer sections {
   .contacts-socials {
@@ -10,6 +11,12 @@
     padding-top: 8rem;
     padding-bottom: 8rem;
     margin-bottom: 8rem;
+
+    @include media.breakpoint(mobile) {
+      padding-top: 6rem;
+      padding-bottom: 6rem;
+      margin-bottom: 6rem;
+    }
   }
 
   .contacts-socials__content {
@@ -22,6 +29,10 @@
     display: flex;
     flex-direction: column;
     gap: 4rem;
+
+    @include media.breakpoint(mobile) {
+      gap: 0.4rem;
+    }
   }
 
   .contacts-socials__title {
@@ -32,6 +43,13 @@
     line-height: 100%;
     letter-spacing: -0.08rem;
     text-transform: uppercase;
+
+    @include media.breakpoint(mobile) {
+      max-width: 34.3rem;
+      font-size: 4rem;
+      line-height: 100%;
+      letter-spacing: -0.1rem;
+    }
   }
 
   .contacts-socials__lead {
@@ -40,6 +58,13 @@
     font-weight: 400;
     line-height: 120%;
     letter-spacing: -0.018rem;
+
+    @include media.breakpoint(mobile) {
+      max-width: 34.3rem;
+      font-size: 1.4rem;
+      line-height: 100%;
+      letter-spacing: -0.014rem;
+    }
   }
 
   .contacts-socials__list {
@@ -48,6 +73,11 @@
     grid-template-columns: repeat(4, minmax(0, 1fr));
     background-color: var(--contacts-socials-card-bg);
     border: 1px solid var(--contacts-socials-divider);
+
+    @include media.breakpoint(mobile) {
+      margin-top: 4rem;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
   }
 
   .contacts-socials__item {
@@ -55,6 +85,23 @@
 
     &:last-child {
       border-right: none;
+    }
+
+    @include media.breakpoint(mobile) {
+      border-right: 1px solid var(--contacts-socials-divider);
+      border-bottom: 1px solid var(--contacts-socials-divider);
+
+      &:last-child {
+        border-right: 1px solid var(--contacts-socials-divider);
+      }
+
+      &:nth-child(2n) {
+        border-right: none;
+      }
+
+      &:nth-last-child(-n + 2) {
+        border-bottom: none;
+      }
     }
   }
 
@@ -64,6 +111,10 @@
     grid-template-rows: 1fr auto 1fr;
     padding: 4rem;
     background-color: var(--contacts-socials-card-bg);
+
+    @include media.breakpoint(mobile) {
+      padding: 1.8rem;
+    }
   }
 
   .contacts-socials__icon {
@@ -72,21 +123,20 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    position: relative;
 
     img {
       width: 100%;
       height: 100%;
       display: block;
+      position: absolute;
+      left: 0;
+      top: 0;
+      object-fit: contain;
     }
-  }
 
-  .contacts-socials__icon--youtube {
-    border-radius: 50%;
-    background-color: #f20119;
-
-    img {
-      width: 2.9rem;
-      height: 2rem;
+    @include media.breakpoint(mobile) {
+      width: 3rem;
     }
   }
 
@@ -100,6 +150,11 @@
     letter-spacing: -0.03rem;
     text-align: center;
     text-transform: uppercase;
+
+    @include media.breakpoint(mobile) {
+      font-size: 2rem;
+      letter-spacing: -0.02rem;
+    }
   }
 
   .contacts-socials__followers {
@@ -109,5 +164,10 @@
     line-height: 120%;
     letter-spacing: -0.018rem;
     align-self: flex-end;
+
+    @include media.breakpoint(mobile) {
+      font-size: 1.4rem;
+      letter-spacing: -0.014rem;
+    }
   }
 }
