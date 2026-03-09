@@ -10,6 +10,7 @@ import ratings from "./ratings";
 import doctorDetails from "./doctorDetails";
 import blog from "./blog";
 import aboutClinic from "./aboutClinic";
+import serviceBenefits from "./serviceBenefits";
 
 export default function sections() {
   doctorDetails();
@@ -22,6 +23,7 @@ export default function sections() {
   blog();
   clinic();
   aboutClinic();
+  serviceBenefits();
   licenses();
   ratings();
 }

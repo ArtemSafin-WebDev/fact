@@ -1,0 +1,134 @@
+@use "utils";
+
+@layer sections {
+  .service-benefits {
+    @include utils.blockWrapper;
+    background-color: #eaeaea;
+    margin-bottom: 12rem;
+  }
+
+  .service-benefits__content {
+    @include utils.blockContent;
+    display: flex;
+    flex-direction: column;
+    container-type: inline-size;
+    padding-top: 8rem;
+    padding-bottom: 8rem;
+  }
+
+  .service-benefits__title {
+    text-align: center;
+    font-size: 11.7cqw;
+    letter-spacing: -0.02em;
+    text-transform: uppercase;
+    font-weight: 900;
+    line-height: 100%;
+    color: #161616;
+  }
+
+  .service-benefits__subtitle {
+    text-align: center;
+    margin-top: 7rem;
+    font-size: 4.5rem;
+    font-style: normal;
+    font-weight: 900;
+    line-height: 100%;
+    letter-spacing: -0.045rem;
+    text-transform: uppercase;
+    color: #161616;
+    align-self: center;
+    text-wrap: balance;
+  }
+
+  .service-benefits__slider {
+    margin-top: 8rem;
+    position: relative;
+
+    .swiper {
+      overflow: hidden;
+    }
+
+    .swiper-slide {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      height: auto;
+    }
+  }
+
+  .service-benefits__controls {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 10;
+  }
+
+  .service-benefits__fraction.swiper-pagination-fraction {
+    position: absolute;
+    top: 2rem;
+    left: 2.4rem;
+    color: #fff;
+    gap: 0.4rem;
+    font-size: 3rem;
+    font-style: normal;
+    font-weight: 900;
+    line-height: 120%;
+    letter-spacing: -0.03rem;
+
+    .swiper-pagination-current,
+    .swiper-pagination-total {
+      color: #fff;
+    }
+
+    .swiper-pagination-total {
+      font-size: 1.6rem;
+      letter-spacing: -0.016rem;
+    }
+  }
+
+  .service-benefits__slider-nav {
+    position: absolute;
+    right: 2.4rem;
+    bottom: 2.2rem;
+    pointer-events: auto;
+  }
+
+  .service-benefits__slide {
+    position: relative;
+    aspect-ratio: 1760 / 600;
+    overflow: hidden;
+  }
+
+  .service-benefits__slide-image {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .service-benefits__slide-overlay {
+    position: absolute;
+    inset: 0;
+    background-image: linear-gradient(
+      225.926deg,
+      rgba(22, 22, 22, 0) 51.852%,
+      #161616 99.058%
+    );
+  }
+
+  .service-benefits__slide-text {
+    position: absolute;
+    left: 2.4rem;
+    bottom: 2rem;
+    max-width: 90.6rem;
+    color: #fff;
+    font-size: 3rem;
+    font-style: normal;
+    font-weight: 900;
+    line-height: 120%;
+    letter-spacing: -0.03rem;
+    text-transform: uppercase;
+    z-index: 2;
+  }
+}
