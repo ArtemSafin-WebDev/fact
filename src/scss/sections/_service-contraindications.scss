@@ -1,0 +1,92 @@
+@use "utils";
+
+@layer sections {
+  .service-contraindications {
+    @include utils.blockWrapper;
+    background-color: #eaeaea;
+  }
+
+  .service-contraindications__content {
+    @include utils.blockContent;
+  }
+
+  .service-contraindications__title {
+    margin: 0;
+    color: #161616;
+    text-wrap: balance;
+  }
+
+  .service-contraindications__list {
+    margin-top: 8rem;
+    margin-bottom: 0;
+    padding: 1px;
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1px;
+    background-color: #d3d3d3;
+  }
+
+  .service-contraindications__item {
+    display: flex;
+  }
+
+  .service-contraindications__card {
+    width: 100%;
+    padding: 4rem;
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    gap: 4rem;
+  }
+
+  .service-contraindications__card-head {
+    height: 4rem;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  .service-contraindications__icon {
+    width: 4rem;
+    height: 4rem;
+    display: grid;
+    place-items: center;
+    flex-shrink: 0;
+    border-radius: 50%;
+    background-color: #d80027;
+  }
+
+  .service-contraindications__icon svg {
+    width: 2rem;
+    height: 2rem;
+    color: #fff;
+  }
+
+  .service-contraindications__card-title {
+    margin: 0;
+    color: #161616;
+    font-size: 1.8rem;
+    font-weight: 900;
+    line-height: 100%;
+    letter-spacing: -0.018rem;
+  }
+
+  .service-contraindications__points {
+    margin-top: auto;
+    margin-bottom: 0;
+    padding-left: 2.25rem;
+    list-style: disc;
+    list-style-position: outside;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    column-gap: 4rem;
+    row-gap: 1.6rem;
+    color: #161616;
+    font-size: 1.5rem;
+    font-weight: 400;
+    line-height: 120%;
+    row-gap: 1rem;
+  }
+}
