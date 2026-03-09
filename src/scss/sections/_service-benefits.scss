@@ -1,10 +1,15 @@
 @use "utils";
+@use "media";
 
 @layer sections {
   .service-benefits {
     @include utils.blockWrapper;
     background-color: #eaeaea;
     margin-bottom: 12rem;
+
+    @include media.breakpoint(mobile) {
+      margin-bottom: 6rem;
+    }
   }
 
   .service-benefits__content {
@@ -14,6 +19,11 @@
     container-type: inline-size;
     padding-top: 8rem;
     padding-bottom: 8rem;
+
+    @include media.breakpoint(mobile) {
+      padding-top: 6rem;
+      padding-bottom: 6rem;
+    }
   }
 
   .service-benefits__title {
@@ -24,6 +34,11 @@
     font-weight: 900;
     line-height: 100%;
     color: #161616;
+
+    @include media.breakpoint(mobile) {
+      text-align: left;
+      font-size: 3.6rem;
+    }
   }
 
   .service-benefits__subtitle {
@@ -38,11 +53,25 @@
     color: #161616;
     align-self: center;
     text-wrap: balance;
+
+    @include media.breakpoint(mobile) {
+      margin-top: 2rem;
+      align-self: stretch;
+      text-align: left;
+      font-size: 1.5rem;
+      line-height: 100%;
+      letter-spacing: -0.015rem;
+      text-wrap: initial;
+    }
   }
 
   .service-benefits__slider {
     margin-top: 8rem;
     position: relative;
+
+    @include media.breakpoint(mobile) {
+      margin-top: 3.6rem;
+    }
 
     .swiper {
       overflow: hidden;
@@ -84,6 +113,19 @@
       font-size: 1.6rem;
       letter-spacing: -0.016rem;
     }
+
+    @include media.breakpoint(mobile) {
+      top: 0.8rem;
+      left: 1rem;
+      gap: 0.2rem;
+      font-size: 1.5rem;
+      letter-spacing: -0.015rem;
+
+      .swiper-pagination-total {
+        font-size: 1rem;
+        letter-spacing: -0.01rem;
+      }
+    }
   }
 
   .service-benefits__slider-nav {
@@ -91,12 +133,21 @@
     right: 2.4rem;
     bottom: 2.2rem;
     pointer-events: auto;
+
+    @include media.breakpoint(mobile) {
+      right: 1rem;
+      bottom: 1rem;
+    }
   }
 
   .service-benefits__slide {
     position: relative;
     aspect-ratio: 1760 / 600;
     overflow: hidden;
+
+    @include media.breakpoint(mobile) {
+      aspect-ratio: 343 / 200;
+    }
   }
 
   .service-benefits__slide-image {
@@ -130,5 +181,14 @@
     letter-spacing: -0.03rem;
     text-transform: uppercase;
     z-index: 2;
+
+    @include media.breakpoint(mobile) {
+      left: 1rem;
+      bottom: 1rem;
+      max-width: 17.7rem;
+      font-size: 1.5rem;
+      line-height: 120%;
+      letter-spacing: -0.015rem;
+    }
   }
 }
