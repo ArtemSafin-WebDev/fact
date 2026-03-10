@@ -1,3 +1,5 @@
+@use "media";
+
 @layer sections {
   .feedback-success-modal {
     position: fixed;
@@ -32,6 +34,12 @@
     grid-template-columns: repeat(2, minmax(0, 1fr));
     grid-template-rows: 1fr auto 1fr;
     color: var(--text-color);
+
+    @include media.breakpoint(mobile) {
+      padding: 1.6rem;
+      grid-template-columns: minmax(0, 1fr);
+      grid-template-rows: 1fr auto 1fr;
+    }
   }
 
   .feedback-success-modal__logo {
@@ -42,6 +50,10 @@
     justify-self: flex-start;
     grid-row: 1 / 2;
     grid-column: 1 / 2;
+
+    @include media.breakpoint(mobile) {
+      display: none;
+    }
   }
 
   .feedback-success-modal__logo img {
@@ -60,6 +72,11 @@
     height: 4rem;
     background-color: var(--text-color);
     color: white;
+
+    @include media.breakpoint(mobile) {
+      grid-column: 1 / -1;
+      grid-row: 1 / 2;
+    }
   }
 
   .feedback-success-modal__close svg {
@@ -75,6 +92,13 @@
     grid-row: 2 / 3;
     justify-self: center;
     max-width: 94.6rem;
+
+    @include media.breakpoint(mobile) {
+      grid-row: 2 / 3;
+      justify-self: stretch;
+      max-width: none;
+      gap: 4rem;
+    }
   }
 
   .feedback-success-modal__icon {
@@ -82,6 +106,12 @@
     height: 5.06rem;
     color: var(--text-color);
     margin-bottom: 4rem;
+
+    @include media.breakpoint(mobile) {
+      width: 2.5rem;
+      height: 2.5rem;
+      margin: 0;
+    }
   }
 
   .feedback-success-modal__icon svg {
@@ -100,7 +130,14 @@
     line-height: 100%;
     letter-spacing: -0.16rem;
     text-transform: uppercase;
-    white-space: nowrap;
+
+    @include media.breakpoint(mobile) {
+      margin: 0;
+      font-size: 4rem;
+      line-height: 100%;
+      letter-spacing: -0.04rem;
+      white-space: normal;
+    }
   }
 
   .feedback-success-modal__title-dot {
@@ -111,6 +148,11 @@
     flex-shrink: 0;
     display: inline-block;
     vertical-align: baseline;
+
+    @include media.breakpoint(mobile) {
+      width: 1rem;
+      height: 1rem;
+    }
   }
 
   .feedback-success-modal__description {
@@ -118,5 +160,11 @@
     font-style: normal;
     font-weight: 400;
     line-height: 140%;
+
+    @include media.breakpoint(mobile) {
+      font-size: 1.4rem;
+      line-height: 120%;
+      letter-spacing: -0.014rem;
+    }
   }
 }
