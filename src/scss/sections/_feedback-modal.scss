@@ -202,7 +202,7 @@
       white-space: nowrap;
     }
 
-    @include media.hover {
+    @include media.canHover {
       background-color: var(--text-color);
       color: white;
     }

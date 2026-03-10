@@ -15,6 +15,7 @@ import serviceStages from "./serviceStages";
 import serviceEquipment from "./serviceEquipment";
 import serviceSpecialists from "./serviceSpecialists";
 import serviceMethods from "./serviceMethods";
+import contactsHero from "./contactsHero";
 
 export default function sections() {
   doctorDetails();
@@ -32,6 +33,7 @@ export default function sections() {
   serviceStages();
   serviceBenefits();
   serviceEquipment();
+  contactsHero();
   licenses();
   ratings();
 }

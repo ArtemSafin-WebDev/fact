@@ -30,7 +30,7 @@
       background-color: #eaeaea;
     }
 
-    @include media.hover {
+    @include media.canHover {
       &:hover {
         color: white;
       }

@@ -191,7 +191,7 @@
     }
   }
 
-  @include media.hover {
+  @include media.canHover {
     .service-equipment__card:hover {
       color: #fff;
     }

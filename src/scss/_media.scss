@@ -14,8 +14,8 @@
   }
 }
 
-@mixin hover {
-  @media (hover: hover) and (pointer: fine) {
+@mixin canHover {
+  @media (hover: canHover) and (pointer: fine) {
     @content;
   }
 }

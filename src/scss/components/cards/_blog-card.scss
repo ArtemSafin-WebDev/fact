@@ -17,7 +17,7 @@
       aspect-ratio: 343 / 225;
     }
 
-    @include media.hover {
+    @include media.canHover {
       .blog-card__btn {
         opacity: 0;
         visibility: hidden;

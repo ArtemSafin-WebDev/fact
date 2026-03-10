@@ -98,7 +98,7 @@
     transition: text-decoration-color 0.2s;
     cursor: pointer;
 
-    @include media.hover {
+    @include media.canHover {
       &:hover {
         text-decoration-color: transparent;
       }

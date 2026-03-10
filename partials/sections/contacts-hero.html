@@ -1,0 +1,77 @@
+<section class="contacts-hero">
+    <div class="contacts-hero__content">
+        {{> components/breadcrumbs items=contactsHero.breadcrumbs }}
+
+        <h1 class="contacts-hero__title">
+            {{contactsHero.title}}
+        </h1>
+
+        <fieldset class="tabs-nav contacts-hero__tabs">
+            <legend class="contacts-hero__legend">Выбор клиники</legend>
+            <ul class="tabs-nav__list">
+                {{#each contactsHero.clinics}}
+                <li class="tabs-nav__list-item">
+                    <button class="tabs-nav__btn contacts-hero__tab-btn{{#if active}} active{{/if}}" type="button"
+                        role="tab" aria-selected="{{#if active}}true{{else}}false{{/if}}"
+                        data-contacts-tab-btn="{{id}}">
+                        <span class="contacts-hero__tab-city">{{tabCity}}</span>
+                        <span class="contacts-hero__tab-street">{{tabStreet}}</span>
+                    </button>
+                </li>
+                {{/each}}
+            </ul>
+        </fieldset>
+    </div>
+
+    <div class="contacts-hero__stack">
+        <div class="contacts-hero__map">
+            <img src="{{contactsHero.map.imageSrc}}" alt="{{contactsHero.map.imageAlt}}" loading="lazy"
+                data-contacts-map>
+        </div>
+
+        <div class="contacts-hero__panels">
+            <div class="contacts-hero__panels-content">
+                {{#each contactsHero.clinics}}
+                <article class="contacts-hero__panel{{#if active}} is-active{{/if}}" data-contacts-city-panel="{{id}}">
+                    <div class="contacts-hero__address-card">
+                        <p class="contacts-hero__small-label">{{addressLabel}}</p>
+                        <h2 class="contacts-hero__address-title">
+                            {{#each addressLines}}
+                            <span>{{this}}</span>
+                            {{/each}}
+                        </h2>
+                        <a class="btn btn--green contacts-hero__route-link" href="{{routeHref}}">{{routeText}}</a>
+                    </div>
+
+                    <div class="contacts-hero__contacts-card">
+                        <p class="contacts-hero__small-label contacts-hero__small-label--dark">{{worktime}}</p>
+                        <div class="contacts-hero__contacts-grid">
+                            <div class="contacts-hero__contacts-item">
+                                <a class="contacts-hero__contacts-link" href="{{phoneHref}}">{{phone}}</a>
+                                <a class="contacts-hero__contacts-sub-link" href="{{callbackHref}}">{{callbackText}}</a>
+                            </div>
+                            <div class="contacts-hero__contacts-item">
+                                <a class="contacts-hero__contacts-link" href="{{mailHref}}">{{mail}}</a>
+                                <a class="contacts-hero__contacts-sub-link"
+                                    href="{{mailActionHref}}">{{mailActionText}}</a>
+                            </div>
+                        </div>
+                        <div class="contacts-hero__socials">
+                            <a class="contacts-hero__social-link" href="{{whatsappHref}}" aria-label="WhatsApp">
+                                <svg width="24" height="24" aria-hidden="true">
+                                    <use xlink:href="#whatsapp"></use>
+                                </svg>
+                            </a>
+                            <a class="contacts-hero__social-link" href="{{telegramHref}}" aria-label="Telegram">
+                                <svg width="19" height="16" aria-hidden="true">
+                                    <use xlink:href="#telegram"></use>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+                {{/each}}
+            </div>
+        </div>
+    </div>
+</section>

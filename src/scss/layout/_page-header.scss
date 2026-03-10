@@ -131,7 +131,7 @@
       height: 1.2rem;
     }
 
-    @include media.hover {
+    @include media.canHover {
       &:hover {
         color: var(--green-300);
       }
@@ -196,7 +196,7 @@
     letter-spacing: -0.015rem;
     transition: color 0.2s;
 
-    @include media.hover {
+    @include media.canHover {
       &:hover {
         color: var(--green-300);
       }
@@ -501,7 +501,7 @@
       background-color 0.2s,
       color 0.2s;
 
-    @include media.hover {
+    @include media.canHover {
       &:hover {
         background-color: var(--green-200);
       }
@@ -645,7 +645,7 @@
     color: var(--green-300);
   }
 
-  @include media.hover {
+  @include media.canHover {
     .page-header__services-menu-btn:hover {
       color: var(--green-300);
     }
@@ -742,7 +742,7 @@
       padding-left: 2rem;
     }
 
-    @include media.hover {
+    @include media.canHover {
       &:hover {
         color: var(--green-300);
       }
@@ -787,7 +787,7 @@
       height: 2.4rem;
     }
 
-    @include media.hover {
+    @include media.canHover {
       &:hover {
         background-color: var(--green-300);
       }
@@ -804,7 +804,7 @@
       margin-top: auto;
     }
 
-    @include media.hover {
+    @include media.canHover {
       &:hover {
         background-color: var(--green-200);
       }

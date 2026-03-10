@@ -196,7 +196,7 @@
       color: #111;
     }
 
-    @include media.hover {
+    @include media.canHover {
       &:hover {
         opacity: 0.7;
       }
@@ -216,7 +216,7 @@
     background: #111;
     transition: opacity 0.2s;
 
-    @include media.hover {
+    @include media.canHover {
       &:hover {
         opacity: 0.7;
       }

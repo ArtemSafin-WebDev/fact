@@ -98,7 +98,7 @@
       background-color: #f6f6f6;
     }
 
-    @include media.hover {
+    @include media.canHover {
       &:hover span {
         background-color: #f6f6f6;
       }

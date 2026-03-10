@@ -16,7 +16,7 @@
       border: 1px solid #cbcbcb;
     }
 
-    @include media.hover {
+    @include media.canHover {
       &:hover .promo-card__bg {
         opacity: 1;
       }

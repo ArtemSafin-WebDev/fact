@@ -25,7 +25,7 @@
   }
 
   .license-card {
-    @include media.hover {
+    @include media.canHover {
       &:hover .license-card__media img {
         filter: grayscale(0);
       }
