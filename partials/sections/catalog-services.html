@@ -16,11 +16,8 @@
             <ul class="tabs-nav__list">
                 {{#each catalogServices.tabs}}
                 <li class="tabs-nav__list-item">
-                    <button
-                        class="tabs-nav__btn{{#if active}} active{{/if}}"
-                        type="button"
-                        data-services-tab-btn="{{target}}"
-                    >
+                    <button class="tabs-nav__btn{{#if active}} active{{/if}}" type="button"
+                        data-services-tab-btn="{{target}}">
                         {{title}}
                     </button>
                 </li>
@@ -68,52 +65,54 @@
             </ul>
         </section>
 
-        <section class="catalog-services__group catalog-services__group--full catalog-services__panel" data-services-panel="full">
+        <section class="catalog-services__group catalog-services__group--full catalog-services__panel"
+            data-services-panel="full">
             <h2 class="catalog-services__group-title">{{catalogServices.full.title}}</h2>
 
             <ul class="catalog-services__full-list">
                 {{#each catalogServices.full.items}}
                 <li class="catalog-services__full-item{{#if expanded}} is-expanded{{/if}}" data-services-item>
                     {{#if subservices}}
-                    <button
-                        class="catalog-services__full-toggle"
-                        type="button"
-                        data-services-expand-toggle
-                        aria-expanded="{{#if expanded}}true{{else}}false{{/if}}"
-                    >
-                    {{else}}
-                    <div class="catalog-services__full-toggle catalog-services__full-toggle--static">
-                    {{/if}}
-                        <div class="catalog-services__full-doctors">
-                            {{#each doctors}}
-                            <div class="catalog-services__full-doctor">
-                                <img src="{{src}}" alt="{{#if alt}}{{alt}}{{/if}}">
+                    <button class="catalog-services__full-toggle" type="button" data-services-expand-toggle
+                        aria-expanded="{{#if expanded}}true{{else}}false{{/if}}">
+                        {{else}}
+                        <div class="catalog-services__full-toggle catalog-services__full-toggle--static">
+                            {{/if}}
+                            <div class="catalog-services__full-doctors">
+                                {{#each doctors}}
+                                <div class="catalog-services__full-doctor">
+                                    <img src="{{src}}" alt="{{#if alt}}{{alt}}{{/if}}">
+                                </div>
+                                {{/each}}
                             </div>
-                            {{/each}}
-                        </div>
-                        <h3 class="catalog-services__full-title">{{title}}</h3>
-                        {{#if subservices}}
-                        <div class="catalog-services__full-subservices" data-services-subservices>
-                            <div class="catalog-services__full-subservices-inner">
-                            {{#each subservices}}
-                            <span>{{this}}</span>
-                            {{/each}}
+                            <h3 class="catalog-services__full-title">{{title}}</h3>
+                            {{#if subservices}}
+                            <div class="catalog-services__full-subservices" data-services-subservices>
+                                <div class="catalog-services__full-subservices-inner">
+                                    <div class="catalog-services__full-subservices-content">
+                                        {{#each subservices}}
+                                        <span>{{this}}</span>
+                                        {{/each}}
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                        {{/if}}
-                        <span class="catalog-services__full-icon" aria-hidden="true">
-                            <svg width="16" height="16" aria-hidden="true">
-                                <use xlink:href="#select-arrow"></use>
-                            </svg>
-                        </span>
-                    {{#if subservices}}
+                            {{/if}}
+                            <span class="catalog-services__full-icon" aria-hidden="true">
+                                <svg width="24" height="24" aria-hidden="true">
+                                    <use xlink:href="#accordion-arrow"></use>
+                                </svg>
+                                <svg width="24" height="24" aria-hidden="true">
+                                    <use xlink:href="#accordion-mobile-arrow"></use>
+                                </svg>
+                            </span>
+                            {{#if subservices}}
                     </button>
                     {{else}}
-                    </div>
-                    {{/if}}
-                </li>
-                {{/each}}
-            </ul>
-        </section>
     </div>
+    {{/if}}
+    </li>
+    {{/each}}
+    </ul>
+</section>
+</div>
 </section>
