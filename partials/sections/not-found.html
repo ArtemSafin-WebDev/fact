@@ -1,6 +1,9 @@
 <section class="not-found" aria-labelledby="not-found-title">
   <div class="not-found__background" aria-hidden="true">
-    <img src="/images/404/bg.webp" alt="">
+    <picture>
+      <source srcset="/images/intro/bg-mobile.webp" media="(max-width: 640px)">
+      <img src="/images/404/bg.webp" alt="">
+    </picture>
   </div>
   <div class="not-found__content">
     <div class="not-found__text-content">
@@ -13,6 +16,6 @@
         Попробуйте вернуться на главную
       </p>
     </div>
-    <a href="/" class="btn btn--mobile-large not-found__btn">ВЕРНУТЬСЯ НА ГЛАВНУЮ</a>
+    <a href="/" class="btn not-found__btn">ВЕРНУТЬСЯ НА ГЛАВНУЮ</a>
   </div>
 </section>
