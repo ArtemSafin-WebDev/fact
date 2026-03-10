@@ -348,6 +348,12 @@
     grid-template-rows: 1fr;
   }
 
+  .catalog-services__full-item.is-expanded {
+    @include media.breakpointMF(above-mobile) {
+      background-color: var(--green-300);
+    }
+  }
+
   .catalog-services__full-icon {
     grid-column: 4;
     width: 6rem;
@@ -360,6 +366,7 @@
       background-color 0.2s,
       color 0.2s,
       transform 0.6s;
+    transform: translateX(0);
     border: 1px solid #d3d3d3;
     @include media.breakpoint(mobile) {
       grid-column: 3;
@@ -387,6 +394,19 @@
       &:nth-child(2) {
         display: block;
       }
+    }
+  }
+
+  .catalog-services__full-item.is-expanded .catalog-services__full-icon svg {
+    transform: rotate(180deg);
+  }
+
+  .catalog-services__full-item.is-expanded .catalog-services__full-icon {
+    @include media.breakpointMF(above-mobile) {
+      background-color: #161616;
+      border-color: #161616;
+      color: #fff;
+      transform: translateX(-4rem);
     }
   }
 }
