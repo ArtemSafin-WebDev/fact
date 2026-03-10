@@ -7,3 +7,9 @@
 @use "select";
 @use "btns";
 @use "cards";
+
+.validation-error {
+  margin-top: 1rem;
+  font-size: 1.4rem;
+  line-height: 1.2;
+}
