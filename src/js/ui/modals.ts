@@ -6,6 +6,8 @@ export default function modals() {
   const OPEN_BTN_SELECTOR = "a[href^='#']";
   const OPEN_BY_DATA_SELECTOR = "[data-modal-target]";
   const CLOSE_BTN_SELECTOR = ".js-modal-close";
+  const getModalByHash = (hash: string) =>
+    document.querySelector<HTMLElement>(`.js-modal${hash}`);
 
   const openModal = (modal: HTMLElement) => {
     modal.classList.add("active");
@@ -53,7 +55,7 @@ export default function modals() {
       if (!trigger) return;
       const modalHash = trigger.dataset.modalTarget;
       if (!modalHash) return;
-      const modal = document.querySelector<HTMLElement>(`.js-modal${modalHash}`);
+      const modal = getModalByHash(modalHash);
       if (!modal) return;
       event.preventDefault();
       closeCurrentActiveModals();
@@ -68,7 +70,7 @@ export default function modals() {
       if (!btn) return;
       const hash = btn.hash;
       if (!hash) return;
-      const modal = document.querySelector<HTMLElement>(`.js-modal${hash}`);
+      const modal = getModalByHash(hash);
       if (!modal) return;
       event.preventDefault();
       closeCurrentActiveModals();
