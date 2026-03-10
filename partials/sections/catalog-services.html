@@ -85,18 +85,20 @@
                                 </div>
                                 {{/each}}
                             </div>
-                            <h3 class="catalog-services__full-title">{{title}}</h3>
-                            {{#if subservices}}
-                            <div class="catalog-services__full-subservices" data-services-subservices>
-                                <div class="catalog-services__full-subservices-inner">
-                                    <div class="catalog-services__full-subservices-content">
-                                        {{#each subservices}}
-                                        <span>{{this}}</span>
-                                        {{/each}}
+                            <div class="catalog-services__full-main">
+                                <h3 class="catalog-services__full-title">{{title}}</h3>
+                                {{#if subservices}}
+                                <div class="catalog-services__full-subservices" data-services-subservices>
+                                    <div class="catalog-services__full-subservices-inner">
+                                        <div class="catalog-services__full-subservices-content">
+                                            {{#each subservices}}
+                                            <span>{{this}}</span>
+                                            {{/each}}
+                                        </div>
                                     </div>
                                 </div>
+                                {{/if}}
                             </div>
-                            {{/if}}
                             <span class="catalog-services__full-icon" aria-hidden="true">
                                 <svg width="24" height="24" aria-hidden="true">
                                     <use xlink:href="#accordion-arrow"></use>
