@@ -16,7 +16,9 @@
     aspect-ratio: 1920 / 1032;
 
     @include media.breakpoint(mobile) {
-      aspect-ratio: 375 / 770;
+      aspect-ratio: revert;
+      min-height: min(72rem, calc(100vh + 5rem));
+      min-height: min(72rem, calc(100svh + 5rem));
     }
   }
 
