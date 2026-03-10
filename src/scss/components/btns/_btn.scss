@@ -47,6 +47,32 @@
       }
     }
 
+    &--dark-transparent {
+      background-color: rgb(22 22 22 / 20%);
+      color: white;
+
+      &:link,
+      &:visited {
+        color: white;
+      }
+
+      @include media.hover {
+        &:hover {
+          background-color: rgb(22 22 22 / 30%);
+          color: white;
+        }
+      }
+    }
+
+    &--no-hover {
+      @include media.hover {
+        &:hover {
+          background-color: var(--text-color);
+          color: white;
+        }
+      }
+    }
+
     @include media.breakpoint(mobile) {
       align-self: stretch;
       width: auto;
