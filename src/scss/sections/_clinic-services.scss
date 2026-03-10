@@ -89,7 +89,6 @@
 
       .swiper-wrapper {
         display: block;
-        transform: none !important;
       }
 
       .swiper-slide {
@@ -98,7 +97,7 @@
       }
 
       .swiper-slide + .swiper-slide {
-        border-top: 0.05rem solid #8d8d8d;
+        border-top: 1px solid #8d8d8d;
       }
     }
   }
@@ -106,7 +105,7 @@
   .clinic-services__list {
     margin-top: 3.2rem;
     display: grid;
-    grid-template-columns: auto 1fr 1.23fr auto;
+    grid-template-columns: 20rem 1fr 1.23fr auto;
 
     @include media.breakpoint(mobile) {
       margin-top: 2rem;
