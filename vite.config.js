@@ -69,6 +69,7 @@ function flattenPagesPlugin() {
 }
 
 export default {
+  base: "",
   css: {
     preprocessorOptions: {
       scss: {
