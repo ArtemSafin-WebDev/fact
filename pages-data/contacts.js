@@ -46,7 +46,10 @@ const contactsPageData = {
           mapLng: 38.9736,
           mapZoom: 18,
           addressLabel: "Адрес клиники",
-          addressLines: ["г. Краснодар,", "Красноармейский пер., д. 18"],
+          addressLines: [
+            "г.\u00A0Краснодар,",
+            "Красноармейский пер., д.\u00A018",
+          ],
           routeText: "Построить маршрут",
           routeHref: "#",
           worktime: "Ежедневно с 9:00 до 19:00",
