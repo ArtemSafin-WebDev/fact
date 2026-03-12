@@ -37,6 +37,9 @@ export default function contactsHero() {
     );
     const mapContainer =
       section.querySelector<HTMLElement>("[data-contacts-map]");
+    const mapWrap = section.querySelector<HTMLElement>(".contacts-hero__map");
+    const panelsWrap =
+      section.querySelector<HTMLElement>(".contacts-hero__panels");
     const cityPoints = tabButtons
       .map(parseCityPoint)
       .filter((point): point is ContactsMapPoint => Boolean(point));
@@ -45,6 +48,22 @@ export default function contactsHero() {
 
     type MapController = Awaited<ReturnType<typeof initYandexMap>>;
     let mapController: MapController = null;
+    let viewportWidth = window.innerWidth;
+
+    const getPanelsOverlayHeight = () => {
+      if (!mapWrap || !panelsWrap) return 0;
+
+      const mapRect = mapWrap.getBoundingClientRect();
+      const panelsRect = panelsWrap.getBoundingClientRect();
+
+      const overlap = Math.max(
+        0,
+        Math.min(mapRect.bottom, panelsRect.bottom) -
+          Math.max(mapRect.top, panelsRect.top),
+      );
+
+      return Math.round(overlap);
+    };
 
     const setActiveCity = (cityId: string) => {
       tabButtons.forEach((button) => {
@@ -69,10 +88,14 @@ export default function contactsHero() {
       setActiveCity(initialCityId);
     }
 
-    void initYandexMap(mapContainer, cityPoints)
+    void initYandexMap(mapContainer, cityPoints, {
+      bottomMargin: getPanelsOverlayHeight(),
+    })
       .then((controller) => {
         if (!controller) return;
         mapController = controller;
+
+        mapController.setBottomMargin(getPanelsOverlayHeight());
 
         if (initialCityId) {
           mapController.focusCity(initialCityId);
@@ -88,6 +111,14 @@ export default function contactsHero() {
         if (!cityId) return;
         setActiveCity(cityId);
       });
+    });
+
+    window.addEventListener("resize", () => {
+      const nextViewportWidth = window.innerWidth;
+      if (nextViewportWidth === viewportWidth) return;
+
+      viewportWidth = nextViewportWidth;
+      mapController?.setBottomMargin(getPanelsOverlayHeight());
     });
   });
 }

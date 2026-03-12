@@ -18,6 +18,11 @@ export type ContactsMapPoint = {
 
 type ContactsMapController = {
   focusCity: (cityId: string) => void;
+  setBottomMargin: (margin: number) => void;
+};
+
+type InitYandexMapOptions = {
+  bottomMargin?: number;
 };
 
 const markerColor: MarkerColorProps = {
@@ -73,6 +78,7 @@ const buildMapLocation = (
 export default async function initYandexMap(
   container: HTMLElement | null,
   points: ContactsMapPoint[],
+  options: InitYandexMapOptions = {},
 ): Promise<ContactsMapController | null> {
   if (!container || !points.length) return null;
 
@@ -97,10 +103,12 @@ export default async function initYandexMap(
   )) as typeof import("@yandex/ymaps3-default-ui-theme");
 
   const initialPoint = points[0];
+  const initialBottomMargin = Math.max(0, Math.round(options.bottomMargin ?? 0));
 
   const map = new YMap(container, {
     location: buildMapLocation(initialPoint),
     behaviors: ["drag", "pinchZoom", "dblClick"],
+    margin: [0, 0, initialBottomMargin, 0],
   });
 
   map.addChild(
@@ -137,6 +145,12 @@ export default async function initYandexMap(
 
       map.update({
         location: buildMapLocation(targetPoint, 350),
+      });
+    },
+    setBottomMargin(margin: number) {
+      const safeMargin = Math.max(0, Math.round(margin));
+      map.update({
+        margin: [0, 0, safeMargin, 0],
       });
     },
   };
