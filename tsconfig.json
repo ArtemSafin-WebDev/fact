@@ -4,10 +4,14 @@
     "useDefineForClassFields": true,
     "module": "ESNext",
     "lib": ["ESNext", "dom", "dom.iterable"],
+    "types": ["vite/client", "@yandex/ymaps3-types"],
     "skipLibCheck": true,
 
     /* Bundler mode */
     "moduleResolution": "bundler",
+    "paths": {
+      "ymaps3": ["./node_modules/@yandex/ymaps3-types"]
+    },
     "allowImportingTsExtensions": true,
     "resolveJsonModule": true,
     "isolatedModules": true,

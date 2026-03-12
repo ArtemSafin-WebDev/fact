@@ -13,7 +13,8 @@
                 <li class="tabs-nav__list-item">
                     <button class="tabs-nav__btn contacts-hero__tab-btn{{#if active}} active{{/if}}" type="button"
                         role="tab" aria-selected="{{#if active}}true{{else}}false{{/if}}"
-                        data-contacts-tab-btn="{{id}}">
+                        data-contacts-tab-btn="{{id}}" data-map-lat="{{mapLat}}" data-map-lng="{{mapLng}}"
+                        data-map-zoom="{{mapZoom}}">
                         <span class="contacts-hero__tab-city">{{tabCity}}</span>
                         <span class="contacts-hero__tab-street">{{tabStreet}}</span>
                     </button>
@@ -25,8 +26,7 @@
 
     <div class="contacts-hero__stack">
         <div class="contacts-hero__map">
-            <img src="{{contactsHero.map.imageSrc}}" alt="{{contactsHero.map.imageAlt}}" loading="lazy"
-                data-contacts-map>
+            <div data-contacts-map aria-label="{{contactsHero.map.imageAlt}}"></div>
         </div>
 
         <div class="contacts-hero__panels">
