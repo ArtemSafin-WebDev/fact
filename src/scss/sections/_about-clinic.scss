@@ -251,4 +251,12 @@
     }
   }
 
+  .about-clinic {
+    .video-preview {
+      @include media.breakpoint(mobile) {
+        margin-top: -9.1rem;
+      }
+    }
+  }
+
 }

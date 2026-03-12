@@ -7,7 +7,7 @@ const contactsPageData = {
         { title: "Контакты", isCurrent: true },
         { title: "Наши клиники", isGhost: true },
       ],
-      title: "Наши клиники",
+      title: "Наши<br> клиники",
       map: {
         imageSrc: "/images/contacts/map-base.png",
         imageAlt: "Схема расположения клиник Факт",

@@ -44,11 +44,19 @@
     letter-spacing: -0.08rem;
     text-transform: uppercase;
 
+    br {
+      display: none;
+    }
+
     @include media.breakpoint(mobile) {
       margin-top: 0;
       font-size: 4rem;
       letter-spacing: -0.1rem;
       max-width: 34.3rem;
+
+      br {
+        display: block;
+      }
     }
   }
 
