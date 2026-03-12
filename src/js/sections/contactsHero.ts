@@ -1,6 +1,7 @@
 import initYandexMap, { type ContactsMapPoint } from "./yandexMaps";
 
 const DEFAULT_MAP_ZOOM = 15;
+const MAP_OVERLAY_MARGIN_FACTOR = 0.8;
 
 const parseCityPoint = (
   button: HTMLButtonElement,
@@ -62,7 +63,7 @@ export default function contactsHero() {
           Math.max(mapRect.top, panelsRect.top),
       );
 
-      return Math.round(overlap);
+      return Math.round(overlap * MAP_OVERLAY_MARGIN_FACTOR);
     };
 
     const setActiveCity = (cityId: string) => {
