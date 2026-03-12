@@ -44,11 +44,7 @@
 
     @include media.breakpoint(mobile) {
       background:
-        linear-gradient(
-          90deg,
-          rgba(0, 0, 0, 0.3) 0%,
-          rgba(0, 0, 0, 0.3) 100%
-        ),
+        linear-gradient(90deg, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.3) 100%),
         linear-gradient(
           180deg,
           rgb(189, 190, 192) 5.9%,
@@ -133,5 +129,12 @@
     font-weight: 900;
     line-height: 100%;
     text-transform: uppercase;
+  }
+}
+
+.video-preview--contacts {
+  @include media.breakpoint(mobile) {
+    aspect-ratio: 375 / 500;
+    margin-top: 0;
   }
 }
