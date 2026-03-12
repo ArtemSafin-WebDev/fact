@@ -1,4 +1,8 @@
-import type { Customization, YMapLocationRequest } from "ymaps3";
+import type {
+  Customization,
+  CustomizationItem,
+  YMapLocationRequest,
+} from "ymaps3";
 import type { IconName } from "@yandex/ymaps3-default-ui-theme/dist/types/icons";
 import type { MarkerColorProps } from "@yandex/ymaps3-default-ui-theme/dist/types/markers/YMapDefaultMarker";
 import "@yandex/ymaps3-default-ui-theme/dist/esm/index.css";
@@ -26,6 +30,36 @@ const YMAPS_THEME_PACKAGE = "@yandex/ymaps3-default-ui-theme";
 const YMAPS_THEME_PACKAGE_VERSION = "0.0.24";
 
 let isThemeLoaderRegistered = false;
+
+const attractionsVisibilityStyles: CustomizationItem[] = [
+  {
+    types: "point",
+    elements: "label.icon",
+    stylers: {
+      visibility: "off",
+    },
+  },
+  {
+    tags: {
+      any: [
+        "poi",
+        "attraction",
+        "landmark",
+        "museum",
+        "monument",
+        "sights",
+      ],
+    },
+    stylers: {
+      visibility: "off",
+    },
+  },
+];
+
+const mapCustomization: Customization = [
+  ...(mapStyles as unknown as CustomizationItem[]),
+  ...attractionsVisibilityStyles,
+];
 
 const buildMapLocation = (
   point: ContactsMapPoint,
@@ -71,7 +105,7 @@ export default async function initYandexMap(
 
   map.addChild(
     new YMapDefaultSchemeLayer({
-      customization: mapStyles as Customization,
+      customization: mapCustomization,
     }),
   );
   map.addChild(new YMapDefaultFeaturesLayer({}));
