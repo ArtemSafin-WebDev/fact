@@ -15,7 +15,18 @@ import serviceStages from "./serviceStages";
 import serviceEquipment from "./serviceEquipment";
 import serviceSpecialists from "./serviceSpecialists";
 import serviceMethods from "./serviceMethods";
-import contactsHero from "./contactsHero";
+
+const initContactsHero = () => {
+  if (!document.querySelector(".contacts-hero")) return;
+
+  void import("./contactsHero")
+    .then(({ default: contactsHero }) => {
+      contactsHero();
+    })
+    .catch((error) => {
+      console.error("Contacts hero init error", error);
+    });
+};
 
 export default function sections() {
   doctorDetails();
@@ -33,7 +44,7 @@ export default function sections() {
   serviceStages();
   serviceBenefits();
   serviceEquipment();
-  contactsHero();
+  initContactsHero();
   licenses();
   ratings();
 }

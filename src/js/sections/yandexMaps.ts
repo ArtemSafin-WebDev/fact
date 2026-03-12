@@ -1,7 +1,8 @@
-import type { YMapLocationRequest } from "ymaps3";
+import type { Customization, YMapLocationRequest } from "ymaps3";
 import type { IconName } from "@yandex/ymaps3-default-ui-theme/dist/types/icons";
 import type { MarkerColorProps } from "@yandex/ymaps3-default-ui-theme/dist/types/markers/YMapDefaultMarker";
 import "@yandex/ymaps3-default-ui-theme/dist/esm/index.css";
+import mapStyles from "./data/mapStyles";
 
 export type ContactsMapPoint = {
   id: string;
@@ -68,7 +69,11 @@ export default async function initYandexMap(
     behaviors: ["drag", "pinchZoom", "dblClick"],
   });
 
-  map.addChild(new YMapDefaultSchemeLayer({}));
+  map.addChild(
+    new YMapDefaultSchemeLayer({
+      customization: mapStyles as Customization,
+    }),
+  );
   map.addChild(new YMapDefaultFeaturesLayer({}));
 
   const controls = new YMapControls({
