@@ -124,7 +124,6 @@ export default async function initYandexMap(
         size: "normal",
         iconName: markerIcon,
         color: markerColor,
-        title: point.title,
       }),
     );
   });
