@@ -8,57 +8,40 @@
     top: 0;
     z-index: 100;
     width: 100%;
-    @include utils.blockWrapper;
   }
 
-  .page-header__content {
-    @include utils.blockContent;
+  .page-header__top {
+    @include utils.blockWrapper;
     position: relative;
-    z-index: 2;
-    display: flex;
-    flex-direction: column;
-    gap: 2.9rem;
-    padding: 2.4rem 0;
+    z-index: 10;
+  }
 
+  .page-header__top-inner {
+    @include utils.blockContent;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    align-items: start;
+    padding-top: 2.4rem;
+    padding-bottom: 1rem;
     @include media.breakpoint(mobile) {
       padding: 1.6rem 0;
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 2rem;
-      grid-template-areas:
-        "phone schedule"
-        "divider divider"
-        "logo btns";
+      border-bottom: 1px solid rgb(0 0 0 / 10%);
+      display: flex;
       align-items: center;
-      row-gap: 1.6rem;
-
-      &::before {
-        content: "";
-        height: 1px;
-        grid-area: divider;
-        background-color: rgb(0 0 0 / 10%);
+      justify-content: space-between;
+      .page-header__version {
+        display: none;
       }
     }
   }
 
-  .page-header__top {
-    display: grid;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-    align-items: start;
-
-    @include media.breakpoint(mobile) {
-      display: contents;
-    }
-  }
-
   .page-header__btns {
-    display: contents;
+    display: none;
 
     @include media.breakpoint(mobile) {
       display: flex;
       align-items: center;
       justify-self: flex-end;
-      grid-area: btns;
       gap: 1px;
     }
   }
@@ -204,33 +187,42 @@
 
     @include media.breakpoint(mobile) {
       grid-column: revert;
-      grid-area: phone;
+
       font-size: 1.3rem;
       font-style: normal;
       font-weight: 900;
       line-height: 140%;
       justify-self: flex-start;
       letter-spacing: 0;
+      order: -10;
     }
   }
 
   .page-header__bottom {
+    @include utils.blockWrapper;
+    position: relative;
+    z-index: 10;
+    // background-color: #fff;
+  }
+
+  .page-header__bottom-inner {
+    @include utils.blockContent;
     display: grid;
     grid-template-columns: repeat(4, minmax(0, 1fr));
     align-items: center;
+    padding: 2rem 0;
 
     @include media.breakpoint(mobile) {
-      display: contents;
+      padding: 1.6rem 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
     }
   }
 
   .page-header__logo {
     flex-shrink: 0;
     grid-column: 1 / 2;
-
-    @include media.breakpoint(mobile) {
-      grid-area: logo;
-    }
   }
 
   .page-header__logo-image {
@@ -252,13 +244,6 @@
 
     @include media.breakpoint(mobile) {
       display: none;
-      grid-area: menu;
-      grid-column: 1 / -1;
-      width: 100%;
-      padding-top: 2.8rem;
-      flex-direction: column;
-      align-items: stretch;
-      gap: 4rem;
     }
   }
 
@@ -581,7 +566,8 @@
     position: fixed;
     inset: 0;
     z-index: 1;
-    background-color: #f0f0f0;
+    background-color: white;
+    color: var(--text-color);
     opacity: 0;
     visibility: hidden;
     pointer-events: none;
@@ -589,6 +575,7 @@
     transition:
       opacity 0.25s ease,
       visibility 0.25s ease;
+    overscroll-behavior-y: none;
 
     @include media.breakpoint(mobile) {
       display: none;
