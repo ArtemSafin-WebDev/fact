@@ -590,7 +590,6 @@
 
   .page-header__services-menu-content {
     @include utils.blockContent;
-    height: 100vh;
     padding-top: 22.5rem;
     padding-bottom: 6rem;
   }
