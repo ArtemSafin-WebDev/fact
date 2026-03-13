@@ -202,7 +202,23 @@
     @include utils.blockWrapper;
     position: relative;
     z-index: 10;
-    // background-color: #fff;
+    transition:
+      background-color 0.25s ease,
+      box-shadow 0.25s ease;
+  }
+
+  .page-header.is-compact .page-header__bottom {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    background-color: #fff;
+    box-shadow: 0 8px 20px rgb(22 22 22 / 8%);
+    z-index: 20;
+  }
+
+  .page-header.is-compact.is-services-open .page-header__bottom {
+    box-shadow: none;
   }
 
   .page-header__bottom-inner {
