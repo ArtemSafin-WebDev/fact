@@ -1,3 +1,6 @@
+import Swiper from "swiper";
+import { Navigation } from "swiper/modules";
+
 type ServiceMethodsTabButton = HTMLButtonElement & {
   dataset: DOMStringMap & { serviceMethodsTabBtn?: string };
 };
@@ -12,6 +15,9 @@ export default function serviceMethods() {
   );
 
   sections.forEach((section) => {
+    const slider = section.querySelector<HTMLElement>(
+      ".service-methods__tabs-slider",
+    );
     const tabButtons = Array.from(
       section.querySelectorAll<ServiceMethodsTabButton>(
         "[data-service-methods-tab-btn]",
@@ -25,12 +31,28 @@ export default function serviceMethods() {
 
     if (!tabButtons.length || !panels.length) return;
 
+    slider &&
+      new Swiper(slider, {
+        modules: [Navigation],
+        speed: 500,
+        slidesPerView: "auto",
+        watchSlidesProgress: true,
+        navigation: {
+          prevEl: section.querySelector<HTMLButtonElement>(
+            ".service-methods__slider-nav .slider-nav__arrow--prev",
+          ),
+          nextEl: section.querySelector<HTMLButtonElement>(
+            ".service-methods__slider-nav .slider-nav__arrow--next",
+          ),
+        },
+      });
+
     const setActiveTab = (target: string) => {
       tabButtons.forEach((button) => {
         const isActive = button.dataset.serviceMethodsTabBtn === target;
         button.classList.toggle("active", isActive);
         button.setAttribute("aria-selected", isActive ? "true" : "false");
-        button.tabIndex = isActive ? 0 : -1;
+        button.tabIndex = -1;
       });
 
       panels.forEach((panel) => {
@@ -50,7 +72,9 @@ export default function serviceMethods() {
     tabButtons.forEach((button) => {
       button.addEventListener("click", () => {
         const target = button.dataset.serviceMethodsTabBtn;
+
         if (!target) return;
+
         setActiveTab(target);
       });
     });

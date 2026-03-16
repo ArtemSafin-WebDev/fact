@@ -7,22 +7,45 @@
             <p class="service-methods__description">{{serviceMethods.description}}</p>
         </div>
 
-        <div class="service-methods__tabs" role="tablist" aria-label="Методы лазерной коррекции">
-            <ul class="service-methods__tabs-list">
-                {{#each serviceMethods.tabs}}
-                <li class="service-methods__tabs-item">
-                    <button class="service-methods__tab-btn{{#if isActive}} active{{/if}}" type="button"
-                        data-service-methods-tab-btn="{{id}}" id="service-methods-tab-{{id}}" role="tab"
-                        aria-controls="service-methods-panel-{{id}}"
-                        aria-selected="{{#if isActive}}true{{else}}false{{/if}}">
-                        <span class="service-methods__tab-label">{{label}}</span>
-                        {{#if note}}
-                        <span class="service-methods__tab-note">{{note}}</span>
-                        {{/if}}
-                    </button>
-                </li>
-                {{/each}}
-            </ul>
+        <div class="service-methods__tabs">
+            <div class="service-methods__tabs-slider swiper" role="tablist" aria-label="Методы лазерной коррекции">
+                <ul class="service-methods__tabs-list swiper-wrapper">
+                    {{#each serviceMethods.tabs}}
+                    <li class="service-methods__tabs-item swiper-slide">
+                        <button class="service-methods__tab-btn{{#if isActive}} active{{/if}}" type="button"
+                            data-service-methods-tab-btn="{{id}}" id="service-methods-tab-{{id}}" role="tab"
+                            aria-controls="service-methods-panel-{{id}}"
+                            aria-selected="{{#if isActive}}true{{else}}false{{/if}}">
+                            <span class="service-methods__tab-label">{{label}}</span>
+                            {{#if note}}
+                            <span class="service-methods__tab-note">{{note}}</span>
+                            {{/if}}
+                        </button>
+                    </li>
+                    {{/each}}
+                </ul>
+            </div>
+
+            <div class="slider-nav service-methods__slider-nav">
+                <button class="slider-nav__arrow slider-nav__arrow--prev" type="button"
+                    aria-label="Предыдущий метод коррекции">
+                    <svg width="14" height="14" aria-hidden="true">
+                        <use xlink:href="#arrow-left"></use>
+                    </svg>
+                    <svg class="slider-nav__arrow-icon--bold" aria-hidden="true">
+                        <use xlink:href="#arrow-left-bold"></use>
+                    </svg>
+                </button>
+                <button class="slider-nav__arrow slider-nav__arrow--next" type="button"
+                    aria-label="Следующий метод коррекции">
+                    <svg width="14" height="14" aria-hidden="true">
+                        <use xlink:href="#arrow-right"></use>
+                    </svg>
+                    <svg class="slider-nav__arrow-icon--bold" aria-hidden="true">
+                        <use xlink:href="#arrow-right-bold"></use>
+                    </svg>
+                </button>
+            </div>
         </div>
 
         <div class="service-methods__panels">

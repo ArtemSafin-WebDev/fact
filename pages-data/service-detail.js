@@ -56,7 +56,8 @@ const serviceMethodsItems = [
     price: "от 35 000 р",
     priceLabel: "за коррекцию одного глаза",
     image: "/images/service-methods/method-lasik.webp",
-    imageAlt: "Пациент проходит обследование зрения на офтальмологическом оборудовании",
+    imageAlt:
+      "Пациент проходит обследование зрения на офтальмологическом оборудовании",
     indications: [
       {
         title: "близорукость",
@@ -77,7 +78,8 @@ const serviceMethodsItems = [
     price: "от 70 000 р",
     priceLabel: "за коррекцию одного глаза",
     image: "/images/service-methods/method-lasik.webp",
-    imageAlt: "Пациент проходит обследование зрения на офтальмологическом оборудовании",
+    imageAlt:
+      "Пациент проходит обследование зрения на офтальмологическом оборудовании",
     indications: [
       {
         title: "близорукость",
@@ -98,7 +100,8 @@ const serviceMethodsItems = [
     price: "от 65 000 р",
     priceLabel: "за коррекцию одного глаза",
     image: "/images/service-methods/method-lasik.webp",
-    imageAlt: "Пациент проходит обследование зрения на офтальмологическом оборудовании",
+    imageAlt:
+      "Пациент проходит обследование зрения на офтальмологическом оборудовании",
     indications: [
       {
         title: "близорукость",
@@ -119,7 +122,8 @@ const serviceMethodsItems = [
     price: "от 60 000 р",
     priceLabel: "за коррекцию одного глаза",
     image: "/images/service-methods/method-lasik.webp",
-    imageAlt: "Пациент проходит обследование зрения на офтальмологическом оборудовании",
+    imageAlt:
+      "Пациент проходит обследование зрения на офтальмологическом оборудовании",
     indications: [
       {
         title: "близорукость",
@@ -140,7 +144,8 @@ const serviceMethodsItems = [
     price: "от 45 000 р",
     priceLabel: "за коррекцию одного глаза",
     image: "/images/service-methods/method-lasik.webp",
-    imageAlt: "Пациент проходит обследование зрения на офтальмологическом оборудовании",
+    imageAlt:
+      "Пациент проходит обследование зрения на офтальмологическом оборудовании",
     indications: [
       {
         title: "близорукость",

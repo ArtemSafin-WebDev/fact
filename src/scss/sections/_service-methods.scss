@@ -78,9 +78,22 @@
 
   .service-methods__tabs {
     margin-top: 12rem;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: stretch;
 
     @include media.breakpoint(mobile) {
       margin-top: 2rem;
+      grid-template-columns: minmax(0, 1fr);
+    }
+  }
+
+  .service-methods__tabs-slider {
+    min-width: 0;
+    max-width: 111rem;
+    @include media.breakpoint(mobile) {
+      max-width: none;
+      overflow: visible;
     }
   }
 
@@ -90,29 +103,16 @@
     list-style: none;
     display: flex;
     align-items: stretch;
-
-    @include media.breakpoint(mobile) {
-      width: 100%;
-      flex-wrap: nowrap;
-    }
   }
 
   .service-methods__tabs-item {
     display: flex;
-    flex: 0 1 22rem;
-
+    height: auto;
+    flex-basis: 20%;
     @include media.breakpoint(mobile) {
-      min-width: 0;
-      flex: 1 1 auto;
-      max-width: 8rem;
-    }
-  }
+      flex-basis: 20%;
 
-  .service-methods__tabs-item + .service-methods__tabs-item {
-    margin-left: -1px;
-
-    @include media.breakpoint(mobile) {
-      margin-left: 0;
+      max-width: 10rem;
     }
   }
 
@@ -121,6 +121,7 @@
 
     padding: 1.2rem 1.6rem;
     border: 1px solid rgb(0 0 0 / 30%);
+    border-right-color: transparent;
     background-color: transparent;
     color: #161616;
     font-size: 1.5rem;
@@ -132,9 +133,20 @@
     transition:
       background-color 0.2s,
       border-color 0.2s;
+    flex-grow: 1;
+
+    @media (min-width: 641px) {
+      .swiper-slide:nth-last-child(1 of .swiper-slide-visible) & {
+        border-right-color: rgb(0 0 0 / 30%);
+      }
+    }
+
+    .swiper-slide:last-child & {
+      border-right-color: rgb(0 0 0 / 30%);
+    }
 
     @include media.breakpoint(mobile) {
-      padding: 1.2rem 0.6rem;
+      padding: 0.6rem 0.6rem;
       border-width: 0.5px;
       font-size: 1rem;
       line-height: 100%;
@@ -143,9 +155,21 @@
     }
   }
 
+  .service-methods__slider-nav {
+    margin-left: -1px;
+
+    &:has(.swiper-button-lock) {
+      display: none;
+    }
+
+    @include media.breakpoint(mobile) {
+      display: none;
+    }
+  }
+
   .service-methods__tab-btn.active {
     background-color: var(--green-300);
-    border-color: var(--green-300);
+    border-color: var(--green-300) !important;
     cursor: default;
     position: relative;
     z-index: 1;
