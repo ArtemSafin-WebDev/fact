@@ -25,6 +25,7 @@
   .faq__left {
     display: flex;
     flex-direction: column;
+    gap: 4rem;
 
     @include media.breakpoint(mobile) {
       display: contents;
@@ -228,5 +229,4 @@
       fill: #fff;
     }
   }
-
 }
