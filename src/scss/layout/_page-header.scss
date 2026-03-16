@@ -169,6 +169,19 @@
     }
   }
 
+  .page-header__schedule .city {
+    color: inherit;
+    font: inherit;
+    line-height: inherit;
+    transition: color 0.2s;
+
+    @include media.canHover {
+      &:hover {
+        color: var(--green-300);
+      }
+    }
+  }
+
   .page-header__phone {
     grid-column: 4 / -1;
     justify-self: flex-end;

@@ -1,0 +1,31 @@
+<div class="city-modal js-modal" id="city-modal" aria-hidden="true" data-lenis-prevent>
+    <div class="city-modal__inner" role="dialog" aria-modal="true" aria-labelledby="city-modal-title">
+        <button class="city-modal__close js-modal-close" type="button" aria-label="Закрыть окно">
+            <svg width="15" height="15" aria-hidden="true">
+                <use xlink:href="#modal-close"></use>
+            </svg>
+        </button>
+
+        <div class="city-modal__content">
+            <h2 class="city-modal__title" id="city-modal-title">
+                Ваш город
+                <span class="city-modal__current-city">
+                    <svg width="11" height="15" aria-hidden="true">
+                        <use xlink:href="#location"></use>
+                    </svg>
+                    <span data-current-city-name>Пятигорск</span>?
+                </span>
+            </h2>
+
+            <div class="city-modal__actions">
+                <button class="city-modal__btn city-modal__btn--confirm js-modal-close" type="button">
+                    Да
+                </button>
+                <button class="city-modal__btn city-modal__btn--secondary" type="button"
+                    data-modal-target="#city-select-modal" aria-haspopup="dialog" aria-controls="city-select-modal">
+                    выбрать другой
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

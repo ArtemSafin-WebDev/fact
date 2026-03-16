@@ -1,0 +1,129 @@
+@use "media";
+
+@layer sections {
+  .city-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 505;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--content-padding);
+    background-color: rgb(0 0 0 / 60%);
+    overflow-y: auto;
+    overscroll-behavior-y: none;
+    -webkit-overflow-scrolling: touch;
+    backdrop-filter: blur(4px);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition:
+      opacity 0.4s,
+      visibility 0s linear 0.4s;
+  }
+
+  .city-modal.active {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transition:
+      opacity 0.4s,
+      visibility 0.4s;
+  }
+
+  .city-modal__inner {
+    position: relative;
+    width: min(75rem, calc(100vw - (var(--content-padding) * 2)));
+    min-height: 22.6rem;
+    margin: auto;
+    background-color: #fff;
+    color: var(--text-color);
+  }
+
+  .city-modal__close {
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 1;
+    display: grid;
+    place-items: center;
+    width: 4rem;
+    aspect-ratio: 1 / 1;
+    background-color: var(--text-color);
+    color: #fff;
+  }
+
+  .city-modal__close svg {
+    width: 1.5rem;
+    aspect-ratio: 1 / 1;
+    fill: currentColor;
+  }
+
+  .city-modal__content {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+    padding: 5.6rem 4rem;
+  }
+
+  .city-modal__title {
+    display: flex;
+    align-items: baseline;
+    gap: 1.7rem;
+    font-size: 1.8rem;
+    font-weight: 400;
+    line-height: 140%;
+  }
+
+  .city-modal__current-city {
+    display: inline-flex;
+    align-items: baseline;
+    gap: 0.6rem;
+    font-weight: 900;
+  }
+
+  .city-modal__current-city svg {
+    width: 1.125rem;
+    height: 1.5rem;
+    color: var(--text-color);
+    transform: translateY(0.2rem);
+    flex-shrink: 0;
+  }
+
+  .city-modal__actions {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .city-modal__btn {
+    height: 6rem;
+    padding: 0 3rem;
+    font-size: 1.5rem;
+    font-weight: 900;
+    line-height: 100%;
+    text-transform: uppercase;
+    transition:
+      background-color 0.2s,
+      color 0.2s;
+  }
+
+  .city-modal__btn--confirm {
+    background-color: var(--text-color);
+    color: #fff;
+  }
+
+  .city-modal__btn--secondary {
+    background-color: rgb(22 22 22 / 20%);
+    color: #fff;
+  }
+
+  @include media.canHover {
+    .city-modal__btn--confirm:hover {
+      background-color: #08090d;
+    }
+
+    .city-modal__btn--secondary:hover {
+      background-color: rgb(22 22 22 / 30%);
+    }
+  }
+}

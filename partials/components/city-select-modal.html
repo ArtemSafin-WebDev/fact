@@ -1,0 +1,184 @@
+<div class="city-select-modal js-modal" id="city-select-modal" aria-hidden="true" data-lenis-prevent>
+    <div class="city-select-modal__inner" role="dialog" aria-modal="true" aria-labelledby="city-select-modal-title">
+        <button class="city-select-modal__close js-modal-close" type="button" aria-label="Закрыть окно">
+            <svg width="15" height="15" aria-hidden="true">
+                <use xlink:href="#modal-close"></use>
+            </svg>
+        </button>
+
+        <div class="city-select-modal__content">
+            <h2 class="city-select-modal__title" id="city-select-modal-title">
+                Выберите свой город
+            </h2>
+
+            <label class="city-select-modal__search">
+                <input class="city-select-modal__search-input" type="search" name="city-search" autocomplete="off"
+                    placeholder="Поиск города" aria-label="Поиск города" data-city-search-input>
+                <span class="city-select-modal__search-icon" aria-hidden="true">
+                    <svg width="25" height="25">
+                        <use xlink:href="#search"></use>
+                    </svg>
+                </span>
+            </label>
+
+            <div class="city-select-modal__cities" data-city-search-scroll>
+                <div class="city-select-modal__cities-layout">
+                    <div class="city-select-modal__featured city-select-modal__featured--sticky"
+                        data-city-featured-column>
+                        <ul class="city-select-modal__featured-list">
+                            <li>
+                                <button class="city-select-modal__city city-select-modal__city--featured js-modal-close"
+                                    type="button" data-city-name="Москва">
+                                    Москва
+                                </button>
+                            </li>
+                            <li>
+                                <button class="city-select-modal__city city-select-modal__city--featured js-modal-close"
+                                    type="button" data-city-name="Краснодар">
+                                    Краснодар
+                                </button>
+                            </li>
+                            <li>
+                                <button class="city-select-modal__city city-select-modal__city--featured js-modal-close"
+                                    type="button" data-city-name="Ессентуки">
+                                    Ессентуки
+                                </button>
+                            </li>
+                            <li>
+                                <button class="city-select-modal__city city-select-modal__city--featured js-modal-close"
+                                    type="button" data-city-name="Махачкала">
+                                    Махачкала
+                                </button>
+                            </li>
+                            <li>
+                                <button class="city-select-modal__city city-select-modal__city--featured js-modal-close"
+                                    type="button" data-city-name="Пермь">
+                                    Пермь
+                                </button>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="city-select-modal__masonry" data-city-masonry>
+                        <section class="city-select-modal__group" data-city-letter-group>
+                            <h3 class="city-select-modal__group-title">А</h3>
+                            <ul class="city-select-modal__group-list">
+                                <li>
+                                    <button class="city-select-modal__city js-modal-close" type="button"
+                                        data-city-name="Анапа">Анапа</button>
+                                </li>
+                                <li>
+                                    <button class="city-select-modal__city js-modal-close" type="button"
+                                        data-city-name="Армавир">Армавир</button>
+                                </li>
+                            </ul>
+                        </section>
+                        <section class="city-select-modal__group" data-city-letter-group>
+                            <h3 class="city-select-modal__group-title">Б</h3>
+                            <ul class="city-select-modal__group-list">
+                                <li>
+                                    <button class="city-select-modal__city js-modal-close" type="button"
+                                        data-city-name="Березники">Березники</button>
+                                </li>
+                            </ul>
+                        </section>
+                        <section class="city-select-modal__group" data-city-letter-group>
+                            <h3 class="city-select-modal__group-title">Г</h3>
+                            <ul class="city-select-modal__group-list">
+                                <li>
+                                    <button class="city-select-modal__city js-modal-close" type="button"
+                                        data-city-name="Георгиевск">Георгиевск</button>
+                                </li>
+                                <li>
+                                    <button class="city-select-modal__city js-modal-close" type="button"
+                                        data-city-name="Горячий ключ">Горячий ключ</button>
+                                </li>
+                            </ul>
+                        </section>
+                        <section class="city-select-modal__group" data-city-letter-group>
+                            <h3 class="city-select-modal__group-title">Е</h3>
+                            <ul class="city-select-modal__group-list">
+                                <li>
+                                    <button class="city-select-modal__city js-modal-close" type="button"
+                                        data-city-name="Ейск">Ейск</button>
+                                </li>
+                            </ul>
+                        </section>
+                        <section class="city-select-modal__group" data-city-letter-group>
+                            <h3 class="city-select-modal__group-title">К</h3>
+                            <ul class="city-select-modal__group-list">
+                                <li>
+                                    <button class="city-select-modal__city js-modal-close" type="button"
+                                        data-city-name="Кропоткин">Кропоткин</button>
+                                </li>
+                                <li>
+                                    <button class="city-select-modal__city js-modal-close" type="button"
+                                        data-city-name="Крымск">Крымск</button>
+                                </li>
+                            </ul>
+                        </section>
+                        <section class="city-select-modal__group" data-city-letter-group>
+                            <h3 class="city-select-modal__group-title">М</h3>
+                            <ul class="city-select-modal__group-list">
+                                <li>
+                                    <button class="city-select-modal__city js-modal-close" type="button"
+                                        data-city-name="Майкоп">Майкоп</button>
+                                </li>
+                                <li>
+                                    <button class="city-select-modal__city js-modal-close" type="button"
+                                        data-city-name="Минеральные воды">Минеральные<br>воды</button>
+                                </li>
+                                <li>
+                                    <button class="city-select-modal__city js-modal-close" type="button"
+                                        data-city-name="Моздок">Моздок</button>
+                                </li>
+                            </ul>
+                        </section>
+                        <section class="city-select-modal__group" data-city-letter-group>
+                            <h3 class="city-select-modal__group-title">П</h3>
+                            <ul class="city-select-modal__group-list">
+                                <li>
+                                    <button class="city-select-modal__city js-modal-close" type="button"
+                                        data-city-name="Пятигорск">Пятигорск</button>
+                                </li>
+                            </ul>
+                        </section>
+                        <section class="city-select-modal__group" data-city-letter-group>
+                            <h3 class="city-select-modal__group-title">С</h3>
+                            <ul class="city-select-modal__group-list">
+                                <li>
+                                    <button class="city-select-modal__city js-modal-close" type="button"
+                                        data-city-name="Славянск-на-Кубани">Славянск-на-<br>Кубани</button>
+                                </li>
+                                <li>
+                                    <button class="city-select-modal__city js-modal-close" type="button"
+                                        data-city-name="Соликамск">Соликамск</button>
+                                </li>
+                                <li>
+                                    <button class="city-select-modal__city js-modal-close" type="button"
+                                        data-city-name="Сочи">Сочи</button>
+                                </li>
+                            </ul>
+                        </section>
+                        <section class="city-select-modal__group" data-city-letter-group>
+                            <h3 class="city-select-modal__group-title">Т</h3>
+                            <ul class="city-select-modal__group-list">
+                                <li>
+                                    <button class="city-select-modal__city js-modal-close" type="button"
+                                        data-city-name="Темрюк">Темрюк</button>
+                                </li>
+                                <li>
+                                    <button class="city-select-modal__city js-modal-close" type="button"
+                                        data-city-name="Тимашевск">Тимашевск</button>
+                                </li>
+                            </ul>
+                        </section>
+                    </div>
+                </div>
+                <p class="city-select-modal__empty" hidden data-city-search-empty>
+                    Ничего не найдено
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
