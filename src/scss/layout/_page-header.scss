@@ -322,6 +322,7 @@
       row-gap: 1.6rem;
       background-color: #fff;
       flex-grow: 1;
+      min-height: 0;
     }
   }
 
@@ -428,24 +429,95 @@
     }
   }
 
-  .page-header__mobile-city {
-    display: none;
-
-    @include media.breakpoint(mobile) {
-      display: block;
-      font-size: 1.4rem;
-      line-height: 140%;
-      margin-bottom: 2rem;
-    }
-  }
-
   .page-header__mobile-menu-body {
     @include media.breakpoint(mobile) {
       display: flex;
       flex-direction: column;
-      gap: 3.2rem;
-
+      gap: 2rem;
       flex-grow: 1;
+      min-height: 0;
+    }
+  }
+
+  .page-header__mobile-city-tabs {
+    display: none;
+
+    @include media.breakpoint(mobile) {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+  }
+
+  .page-header__mobile-city-tab {
+    @include media.breakpoint(mobile) {
+      display: grid;
+      place-items: center;
+      width: 100%;
+      height: 4rem;
+      border: 0.5px solid rgb(0 0 0 / 30%);
+      font-size: 1rem;
+      line-height: 100%;
+      font-weight: 900;
+      color: var(--text-color);
+      text-align: center;
+      background-color: #fff;
+      transition:
+        background-color 0.2s,
+        border-color 0.2s;
+    }
+  }
+
+  .page-header__mobile-city-tab-link {
+    @include media.breakpoint(mobile) {
+      text-decoration: none;
+    }
+  }
+
+  .page-header__mobile-city-tab.is-active {
+    @include media.breakpoint(mobile) {
+      background-color: var(--green-300);
+      border-color: var(--green-300);
+    }
+  }
+
+  .page-header__mobile-menu-main {
+    @include media.breakpoint(mobile) {
+      display: flex;
+      flex-direction: column;
+      gap: 4rem;
+      flex-grow: 1;
+      min-height: 0;
+    }
+  }
+
+  .page-header__mobile-city-select {
+    display: none;
+
+    @include media.breakpoint(mobile) {
+      min-height: 0;
+      flex-grow: 1;
+    }
+  }
+
+  .page-header__mobile-city-select-inner {
+    @include media.breakpoint(mobile) {
+      display: flex;
+      flex-direction: column;
+      min-height: 0;
+      flex-grow: 1;
+      overflow: hidden;
+    }
+  }
+
+  .page-header.is-mobile-city-select-open .page-header__mobile-menu-main {
+    @include media.breakpoint(mobile) {
+      display: none;
+    }
+  }
+
+  .page-header.is-mobile-city-select-open .page-header__mobile-city-select {
+    @include media.breakpoint(mobile) {
+      display: flex;
     }
   }
 
@@ -737,8 +809,8 @@
 
     @include media.breakpoint(mobile) {
       flex-direction: column;
-      align-items: flex-start;
-      gap: 2.4rem;
+      align-items: stretch;
+      gap: 3.2rem;
     }
   }
 

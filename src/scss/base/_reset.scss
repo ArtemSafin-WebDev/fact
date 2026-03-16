@@ -48,9 +48,16 @@
 
   body.menu-open,
   body.modal-open {
-    touch-action: none;
     overflow: hidden;
     overscroll-behavior: none;
+  }
+
+  body.menu-open {
+    touch-action: pan-y;
+  }
+
+  body.modal-open {
+    touch-action: none;
   }
 
   main {

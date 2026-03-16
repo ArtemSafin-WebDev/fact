@@ -1,3 +1,14 @@
+const CITY_PICKER_RESET_EVENT = "city-picker:reset";
+const CITY_PICKER_CHANGE_EVENT = "city-picker:change";
+
+type CityPickerChangeEventDetail = {
+  cityName: string;
+  sourceRoot: HTMLElement;
+};
+
+const normalize = (value: string) =>
+  value.trim().replace(/\s+/g, " ").toLocaleLowerCase("ru-RU");
+
 export default function mobileMenu() {
   const header = document.querySelector<HTMLElement>(".page-header");
   const burger = header?.querySelector<HTMLButtonElement>(".page-header__burger");
@@ -22,11 +33,28 @@ export default function mobileMenu() {
   const mobileServicesList = mobileMenu.querySelector<HTMLElement>(
     "[data-mobile-services-list]",
   );
+  const mobileMenuMain = mobileMenu.querySelector<HTMLElement>("[data-mobile-menu-main]");
+  const mobileCitySelectToggle = mobileMenu.querySelector<HTMLButtonElement>(
+    "[data-mobile-city-select-toggle]",
+  );
+  const mobileCitySelectPanel = mobileMenu.querySelector<HTMLElement>(
+    "[data-mobile-city-select]",
+  );
+  const mobileCitySelectRoot = mobileMenu.querySelector<HTMLElement>(
+    "[data-mobile-city-select] [data-city-select-root]",
+  );
+  const mobileCityTabLinks = Array.from(
+    mobileMenu.querySelectorAll<HTMLAnchorElement>("[data-mobile-city-tab-link]"),
+  );
   const closeOnClickLinks = Array.from(
     mobileMenu.querySelectorAll<HTMLAnchorElement>(
-      ".page-header__nav-link, .page-header__mobile-services-link, .page-header__callback-btn",
+      ".page-header__nav-link, .page-header__mobile-services-link, .page-header__callback-btn, [data-mobile-city-tab-link]",
     ),
   );
+
+  let currentCityName =
+    mobileCityTabLinks.find((cityLink) => cityLink.classList.contains("is-active"))
+      ?.dataset.cityName ?? "";
 
   const syncBodyMenuState = () => {
     document.body.classList.toggle(
@@ -48,12 +76,50 @@ export default function mobileMenu() {
     mobileServicesList?.setAttribute("aria-hidden", isOpen ? "false" : "true");
   };
 
+  const syncMobileCityTabsState = () => {
+    const isCitySelectOpen = header.classList.contains("is-mobile-city-select-open");
+    const normalizedCurrentCity = normalize(currentCityName);
+
+    mobileCityTabLinks.forEach((cityLink) => {
+      const cityName = cityLink.dataset.cityName ?? cityLink.textContent ?? "";
+      const isActiveCity =
+        !isCitySelectOpen && normalize(cityName) === normalizedCurrentCity;
+      cityLink.classList.toggle("is-active", isActiveCity);
+    });
+
+    mobileCitySelectToggle?.classList.toggle("is-active", isCitySelectOpen);
+  };
+
+  const setMobileCitySelectState = (isOpen: boolean) => {
+    header.classList.toggle("is-mobile-city-select-open", isOpen);
+    mobileCitySelectToggle?.setAttribute("aria-expanded", isOpen ? "true" : "false");
+    mobileMenuMain?.setAttribute("aria-hidden", isOpen ? "true" : "false");
+    mobileCitySelectPanel?.setAttribute("aria-hidden", isOpen ? "false" : "true");
+
+    if (isOpen) {
+      setMobileServicesState(false);
+      if (mobileCitySelectRoot) {
+        document.dispatchEvent(
+          new CustomEvent(CITY_PICKER_RESET_EVENT, {
+            bubbles: true,
+            detail: {
+              root: mobileCitySelectRoot,
+            },
+          }),
+        );
+      }
+    }
+
+    syncMobileCityTabsState();
+  };
+
   const openMenu = () => {
     header.classList.add("is-mobile-menu-open");
     header.classList.remove("is-services-open");
     servicesToggle?.setAttribute("aria-expanded", "false");
     servicesMenu?.setAttribute("aria-hidden", "true");
     setMobileServicesState(false);
+    setMobileCitySelectState(false);
     mobileMenu.setAttribute("aria-hidden", "false");
     setBurgerState(true);
     syncBodyMenuState();
@@ -62,6 +128,7 @@ export default function mobileMenu() {
   const closeMenu = () => {
     header.classList.remove("is-mobile-menu-open");
     setMobileServicesState(false);
+    setMobileCitySelectState(false);
     mobileMenu.setAttribute("aria-hidden", "true");
     setBurgerState(false);
     syncBodyMenuState();
@@ -83,16 +150,45 @@ export default function mobileMenu() {
       return;
     }
 
+    setMobileCitySelectState(false);
     setMobileServicesState(!header.classList.contains("is-mobile-services-open"));
   });
 
+  mobileCitySelectToggle?.addEventListener("click", () => {
+    if (!mobileMediaQuery.matches || !header.classList.contains("is-mobile-menu-open")) {
+      return;
+    }
+
+    setMobileCitySelectState(!header.classList.contains("is-mobile-city-select-open"));
+  });
+
   mobileMenuClose.addEventListener("click", closeMenu);
+
+  mobileCityTabLinks.forEach((cityLink) => {
+    cityLink.addEventListener("click", () => {
+      const cityName = cityLink.dataset.cityName ?? cityLink.textContent ?? "";
+      if (cityName) {
+        currentCityName = cityName;
+      }
+      syncMobileCityTabsState();
+    });
+  });
 
   closeOnClickLinks.forEach((link) => {
     link.addEventListener("click", () => {
       if (!header.classList.contains("is-mobile-menu-open")) return;
       closeMenu();
     });
+  });
+
+  document.addEventListener(CITY_PICKER_CHANGE_EVENT, (event) => {
+    const detail = (event as CustomEvent<CityPickerChangeEventDetail>).detail;
+    const { cityName, sourceRoot } = detail ?? {};
+
+    if (!cityName || !sourceRoot || !mobileCitySelectPanel?.contains(sourceRoot)) return;
+
+    currentCityName = cityName;
+    setMobileCitySelectState(false);
   });
 
   document.addEventListener("keydown", (event) => {
@@ -109,5 +205,6 @@ export default function mobileMenu() {
 
   setBurgerState(false);
   setMobileServicesState(false);
+  setMobileCitySelectState(false);
   mobileMenu.setAttribute("aria-hidden", "true");
 }

@@ -141,93 +141,134 @@
                     </button>
                 </div>
             </div>
-            <p class="page-header__mobile-city">Пятигорск</p>
             <div class="page-header__mobile-menu-body">
-                <button class="page-header__services-link" type="button" data-mobile-services-toggle
-                    aria-expanded="false" aria-controls="header-mobile-services-list">
-                    <span>Услуги</span>
-                    <span class="page-header__services-link-dot" aria-hidden="true"></span>
-                    <svg class="page-header__services-link-arrow" width="16" height="8" aria-hidden="true">
-                        <use xlink:href="#arrow-down"></use>
-                    </svg>
-                </button>
-                <nav class="page-header__nav page-header__mobile-nav" data-mobile-primary-nav>
-                    <ul class="page-header__nav-list">
-                        <li class="page-header__nav-list-item">
-                            <a href="#" class="page-header__nav-link">
-                                Врачи
-                            </a>
-                        </li>
-                        <li class="page-header__nav-list-item">
-                            <a href="#" class="page-header__nav-link">
-                                Цены
-                            </a>
-                        </li>
-                        <li class="page-header__nav-list-item">
-                            <a href="#" class="page-header__nav-link">
-                                Статьи
-                            </a>
-                        </li>
-                        <li class="page-header__nav-list-item">
-                            <a href="#" class="page-header__nav-link">
-                                О клинике
-                            </a>
-                        </li>
-                        <li class="page-header__nav-list-item">
-                            <a href="#" class="page-header__nav-link">
-                                Контакты
-                            </a>
-                        </li>
-                        <li class="page-header__nav-list-item">
-                            <a href="#" class="page-header__nav-link">
-                                Клиника года
-                            </a>
-                        </li>
-                    </ul>
-                </nav>
-                <nav class="page-header__mobile-services" id="header-mobile-services-list" data-mobile-services-list
+                <ul class="page-header__mobile-city-tabs">
+                    <li class="page-header__mobile-city-tabs-item">
+                        <a href="/?city=Пятигорск"
+                            class="page-header__mobile-city-tab page-header__mobile-city-tab-link is-active"
+                            data-mobile-city-tab-link data-city-name="Пятигорск">
+                            Пятигорск
+                        </a>
+                    </li>
+                    <li class="page-header__mobile-city-tabs-item">
+                        <a href="/?city=Краснодар" class="page-header__mobile-city-tab page-header__mobile-city-tab-link"
+                            data-mobile-city-tab-link data-city-name="Краснодар">
+                            Краснодар
+                        </a>
+                    </li>
+                    <li class="page-header__mobile-city-tabs-item">
+                        <button class="page-header__mobile-city-tab" type="button" data-mobile-city-select-toggle
+                            aria-expanded="false" aria-controls="header-mobile-city-select">
+                            Другие города
+                        </button>
+                    </li>
+                </ul>
+                <div class="page-header__mobile-menu-main" data-mobile-menu-main>
+                    <button class="page-header__services-link" type="button" data-mobile-services-toggle
+                        aria-expanded="false" aria-controls="header-mobile-services-list">
+                        <span>Услуги</span>
+                        <span class="page-header__services-link-dot" aria-hidden="true"></span>
+                        <svg class="page-header__services-link-arrow" width="16" height="8" aria-hidden="true">
+                            <use xlink:href="#arrow-down"></use>
+                        </svg>
+                    </button>
+                    <nav class="page-header__nav page-header__mobile-nav" data-mobile-primary-nav>
+                        <ul class="page-header__nav-list">
+                            <li class="page-header__nav-list-item">
+                                <a href="#" class="page-header__nav-link">
+                                    Врачи
+                                </a>
+                            </li>
+                            <li class="page-header__nav-list-item">
+                                <a href="#" class="page-header__nav-link">
+                                    Цены
+                                </a>
+                            </li>
+                            <li class="page-header__nav-list-item">
+                                <a href="#" class="page-header__nav-link">
+                                    Статьи
+                                </a>
+                            </li>
+                            <li class="page-header__nav-list-item">
+                                <a href="#" class="page-header__nav-link">
+                                    О клинике
+                                </a>
+                            </li>
+                            <li class="page-header__nav-list-item">
+                                <a href="#" class="page-header__nav-link">
+                                    Контакты
+                                </a>
+                            </li>
+                            <li class="page-header__nav-list-item">
+                                <a href="#" class="page-header__nav-link">
+                                    Клиника года
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                    <nav class="page-header__mobile-services" id="header-mobile-services-list" data-mobile-services-list
+                        aria-hidden="true">
+                        <ul class="page-header__mobile-services-list">
+                            <li class="page-header__mobile-services-item">
+                                <a href="#" class="page-header__mobile-services-link">
+                                    Диагностика
+                                </a>
+                            </li>
+                            <li class="page-header__mobile-services-item">
+                                <a href="#" class="page-header__mobile-services-link">
+                                    Детское отделение
+                                </a>
+                            </li>
+                            <li class="page-header__mobile-services-item">
+                                <a href="#" class="page-header__mobile-services-link">
+                                    Лазерная коррекция
+                                </a>
+                            </li>
+                            <li class="page-header__mobile-services-item">
+                                <a href="#" class="page-header__mobile-services-link">
+                                    Глаукома
+                                </a>
+                            </li>
+                            <li class="page-header__mobile-services-item">
+                                <a href="#" class="page-header__mobile-services-link">
+                                    Катаракта
+                                </a>
+                            </li>
+                            <li class="page-header__mobile-services-item">
+                                <a href="#" class="page-header__mobile-services-link">
+                                    Кератоконус
+                                </a>
+                            </li>
+                            <li class="page-header__mobile-services-item">
+                                <a href="#" class="page-header__mobile-services-link">
+                                    Окулопластика
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                    <a href="#feedback-modal" class="btn btn--mobile-large btn--green page-header__callback-btn">
+                        Записаться
+                    </a>
+                </div>
+                <section class="page-header__mobile-city-select" id="header-mobile-city-select" data-mobile-city-select
                     aria-hidden="true">
-                    <ul class="page-header__mobile-services-list">
-                        <li class="page-header__mobile-services-item">
-                            <a href="#" class="page-header__mobile-services-link">
-                                Диагностика
-                            </a>
-                        </li>
-                        <li class="page-header__mobile-services-item">
-                            <a href="#" class="page-header__mobile-services-link">
-                                Детское отделение
-                            </a>
-                        </li>
-                        <li class="page-header__mobile-services-item">
-                            <a href="#" class="page-header__mobile-services-link">
-                                Лазерная коррекция
-                            </a>
-                        </li>
-                        <li class="page-header__mobile-services-item">
-                            <a href="#" class="page-header__mobile-services-link">
-                                Глаукома
-                            </a>
-                        </li>
-                        <li class="page-header__mobile-services-item">
-                            <a href="#" class="page-header__mobile-services-link">
-                                Катаракта
-                            </a>
-                        </li>
-                        <li class="page-header__mobile-services-item">
-                            <a href="#" class="page-header__mobile-services-link">
-                                Кератоконус
-                            </a>
-                        </li>
-                        <li class="page-header__mobile-services-item">
-                            <a href="#" class="page-header__mobile-services-link">
-                                Окулопластика
-                            </a>
-                        </li>
-                    </ul>
-                </nav>
-                <a href="#feedback-modal" class="btn btn--mobile-large btn--green page-header__callback-btn">
-                    Записаться
-                </a>
+                    <div class="page-header__mobile-city-select-inner" data-city-select-root data-city-select-mobile>
+                        <h2 class="city-select-modal__title">
+                            Выберите свой город
+                        </h2>
+                        <label class="city-select-modal__search">
+                            <input class="city-select-modal__search-input" type="search" name="city-search-mobile"
+                                autocomplete="off" placeholder="Поиск города" aria-label="Поиск города"
+                                data-city-search-input>
+                            <span class="city-select-modal__search-icon" aria-hidden="true">
+                                <svg width="25" height="25">
+                                    <use xlink:href="#search"></use>
+                                </svg>
+                            </span>
+                        </label>
+                        {{> components/city-select-cities-mobile }}
+                    </div>
+                </section>
             </div>
         </div>
     </div>
