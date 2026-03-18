@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  {{> layout/meta }}
+</head>
+
+<body class="maintenance-page">
+  {{> layout/header }}
+  <main class="page-main">
+    {{> sections/maintenance }}
+  </main>
+  {{> components/modals }}
+
+  <script type="module" src="/src/js/main.ts"></script>
+  <script defer src="/js/forms.js"></script>
+</body>
+
+</html>

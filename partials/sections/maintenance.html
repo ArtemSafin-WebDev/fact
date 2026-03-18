@@ -1,0 +1,44 @@
+<section class="maintenance" aria-labelledby="maintenance-title">
+  <div class="maintenance__background" aria-hidden="true">
+    <picture>
+      <source srcset="/images/intro/bg-mobile.webp" media="(max-width: 640px)">
+      <img src="/images/404/bg.webp" alt="">
+    </picture>
+  </div>
+  <div class="maintenance__content">
+    <div class="maintenance__text-content">
+      <h1 class="maintenance__title" id="maintenance-title">
+        МЫ<br>
+        ОБНОВЛЯЕМСЯ
+      </h1>
+      <p class="maintenance__text">
+        Чтобы стать еще ближе, интересней и полезней. Приносим извинения за временные неудобства
+      </p>
+      <p class="maintenance__text">
+        Если не нашли нужную информацию - заполните форму - мы с вами свяжемся
+      </p>
+    </div>
+
+    <form action="/" method="POST" class="maintenance__form js-form">
+      <div class="maintenance__form-fields">
+        <div class="maintenance__form-field">
+          <div class="maintenance__form-input-wrapper">
+            <input type="text" class="maintenance__form-input" name="your-name" required placeholder="Имя*">
+          </div>
+        </div>
+        <div class="maintenance__form-field">
+          <div class="maintenance__form-input-wrapper">
+            <input type="tel" class="maintenance__form-input" name="your-phone" required placeholder="Телефон*">
+          </div>
+        </div>
+      </div>
+      <div class="maintenance__form-actions">
+        <p class="maintenance__form-policy">
+          Нажимая кнопку, вы соглашаетесь с условиями обработки персональных данных и <a href="#">Политикой
+            конфиденциальности</a>
+        </p>
+        <button class="btn maintenance__form-submit" type="submit">свяжитесь со мной</button>
+      </div>
+    </form>
+  </div>
+</section>
