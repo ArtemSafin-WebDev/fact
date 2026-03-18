@@ -7,11 +7,7 @@ const CITY_MASONRY_SELECTOR = "[data-city-masonry]";
 const CITY_SEARCH_EMPTY_SELECTOR = "[data-city-search-empty]";
 const CITY_SEARCH_SCROLL_SELECTOR = "[data-city-search-scroll]";
 const CITY_SELECT_MODAL_SELECTOR = "#city-select-modal";
-const DESKTOP_CITY_SELECTOR = ".page-header__schedule .city";
-const CITY_MODAL_CURRENT_CITY_SELECTOR = "[data-current-city-name]";
 const CITY_PICKER_RESET_EVENT = "city-picker:reset";
-const CITY_PICKER_CHANGE_EVENT = "city-picker:change";
-const CITY_QUERY_PARAM = "city";
 
 type ModalOpenEventDetail = {
   modal?: HTMLElement;
@@ -30,27 +26,6 @@ export default function citySelectModal() {
   );
   if (!pickerRoots.length) return;
 
-  const desktopCity = document.querySelector<HTMLElement>(DESKTOP_CITY_SELECTOR);
-  const currentCityInPrimaryModal = document.querySelector<HTMLElement>(
-    CITY_MODAL_CURRENT_CITY_SELECTOR,
-  );
-
-  const updateCurrentCity = (cityName: string) => {
-    if (desktopCity) {
-      desktopCity.textContent = cityName;
-    }
-    if (currentCityInPrimaryModal) {
-      currentCityInPrimaryModal.textContent = cityName;
-    }
-  };
-
-  const getCityHref = (cityName: string) => {
-    const url = new URL(window.location.href);
-    url.searchParams.set(CITY_QUERY_PARAM, cityName);
-    url.hash = "";
-    return `${url.pathname}${url.search}`;
-  };
-
   pickerRoots.forEach((pickerRoot) => {
     const searchInput = pickerRoot.querySelector<HTMLInputElement>(
       CITY_SEARCH_INPUT_SELECTOR,
@@ -65,13 +40,6 @@ export default function citySelectModal() {
     const scrollArea = pickerRoot.querySelector<HTMLElement>(CITY_SEARCH_SCROLL_SELECTOR);
 
     if (!cityItems.length) return;
-
-    cityItems.forEach((cityItem) => {
-      const cityName = cityItem.dataset.cityName ?? cityItem.textContent?.trim() ?? "";
-      if (!cityName || !(cityItem instanceof HTMLAnchorElement)) return;
-
-      cityItem.setAttribute("href", getCityHref(cityName));
-    });
 
     const modal = pickerRoot.closest<HTMLElement>(CITY_SELECT_MODAL_SELECTOR);
     const modalCloseButton = modal?.querySelector<HTMLButtonElement>(".js-modal-close");
@@ -140,21 +108,6 @@ export default function citySelectModal() {
       const target = event.target as HTMLElement;
       const cityItem = target.closest<HTMLElement>(CITY_ITEM_SELECTOR);
       if (!cityItem || !pickerRoot.contains(cityItem)) return;
-
-      const cityName = cityItem.dataset.cityName ?? cityItem.textContent?.trim() ?? "";
-      if (!cityName) return;
-
-      updateCurrentCity(cityName);
-
-      document.dispatchEvent(
-        new CustomEvent(CITY_PICKER_CHANGE_EVENT, {
-          bubbles: true,
-          detail: {
-            cityName,
-            sourceRoot: pickerRoot,
-          },
-        }),
-      );
 
       if (modal?.classList.contains("active")) {
         modalCloseButton?.click();
