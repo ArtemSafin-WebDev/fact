@@ -130,6 +130,10 @@
 
       @include media.breakpoint(mobile) {
         width: 16.5rem;
+
+        &:only-child {
+          width: 100%;
+        }
       }
     }
   }

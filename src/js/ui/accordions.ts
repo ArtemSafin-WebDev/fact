@@ -7,10 +7,6 @@ export default function accordions() {
 
     button?.addEventListener("click", (event) => {
       event.preventDefault();
-      elements.forEach((someElement) => {
-        if (someElement === element) return;
-        someElement.classList.remove("active");
-      });
       element.classList.toggle("active");
     });
   });

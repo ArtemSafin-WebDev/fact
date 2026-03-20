@@ -1,0 +1,184 @@
+@use "media";
+
+@layer components {
+  .wysiwyg {
+    font-size: 1.8rem;
+    font-weight: 400;
+    line-height: 140%;
+
+    @include media.breakpoint(mobile) {
+      font-size: 1.4rem;
+    }
+
+    // Абзацы
+    p {
+      margin: 0;
+
+      & + p {
+        margin-top: 1.2em;
+      }
+    }
+
+    // Заголовки
+    h2 {
+      margin: 1.6em 0 0.6em;
+      font-size: 1.4em;
+      font-weight: 900;
+      line-height: 110%;
+      letter-spacing: -0.02em;
+      text-transform: uppercase;
+    }
+
+    h3 {
+      margin: 1.4em 0 0.5em;
+      font-size: 1.2em;
+      font-weight: 900;
+      line-height: 110%;
+      letter-spacing: -0.015em;
+      text-transform: uppercase;
+    }
+
+    h4 {
+      margin: 1.2em 0 0.4em;
+      font-size: 1em;
+      font-weight: 900;
+      line-height: 120%;
+      letter-spacing: -0.01em;
+      text-transform: uppercase;
+    }
+
+    h2:first-child,
+    h3:first-child,
+    h4:first-child {
+      margin-top: 0;
+    }
+
+    // Списки
+    ul,
+    ol {
+      margin: 1em 0;
+      padding: 0;
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.6em;
+
+      &:first-child {
+        margin-top: 0;
+      }
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    ul li {
+      padding-left: 1.2em;
+      position: relative;
+
+      &::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0.55em;
+        width: 0.45em;
+        height: 0.45em;
+        border-radius: 50%;
+        background-color: var(--green-300);
+        flex-shrink: 0;
+      }
+    }
+
+    ol {
+      counter-reset: wysiwyg-ol;
+    }
+
+    ol li {
+      padding-left: 1.6em;
+      position: relative;
+      counter-increment: wysiwyg-ol;
+
+      &::before {
+        content: counter(wysiwyg-ol) ".";
+        position: absolute;
+        left: 0;
+        top: 0;
+        font-weight: 900;
+        line-height: inherit;
+      }
+    }
+
+    // Вложенные списки
+    ul ul,
+    ol ol,
+    ul ol,
+    ol ul {
+      margin: 0.4em 0 0;
+    }
+
+    // Таблицы
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.9em;
+    }
+
+    th,
+    td {
+      padding: 0.8em 1.2em;
+      text-align: left;
+      border: 1px solid #cbcbcb;
+      vertical-align: top;
+    }
+
+    th {
+      font-weight: 900;
+      background-color: #f5f5f5;
+      text-transform: uppercase;
+      letter-spacing: -0.01em;
+    }
+
+    tr:hover td {
+      background-color: #fafafa;
+    }
+
+    // Разделитель
+    hr {
+      margin: 2em 0;
+      border: none;
+      border-top: 1px solid #cbcbcb;
+    }
+
+    // Жирный / курсив
+    strong,
+    b {
+      font-weight: 700;
+    }
+
+    em,
+    i {
+      font-style: italic;
+    }
+
+    // Ссылки
+    a {
+      color: inherit;
+      text-decoration: underline;
+      text-underline-offset: 0.2em;
+      transition: color 0.2s;
+
+      &:hover {
+        color: var(--green-300);
+      }
+    }
+
+    // Первый и последний дочерние элементы — без внешних отступов
+    > *:first-child {
+      margin-top: 0;
+    }
+
+    > *:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
