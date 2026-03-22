@@ -112,11 +112,11 @@
     .tabs-nav__btn {
       width: 100%;
       min-width: 0;
-      height: 6rem;
+      min-height: 6rem;
       padding: 0 2rem;
 
       @include media.breakpoint(mobile) {
-        height: 4rem;
+        min-height: 4rem;
         padding: 0 1rem;
         font-size: 1.4rem;
         letter-spacing: -0.014rem;

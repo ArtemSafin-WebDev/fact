@@ -31,6 +31,7 @@
       max-width: 34.3rem;
       text-wrap: initial;
       font-size: 4rem;
+      font-size: 3.2rem;
       letter-spacing: -0.04rem;
     }
   }
@@ -88,7 +89,6 @@
     @include media.breakpoint(mobile) {
       width: 100%;
       min-width: 0;
-      height: 4rem;
       padding: 0 0.8rem;
       border-color: rgb(0 0 0 / 30%);
       font-size: 1rem;

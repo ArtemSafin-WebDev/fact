@@ -82,8 +82,8 @@
       .tabs-nav__btn {
         width: 100%;
         min-width: 0;
-        height: 4rem;
-        padding: 0 1rem;
+        min-height: 4rem;
+        padding: 0.5rem 1rem;
         border-width: 0.05rem;
         font-size: 1rem;
         line-height: 100%;

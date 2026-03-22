@@ -45,7 +45,7 @@
     gap: 3rem;
 
     @include media.breakpoint(mobile) {
-      padding-top: 14rem;
+      padding-top: 16rem;
       gap: 2rem;
     }
   }
@@ -63,6 +63,7 @@
       font-weight: 900;
       line-height: 100%;
       letter-spacing: -0.1rem;
+      font-size: 3.2rem;
       text-transform: uppercase;
     }
   }

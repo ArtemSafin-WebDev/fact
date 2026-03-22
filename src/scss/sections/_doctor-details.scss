@@ -167,11 +167,10 @@
   }
 
   .doctor-details__clinic {
-    height: 6rem;
     display: inline-flex;
     align-items: center;
     gap: 1rem;
-    padding: 0 4rem;
+    padding: 2rem 4rem;
     font-size: 1.5rem;
     font-weight: 900;
     line-height: 100%;
@@ -179,8 +178,7 @@
     @include media.breakpoint(mobile) {
       flex: 1 1 50%;
       justify-content: center;
-      height: 3rem;
-      padding: 0 1rem;
+      padding: 0.5rem 1rem;
       font-size: 1.4rem;
       letter-spacing: -0.014rem;
       white-space: nowrap;
@@ -198,8 +196,8 @@
   }
 
   .doctor-details__rating {
-    height: 6rem;
-    padding: 0 2rem;
+    min-height: 6rem;
+    padding: 1rem 2rem;
     background-color: #fff;
     display: inline-flex;
     align-items: center;
@@ -209,8 +207,8 @@
     @include media.breakpoint(mobile) {
       align-self: stretch;
       justify-content: center;
-      height: 3rem;
-      padding: 0 1rem;
+      min-height: 3rem;
+      padding: 0.5rem 1rem;
       border-top: 1px solid #eaeaea;
     }
   }

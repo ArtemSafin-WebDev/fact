@@ -76,7 +76,6 @@
   }
 
   .service-comparison__table th {
-    height: 7.5rem;
     padding: 1.6rem 2.4rem;
 
     text-align: center;
@@ -87,7 +86,6 @@
     text-transform: uppercase;
 
     @include media.breakpoint(mobile) {
-      height: 4.8rem;
       padding: 1.4rem 1.6rem;
       font-size: 1.2rem;
       letter-spacing: -0.012rem;
@@ -95,7 +93,6 @@
   }
 
   .service-comparison__table td {
-    height: 7.5rem;
     padding: 1.8rem 2.4rem;
 
     text-align: left;
@@ -128,22 +125,6 @@
   .service-comparison__table tbody tr:nth-child(even) td {
     background-color: #fff;
     border-color: #eaeaea;
-  }
-
-  .service-comparison__table th:first-child,
-  .service-comparison__table td:first-child {
-    @include media.breakpoint(mobile) {
-      width: 12.5rem;
-      padding-left: 1.4rem;
-      padding-right: 1.4rem;
-    }
-  }
-
-  .service-comparison__table th:not(:first-child),
-  .service-comparison__table td:not(:first-child) {
-    @include media.breakpoint(mobile) {
-      width: 22.5rem;
-    }
   }
 
   .service-comparison__table tbody tr:nth-child(odd) td:first-child {
