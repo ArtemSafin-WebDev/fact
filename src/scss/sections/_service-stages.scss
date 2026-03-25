@@ -133,8 +133,6 @@
 
     @include media.breakpoint(mobile) {
       aspect-ratio: 343 / 234;
-      margin: -1px;
-      margin-bottom: 0;
     }
   }
 
