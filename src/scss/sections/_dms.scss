@@ -1,0 +1,123 @@
+@use "utils";
+
+@layer sections {
+  .dms {
+    @include utils.blockWrapper;
+    padding-top: 20.4rem;
+    padding-bottom: 12rem;
+  }
+
+  .dms__content {
+    @include utils.blockContent;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .dms__main {
+    margin-top: 11.6rem;
+    display: grid;
+    grid-template-columns: repeat(8, minmax(0, 1fr));
+    row-gap: 6rem;
+  }
+
+  .dms__title,
+  .dms__lead,
+  .dms__block {
+    grid-column: 2 / 8;
+  }
+
+  .dms__title {
+    font-size: 4.5rem;
+    font-style: normal;
+    font-weight: 900;
+    line-height: 100%;
+    letter-spacing: -0.045rem;
+    text-transform: uppercase;
+    color: #161616;
+  }
+
+  .dms__lead {
+    font-size: 1.8rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 140%;
+    letter-spacing: -0.018rem;
+    color: #161616;
+  }
+
+  .dms__block {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+  }
+
+  .dms__block + .dms__block {
+    margin-top: 2rem;
+  }
+
+  .dms__media {
+    display: grid;
+    width: 100%;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .dms__media:has(.dms__media-item:nth-child(3)) {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .dms__media-item {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .dms__media-item:not(:last-child) {
+    border-right: 0.2rem solid #eaeaea;
+  }
+
+  .dms__media .dms__media-item {
+    aspect-ratio: 660 / 499;
+  }
+
+  .dms__media:has(.dms__media-item:nth-child(3)) .dms__media-item {
+    aspect-ratio: 440 / 499;
+  }
+
+  .dms__media-item img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .dms__text {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+  }
+
+  .dms__block-title {
+    font-size: 2rem;
+    font-style: normal;
+    font-weight: 900;
+    line-height: 120%;
+    letter-spacing: -0.02rem;
+    text-transform: uppercase;
+    color: #161616;
+  }
+
+  .dms__paragraphs {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+  }
+
+  .dms__paragraphs p {
+    font-size: 1.8rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 140%;
+    letter-spacing: -0.018rem;
+    color: #161616;
+  }
+}
