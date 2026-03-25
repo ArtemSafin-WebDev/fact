@@ -31,7 +31,7 @@
       max-width: 34.3rem;
       text-wrap: initial;
       font-size: 4rem;
-      font-size: 3.2rem;
+      font-size: 3rem;
       letter-spacing: -0.04rem;
     }
   }
@@ -52,10 +52,6 @@
     list-style: none;
     display: flex;
     align-items: stretch;
-
-    @include media.breakpoint(mobile) {
-      width: 100%;
-    }
   }
 
   .service-stages__tab-item {
@@ -245,18 +241,6 @@
       flex-direction: column;
       align-items: stretch;
       gap: 1.6rem;
-    }
-  }
-
-  .service-stages__description {
-    font-size: 1.5rem;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 140%;
-    color: #161616;
-
-    @include media.breakpoint(mobile) {
-      font-size: 1.4rem;
     }
   }
 
