@@ -1,11 +1,17 @@
 @use "utils";
+@use "media";
 
 @layer sections {
   .patients-memo {
     @include utils.blockWrapper;
     padding-top: 20.4rem;
-    padding-bottom: 12rem;
+    margin-bottom: 12rem;
     background-color: #fff;
+
+    @include media.breakpoint(mobile) {
+      padding-top: 16.5rem;
+      margin-bottom: 6rem;
+    }
   }
 
   .patients-memo__content {
@@ -20,6 +26,12 @@
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 0;
     align-items: start;
+
+    @include media.breakpoint(mobile) {
+      margin-top: 0;
+      grid-template-columns: minmax(0, 1fr);
+      row-gap: 6rem;
+    }
   }
 
   .patients-memo__title {
@@ -30,12 +42,16 @@
     letter-spacing: -0.08rem;
     text-transform: uppercase;
     color: #161616;
+
+    @include media.breakpoint(mobile) {
+      font-size: 4rem;
+      letter-spacing: -0.1rem;
+    }
   }
 
   .patients-memo__list {
     display: flex;
     flex-direction: column;
-    border-top: 1px solid transparent;
   }
 
   .patients-memo__item {
@@ -44,10 +60,23 @@
     column-gap: 3rem;
     padding-bottom: 4rem;
     border-bottom: 1px solid #d4d4d4;
+    &:last-child {
+      border: none;
+      padding-bottom: 0;
+    }
+
+    @include media.breakpoint(mobile) {
+      column-gap: 0.7rem;
+      padding-bottom: 2rem;
+    }
   }
 
   .patients-memo__item + .patients-memo__item {
     padding-top: 4rem;
+
+    @include media.breakpoint(mobile) {
+      padding-top: 2rem;
+    }
   }
 
   .patients-memo__item-title {
@@ -58,17 +87,30 @@
     letter-spacing: -0.02rem;
     text-transform: uppercase;
     color: #161616;
+
+    @include media.breakpoint(mobile) {
+      font-size: 1.5rem;
+      line-height: 120%;
+      letter-spacing: -0.03rem;
+    }
   }
 
   .patients-memo__item-description {
     margin-top: 2rem;
-    max-width: 70rem;
     font-size: 1.8rem;
     font-style: normal;
     font-weight: 400;
     line-height: 120%;
     letter-spacing: -0.018rem;
     color: #161616;
+    max-width: 70rem;
+
+    @include media.breakpoint(mobile) {
+      margin-top: 2rem;
+      font-size: 1.4rem;
+      letter-spacing: -0.014rem;
+      max-width: none;
+    }
   }
 
   .patients-memo__download {
@@ -79,10 +121,16 @@
     display: grid;
     place-items: center;
     flex-shrink: 0;
+    align-self: start;
     transition:
       border-color 0.2s,
       background-color 0.2s,
       color 0.2s;
+
+    @include media.breakpoint(mobile) {
+      width: 4rem;
+      height: 4rem;
+    }
 
     &:hover {
       border-color: #161616;
@@ -94,5 +142,18 @@
     height: 2.4rem;
     fill: none;
     stroke: currentColor;
+
+    @include media.breakpoint(mobile) {
+      width: 1.6rem;
+      height: 1.6rem;
+    }
+  }
+
+  .patients-memo {
+    .breadcrumbs {
+      @include media.breakpoint(mobile) {
+        display: none;
+      }
+    }
   }
 }
