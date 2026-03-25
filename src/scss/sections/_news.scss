@@ -1,0 +1,70 @@
+@use "utils";
+
+@layer sections {
+  .news {
+    @include utils.blockWrapper;
+    padding-top: 17.1rem;
+    padding-bottom: 8rem;
+    background-color: #eaeaea;
+  }
+
+  .news__content {
+    @include utils.blockContent;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+  }
+
+  .news__title {
+    margin: 0;
+    font-size: 8rem;
+    font-style: normal;
+    font-weight: 900;
+    line-height: 100%;
+    letter-spacing: -0.08rem;
+    text-transform: uppercase;
+    color: #161616;
+  }
+
+  .news__list {
+    margin-top: 8rem;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1px;
+    padding: 1px;
+    background-color: #cbcbcb;
+  }
+
+  .news__list-item {
+    display: flex;
+    min-width: 0;
+  }
+
+  .news__card {
+    width: 100%;
+  }
+
+  .news__card--active .blog-card__bg {
+    opacity: 1;
+  }
+
+  .news__card--active .blog-card__bg::after {
+    opacity: 1;
+  }
+
+  .news__card--active .blog-card__content {
+    color: white;
+  }
+
+  .news__card--active .blog-card__btn {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+  }
+
+  .news__more {
+    margin-top: 8rem;
+    align-self: center;
+    width: 44rem;
+  }
+}

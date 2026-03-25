@@ -1,0 +1,27 @@
+<section class="news">
+    <div class="news__content">
+        <h1 class="news__title">
+            {{newsPage.title}}
+        </h1>
+        <ul class="news__list" aria-label="Список новостей">
+            {{#each newsPage.cards}}
+            <li class="news__list-item">
+                {{> components/blog-card
+                href=href
+                modClass=modClass
+                imageDesktop=imageDesktop
+                imageAlt=imageAlt
+                tag=tag
+                title=title
+                description=description
+                showButton=showButton
+                buttonText=buttonText
+                }}
+            </li>
+            {{/each}}
+        </ul>
+        <button class="btn news__more" type="button">
+            показать еще
+        </button>
+    </div>
+</section>

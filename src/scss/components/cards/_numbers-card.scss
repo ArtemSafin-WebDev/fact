@@ -19,26 +19,7 @@
     }
   }
 
-  li:nth-child(even) .numbers-card {
-    background: var(--green-200);
-
-    @include media.breakpoint(mobile) {
-      background: var(--green-300);
-    }
-  }
-
-  li:nth-child(4n + 2) .numbers-card {
-    @include media.breakpoint(mobile) {
-      background: var(--green-200);
-    }
-  }
-
-  li:nth-child(4n + 3) .numbers-card {
-    @include media.breakpoint(mobile) {
-      background: var(--green-200);
-    }
-  }
-
+  li:nth-child(even) .numbers-card,
   .swiper-slide:nth-child(even) .numbers-card {
     background: var(--green-200);
   }
