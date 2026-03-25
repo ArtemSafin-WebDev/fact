@@ -192,6 +192,10 @@
       display: block;
       font-size: 1.3rem;
       line-height: 120%;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      display: -webkit-box;
     }
   }
 
@@ -210,6 +214,7 @@
       opacity: 1;
       visibility: visible;
       pointer-events: auto;
+      align-self: flex-end;
     }
   }
 

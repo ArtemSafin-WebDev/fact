@@ -1,4 +1,5 @@
 @use "utils";
+@use "media";
 
 @layer sections {
   .news {
@@ -6,6 +7,17 @@
     padding-top: 20rem;
     padding-bottom: 8rem;
     background-color: #eaeaea;
+
+    @include media.breakpoint(mobile) {
+      padding-top: 16.5rem;
+      padding-bottom: 6rem;
+    }
+  }
+
+  .news .breadcrumbs {
+    @include media.breakpoint(mobile) {
+      display: none;
+    }
   }
 
   .news__content {
@@ -24,12 +36,24 @@
     letter-spacing: -0.08rem;
     text-transform: uppercase;
     color: #161616;
+
+    @include media.breakpoint(mobile) {
+      margin-top: 0;
+      font-size: 4rem;
+      letter-spacing: -0.1rem;
+    }
   }
 
   .news__list {
     margin-top: 8rem;
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
+
+    @include media.breakpoint(mobile) {
+      margin-top: 3.2rem;
+      display: flex;
+      flex-direction: column;
+    }
   }
 
   .news__list-item {
@@ -38,23 +62,73 @@
     background-color: #fff;
     border-right: 1px solid #cbcbcb;
     border-bottom: 1px solid #cbcbcb;
+
+    @include media.breakpoint(mobile) {
+      border-right: none;
+      border-left: none;
+      border-top: none;
+      border-bottom: 1px solid #d3d3d3;
+    }
   }
 
   .news__list-item:nth-child(3n + 1) {
     border-left: 1px solid #cbcbcb;
+
+    @include media.breakpoint(mobile) {
+      border-left: none;
+    }
   }
 
   .news__list-item:nth-child(-n + 3) {
     border-top: 1px solid #cbcbcb;
+
+    @include media.breakpoint(mobile) {
+      border-top: none;
+    }
+  }
+
+  .news__list-item:last-child {
+    @include media.breakpoint(mobile) {
+      border-bottom: none;
+    }
   }
 
   .news__list-item > .blog-card {
     width: 100%;
   }
 
+  .news .blog-card__bottom {
+    @include media.breakpoint(mobile) {
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 1.2rem;
+    }
+  }
+
+  .news .blog-card__desc {
+    @include media.breakpoint(mobile) {
+      font-size: 1.4rem;
+      line-height: 120%;
+      max-width: 23.5rem;
+    }
+  }
+
   .news__more {
     margin-top: 8rem;
     align-self: center;
     width: 44rem;
+
+    @include media.breakpoint(mobile) {
+      margin-top: 3rem;
+      align-self: stretch;
+      width: auto;
+      height: 6rem;
+      display: grid;
+      place-items: center;
+      padding: 0 3rem;
+      font-size: 1.4rem;
+      line-height: 100%;
+      text-transform: uppercase;
+    }
   }
 }
