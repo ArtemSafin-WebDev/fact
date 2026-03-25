@@ -1,10 +1,16 @@
 @use "utils";
+@use "media";
 
 @layer sections {
   .dms {
     @include utils.blockWrapper;
     padding-top: 20.4rem;
     padding-bottom: 12rem;
+
+    @include media.breakpoint(mobile) {
+      padding-top: 16.5rem;
+      padding-bottom: 6rem;
+    }
   }
 
   .dms__content {
@@ -18,12 +24,23 @@
     display: grid;
     grid-template-columns: repeat(8, minmax(0, 1fr));
     row-gap: 6rem;
+
+    @include media.breakpoint(mobile) {
+      margin-top: 3.2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 3.2rem;
+    }
   }
 
   .dms__title,
   .dms__lead,
   .dms__block {
     grid-column: 2 / 8;
+
+    @include media.breakpoint(mobile) {
+      grid-column: auto;
+    }
   }
 
   .dms__title {
@@ -34,6 +51,11 @@
     letter-spacing: -0.045rem;
     text-transform: uppercase;
     color: #161616;
+
+    @include media.breakpoint(mobile) {
+      font-size: 2.4rem;
+      letter-spacing: -0.1rem;
+    }
   }
 
   .dms__lead {
@@ -43,16 +65,29 @@
     line-height: 140%;
     letter-spacing: -0.018rem;
     color: #161616;
+
+    @include media.breakpoint(mobile) {
+      font-size: 1.4rem;
+      letter-spacing: 0;
+    }
   }
 
   .dms__block {
     display: flex;
     flex-direction: column;
     gap: 4rem;
+
+    @include media.breakpoint(mobile) {
+      gap: 3.2rem;
+    }
   }
 
   .dms__block + .dms__block {
     margin-top: 2rem;
+
+    @include media.breakpoint(mobile) {
+      margin-top: 0;
+    }
   }
 
   .dms__media {
@@ -82,6 +117,22 @@
     aspect-ratio: 440 / 499;
   }
 
+  @include media.breakpoint(mobile) {
+    .dms__media .dms__media-item,
+    .dms__media:has(.dms__media-item:nth-child(3)) .dms__media-item {
+      aspect-ratio: 1 / 1;
+    }
+
+    .dms__media-item:not(:last-child) {
+      border-right: 0.2rem solid #fff;
+    }
+
+    .dms__media:has(.dms__media-item:nth-child(3))
+      .dms__media-item:not(:last-child) {
+      border-right-width: 0.1rem;
+    }
+  }
+
   .dms__media-item img {
     position: absolute;
     inset: 0;
@@ -94,6 +145,10 @@
     display: flex;
     flex-direction: column;
     gap: 3rem;
+
+    @include media.breakpoint(mobile) {
+      gap: 2rem;
+    }
   }
 
   .dms__block-title {
@@ -104,12 +159,22 @@
     letter-spacing: -0.02rem;
     text-transform: uppercase;
     color: #161616;
+
+    @include media.breakpoint(mobile) {
+      font-size: 1.5rem;
+      line-height: 120%;
+      letter-spacing: -0.015rem;
+    }
   }
 
   .dms__paragraphs {
     display: flex;
     flex-direction: column;
     gap: 3rem;
+
+    @include media.breakpoint(mobile) {
+      gap: 2rem;
+    }
   }
 
   .dms__paragraphs p {
@@ -119,5 +184,10 @@
     line-height: 140%;
     letter-spacing: -0.018rem;
     color: #161616;
+
+    @include media.breakpoint(mobile) {
+      font-size: 1.4rem;
+      letter-spacing: 0;
+    }
   }
 }
