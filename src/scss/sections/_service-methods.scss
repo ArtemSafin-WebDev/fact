@@ -85,6 +85,19 @@
     @include media.breakpoint(mobile) {
       margin-top: 2rem;
       grid-template-columns: minmax(0, 1fr);
+
+      &:not(:has(.service-methods__tabs-slider)) {
+        overflow-y: hidden;
+        margin: 0 calc(-1 * var(--content-padding));
+        padding: 0 var(--content-padding);
+        scroll-padding-left: var(--content-padding);
+        scrollbar-width: none;
+        display: flex;
+
+        &::-webkit-scrollbar {
+          display: none;
+        }
+      }
     }
   }
 
@@ -121,9 +134,7 @@
     display: flex;
     height: auto;
     flex-basis: 20%;
-    @include media.breakpoint(mobile) {
-      flex-basis: 20%;
-    }
+    flex-shrink: 0;
   }
 
   .service-methods__tab-btn {
