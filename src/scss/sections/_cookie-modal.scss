@@ -3,57 +3,46 @@
 @layer sections {
   .cookie-modal {
     position: fixed;
-    inset: 0;
-    z-index: 520;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: var(--content-padding);
-    background-color: rgb(0 0 0 / 60%);
-    overflow-y: auto;
-    overscroll-behavior-y: contain;
-    -webkit-overflow-scrolling: touch;
-    backdrop-filter: blur(4px);
+    left: 2rem;
+    bottom: 2rem;
+    z-index: 400;
+    width: min(47rem, calc(100vw - 4rem));
     opacity: 0;
     visibility: hidden;
     pointer-events: none;
+    transform: translateY(1.2rem);
     transition:
       opacity 0.4s,
-      visibility 0s linear 0.4s;
+      visibility 0s linear 0.4s,
+      transform 0.4s;
   }
 
   .cookie-modal.active {
     opacity: 1;
     visibility: visible;
     pointer-events: auto;
+    transform: translateY(0);
     transition:
       opacity 0.4s,
-      visibility 0.4s;
+      visibility 0.4s,
+      transform 0.4s;
   }
 
   .cookie-modal__inner {
     position: relative;
-    width: min(75rem, 100vw);
-    height: 43.2rem;
-    margin: auto;
     background-color: var(--green-300);
     color: var(--text-color);
-
-    @include media.breakpoint(mobile) {
-      width: auto;
-      height: auto;
-    }
   }
 
   .cookie-modal__content {
     display: flex;
     flex-direction: column;
-    gap: 4rem;
-    padding: 8rem 4rem 7.2rem;
+    gap: 2rem;
+    padding: 4.5rem 2.2rem 4rem;
 
     @include media.breakpoint(mobile) {
       gap: 2.4rem;
-      padding: 6rem 1.6rem 1.6rem;
+      padding: 4.5rem 1.6rem 1.6rem;
     }
   }
 
@@ -90,8 +79,7 @@
   }
 
   .cookie-modal__description {
-    max-width: 61.1rem;
-    font-size: 1.8rem;
+    font-size: 1.5rem;
     font-weight: 400;
     line-height: 140%;
 
@@ -111,6 +99,7 @@
 
   .cookie-modal__actions {
     display: grid;
+
     grid-template-columns: repeat(2, minmax(0, 1fr));
 
     @include media.breakpoint(mobile) {
@@ -121,15 +110,8 @@
   }
 
   .cookie-modal__btn {
-    flex: 1;
-    align-self: stretch;
-    padding-right: 3rem;
-    padding-left: 3rem;
-    text-transform: uppercase;
-
-    // @include media.breakpoint(mobile) {
-    //   padding: 2rem 1.6rem;
-    //   font-size: 1.5rem;
-    // }
+    @include media.breakpoint(mobile) {
+      text-transform: uppercase;
+    }
   }
 }
