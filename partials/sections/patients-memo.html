@@ -1,0 +1,33 @@
+<section class="patients-memo">
+    <div class="patients-memo__content">
+        {{> components/breadcrumbs items=patientsMemo.breadcrumbs }}
+
+        <div class="patients-memo__grid">
+            <div class="patients-memo__heading">
+                <h1 class="patients-memo__title">
+                    {{patientsMemo.title}}
+                </h1>
+            </div>
+
+            <div class="patients-memo__list" aria-label="Памятки для пациентов">
+                {{#each patientsMemo.items}}
+                <article class="patients-memo__item">
+                    <div class="patients-memo__item-main">
+                        <h2 class="patients-memo__item-title">
+                            {{title}}
+                        </h2>
+                        <p class="patients-memo__item-description">
+                            {{description}}
+                        </p>
+                    </div>
+                    <a class="patients-memo__download" href="{{href}}" aria-label="Скачать: {{title}}">
+                        <svg width="16" height="16" aria-hidden="true">
+                            <use xlink:href="#download"></use>
+                        </svg>
+                    </a>
+                </article>
+                {{/each}}
+            </div>
+        </div>
+    </div>
+</section>

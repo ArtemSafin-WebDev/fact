@@ -1,0 +1,98 @@
+@use "utils";
+
+@layer sections {
+  .patients-memo {
+    @include utils.blockWrapper;
+    padding-top: 20.4rem;
+    padding-bottom: 12rem;
+    background-color: #fff;
+  }
+
+  .patients-memo__content {
+    @include utils.blockContent;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .patients-memo__grid {
+    margin-top: 4rem;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0;
+    align-items: start;
+  }
+
+  .patients-memo__title {
+    font-size: 8rem;
+    font-style: normal;
+    font-weight: 900;
+    line-height: 100%;
+    letter-spacing: -0.08rem;
+    text-transform: uppercase;
+    color: #161616;
+  }
+
+  .patients-memo__list {
+    display: flex;
+    flex-direction: column;
+    border-top: 1px solid transparent;
+  }
+
+  .patients-memo__item {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    column-gap: 3rem;
+    padding-bottom: 4rem;
+    border-bottom: 1px solid #d4d4d4;
+  }
+
+  .patients-memo__item + .patients-memo__item {
+    padding-top: 4rem;
+  }
+
+  .patients-memo__item-title {
+    font-size: 2rem;
+    font-style: normal;
+    font-weight: 900;
+    line-height: 140%;
+    letter-spacing: -0.02rem;
+    text-transform: uppercase;
+    color: #161616;
+  }
+
+  .patients-memo__item-description {
+    margin-top: 2rem;
+    max-width: 70rem;
+    font-size: 1.8rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%;
+    letter-spacing: -0.018rem;
+    color: #161616;
+  }
+
+  .patients-memo__download {
+    width: 6rem;
+    height: 6rem;
+    border: 1px solid #d4d4d4;
+    color: #161616;
+    display: grid;
+    place-items: center;
+    flex-shrink: 0;
+    transition:
+      border-color 0.2s,
+      background-color 0.2s,
+      color 0.2s;
+
+    &:hover {
+      border-color: #161616;
+    }
+  }
+
+  .patients-memo__download svg {
+    width: 2.4rem;
+    height: 2.4rem;
+    fill: none;
+    stroke: currentColor;
+  }
+}
