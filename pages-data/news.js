@@ -9,10 +9,23 @@ const newsPageData = {
     title: "Новости",
     newsPage: {
       title: "Новости",
+      breadcrumbs: [
+        {
+          title: "Главная",
+          href: "/",
+        },
+        {
+          title: "О клинике",
+          href: "#",
+        },
+        {
+          title: "Новости",
+          isCurrent: true,
+        },
+      ],
       cards: [
         {
           href: "#",
-          modClass: "news__card news__card--active",
           imageDesktop: "/images/doctor-detail/article-main.webp",
           imageAlt: "Хирургия катаракты и лечение пресбиопии",
           tag: "# статья от врача",
@@ -24,8 +37,7 @@ const newsPageData = {
         },
         {
           href: "#",
-          modClass: "news__card",
-          imageDesktop: "/images/blog-card/1.webp",
+          imageDesktop: "/images/doctor-detail/article-main.webp",
           imageAlt: "Высокоточные операции на глазах доступны в Пятигорске",
           tag: "# новости",
           title: "Высокоточные операции на глазах доступны в Пятигорске",
@@ -35,8 +47,7 @@ const newsPageData = {
         },
         {
           href: "#",
-          modClass: "news__card",
-          imageDesktop: "/images/doctors/1.webp",
+          imageDesktop: "/images/doctor-detail/article-main.webp",
           imageAlt: "Глазная клиника «ФАКТ» — за здоровый образ жизни и спорт!",
           tag: "# справочник",
           title: "Глазная клиника «ФАКТ» — за здоровый образ жизни и спорт!",
@@ -46,8 +57,7 @@ const newsPageData = {
         },
         {
           href: "#",
-          modClass: "news__card",
-          imageDesktop: "/images/ratings/1.webp",
+          imageDesktop: "/images/doctor-detail/article-main.webp",
           imageAlt: "Глазная клиника «ФАКТ» — за здоровый образ жизни и спорт!",
           tag: "# справочник",
           title: "Глазная клиника «ФАКТ» — за здоровый образ жизни и спорт!",
@@ -57,8 +67,7 @@ const newsPageData = {
         },
         {
           href: "#",
-          modClass: "news__card",
-          imageDesktop: "/images/patients/1.webp",
+          imageDesktop: "/images/doctor-detail/article-main.webp",
           imageAlt: "Высокоточные операции на глазах доступны в Пятигорске",
           tag: "# новости",
           title: "Высокоточные операции на глазах доступны в Пятигорске",
@@ -68,8 +77,7 @@ const newsPageData = {
         },
         {
           href: "#",
-          modClass: "news__card",
-          imageDesktop: "/images/doctors/2.webp",
+          imageDesktop: "/images/doctor-detail/article-main.webp",
           imageAlt: "Глазная клиника «ФАКТ» — за здоровый образ жизни и спорт!",
           tag: "# справочник",
           title: "Глазная клиника «ФАКТ» — за здоровый образ жизни и спорт!",
@@ -79,8 +87,7 @@ const newsPageData = {
         },
         {
           href: "#",
-          modClass: "news__card",
-          imageDesktop: "/images/ratings/2.webp",
+          imageDesktop: "/images/doctor-detail/article-main.webp",
           imageAlt: "Глазная клиника «ФАКТ» — за здоровый образ жизни и спорт!",
           tag: "# справочник",
           title: "Глазная клиника «ФАКТ» — за здоровый образ жизни и спорт!",
@@ -90,8 +97,7 @@ const newsPageData = {
         },
         {
           href: "#",
-          modClass: "news__card",
-          imageDesktop: "/images/patients/2.webp",
+          imageDesktop: "/images/doctor-detail/article-main.webp",
           imageAlt: "Высокоточные операции на глазах доступны в Пятигорске",
           tag: "# новости",
           title: "Высокоточные операции на глазах доступны в Пятигорске",
@@ -101,8 +107,7 @@ const newsPageData = {
         },
         {
           href: "#",
-          modClass: "news__card",
-          imageDesktop: "/images/doctors/3.webp",
+          imageDesktop: "/images/doctor-detail/article-main.webp",
           imageAlt: "Глазная клиника «ФАКТ» — за здоровый образ жизни и спорт!",
           tag: "# справочник",
           title: "Глазная клиника «ФАКТ» — за здоровый образ жизни и спорт!",
@@ -112,8 +117,7 @@ const newsPageData = {
         },
         {
           href: "#",
-          modClass: "news__card",
-          imageDesktop: "/images/ratings/3.webp",
+          imageDesktop: "/images/doctor-detail/article-main.webp",
           imageAlt: "Глазная клиника «ФАКТ» — за здоровый образ жизни и спорт!",
           tag: "# справочник",
           title: "Глазная клиника «ФАКТ» — за здоровый образ жизни и спорт!",
@@ -123,8 +127,7 @@ const newsPageData = {
         },
         {
           href: "#",
-          modClass: "news__card",
-          imageDesktop: "/images/patients/3.webp",
+          imageDesktop: "/images/doctor-detail/article-main.webp",
           imageAlt: "Высокоточные операции на глазах доступны в Пятигорске",
           tag: "# новости",
           title: "Высокоточные операции на глазах доступны в Пятигорске",
@@ -134,8 +137,7 @@ const newsPageData = {
         },
         {
           href: "#",
-          modClass: "news__card",
-          imageDesktop: "/images/doctors/4.webp",
+          imageDesktop: "/images/doctor-detail/article-main.webp",
           imageAlt: "Глазная клиника «ФАКТ» — за здоровый образ жизни и спорт!",
           tag: "# справочник",
           title: "Глазная клиника «ФАКТ» — за здоровый образ жизни и спорт!",

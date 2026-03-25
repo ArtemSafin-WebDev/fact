@@ -1,5 +1,7 @@
 <section class="news">
     <div class="news__content">
+        {{> components/breadcrumbs items=newsPage.breadcrumbs }}
+
         <h1 class="news__title">
             {{newsPage.title}}
         </h1>
@@ -8,7 +10,6 @@
             <li class="news__list-item">
                 {{> components/blog-card
                 href=href
-                modClass=modClass
                 imageDesktop=imageDesktop
                 imageAlt=imageAlt
                 tag=tag
