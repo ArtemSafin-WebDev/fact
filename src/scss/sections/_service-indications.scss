@@ -31,28 +31,31 @@
 
   .service-indications__list {
     margin-top: 8rem;
-    padding: 1px;
     list-style: none;
     display: grid;
     grid-template-columns: repeat(4, minmax(0, 1fr));
-    gap: 1px;
-    background-color: #d3d3d3;
 
     @include media.breakpoint(mobile) {
       margin-top: 4rem;
-      padding: 0;
       display: flex;
       flex-direction: column;
-      background-color: transparent;
-      gap: 0;
     }
   }
 
   .service-indications__item {
     display: flex;
+    min-width: 0;
+    border: 1px solid #d3d3d3;
+    background-color: #fff;
+    &:not(:nth-child(4n + 1)) {
+      margin-left: -1px;
+    }
+    &:nth-child(n + 5) {
+      margin-top: -1px;
+    }
 
     @include media.breakpoint(mobile) {
-      border: 1px solid #d3d3d3;
+      margin-left: 0;
       &:not(:first-child) {
         margin-top: -1px;
       }
@@ -65,7 +68,6 @@
     padding: 4rem;
     display: flex;
     flex-direction: column;
-    background-color: #fff;
     gap: 2rem;
 
     @include media.breakpoint(mobile) {

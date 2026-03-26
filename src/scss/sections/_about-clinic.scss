@@ -130,18 +130,13 @@
   .about-clinic__list {
     display: grid;
     grid-template-columns: repeat(4, minmax(0, 1fr));
-    gap: 1px;
-    padding: 1px;
-    background-color: #d3d3d3;
     margin-top: 8rem;
     position: relative;
     z-index: 10;
     margin-bottom: -8rem;
+
     @include media.breakpoint(mobile) {
       display: flex;
-      gap: 0;
-      padding: 0;
-      background: transparent;
       margin-top: 0;
       margin-bottom: 0;
       z-index: 2;
@@ -151,11 +146,21 @@
   .about-clinic__list-item {
     display: flex;
     flex-direction: column;
+    min-width: 0;
+    border: 1px solid #d3d3d3;
+    background-color: #fff;
+    &:not(:nth-child(4n + 1)) {
+      margin-left: -1px;
+    }
+    &:nth-child(n + 5) {
+      margin-top: -1px;
+    }
 
     @include media.breakpoint(mobile) {
       width: 34.2rem;
-      border: 1px solid #d3d3d3;
+      margin-left: 0;
       border-right: none;
+
       &:last-child {
         border-right: 1px solid #d3d3d3;
       }
@@ -163,7 +168,6 @@
   }
 
   .about-clinic__card {
-    background-color: #fff;
     color: var(--text-color);
     aspect-ratio: 1 / 1;
     display: grid;
