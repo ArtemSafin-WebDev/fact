@@ -1,26 +1,28 @@
-<div class="cookie-modal" id="cookie-modal" aria-hidden="true">
-    <div class="cookie-modal__inner" role="region" aria-labelledby="cookie-modal-title">
-        <button class="cookie-modal__close js-cookie-dismiss" type="button" aria-label="Закрыть окно">
-            <svg width="15" height="15" aria-hidden="true">
-                <use xlink:href="#modal-close"></use>
-            </svg>
-        </button>
-        <div class="cookie-modal__content">
-            <h2 class="cookie-modal__title" id="cookie-modal-title">внимание!</h2>
-            <p class="cookie-modal__description">
-                Продолжая использовать этот сайт и нажимая кнопку «Принимаю», вы даете согласие на
-                <a href="/policy-personal-data" class="cookie-modal__link">обработку персональных данных</a>, использование
-                Яндекс.Метрики, и соглашаетесь с
-                <a href="/policy-cookie" class="cookie-modal__link">политикой обработки файлов cookie</a>.
-            </p>
-            <div class="cookie-modal__actions">
-                <button class="btn btn--no-hover cookie-modal__btn js-cookie-accept" type="button">
-                    принять
-                </button>
-                <button class="btn btn--dark-transparent cookie-modal__btn js-cookie-dismiss" type="button">
-                    отклонить
-                </button>
+<template id="cookie-modal-template">
+    <div class="cookie-modal" id="cookie-modal" aria-hidden="true">
+        <div class="cookie-modal__inner" role="region" aria-labelledby="cookie-modal-title">
+            <button class="cookie-modal__close js-cookie-dismiss" type="button" aria-label="Закрыть окно">
+                <svg width="15" height="15" aria-hidden="true">
+                    <use xlink:href="#modal-close"></use>
+                </svg>
+            </button>
+            <div class="cookie-modal__content">
+                <h2 class="cookie-modal__title" id="cookie-modal-title">внимание!</h2>
+                <p class="cookie-modal__description">
+                    Продолжая использовать этот сайт и нажимая кнопку «Принимаю», вы даете согласие на
+                    <a href="/policy-personal-data" class="cookie-modal__link">обработку персональных данных</a>, использование
+                    Яндекс.Метрики, и соглашаетесь с
+                    <a href="/policy-cookie" class="cookie-modal__link">политикой обработки файлов cookie</a>.
+                </p>
+                <div class="cookie-modal__actions">
+                    <button class="btn btn--no-hover cookie-modal__btn js-cookie-accept" type="button">
+                        принять
+                    </button>
+                    <button class="btn btn--dark-transparent cookie-modal__btn js-cookie-dismiss" type="button">
+                        отклонить
+                    </button>
+                </div>
             </div>
         </div>
     </div>
-</div>
+</template>

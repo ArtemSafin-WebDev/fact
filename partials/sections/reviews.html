@@ -9,25 +9,28 @@
         </h1>
 
         <div class="reviews__ratings">
-            <div class="slider-nav reviews__ratings-nav">
-                <button class="slider-nav__arrow slider-nav__arrow--prev" type="button"
-                    aria-label="Предыдущая площадка">
-                    <svg width="14" height="14" aria-hidden="true">
-                        <use xlink:href="#arrow-left"></use>
-                    </svg>
-                    <svg class="slider-nav__arrow-icon--bold" aria-hidden="true">
-                        <use xlink:href="#arrow-left-bold"></use>
-                    </svg>
-                </button>
-                <button class="slider-nav__arrow slider-nav__arrow--next" type="button"
-                    aria-label="Следующая площадка">
-                    <svg width="14" height="14" aria-hidden="true">
-                        <use xlink:href="#arrow-right"></use>
-                    </svg>
-                    <svg class="slider-nav__arrow-icon--bold" aria-hidden="true">
-                        <use xlink:href="#arrow-right-bold"></use>
-                    </svg>
-                </button>
+            <div class="reviews__ratings-controls">
+                <div class="reviews__ratings-fraction" aria-live="polite" data-reviews-total="4"></div>
+                <div class="slider-nav reviews__ratings-nav">
+                    <button class="slider-nav__arrow slider-nav__arrow--prev" type="button"
+                        aria-label="Предыдущая площадка">
+                        <svg width="14" height="14" aria-hidden="true">
+                            <use xlink:href="#arrow-left"></use>
+                        </svg>
+                        <svg class="slider-nav__arrow-icon--bold" aria-hidden="true">
+                            <use xlink:href="#arrow-left-bold"></use>
+                        </svg>
+                    </button>
+                    <button class="slider-nav__arrow slider-nav__arrow--next" type="button"
+                        aria-label="Следующая площадка">
+                        <svg width="14" height="14" aria-hidden="true">
+                            <use xlink:href="#arrow-right"></use>
+                        </svg>
+                        <svg class="slider-nav__arrow-icon--bold" aria-hidden="true">
+                            <use xlink:href="#arrow-right-bold"></use>
+                        </svg>
+                    </button>
+                </div>
             </div>
             <div class="reviews__ratings-slider">
                 <div class="swiper reviews__ratings-swiper">
@@ -69,6 +72,14 @@
                     {{/each}}
                 </ul>
             </fieldset>
+            <p class="reviews__filters-scroll-hint" aria-hidden="true">
+                <span class="reviews__filters-scroll-hint-icon">
+                    <svg aria-hidden="true">
+                        <use xlink:href="#scroll-helper"></use>
+                    </svg>
+                </span>
+                Листайте влево/вправо чтобы просмотреть все методы
+            </p>
 
             <div class="reviews__videos">
                 {{#each reviewsPage.videoReviews}}

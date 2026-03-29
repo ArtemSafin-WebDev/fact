@@ -57,13 +57,29 @@
     }
   }
 
-  .reviews__ratings-nav {
-    align-self: flex-end;
+  .reviews__ratings-controls {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
     margin-bottom: 4rem;
 
     @include media.breakpoint(mobile) {
+      justify-content: space-between;
       margin-bottom: 2rem;
     }
+  }
+
+  .reviews__ratings-fraction {
+    display: none;
+
+    @include media.breakpoint(mobile) {
+      display: flex;
+      white-space: nowrap;
+    }
+  }
+
+  .reviews__ratings-nav {
+    margin-left: auto;
   }
 
   .reviews__ratings-slider {
@@ -100,7 +116,7 @@
     margin-top: 12rem;
 
     @include media.breakpoint(mobile) {
-      margin-top: 6rem;
+      margin-top: 9rem;
     }
   }
 
@@ -112,10 +128,6 @@
     @include media.breakpoint(mobile) {
       gap: 1.5rem;
     }
-  }
-
-  .reviews__heading {
-    margin: 0;
   }
 
   .reviews__subtitle {
@@ -140,6 +152,15 @@
 
     @include media.breakpoint(mobile) {
       margin-top: 4rem;
+      margin-left: calc(-1 * var(--content-padding));
+      margin-right: calc(-1 * var(--content-padding));
+      width: calc(100% + (var(--content-padding) * 2));
+      padding-left: var(--content-padding);
+      padding-right: var(--content-padding);
+      box-sizing: border-box;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      @include utils.noScrollbar;
     }
   }
 
@@ -155,37 +176,142 @@
 
   .reviews__filters .tabs-nav__list {
     @include media.breakpoint(mobile) {
-      overflow-x: auto;
-      @include utils.noScrollbar;
+      width: max-content;
+      overflow: visible;
+    }
+  }
+
+  .reviews__filters .tabs-nav__list-item {
+    @include media.breakpoint(mobile) {
+      &:not(:first-child) {
+        margin-left: -0.05rem;
+      }
     }
   }
 
   .reviews__filters .tabs-nav__btn {
     width: 100%;
     min-width: 22rem;
+
+    @include media.breakpoint(mobile) {
+      width: auto;
+      min-width: 0;
+      height: 4rem;
+      padding: 0 1rem;
+      border-width: 0.05rem;
+      font-size: 1rem;
+      letter-spacing: 0;
+      white-space: nowrap;
+    }
+  }
+
+  .reviews__filters-scroll-hint {
+    display: none;
+
+    @include media.breakpoint(mobile) {
+      margin-top: 2rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.8rem;
+      font-weight: 500;
+      line-height: 130%;
+      color: #161616;
+    }
+  }
+
+  .reviews__filters-scroll-hint-icon {
+    @include media.breakpoint(mobile) {
+      display: inline-flex;
+      align-items: center;
+    }
+  }
+
+  .reviews__filters-scroll-hint-icon svg {
+    @include media.breakpoint(mobile) {
+      width: 1.5rem;
+      height: 1.5rem;
+      flex-shrink: 0;
+    }
   }
 
   .reviews__videos {
     margin-top: 4rem;
     display: grid;
     grid-template-columns: repeat(4, minmax(0, 1fr));
-    gap: 1px;
-    background-color: #f3f3f3;
-    padding: 1px;
+    gap: 0;
+    border-top: 1px solid #f3f3f3;
+    border-left: 1px solid #f3f3f3;
 
     @include media.breakpoint(mobile) {
-      margin-top: 2rem;
-      grid-template-columns: minmax(0, 1fr);
+      margin-top: 4rem;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0.2rem;
+      row-gap: 0;
+      border-top: none;
+      border-left: none;
     }
   }
 
   .reviews__videos-item {
     display: flex;
     min-width: 0;
+    border-right: 1px solid #f3f3f3;
+    border-bottom: 1px solid #f3f3f3;
+
+    @include media.breakpoint(mobile) {
+      border: none;
+      overflow: hidden;
+    }
   }
 
   .reviews__videos-item .video-review-card {
     width: 100%;
+
+    @include media.breakpoint(mobile) {
+      background-color: #e3e1de;
+    }
+  }
+
+  .reviews__videos-item .video-review-card__media {
+    @include media.breakpoint(mobile) {
+      height: 16.5rem;
+      aspect-ratio: auto;
+    }
+  }
+
+  .reviews__videos-item .video-review-card__content {
+    @include media.breakpoint(mobile) {
+      padding: 3.2rem 2.325rem;
+    }
+  }
+
+  .reviews__videos-item .video-review-card__author-group {
+    @include media.breakpoint(mobile) {
+      gap: 1rem;
+      width: 12.5rem;
+    }
+  }
+
+  .reviews__videos-item .video-review-card__stars {
+    @include media.breakpoint(mobile) {
+      gap: 0;
+    }
+  }
+
+  .reviews__videos-item .video-review-card__stars svg {
+    @include media.breakpoint(mobile) {
+      width: 1.5rem;
+      height: 1.4rem;
+    }
+  }
+
+  .reviews__videos-item .video-review-card__text {
+    @include media.breakpoint(mobile) {
+      width: 12.3rem;
+      -webkit-line-clamp: 2;
+      line-clamp: 2;
+    }
   }
 
   .reviews__show-more {
@@ -211,7 +337,7 @@
     flex-direction: column;
 
     @include media.breakpoint(mobile) {
-      margin-top: 8rem;
+      margin-top: 4rem;
     }
   }
 
@@ -224,9 +350,9 @@
     color: #111;
 
     @include media.breakpoint(mobile) {
-      font-size: 1.8rem;
-      line-height: 100%;
-      letter-spacing: -0.018rem;
+      font-size: 1.5rem;
+      line-height: 120%;
+      letter-spacing: -0.015rem;
     }
   }
 
@@ -234,24 +360,50 @@
     margin-top: 4rem;
     display: grid;
     grid-template-columns: repeat(4, minmax(0, 1fr));
-    gap: 1px;
-    background-color: #f3f3f3;
-    padding: 1px;
+    gap: 0;
+    border-top: 1px solid #f3f3f3;
+    border-left: 1px solid #f3f3f3;
 
     @include media.breakpoint(mobile) {
-      margin-top: 2rem;
-      grid-template-columns: minmax(0, 1fr);
+      margin-top: 4rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1px;
+      border: none;
     }
   }
 
   .reviews__independent-item {
     display: flex;
     min-width: 0;
+    border-right: 1px solid #f3f3f3;
+    border-bottom: 1px solid #f3f3f3;
+
+    @include media.breakpoint(mobile) {
+      border: none;
+    }
   }
 
   .reviews__independent-item .doctor-details__review-card {
     width: 100%;
     background-color: #fff;
+
+    @include media.breakpoint(mobile) {
+      background-color: #f6f6f6;
+    }
+  }
+
+  .reviews__independent-item .doctor-details__review-stars {
+    @include media.breakpoint(mobile) {
+      gap: 0;
+    }
+  }
+
+  .reviews__independent-item .doctor-details__review-stars svg {
+    @include media.breakpoint(mobile) {
+      width: 1.5rem;
+      height: 1.4rem;
+    }
   }
 
   .reviews__independent-item .doctor-details__review-text {
