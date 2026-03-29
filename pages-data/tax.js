@@ -1,7 +1,7 @@
-const taxDeductionPageData = {
-  "/tax-deduction.html": {
+const taxPageData = {
+  "/tax.html": {
     title: "Налоговый вычет",
-    taxDeduction: {
+    tax: {
       breadcrumbs: [
         {
           title: "Главная",
@@ -20,4 +20,4 @@ const taxDeductionPageData = {
   },
 };
 
-export default taxDeductionPageData;
+export default taxPageData;

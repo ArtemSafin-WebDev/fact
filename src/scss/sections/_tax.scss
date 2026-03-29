@@ -1,0 +1,233 @@
+@use "utils";
+
+@layer sections {
+  .tax {
+    @include utils.blockWrapper;
+    padding-top: 20.4rem;
+    margin-bottom: 12rem;
+  }
+
+  .tax__content {
+    @include utils.blockContent;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .tax__hero {
+    margin-top: 4rem;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: 0;
+    background-color: var(--green-300);
+  }
+
+  .tax__hero-left {
+    padding: 8rem 4rem;
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+  }
+
+  .tax__title {
+    font-size: 8rem;
+    font-style: normal;
+    font-weight: 900;
+    line-height: 100%;
+    letter-spacing: -0.08rem;
+    text-transform: uppercase;
+    color: var(--text-color);
+    text-wrap: balance;
+  }
+
+  .tax__lead {
+    max-width: 66rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+
+    p {
+      font-size: 1.8rem;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 140%;
+      letter-spacing: -0.018rem;
+      color: var(--text-color);
+    }
+  }
+
+  .tax__hero-right {
+    padding: 8rem 4rem 8rem 0;
+    display: flex;
+    justify-content: flex-start;
+  }
+
+  .tax__form {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .tax__fields {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+  }
+
+  .tax__field-row {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: 6rem;
+  }
+
+  .tax__input-wrapper {
+    width: 100%;
+  }
+
+  .tax__input {
+    display: block;
+    width: 100%;
+    border-bottom: 0.1rem solid rgb(22 22 22 / 40%);
+    padding: 0 0 3.2rem;
+    color: var(--text-color);
+    font-size: 1.8rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 120%;
+    letter-spacing: -0.018rem;
+
+    &::placeholder {
+      color: var(--text-color);
+      opacity: 1;
+    }
+  }
+
+  .tax__select.select {
+    width: 100%;
+  }
+
+  .tax__select .select__btn {
+    padding: 0 0 3.2rem;
+    border-bottom: 0.1rem solid rgb(22 22 22 / 40%);
+    background-color: transparent;
+    color: var(--text-color);
+    font-size: 1.8rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 120%;
+    letter-spacing: -0.018rem;
+  }
+
+  .tax__select .select__btn-arrow {
+    width: 2rem;
+    height: 2rem;
+
+    svg {
+      width: 100%;
+      height: 100%;
+      fill: currentColor;
+    }
+  }
+
+  .tax__select .select__dropdown {
+    top: 100%;
+    border: 1px solid rgb(22 22 22 / 20%);
+  }
+
+  .tax__select .select__option span {
+    font-size: 1.6rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 120%;
+    padding: 1.4rem 1.6rem;
+  }
+
+  .tax__checkbox {
+    display: inline-flex;
+    align-items: center;
+    gap: 2rem;
+    position: relative;
+    cursor: pointer;
+    width: fit-content;
+  }
+
+  .tax__checkbox-input {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .tax__checkbox-icon {
+    width: 3rem;
+    aspect-ratio: 1 / 1;
+    border: 0.1rem solid rgb(22 22 22 / 40%);
+    display: grid;
+    place-items: center;
+    color: var(--text-color);
+
+    svg {
+      width: 1.7rem;
+      height: 1.3rem;
+      opacity: 0.2;
+      transition: opacity 0.2s;
+    }
+  }
+
+  .tax__checkbox-input:checked + .tax__checkbox-icon {
+    svg {
+      opacity: 1;
+    }
+  }
+
+  .tax__checkbox-text {
+    color: var(--text-color);
+    font-size: 1.5rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 120%;
+    letter-spacing: -0.015rem;
+  }
+
+  .tax__actions {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .tax__policy,
+  .tax__note {
+    color: var(--text-color);
+    font-size: 1.2rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%;
+    letter-spacing: -0.012rem;
+  }
+
+  .tax__policy a {
+    text-decoration: underline;
+    text-decoration-thickness: 0.1rem;
+    text-decoration-skip-ink: none;
+    text-underline-offset: 0.1rem;
+  }
+
+  .tax__submit {
+    width: 100%;
+    padding: 2.2rem 2rem;
+    background-color: var(--text-color);
+    color: #fff;
+    text-align: center;
+    font-size: 1.5rem;
+    font-style: normal;
+    font-weight: 900;
+    line-height: 100%;
+    letter-spacing: -0.015rem;
+    text-transform: uppercase;
+    transition:
+      background-color 0.2s,
+      color 0.2s;
+
+    &:hover {
+      background-color: #fff;
+      color: var(--text-color);
+    }
+  }
+}

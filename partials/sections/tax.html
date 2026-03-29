@@ -1,15 +1,15 @@
-<section class="tax-deduction">
-    <div class="tax-deduction__content">
-        {{> components/breadcrumbs items=taxDeduction.breadcrumbs }}
+<section class="tax">
+    <div class="tax__content">
+        {{> components/breadcrumbs items=tax.breadcrumbs }}
 
-        <div class="tax-deduction__hero">
-            <div class="tax-deduction__hero-left">
-                <h1 class="tax-deduction__title">
+        <div class="tax__hero">
+            <div class="tax__hero-left">
+                <h1 class="tax__title">
                     заявка<br>
                     на налоговый<br>
                     вычет
                 </h1>
-                <div class="tax-deduction__lead">
+                <div class="tax__lead">
                     <p>
                         Налоговый вычет — часть суммы, потраченной на лечение, которая
                         возвращается вам из ранее уплаченного подоходного налога.
@@ -23,75 +23,75 @@
                 </div>
             </div>
 
-            <div class="tax-deduction__hero-right">
-                <form action="/" method="POST" class="tax-deduction__form js-form">
-                    <div class="tax-deduction__fields">
-                        <div class="tax-deduction__field">
-                            <div class="tax-deduction__input-wrapper">
-                                <input type="text" class="tax-deduction__input" name="taxpayer-full-name" required
+            <div class="tax__hero-right">
+                <form action="/" method="POST" class="tax__form js-form">
+                    <div class="tax__fields">
+                        <div class="tax__field">
+                            <div class="tax__input-wrapper">
+                                <input type="text" class="tax__input" name="taxpayer-full-name" required
                                     placeholder="ФИО налогоплательщика" aria-label="ФИО налогоплательщика">
                             </div>
                         </div>
 
-                        <div class="tax-deduction__field">
-                            <div class="tax-deduction__input-wrapper">
-                                <input type="text" class="tax-deduction__input" name="taxpayer-birth-date" required
+                        <div class="tax__field">
+                            <div class="tax__input-wrapper">
+                                <input type="text" class="tax__input" name="taxpayer-birth-date" required
                                     placeholder="Дата рождения налогоплательщика"
                                     aria-label="Дата рождения налогоплательщика" data-mask="date" data-validate-date
                                     inputmode="numeric" autocomplete="off">
                             </div>
                         </div>
 
-                        <div class="tax-deduction__field">
-                            <div class="tax-deduction__input-wrapper">
-                                <input type="text" class="tax-deduction__input" name="taxpayer-inn" required
+                        <div class="tax__field">
+                            <div class="tax__input-wrapper">
+                                <input type="text" class="tax__input" name="taxpayer-inn" required
                                     placeholder="ИНН" aria-label="ИНН" data-mask="inn" data-validate-inn
                                     data-inn-type="individual"
                                     inputmode="numeric" autocomplete="off">
                             </div>
                         </div>
 
-                        <div class="tax-deduction__field-row">
-                            <div class="tax-deduction__field">
-                                <div class="tax-deduction__input-wrapper">
-                                    <input type="text" class="tax-deduction__input" name="passport-series-number" required
+                        <div class="tax__field-row">
+                            <div class="tax__field">
+                                <div class="tax__input-wrapper">
+                                    <input type="text" class="tax__input" name="passport-series-number" required
                                         placeholder="Серия и номер паспорта" aria-label="Серия и номер паспорта"
                                         data-mask="passport" data-validate-passport inputmode="numeric"
                                         autocomplete="off">
                                 </div>
                             </div>
 
-                            <div class="tax-deduction__field">
-                                <div class="tax-deduction__input-wrapper">
-                                    <input type="text" class="tax-deduction__input" name="passport-issue-date" required
+                            <div class="tax__field">
+                                <div class="tax__input-wrapper">
+                                    <input type="text" class="tax__input" name="passport-issue-date" required
                                         placeholder="Дата выдачи паспорта" aria-label="Дата выдачи паспорта"
                                         data-mask="date" data-validate-date inputmode="numeric" autocomplete="off">
                                 </div>
                             </div>
                         </div>
 
-                        <div class="tax-deduction__field-row">
-                            <div class="tax-deduction__field">
-                                <div class="tax-deduction__input-wrapper">
-                                    <input type="text" class="tax-deduction__input" name="passport-issued-by" required
+                        <div class="tax__field-row">
+                            <div class="tax__field">
+                                <div class="tax__input-wrapper">
+                                    <input type="text" class="tax__input" name="passport-issued-by" required
                                         placeholder="Кем выдан" aria-label="Кем выдан">
                                 </div>
                             </div>
 
-                            <div class="tax-deduction__field">
-                                <div class="tax-deduction__input-wrapper tax-deduction__input-wrapper--year-range js-year-range-field">
-                                    <input type="text" class="tax-deduction__input tax-deduction__input--year-range js-year-range-picker"
+                            <div class="tax__field">
+                                <div class="tax__input-wrapper tax__input-wrapper--year-range datepicker-field js-year-range-field">
+                                    <input type="text" class="tax__input tax__input--year-range datepicker-field__input js-year-range-picker"
                                         name="tax-years" placeholder="За какие годы" aria-label="За какие годы" required
                                         data-validate-year-range readonly>
-                                    <svg class="tax-deduction__field-arrow" width="16" height="16" aria-hidden="true">
+                                    <svg class="tax__field-arrow datepicker-field__arrow" width="16" height="16" aria-hidden="true">
                                         <use xlink:href="#select-arrow"></use>
                                     </svg>
                                 </div>
                             </div>
                         </div>
 
-                        <div class="tax-deduction__field tax-deduction__field--select">
-                            <div class="select tax-deduction__select js-select" data-placeholder="Куда вам отправить документы?">
+                        <div class="tax__field tax__field--select">
+                            <div class="select tax__select js-select" data-placeholder="Куда вам отправить документы?">
                                 <button class="select__btn" type="button" aria-label="Куда вам отправить документы?">
                                     <span class="select__btn-text js-btn-text">Куда вам отправить документы?</span>
                                     <svg class="select__btn-arrow" width="16" height="16" aria-hidden="true">
@@ -119,23 +119,23 @@
                             </div>
                         </div>
 
-                        <label class="tax-deduction__checkbox">
-                            <input type="checkbox" class="tax-deduction__checkbox-input" name="patient-not-me">
-                            <span class="tax-deduction__checkbox-icon" aria-hidden="true">
+                        <label class="tax__checkbox">
+                            <input type="checkbox" class="tax__checkbox-input" name="patient-not-me">
+                            <span class="tax__checkbox-icon" aria-hidden="true">
                                 <svg width="17" height="13" aria-hidden="true">
                                     <use xlink:href="#check-mark"></use>
                                 </svg>
                             </span>
-                            <span class="tax-deduction__checkbox-text">Пациент — не я</span>
+                            <span class="tax__checkbox-text">Пациент — не я</span>
                         </label>
 
-                        <div class="tax-deduction__actions">
-                            <p class="tax-deduction__policy">
+                        <div class="tax__actions">
+                            <p class="tax__policy">
                                 Нажимая кнопку, вы соглашаетесь с условиями обработки персональных данных и
                                 <a href="#">Политикой конфиденциальности</a>
                             </p>
-                            <button class="tax-deduction__submit" type="submit">отправить</button>
-                            <p class="tax-deduction__note">
+                            <button class="tax__submit" type="submit">отправить</button>
+                            <p class="tax__note">
                                 Примечание: Отправка справок по электронной почте не предусмотрена действующими
                                 нормативными актами Налогового кодекса РФ. Готовые справки на электронную почту
                                 граждан не высылаются! Так как это не отвечает требованиям информационной безопасности

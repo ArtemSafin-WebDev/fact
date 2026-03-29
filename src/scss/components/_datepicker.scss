@@ -1,0 +1,223 @@
+@layer components {
+  .datepicker-field {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  .datepicker-field__input {
+    padding-right: 4rem;
+    cursor: pointer;
+    user-select: none;
+  }
+
+  .datepicker-field__arrow {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 2rem;
+    height: 2rem;
+    color: var(--text-color);
+    pointer-events: none;
+    transition: transform 0.2s;
+
+    use {
+      fill: currentColor;
+    }
+  }
+
+  .datepicker-field.is-open .datepicker-field__arrow {
+    transform: rotate(180deg);
+  }
+
+  .datepicker-popup {
+    --adp-font-family: var(--inter);
+    --adp-font-size: 15px;
+    --adp-width: 100%;
+    --adp-z-index: 80;
+    --adp-padding: 0;
+    --adp-pointer-size: 0;
+    --adp-transition-offset: 0;
+    --adp-border-radius: 0;
+    --adp-cell-border-radius: 0;
+    --adp-nav-height: 48px;
+    --adp-nav-action-size: 48px;
+    --adp-year-cell-height: 64px;
+    --adp-background-color: #fff;
+    --adp-border-color: rgb(22 22 22 / 20%);
+    --adp-border-color-inline: rgb(22 22 22 / 20%);
+    --adp-border-color-inner: #e2e1dd;
+    --adp-color: var(--text-color);
+    --adp-accent-color: var(--text-color);
+    --adp-color-current-date: var(--text-color);
+    --adp-color-secondary: rgb(22 22 22 / 62%);
+    --adp-nav-color-secondary: rgb(22 22 22 / 62%);
+    --adp-nav-arrow-color: var(--text-color);
+    --adp-background-color-hover: #f1f1ef;
+    --adp-background-color-active: #ebebe8;
+    --adp-cell-background-color-hover: #f1f1ef;
+    --adp-cell-background-color-selected: #f1f1ef;
+    --adp-cell-background-color-selected-hover: #ebebe8;
+    --adp-cell-background-color-in-range: #f1f1ef;
+    --adp-cell-background-color-in-range-hover: #ebebe8;
+    --adp-background-color-selected-other-month: #f1f1ef;
+    --adp-background-color-selected-other-month-focused: #ebebe8;
+    --adp-cell-border-color-in-range: #e2e1dd;
+    --adp-btn-height: 44px;
+    --adp-btn-border-radius: 0;
+    --adp-btn-color: var(--text-color);
+    --adp-btn-color-hover: var(--text-color);
+    --adp-btn-background-color-hover: #f6f6f6;
+    --adp-btn-background-color-active: #efefef;
+    border-radius: 0;
+    box-shadow: none;
+    font-family: var(--inter);
+  }
+
+  .datepicker-popup .air-datepicker--pointer {
+    display: none;
+  }
+
+  .datepicker-popup .air-datepicker-nav {
+    padding: 0;
+    background-color: transparent;
+    border-bottom: 0.1rem solid #e2e1dd;
+  }
+
+  .datepicker-popup .air-datepicker-nav--title {
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 1;
+    letter-spacing: -0.01rem;
+    text-transform: uppercase;
+    color: var(--text-color);
+  }
+
+  .datepicker-popup .air-datepicker-nav--title i {
+    margin-left: 0.4rem;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 1;
+    color: rgb(22 22 22 / 55%);
+  }
+
+  .datepicker-popup .air-datepicker-nav--action svg {
+    display: none;
+  }
+
+  .datepicker-popup .air-datepicker-nav--action {
+    position: relative;
+  }
+
+  .datepicker-popup .air-datepicker-nav--action::before {
+    content: "";
+    width: 1.6rem;
+    height: 1.6rem;
+    display: block;
+    background: url("../../icons/arrow-left.svg") center / contain no-repeat;
+  }
+
+  .datepicker-popup .air-datepicker-nav--action[data-action="next"]::before,
+  .datepicker-popup .air-datepicker-nav--action:last-child::before {
+    transform: rotate(180deg);
+  }
+
+  .datepicker-popup .air-datepicker-nav--action:hover {
+    background-color: #f6f6f6;
+  }
+
+  .datepicker-popup .air-datepicker--content {
+    padding: 0;
+  }
+
+  .datepicker-popup .air-datepicker-body--cells.-years- {
+    gap: 0;
+  }
+
+  .datepicker-popup .air-datepicker-cell.-year- {
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 1;
+    letter-spacing: -0.013rem;
+    color: var(--text-color);
+  }
+
+  .datepicker-popup .air-datepicker-cell.-year-.-other-decade- {
+    color: rgb(22 22 22 / 45%);
+  }
+
+  .datepicker-popup .air-datepicker-cell.-disabled- {
+    opacity: 1;
+    color: rgb(22 22 22 / 45%);
+  }
+
+  .datepicker-popup .air-datepicker-cell.-in-range- {
+    color: var(--text-color);
+    background-color: #ececec !important;
+  }
+
+  .datepicker-popup .air-datepicker-cell.-selected- {
+    color: var(--text-color);
+    font-weight: 900;
+    background-color: #ececec !important;
+  }
+
+  .datepicker-popup .air-datepicker-cell.-current-,
+  .datepicker-popup .air-datepicker-cell.-current-.-focus-,
+  .datepicker-popup .air-datepicker-cell.-current-.-in-range- {
+    color: var(--text-color);
+  }
+
+  .datepicker-popup .air-datepicker-cell.-year-.-current-,
+  .datepicker-popup .air-datepicker-cell.-year-.-current-.-focus-,
+  .datepicker-popup .air-datepicker-cell.-year-.-current-.-in-range-,
+  .datepicker-popup .air-datepicker-cell.-year-.-current-.-selected- {
+    color: var(--text-color) !important;
+  }
+
+  .datepicker-popup .air-datepicker-cell.-year-.-other-decade-.-selected-,
+  .datepicker-popup .air-datepicker-cell.-year-.-other-decade-.-in-range-,
+  .datepicker-popup .air-datepicker-cell.-year-.-other-decade-.-in-range-.-focus-,
+  .datepicker-popup .air-datepicker-cell.-year-.-other-decade-.-selected-.-focus- {
+    background-color: #ececec !important;
+    color: rgb(22 22 22 / 55%) !important;
+  }
+
+  .datepicker-popup .air-datepicker-cell.-range-from-,
+  .datepicker-popup .air-datepicker-cell.-range-to- {
+    border-width: 0 !important;
+    border-radius: 0;
+    background-color: var(--text-color) !important;
+    color: #fff !important;
+  }
+
+  .datepicker-popup .air-datepicker-cell.-range-from-.-focus-,
+  .datepicker-popup .air-datepicker-cell.-range-to-.-focus-,
+  .datepicker-popup .air-datepicker-cell.-range-to-.-range-from- {
+    background-color: var(--text-color) !important;
+    color: #fff !important;
+  }
+
+  .datepicker-popup .air-datepicker--buttons {
+    padding: 0;
+    border-top: 0.1rem solid #e2e1dd;
+  }
+
+  .datepicker-popup .air-datepicker-button {
+    color: var(--text-color);
+  }
+
+  .datepicker-popup .air-datepicker-button span {
+    font-size: 11px;
+    font-style: normal;
+    font-weight: 900;
+    line-height: 1;
+    letter-spacing: -0.011rem;
+    text-transform: uppercase;
+    color: var(--text-color);
+  }
+}
