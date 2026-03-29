@@ -7,6 +7,7 @@ import promo from "./promo";
 import clinic from "./clinic";
 import licenses from "./licenses";
 import ratings from "./ratings";
+import reviews from "./reviews";
 import doctorDetails from "./doctorDetails";
 import blog from "./blog";
 import aboutClinic from "./aboutClinic";
@@ -49,4 +50,5 @@ export default function sections() {
   initContactsHero();
   licenses();
   ratings();
+  reviews();
 }

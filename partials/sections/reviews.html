@@ -1,0 +1,166 @@
+<section class="reviews">
+    <div class="reviews__content">
+        {{> components/breadcrumbs items=reviewsPage.breadcrumbs }}
+
+        <h1 class="reviews__title">
+            {{#each reviewsPage.titleLines}}
+            <span>{{this}}</span>
+            {{/each}}
+        </h1>
+
+        <div class="reviews__ratings">
+            <div class="slider-nav reviews__ratings-nav">
+                <button class="slider-nav__arrow slider-nav__arrow--prev" type="button"
+                    aria-label="Предыдущая площадка">
+                    <svg width="14" height="14" aria-hidden="true">
+                        <use xlink:href="#arrow-left"></use>
+                    </svg>
+                    <svg class="slider-nav__arrow-icon--bold" aria-hidden="true">
+                        <use xlink:href="#arrow-left-bold"></use>
+                    </svg>
+                </button>
+                <button class="slider-nav__arrow slider-nav__arrow--next" type="button"
+                    aria-label="Следующая площадка">
+                    <svg width="14" height="14" aria-hidden="true">
+                        <use xlink:href="#arrow-right"></use>
+                    </svg>
+                    <svg class="slider-nav__arrow-icon--bold" aria-hidden="true">
+                        <use xlink:href="#arrow-right-bold"></use>
+                    </svg>
+                </button>
+            </div>
+            <div class="reviews__ratings-slider">
+                <div class="swiper reviews__ratings-swiper">
+                    <div class="swiper-wrapper">
+                        {{#each reviewsPage.ratings}}
+                        <div class="swiper-slide">
+                            <div class="rating-card">
+                                <div class="rating-card__stars">
+                                    <svg width="14" height="14" aria-hidden="true">
+                                        <use xlink:href="#star"></use>
+                                    </svg>
+                                </div>
+                                <div class="rating-card__amount">{{amount}}</div>
+                                <img src="{{logo}}" alt="{{logoAlt}}" class="rating-card__source">
+                            </div>
+                        </div>
+                        {{/each}}
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="reviews__patients">
+            <div class="reviews__heading-block">
+                <h2 class="h2 reviews__heading">{{reviewsPage.patientsTitle}}</h2>
+                <div class="reviews__subtitle">{{reviewsPage.patientsSubtitle}}</div>
+            </div>
+
+            <fieldset class="tabs-nav reviews__filters">
+                <legend class="reviews__filters-legend">Фильтр отзывов</legend>
+                <ul class="tabs-nav__list">
+                    {{#each reviewsPage.filters}}
+                    <li class="tabs-nav__list-item">
+                        <button class="tabs-nav__btn{{#if active}} active{{/if}}" type="button"
+                            data-reviews-filter="{{id}}" aria-pressed="{{#if active}}true{{else}}false{{/if}}">
+                            {{title}}
+                        </button>
+                    </li>
+                    {{/each}}
+                </ul>
+            </fieldset>
+
+            <div class="reviews__videos">
+                {{#each reviewsPage.videoReviews}}
+                <article class="reviews__videos-item" data-reviews-card data-reviews-category="{{category}}">
+                    <a href="{{href}}" class="video-review-card">
+                        <div class="video-review-card__media">
+                            <div class="video-review-card__bg">
+                                <img src="{{image}}" alt="">
+                            </div>
+                            <div class="video-review-card__play">
+                                <svg width="14" height="14" aria-hidden="true">
+                                    <use xlink:href="#play"></use>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="video-review-card__content">
+                            <div class="video-review-card__meta">
+                                <div class="video-review-card__author-group">
+                                    <h3 class="video-review-card__title">{{name}}</h3>
+                                    <div class="video-review-card__date">{{date}}</div>
+                                </div>
+                                <div class="video-review-card__stars" aria-label="5 из 5">
+                                    <svg width="14" height="14" aria-hidden="true">
+                                        <use xlink:href="#star"></use>
+                                    </svg>
+                                    <svg width="14" height="14" aria-hidden="true">
+                                        <use xlink:href="#star"></use>
+                                    </svg>
+                                    <svg width="14" height="14" aria-hidden="true">
+                                        <use xlink:href="#star"></use>
+                                    </svg>
+                                    <svg width="14" height="14" aria-hidden="true">
+                                        <use xlink:href="#star"></use>
+                                    </svg>
+                                    <svg width="14" height="14" aria-hidden="true">
+                                        <use xlink:href="#star"></use>
+                                    </svg>
+                                </div>
+                            </div>
+                            <div class="video-review-card__text">{{text}}</div>
+                        </div>
+                    </a>
+                </article>
+                {{/each}}
+            </div>
+
+            <button class="btn btn--mobile-large reviews__show-more" type="button">{{reviewsPage.showMoreText}}</button>
+        </div>
+
+        <div class="reviews__independent">
+            <h3 class="reviews__independent-title">{{reviewsPage.externalTitle}}</h3>
+            <div class="reviews__independent-list">
+                {{#each reviewsPage.externalReviews}}
+                <div class="reviews__independent-item">
+                    <article class="doctor-details__review-card">
+                        <div class="doctor-details__review-head">
+                            <div>
+                                <h4 class="doctor-details__review-name">{{name}}</h4>
+                                <div class="doctor-details__review-date">{{date}}</div>
+                            </div>
+                            <div class="doctor-details__review-stars" aria-label="5 из 5">
+                                <svg width="14" height="14" aria-hidden="true">
+                                    <use xlink:href="#star"></use>
+                                </svg>
+                                <svg width="14" height="14" aria-hidden="true">
+                                    <use xlink:href="#star"></use>
+                                </svg>
+                                <svg width="14" height="14" aria-hidden="true">
+                                    <use xlink:href="#star"></use>
+                                </svg>
+                                <svg width="14" height="14" aria-hidden="true">
+                                    <use xlink:href="#star"></use>
+                                </svg>
+                                <svg width="14" height="14" aria-hidden="true">
+                                    <use xlink:href="#star"></use>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="doctor-details__review-text">{{text}}</div>
+                        <a href="{{href}}" class="large-btn doctor-details__review-btn">
+                            <span class="doctor-details__review-btn-text">{{buttonText}}</span>
+                            <svg class="doctor-details__review-btn-icon" width="13" height="13" viewBox="0 0 13 13"
+                                aria-hidden="true">
+                                <path
+                                    d="M12.5605 11.5H9.56055V5.12109L2.12109 12.5605L0 10.4395L7.43945 3H1.06055V0H12.5605V11.5Z" />
+                            </svg>
+                        </a>
+                    </article>
+                </div>
+                {{/each}}
+            </div>
+            <button class="btn btn--mobile-large reviews__show-more" type="button">{{reviewsPage.showMoreText}}</button>
+        </div>
+    </div>
+</section>

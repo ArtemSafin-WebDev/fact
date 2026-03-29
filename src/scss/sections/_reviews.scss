@@ -1,0 +1,270 @@
+@use "utils";
+@use "media";
+
+@layer sections {
+  .reviews {
+    @include utils.blockWrapper;
+    padding-top: 20.4rem;
+    padding-bottom: 12rem;
+    background-color: #eaeaea;
+
+    @include media.breakpoint(mobile) {
+      padding-top: 16.5rem;
+      padding-bottom: 6rem;
+    }
+  }
+
+  .reviews .breadcrumbs {
+    @include media.breakpoint(mobile) {
+      display: none;
+    }
+  }
+
+  .reviews__content {
+    @include utils.blockContent;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+  }
+
+  .reviews__title {
+    margin-top: 4rem;
+    display: flex;
+    flex-direction: column;
+    text-wrap: balance;
+    font-size: 8rem;
+    font-style: normal;
+    font-weight: 900;
+    line-height: 100%;
+    letter-spacing: -0.08rem;
+    text-transform: uppercase;
+
+    @include media.breakpoint(mobile) {
+      margin-top: 0;
+      font-size: 4rem;
+      letter-spacing: -0.1rem;
+      max-width: 100%;
+    }
+  }
+
+  .reviews__ratings {
+    margin-top: 8rem;
+    display: flex;
+    flex-direction: column;
+
+    @include media.breakpoint(mobile) {
+      margin-top: 4rem;
+    }
+  }
+
+  .reviews__ratings-nav {
+    align-self: flex-end;
+    margin-bottom: 4rem;
+
+    @include media.breakpoint(mobile) {
+      margin-bottom: 2rem;
+    }
+  }
+
+  .reviews__ratings-slider {
+    min-width: 0;
+  }
+
+  .reviews__ratings-slider .swiper {
+    overflow: visible;
+  }
+
+  .reviews__ratings-slider .swiper-slide {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    box-sizing: border-box;
+    width: 25%;
+    transition: opacity 0.4s;
+    border-right: 1px solid #eaeaea;
+
+    &:not(.swiper-slide-visible) {
+      opacity: 0.3;
+    }
+
+    @include media.breakpoint(mobile) {
+      width: 18.7rem;
+
+      &:not(.swiper-slide-visible) {
+        opacity: 1;
+      }
+    }
+  }
+
+  .reviews__patients {
+    margin-top: 12rem;
+
+    @include media.breakpoint(mobile) {
+      margin-top: 6rem;
+    }
+  }
+
+  .reviews__heading-block {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+
+    @include media.breakpoint(mobile) {
+      gap: 1.5rem;
+    }
+  }
+
+  .reviews__heading {
+    margin: 0;
+  }
+
+  .reviews__subtitle {
+    font-size: 1.8rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 100%;
+    color: #161616;
+
+    @include media.breakpoint(mobile) {
+      font-size: 1.5rem;
+      line-height: 120%;
+      letter-spacing: -0.015rem;
+    }
+  }
+
+  .reviews__filters {
+    margin-top: 8rem;
+    border: none;
+    min-width: 0;
+    padding: 0;
+
+    @include media.breakpoint(mobile) {
+      margin-top: 4rem;
+    }
+  }
+
+  .reviews__filters-legend {
+    position: absolute;
+    width: 0.1rem;
+    height: 0.1rem;
+    clip-path: inset(100%);
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+    white-space: nowrap;
+  }
+
+  .reviews__filters .tabs-nav__list {
+    @include media.breakpoint(mobile) {
+      overflow-x: auto;
+      @include utils.noScrollbar;
+    }
+  }
+
+  .reviews__filters .tabs-nav__btn {
+    width: 100%;
+    min-width: 22rem;
+  }
+
+  .reviews__videos {
+    margin-top: 4rem;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 1px;
+    background-color: #f3f3f3;
+    padding: 1px;
+
+    @include media.breakpoint(mobile) {
+      margin-top: 2rem;
+      grid-template-columns: minmax(0, 1fr);
+    }
+  }
+
+  .reviews__videos-item {
+    display: flex;
+    min-width: 0;
+  }
+
+  .reviews__videos-item .video-review-card {
+    width: 100%;
+  }
+
+  .reviews__show-more {
+    margin-top: 8rem;
+    align-self: center;
+    margin-inline: auto;
+    width: 43.9rem;
+    height: 6rem;
+    display: grid;
+    place-items: center;
+    padding: 0 2rem;
+    text-align: center;
+
+    @include media.breakpoint(mobile) {
+      margin-top: 4rem;
+      width: 100%;
+    }
+  }
+
+  .reviews__independent {
+    margin-top: 16rem;
+    display: flex;
+    flex-direction: column;
+
+    @include media.breakpoint(mobile) {
+      margin-top: 8rem;
+    }
+  }
+
+  .reviews__independent-title {
+    font-size: 2rem;
+    font-weight: 900;
+    line-height: 120%;
+    letter-spacing: -0.02rem;
+    text-transform: uppercase;
+    color: #111;
+
+    @include media.breakpoint(mobile) {
+      font-size: 1.8rem;
+      line-height: 100%;
+      letter-spacing: -0.018rem;
+    }
+  }
+
+  .reviews__independent-list {
+    margin-top: 4rem;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 1px;
+    background-color: #f3f3f3;
+    padding: 1px;
+
+    @include media.breakpoint(mobile) {
+      margin-top: 2rem;
+      grid-template-columns: minmax(0, 1fr);
+    }
+  }
+
+  .reviews__independent-item {
+    display: flex;
+    min-width: 0;
+  }
+
+  .reviews__independent-item .doctor-details__review-card {
+    width: 100%;
+    background-color: #fff;
+  }
+
+  .reviews__independent-item .doctor-details__review-text {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  @include media.breakpointMF(above-mobile) {
+    .reviews__independent-item .doctor-details__review-card {
+      aspect-ratio: 439 / 317;
+    }
+  }
+}
