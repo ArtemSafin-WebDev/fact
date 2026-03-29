@@ -16,6 +16,10 @@ type Locale = {
   emailField: string;
   alphanumericField: string;
   phoneField: string;
+  dateField: string;
+  innField: string;
+  passportField: string;
+  yearRangeField: string;
 };
 
 type Localization = {
@@ -29,12 +33,20 @@ const defaultLocalization: Localization = {
     emailField: "Введите корректный E-mail",
     alphanumericField: "Разрешены только цифры и буквы",
     phoneField: "Введите правильный номер телефона",
+    dateField: "Введите дату в формате ДД.ММ.ГГГГ",
+    innField: "Введите корректный ИНН",
+    passportField: "Введите серию и номер паспорта",
+    yearRangeField: "Выберите диапазон лет",
   },
   en: {
     requiredField: "Field is required",
     emailField: "Enter correct E-mail",
     alphanumericField: "Only digits and numbers allowed",
     phoneField: "Enter correct phone number",
+    dateField: "Enter a date in DD.MM.YYYY format",
+    innField: "Enter valid INN",
+    passportField: "Enter valid passport series and number",
+    yearRangeField: "Select a year range",
   },
 };
 
@@ -135,6 +147,36 @@ class Validator {
 
   private initializeMasks() {
     this.textFields.forEach((field) => {
+      if (field.matches('[data-mask="date"]')) {
+        const instance = new Inputmask({
+          mask: "99.99.9999",
+          clearIncomplete: true,
+          showMaskOnHover: false,
+        });
+        instance.mask(field);
+      }
+
+      if (field.matches('[data-mask="inn"]')) {
+        const isIndividualInn = field.getAttribute("data-inn-type") === "individual";
+
+        const instance = new Inputmask({
+          mask: isIndividualInn ? "999999999999" : "9999999999[99]",
+          greedy: !isIndividualInn,
+          clearIncomplete: true,
+          showMaskOnHover: false,
+        });
+        instance.mask(field);
+      }
+
+      if (field.matches('[data-mask="passport"]')) {
+        const instance = new Inputmask({
+          mask: "9999 999999",
+          clearIncomplete: true,
+          showMaskOnHover: false,
+        });
+        instance.mask(field);
+      }
+
       if (field.matches('[type="tel"]')) {
         const instance = new Inputmask({ mask: "+7 (999) 999-99-99" });
         instance.mask(field);
@@ -193,6 +235,43 @@ class Validator {
         this.errors.push({
           element: field,
           message: this.localization[this.locale].alphanumericField,
+        });
+      }
+    }
+
+    if (value && field.matches("[data-validate-date]")) {
+      if (!this.isValidDate(value)) {
+        this.errors.push({
+          element: field,
+          message: this.localization[this.locale].dateField,
+        });
+      }
+    }
+
+    if (value && field.matches("[data-validate-inn]")) {
+      const innType = field.getAttribute("data-inn-type");
+      if (!this.isValidInn(value, innType === "individual" ? "individual" : "any")) {
+        this.errors.push({
+          element: field,
+          message: this.localization[this.locale].innField,
+        });
+      }
+    }
+
+    if (value && field.matches("[data-validate-passport]")) {
+      if (!this.isValidPassport(value)) {
+        this.errors.push({
+          element: field,
+          message: this.localization[this.locale].passportField,
+        });
+      }
+    }
+
+    if (value && field.matches("[data-validate-year-range]")) {
+      if (!this.isValidYearRange(value)) {
+        this.errors.push({
+          element: field,
+          message: this.localization[this.locale].yearRangeField,
         });
       }
     }
@@ -287,6 +366,79 @@ class Validator {
     error: ValidationError | null
   ): void {
     this.placeErrorMessage(select, error);
+  }
+
+  private isValidDate(value: string): boolean {
+    const match = value.match(/^(\d{2})\.(\d{2})\.(\d{4})$/);
+    if (!match) {
+      return false;
+    }
+
+    const day = Number(match[1]);
+    const month = Number(match[2]);
+    const year = Number(match[3]);
+    const currentYear = new Date().getFullYear();
+
+    if (year < 1900 || year > currentYear) {
+      return false;
+    }
+
+    const date = new Date(year, month - 1, day);
+    return (
+      date.getFullYear() === year &&
+      date.getMonth() === month - 1 &&
+      date.getDate() === day
+    );
+  }
+
+  private isValidInn(value: string, type: "any" | "individual" = "any"): boolean {
+    const inn = value.replace(/\D/g, "");
+    if (type === "individual" && inn.length !== 12) {
+      return false;
+    }
+
+    if (type === "any" && !(inn.length === 10 || inn.length === 12)) {
+      return false;
+    }
+
+    if (inn.length === 10) {
+      const checksum = [2, 4, 10, 3, 5, 9, 4, 6, 8]
+        .map((coef, index) => coef * Number(inn[index]))
+        .reduce((acc, item) => acc + item, 0);
+
+      return checksum % 11 % 10 === Number(inn[9]);
+    }
+
+    const checksum11 = [7, 2, 4, 10, 3, 5, 9, 4, 6, 8]
+      .map((coef, index) => coef * Number(inn[index]))
+      .reduce((acc, item) => acc + item, 0);
+
+    if (checksum11 % 11 % 10 !== Number(inn[10])) {
+      return false;
+    }
+
+    const checksum12 = [3, 7, 2, 4, 10, 3, 5, 9, 4, 6, 8]
+      .map((coef, index) => coef * Number(inn[index]))
+      .reduce((acc, item) => acc + item, 0);
+
+    return checksum12 % 11 % 10 === Number(inn[11]);
+  }
+
+  private isValidPassport(value: string): boolean {
+    const digits = value.replace(/\D/g, "");
+    return digits.length === 10;
+  }
+
+  private isValidYearRange(value: string): boolean {
+    const match = value.match(/^(\d{4})\s—\s(\d{4})$/);
+    if (!match) {
+      return false;
+    }
+
+    const fromYear = Number(match[1]);
+    const toYear = Number(match[2]);
+
+    return fromYear <= toYear;
   }
 
   public validate(): boolean {
