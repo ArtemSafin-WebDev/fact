@@ -1,0 +1,31 @@
+<section class="news-article-related">
+    <div class="news-article-related__content">
+        <div class="news-article-related__head">
+            <h2 class="h2 news-article-related__title">
+                {{newsArticle.relatedNews.title}}
+            </h2>
+            <p class="news-article-related__subtitle">
+                {{newsArticle.relatedNews.subtitle}}
+            </p>
+        </div>
+
+        <div class="news-article-related__slider">
+            <div class="swiper">
+                <ul class="swiper-wrapper news-article-related__list">
+                    {{#each newsArticle.relatedNews.cards}}
+                    <li class="swiper-slide news-article-related__list-item">
+                        {{> components/blog-card
+                        href=href
+                        imageDesktop=imageDesktop
+                        imageAlt=imageAlt
+                        tag=tag
+                        title=title
+                        description=description
+                        }}
+                    </li>
+                    {{/each}}
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
