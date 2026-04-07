@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  {{> layout/meta }}
+</head>
+
+<body>
+  {{> layout/header }}
+  <main class="page-main page-main--about">
+    {{> sections/intro }}
+    {{> components/video-preview className="video-preview--about" }}
+    {{> sections/team-fact }}
+    {{> sections/doctors }}
+    {{> sections/about-atmosphere }}
+    {{> sections/service-equipment className="service-equipment--offset-top" }}
+    {{> sections/first-visit }}
+    {{> sections/contacts-socials }}
+  </main>
+  {{> layout/footer }}
+  {{> components/modals }}
+
+  <script type="module" src="/src/js/main.ts"></script>
+  <script defer src="/js/forms.js"></script>
+</body>
+
+</html>

@@ -9,6 +9,12 @@
     }
   }
 
+  .intro__breadcrumbs {
+    @include media.breakpoint(mobile) {
+      display: none;
+    }
+  }
+
   .intro__top {
     @include utils.blockWrapper;
     position: relative;

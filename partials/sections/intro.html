@@ -2,22 +2,31 @@
     <div class="intro__top">
         <div class="intro__top-bg">
             <picture>
-                <source srcset="/images/intro/bg-mobile.webp" media="(max-width: 640px)" />
-                <img src="/images/intro/bg.webp" alt="">
+                {{#if intro.background.mobileSrc}}
+                <source srcset="{{intro.background.mobileSrc}}" media="(max-width: 640px)" />
+                {{/if}}
+                <img src="{{intro.background.src}}" alt="{{intro.background.alt}}">
             </picture>
         </div>
 
         <div class="intro__top-content">
+            {{#if intro.breadcrumbs}}
+            <div class="intro__breadcrumbs">
+                {{> components/breadcrumbs items=intro.breadcrumbs }}
+            </div>
+            {{/if}}
+
             <h1 class="intro__top-heading">
-                Лучшее<br> расставание<br> в жизни
+                {{{intro.title}}}
             </h1>
             <div class="intro__top-text">
-                Лазерная коррекция зрения
+                {{{intro.text}}}
             </div>
             <div class="intro__wrapper">
-                <a href="#feedback-modal" class="btn intro__callback-btn">
-                    Записаться на приём
+                <a href="{{intro.button.href}}" class="btn intro__callback-btn">
+                    {{intro.button.text}}
                 </a>
+                {{#if intro.showSliderNav}}
                 <div class="slider-nav slider-nav--white intro__slider-nav">
                     <button class="slider-nav__arrow slider-nav__arrow--prev" type="button">
                         <svg width="14" height="14" aria-hidden="true">
@@ -36,91 +45,45 @@
                         </svg>
                     </button>
                 </div>
+                {{/if}}
+                {{#if intro.social}}
                 <div class="intro__social">
+                    {{#each intro.social}}
                     <a href="#" class="intro__social-link">
                         <svg width="14" height="14" aria-hidden="true">
-                            <use xlink:href="#whatsapp"></use>
+                            <use xlink:href="#{{icon}}"></use>
                         </svg>
                     </a>
-                    <a href="#" class="intro__social-link">
-                        <svg width="14" height="14" aria-hidden="true">
-                            <use xlink:href="#telegram"></use>
-                        </svg>
-                    </a>
+                    {{/each}}
                 </div>
+                {{/if}}
             </div>
         </div>
 
 
     </div>
+    {{#if intro.numbers}}
     <div class="intro__bottom">
         <div class="intro__bottom-content">
             <div class="intro__slider">
                 <div class="swiper">
                     <div class="swiper-wrapper">
+                        {{#each intro.numbers}}
                         <div class="swiper-slide">
                             <div class="numbers-card">
                                 <div class="numbers-card__amount numbers-card__amount--medium">
-                                    40 000+
+                                    {{amount}}
                                 </div>
                                 <div class="numbers-card__text">
-                                    проведенных операций
+                                    {{{text}}}
                                 </div>
                             </div>
                         </div>
-                        <div class="swiper-slide">
-                            <div class="numbers-card">
-                                <div class="numbers-card__amount numbers-card__amount--medium">
-                                    60 000+
-                                </div>
-                                <div class="numbers-card__text">
-                                    довольных пациентов
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="numbers-card">
-                                <div class="numbers-card__amount numbers-card__amount--medium">
-                                    1000+
-                                </div>
-                                <div class="numbers-card__text">
-                                    положительных отзывов
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="numbers-card">
-                                <div class="numbers-card__amount numbers-card__amount--medium">
-                                    300+
-                                </div>
-                                <div class="numbers-card__text">
-                                    офтальмологических услуг
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="numbers-card">
-                                <div class="numbers-card__amount numbers-card__amount--medium">
-                                    40 000+
-                                </div>
-                                <div class="numbers-card__text">
-                                    проведенных операций
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="numbers-card">
-                                <div class="numbers-card__amount numbers-card__amount--medium">
-                                    60 000+
-                                </div>
-                                <div class="numbers-card__text">
-                                    довольных пациентов
-                                </div>
-                            </div>
-                        </div>
+                        {{/each}}
                     </div>
                 </div>
             </div>
         </div>
     </div>
+    {{/if}}
 </section>

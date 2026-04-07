@@ -131,9 +131,26 @@
   }
 }
 
+.page-main--about {
+  .intro {
+    margin-bottom: 0;
+  }
+}
+
 .video-preview--contacts {
   @include media.breakpoint(mobile) {
     aspect-ratio: 375 / 500;
     margin-top: 0;
+  }
+}
+
+.video-preview--about {
+  margin-top: -35rem;
+  position: relative;
+  z-index: 2;
+  aspect-ratio: 1920 / 1275;
+
+  .video-preview__info {
+    margin-top: 35rem;
   }
 }

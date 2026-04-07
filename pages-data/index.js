@@ -3,6 +3,47 @@ import { createCards } from "./shared/pageHelpers";
 const indexPageData = {
   "/index.html": {
     title: "Главная страница",
+    intro: {
+      background: {
+        src: "/images/intro/bg.webp",
+        mobileSrc: "/images/intro/bg-mobile.webp",
+        alt: "",
+      },
+      title: "Лучшее<br> расставание<br> в жизни",
+      text: "Лазерная коррекция зрения",
+      button: {
+        text: "Записаться на приём",
+        href: "#feedback-modal",
+      },
+      showSliderNav: true,
+      social: [{ icon: "whatsapp" }, { icon: "telegram" }],
+      numbers: [
+        {
+          amount: "40 000+",
+          text: "проведенных операций",
+        },
+        {
+          amount: "60 000+",
+          text: "довольных пациентов",
+        },
+        {
+          amount: "1000+",
+          text: "положительных отзывов",
+        },
+        {
+          amount: "300+",
+          text: "офтальмологических услуг",
+        },
+        {
+          amount: "40 000+",
+          text: "проведенных операций",
+        },
+        {
+          amount: "60 000+",
+          text: "довольных пациентов",
+        },
+      ],
+    },
     clinicServices: {
       sliderCards: [
         {
@@ -98,6 +139,8 @@ const indexPageData = {
       ],
     },
     doctors: {
+      title: "Наши врачи",
+      subtitle: "С заботой о вашем зрении",
       tabs: [
         {
           title: "Все клиники",

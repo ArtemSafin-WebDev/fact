@@ -2,6 +2,10 @@
 @use "media";
 
 @layer sections {
+  .service-equipment--offset-top {
+    margin-top: 12rem;
+  }
+
   .service-equipment {
     @include utils.blockWrapper;
     margin-bottom: 12rem;
@@ -88,10 +92,18 @@
 
   .service-equipment__slider .swiper {
     overflow: hidden;
-    border: 1px solid #cbcbcb;
+    position: relative;
+
+    &::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border: 1px solid #cbcbcb;
+      pointer-events: none;
+      z-index: 20;
+    }
 
     @include media.breakpoint(mobile) {
-      border: none;
       overflow: visible;
     }
   }
@@ -103,30 +115,18 @@
 
   .service-equipment__slide {
     position: relative;
+    width: 50%;
+    border-right: 1px solid #cbcbcb;
+    &:last-child {
+      border-right: none;
+    }
     @include media.breakpoint(mobile) {
+      width: 100%;
       border: 1px solid #cbcbcb;
       border-right: none;
       &:last-child {
         border-right: 1px solid #cbcbcb;
       }
-    }
-  }
-
-  .service-equipment__slide::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    width: 1px;
-    background-color: #cbcbcb;
-    opacity: 0;
-    transition: opacity 0.2s ease;
-    pointer-events: none;
-    z-index: 3;
-
-    @include media.breakpoint(mobile) {
-      display: none;
     }
   }
 

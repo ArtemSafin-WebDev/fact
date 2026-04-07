@@ -1,0 +1,19 @@
+<section class="about-atmosphere">
+    <div class="about-atmosphere__content">
+        <div class="about-atmosphere__heading">
+            <h2 class="about-atmosphere__title">
+                {{{aboutAtmosphere.title}}}
+            </h2>
+            <p class="about-atmosphere__text">
+                {{aboutAtmosphere.text}}
+            </p>
+        </div>
+        <ul class="about-atmosphere__list" aria-hidden="true">
+            {{#each aboutAtmosphere.images}}
+                <li class="about-atmosphere__item {{className}}">
+                    <img class="about-atmosphere__image" src="{{src}}" alt="" loading="lazy" decoding="async">
+                </li>
+            {{/each}}
+        </ul>
+    </div>
+</section>

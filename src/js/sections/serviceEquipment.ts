@@ -18,14 +18,9 @@ export default function serviceEquipment() {
 
     new Swiper(container, {
       speed: 600,
-      slidesPerView: 1,
+      slidesPerView: "auto",
       watchSlidesProgress: true,
       modules: [Navigation, Pagination],
-      breakpoints: {
-        641: {
-          slidesPerView: 2,
-        },
-      },
       navigation: {
         prevEl: element.querySelector<HTMLButtonElement>(
           ".service-equipment__slider-nav .slider-nav__arrow--prev",
