@@ -1,0 +1,29 @@
+<section class="news-article">
+    <div class="news-article__content">
+        {{> components/breadcrumbs items=newsArticle.breadcrumbs }}
+
+        <div class="news-article__inner">
+            <div class="news-article__head">
+                <p class="news-article__meta">
+                    Опубликовано: {{newsArticle.publishedAt}}
+                </p>
+
+                <h1 class="news-article__title">
+                    {{newsArticle.title}}
+                </h1>
+            </div>
+
+            <div class="news-article__body">
+                {{{newsArticle.bodyHtml}}}
+            </div>
+
+            <ul class="news-article__tags" aria-label="Теги статьи">
+                {{#each newsArticle.tags}}
+                <li class="news-article__tags-item">
+                    <span class="news-article__tag">{{this}}</span>
+                </li>
+                {{/each}}
+            </ul>
+        </div>
+    </div>
+</section>
