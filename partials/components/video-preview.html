@@ -1,7 +1,7 @@
 <a href="#" class="video-preview{{#if className}} {{className}}{{/if}}">
     <div class="video-preview__bg">
         <picture>
-            <source srcset="/images/about-clinic/preview-mobile.webp" media="(max-width: 640px)" />
+            <source srcset="{{#if mobileImage}}{{mobileImage}}{{else}}/images/about-clinic/preview-mobile.webp{{/if}}" media="(max-width: 640px)" />
             <img src="/images/about-clinic/preview.webp" alt="">
         </picture>
     </div>

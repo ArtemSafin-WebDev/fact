@@ -11,6 +11,7 @@ import reviews from "./reviews";
 import doctorDetails from "./doctorDetails";
 import blog from "./blog";
 import aboutClinic from "./aboutClinic";
+import aboutAtmosphere from "./aboutAtmosphere";
 import serviceBenefits from "./serviceBenefits";
 import serviceStages from "./serviceStages";
 import serviceEquipment from "./serviceEquipment";
@@ -41,6 +42,7 @@ export default function sections() {
   blog();
   clinic();
   aboutClinic();
+  aboutAtmosphere();
   serviceMethods();
   serviceSpecialists();
   serviceStages();

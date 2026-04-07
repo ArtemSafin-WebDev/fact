@@ -1,4 +1,5 @@
 @use "utils";
+@use "media";
 
 @layer sections {
   .about-atmosphere {
@@ -6,6 +7,11 @@
     padding-top: 8rem;
     padding-bottom: 8rem;
     background-color: #eaeaea;
+
+    @include media.breakpoint(mobile) {
+      padding-top: 6rem;
+      padding-bottom: 6rem;
+    }
   }
 
   .about-atmosphere__content {
@@ -16,6 +22,10 @@
 
   .about-atmosphere__heading {
     max-width: 109.5rem;
+
+    @include media.breakpoint(mobile) {
+      max-width: 34.1rem;
+    }
   }
 
   .about-atmosphere__title {
@@ -25,6 +35,11 @@
     letter-spacing: -0.08rem;
     text-transform: uppercase;
     color: #161616;
+
+    @include media.breakpoint(mobile) {
+      font-size: 4rem;
+      letter-spacing: -0.04rem;
+    }
   }
 
   .about-atmosphere__text {
@@ -34,6 +49,13 @@
     line-height: 120%;
     letter-spacing: -0.018rem;
     color: #161616;
+
+    @include media.breakpoint(mobile) {
+      margin-top: 1.5rem;
+      font-size: 1.4rem;
+      letter-spacing: -0.014rem;
+      max-width: 34.1rem;
+    }
   }
 
   .about-atmosphere__list {
@@ -42,6 +64,11 @@
     list-style: none;
     margin-top: 5rem;
     padding: 0;
+
+    @include media.breakpoint(mobile) {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      margin-top: 4rem;
+    }
   }
 
   .about-atmosphere__item {
@@ -57,15 +84,62 @@
     &:nth-child(5) {
       border-right: 0.2rem solid #eaeaea;
     }
+
+    @include media.breakpoint(mobile) {
+      border-bottom: 0.2rem solid #eaeaea;
+      border-right: 0;
+
+      &:nth-child(-n + 3) {
+        border-bottom: 0.2rem solid #eaeaea;
+      }
+
+      &:nth-child(2),
+      &:nth-child(4) {
+        border-right: 0.2rem solid #eaeaea;
+      }
+
+      &:nth-child(1) {
+        order: 1;
+      }
+
+      &:nth-child(2) {
+        order: 2;
+      }
+
+      &:nth-child(3) {
+        order: 3;
+      }
+
+      &:nth-child(6) {
+        order: 4;
+      }
+
+      &:nth-child(4) {
+        order: 5;
+      }
+
+      &:nth-child(5) {
+        order: 6;
+      }
+    }
   }
 
   .about-atmosphere__item--wide {
     grid-column: span 2;
     aspect-ratio: 880 / 499;
+
+    @include media.breakpoint(mobile) {
+      grid-column: 1 / -1;
+      aspect-ratio: 343 / 250;
+    }
   }
 
   .about-atmosphere__item--small {
     aspect-ratio: 440 / 499;
+
+    @include media.breakpoint(mobile) {
+      aspect-ratio: 172 / 250;
+    }
   }
 
   .about-atmosphere__image {
@@ -73,5 +147,35 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
+  }
+
+  .about-atmosphere__toggle {
+    display: none;
+
+    &[hidden] {
+      display: none;
+    }
+
+    @include media.breakpoint(mobile) {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      margin-top: 4rem;
+      padding: 2.3rem 3rem;
+      font-size: 1.4rem;
+      font-weight: 900;
+      line-height: 100%;
+      text-transform: uppercase;
+    }
+  }
+
+  .about-atmosphere:not(.is-mobile-expanded) {
+    @include media.breakpoint(mobile) {
+      .about-atmosphere__item:nth-child(4),
+      .about-atmosphere__item:nth-child(5) {
+        display: none;
+      }
+    }
   }
 }

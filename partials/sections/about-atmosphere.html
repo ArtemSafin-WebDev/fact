@@ -8,12 +8,16 @@
                 {{aboutAtmosphere.text}}
             </p>
         </div>
-        <ul class="about-atmosphere__list" aria-hidden="true">
+        <ul class="about-atmosphere__list" aria-hidden="true" data-about-atmosphere-list>
             {{#each aboutAtmosphere.images}}
                 <li class="about-atmosphere__item {{className}}">
                     <img class="about-atmosphere__image" src="{{src}}" alt="" loading="lazy" decoding="async">
                 </li>
             {{/each}}
         </ul>
+        <button class="btn btn--no-hover about-atmosphere__toggle" type="button" data-about-atmosphere-toggle
+            data-default-text="Показать еще фото" data-expanded-text="Скрыть" aria-expanded="false" hidden>
+            Показать еще фото
+        </button>
     </div>
 </section>

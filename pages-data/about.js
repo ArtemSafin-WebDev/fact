@@ -14,13 +14,14 @@ const aboutPageData = {
         { title: "О компании", isCurrent: true },
         { title: "О глазной клинике Факт", isGhost: true },
       ],
-      title: "О глазной<br>клинике<br>Факт",
+      title: "О глазной клинике Факт",
       text: "Наша миссия — повысить культуру и сервис сферы офтальмологии, чтобы каждый пациент мог получить качественное лечение без стресса и с первого раза",
       button: {
         text: "Записаться на диагностику",
         href: "#feedback-modal",
       },
       showSliderNav: false,
+      social: [{ icon: "whatsapp" }, { icon: "telegram" }],
       numbers: [
         {
           amount: "40 000+",
