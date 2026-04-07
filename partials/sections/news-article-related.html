@@ -9,6 +9,30 @@
             </p>
         </div>
 
+        <div class="news-article-related__controls">
+            <span class="news-article-related__fraction" aria-live="polite"></span>
+            <div class="slider-nav news-article-related__slider-nav">
+                <button class="slider-nav__arrow slider-nav__arrow--prev" type="button"
+                    aria-label="Предыдущая статья">
+                    <svg width="14" height="14" aria-hidden="true">
+                        <use xlink:href="#arrow-left"></use>
+                    </svg>
+                    <svg class="slider-nav__arrow-icon--bold" aria-hidden="true">
+                        <use xlink:href="#arrow-left-bold"></use>
+                    </svg>
+                </button>
+                <button class="slider-nav__arrow slider-nav__arrow--next" type="button"
+                    aria-label="Следующая статья">
+                    <svg width="14" height="14" aria-hidden="true">
+                        <use xlink:href="#arrow-right"></use>
+                    </svg>
+                    <svg class="slider-nav__arrow-icon--bold" aria-hidden="true">
+                        <use xlink:href="#arrow-right-bold"></use>
+                    </svg>
+                </button>
+            </div>
+        </div>
+
         <div class="news-article-related__slider">
             <div class="swiper">
                 <ul class="swiper-wrapper news-article-related__list">
@@ -21,11 +45,16 @@
                         tag=tag
                         title=title
                         description=description
+                        showButton=true
                         }}
                     </li>
                     {{/each}}
                 </ul>
             </div>
         </div>
+
+        <a href="/news.html" class="btn btn--mobile-large news-article-related__show-all">
+            смотреть все статьи
+        </a>
     </div>
 </section>

@@ -10,6 +10,7 @@ import ratings from "./ratings";
 import reviews from "./reviews";
 import doctorDetails from "./doctorDetails";
 import blog from "./blog";
+import newsArticleRelated from "./newsArticleRelated";
 import aboutClinic from "./aboutClinic";
 import aboutAtmosphere from "./aboutAtmosphere";
 import serviceBenefits from "./serviceBenefits";
@@ -40,6 +41,7 @@ export default function sections() {
   patients();
   promo();
   blog();
+  newsArticleRelated();
   clinic();
   aboutClinic();
   aboutAtmosphere();
