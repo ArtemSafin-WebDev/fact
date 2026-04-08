@@ -1,7 +1,8 @@
 <a
     href="{{#if href}}{{href}}{{else}}#{{/if}}"
-    class="clinic-services-horizontal-card"
+    class="clinic-services-horizontal-card{{#if hideDoctors}} clinic-services-horizontal-card--no-doctors{{/if}}"
 >
+    {{#unless hideDoctors}}
     <div class="clinic-services-horizontal-card__doctors">
         {{#each doctors}}
         <div class="clinic-services-horizontal-card__doctor">
@@ -9,6 +10,7 @@
         </div>
         {{/each}}
     </div>
+    {{/unless}}
     <h3 class="clinic-services-horizontal-card__title">
         {{title}}
     </h3>

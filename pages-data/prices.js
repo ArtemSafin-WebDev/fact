@@ -1,0 +1,225 @@
+const pricesPageData = {
+  "/prices.html": {
+    title: "Цены",
+    pricesHero: {
+      breadcrumbs: [
+        { title: "Главная", href: "/" },
+        { title: "О клинике", href: "/about.html" },
+        { title: "Цены", isCurrent: true },
+      ],
+      title: "Цены на лечение в клинике факт",
+      lead: "Никаких переплат и скрытых платежей, цены фиксированные и прописываются в договоре",
+      searchPlaceholder: "Найти услугу",
+      tabsLabel: "Выберите направление",
+      tabs: [
+        {
+          id: "diagnostics",
+          title: "Диагностика",
+          active: true,
+          items: [
+            {
+              href: "/service-detail.html",
+              hideDoctors: true,
+              title: "Лазерная коррекция LASIK",
+              description: "Передовые лазерные системы от ведущих мировых производителей",
+              price: "от 29 500 ₽",
+            },
+            {
+              href: "/service-detail.html",
+              hideDoctors: true,
+              title: "Лазерная коррекция LASIK",
+              description: "Только лучшие и безопасные технологии, проверенные опытом и временем",
+              price: "от 27 500 ₽",
+            },
+            {
+              href: "/service-detail.html",
+              hideDoctors: true,
+              title: "Лазерная коррекция LASIK",
+              description: "Заболевание глаз, характеризующееся повышением внутриглазного давления",
+              price: "от 10 500 ₽",
+            },
+            {
+              href: "/service-detail.html",
+              hideDoctors: true,
+              title: "Лазерная коррекция LASIK",
+              description: "Комплексное обследование на новейшем оборудовании с учетом возраста",
+              price: "от 27 500 ₽",
+            },
+            {
+              href: "/service-detail.html",
+              hideDoctors: true,
+              title: "Лазерная коррекция LASIK",
+              description: "Заболевание глаз, характеризующееся повышением внутриглазного давления",
+              price: "от 10 500 ₽",
+            },
+            {
+              href: "/service-detail.html",
+              hideDoctors: true,
+              title: "Лазерная коррекция LASIK",
+              description: "Комплексное обследование на новейшем оборудовании с учетом возраста",
+              price: "от 27 500 ₽",
+            },
+            {
+              href: "/service-detail.html",
+              hideDoctors: true,
+              title: "Лазерная коррекция LASIK",
+              description: "Заболевание глаз, характеризующееся повышением внутриглазного давления",
+              price: "от 10 500 ₽",
+            },
+            {
+              href: "/service-detail.html",
+              hideDoctors: true,
+              title: "Лазерная коррекция LASIK",
+              description: "Комплексное обследование на новейшем оборудовании с учетом возраста",
+              price: "от 27 500 ₽",
+            },
+          ],
+        },
+        {
+          id: "laser-correction",
+          title: "Лазерная коррекция",
+          items: [
+            {
+              href: "/service-detail.html",
+              hideDoctors: true,
+              title: "Femto Super LASIK",
+              description: "Максимально персонализированная коррекция зрения с быстрым восстановлением",
+              price: "от 49 000 ₽",
+            },
+            {
+              href: "/service-detail.html",
+              hideDoctors: true,
+              title: "Super LASIK",
+              description: "Коррекция близорукости, дальнозоркости и астигматизма по индивидуальным параметрам",
+              price: "от 39 000 ₽",
+            },
+            {
+              href: "/service-detail.html",
+              hideDoctors: true,
+              title: "LASIK",
+              description: "Классическая лазерная коррекция зрения с прогнозируемым результатом",
+              price: "от 29 500 ₽",
+            },
+            {
+              href: "/service-detail.html",
+              hideDoctors: true,
+              title: "ФРК",
+              description: "Метод коррекции для пациентов с индивидуальными особенностями роговицы",
+              price: "от 24 500 ₽",
+            },
+          ],
+        },
+        {
+          id: "glaucoma",
+          title: "Глаукома",
+          items: [
+            {
+              href: "/service-detail.html",
+              hideDoctors: true,
+              title: "Первичный прием глаукомолога",
+              description: "Комплексная оценка состояния зрительного нерва и внутриглазного давления",
+              price: "от 4 500 ₽",
+            },
+            {
+              href: "/service-detail.html",
+              hideDoctors: true,
+              title: "Лазерное лечение глаукомы",
+              description: "Щадящий метод стабилизации внутриглазного давления на ранних стадиях",
+              price: "от 18 000 ₽",
+            },
+            {
+              href: "/service-detail.html",
+              hideDoctors: true,
+              title: "Хирургическое лечение глаукомы",
+              description: "Оперативное лечение при прогрессирующем течении заболевания",
+              price: "от 42 000 ₽",
+            },
+          ],
+        },
+        {
+          id: "children",
+          title: "Детское отделение",
+          items: [
+            {
+              href: "/service-detail.html",
+              hideDoctors: true,
+              title: "Детская диагностика зрения",
+              description: "Проверка зрения у детей с учетом возраста и поведенческих особенностей",
+              price: "от 3 500 ₽",
+            },
+            {
+              href: "/service-detail.html",
+              hideDoctors: true,
+              title: "Подбор очковой коррекции",
+              description: "Подбор линз и рекомендаций для комфортной и безопасной коррекции",
+              price: "от 2 900 ₽",
+            },
+            {
+              href: "/service-detail.html",
+              hideDoctors: true,
+              title: "Лечение прогрессирующей миопии",
+              description: "Комплексный подход к замедлению снижения зрения у детей",
+              price: "от 8 500 ₽",
+            },
+          ],
+        },
+        {
+          id: "keratoconus",
+          title: "Кератоконус",
+          items: [
+            {
+              href: "/service-detail.html",
+              hideDoctors: true,
+              title: "Диагностика кератоконуса",
+              description: "Точная оценка формы и толщины роговицы на современном оборудовании",
+              price: "от 6 000 ₽",
+            },
+            {
+              href: "/service-detail.html",
+              hideDoctors: true,
+              title: "Кросслинкинг роговицы",
+              description: "Укрепление роговицы для остановки прогрессирования заболевания",
+              price: "от 35 000 ₽",
+            },
+            {
+              href: "/service-detail.html",
+              hideDoctors: true,
+              title: "Имплантация роговичных сегментов",
+              description: "Хирургическая коррекция формы роговицы при выраженном кератоконусе",
+              price: "от 58 000 ₽",
+            },
+          ],
+        },
+        {
+          id: "cataract",
+          title: "Катаракта",
+          items: [
+            {
+              href: "/service-detail.html",
+              hideDoctors: true,
+              title: "Диагностика катаракты",
+              description: "Подбор тактики лечения и расчет параметров искусственного хрусталика",
+              price: "от 5 000 ₽",
+            },
+            {
+              href: "/service-detail.html",
+              hideDoctors: true,
+              title: "Удаление катаракты",
+              description: "Современная факоэмульсификация с имплантацией интраокулярной линзы",
+              price: "от 48 000 ₽",
+            },
+            {
+              href: "/service-detail.html",
+              hideDoctors: true,
+              title: "Премиальные ИОЛ",
+              description: "Расширенные возможности зрения на разных дистанциях после операции",
+              price: "от 78 000 ₽",
+            },
+          ],
+        },
+      ],
+    },
+  },
+};
+
+export default pricesPageData;

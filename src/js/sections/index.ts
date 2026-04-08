@@ -19,6 +19,7 @@ import serviceEquipment from "./serviceEquipment";
 import serviceSpecialists from "./serviceSpecialists";
 import serviceMethods from "./serviceMethods";
 import tax from "./tax";
+import pricesHero from "./pricesHero";
 
 const initContactsHero = () => {
   if (!document.querySelector(".contacts-hero")) return;
@@ -51,6 +52,7 @@ export default function sections() {
   serviceBenefits();
   serviceEquipment();
   tax();
+  pricesHero();
   initContactsHero();
   licenses();
   ratings();

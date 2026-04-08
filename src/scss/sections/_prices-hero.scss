@@ -1,0 +1,172 @@
+@use "utils";
+
+@layer sections {
+  .prices-hero {
+    @include utils.blockWrapper;
+    padding-top: 20.4rem;
+    padding-bottom: 8rem;
+  }
+
+  .prices-hero__content {
+    @include utils.blockContent;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .prices-hero__title {
+    margin-top: 4rem;
+
+    font-size: 8rem;
+    font-weight: 900;
+    line-height: 100%;
+    letter-spacing: -0.08rem;
+    text-transform: uppercase;
+    color: #161616;
+  }
+
+  .prices-hero__lead {
+    margin-top: 4rem;
+    max-width: 88rem;
+    font-size: 1.8rem;
+    font-weight: 400;
+    line-height: 100%;
+    letter-spacing: -0.018rem;
+    color: #161616;
+  }
+
+  .prices-hero__search {
+    margin-top: 12rem;
+    width: min(132rem, 100%);
+    align-self: center;
+  }
+
+  .prices-hero__search-field {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: center;
+    gap: 1rem;
+    min-height: 6.6rem;
+    padding: 0 1.6rem;
+    border: 1px solid #b3b3b3;
+  }
+
+  .prices-hero__search-field input {
+    width: 100%;
+    border: none;
+    color: #161616;
+    font-size: 1.5rem;
+    font-weight: 400;
+    line-height: 100%;
+    letter-spacing: -0.015rem;
+  }
+
+  .prices-hero__search-field input::placeholder {
+    color: #161616;
+    opacity: 1;
+  }
+
+  .prices-hero__search-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #161616;
+  }
+
+  .prices-hero__search-icon svg {
+    display: block;
+    width: 2.5rem;
+    height: 2.5rem;
+    fill: currentColor;
+  }
+
+  .prices-hero__tabs {
+    margin-top: 8.8rem;
+    border: none;
+    padding: 0;
+    min-width: 0;
+  }
+
+  .prices-hero__legend {
+    position: absolute;
+    width: 0.1rem;
+    height: 0.1rem;
+    clip-path: inset(100%);
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+    white-space: nowrap;
+  }
+
+  .prices-hero__tabs-caption {
+    margin-bottom: 3.6rem;
+    font-size: 1.8rem;
+    font-weight: 400;
+    line-height: 100%;
+    letter-spacing: -0.018rem;
+    color: #161616;
+  }
+
+  .prices-hero__tabs .tabs-nav__list {
+    width: 100%;
+  }
+
+  .prices-hero__tabs .tabs-nav__list-item {
+    flex: 1 1 0;
+  }
+
+  .prices-hero__tabs .tabs-nav__btn {
+    width: 100%;
+    min-width: 0;
+    min-height: 6rem;
+    padding: 2rem;
+    border-color: rgb(22 22 22 / 30%);
+    font-size: 1.5rem;
+    line-height: 100%;
+    letter-spacing: -0.015rem;
+  }
+
+  .prices-hero__tabs .tabs-nav__btn.active {
+    border-color: var(--green-300);
+  }
+
+  .prices-hero__panel {
+    display: none;
+    margin-top: 8rem;
+  }
+
+  .prices-hero__panel.is-active {
+    display: block;
+  }
+
+  .prices-hero.is-empty-results .prices-hero__panel.is-active {
+    display: none;
+  }
+
+  .prices-hero__list {
+    display: grid;
+    grid-template-columns: 62rem minmax(0, 1fr) auto;
+  }
+
+  .prices-hero__list-item {
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: subgrid;
+    border-top: 1px solid #d3d3d3;
+  }
+
+  .prices-hero__list-item[hidden] {
+    display: none;
+  }
+
+  .prices-hero__list-item:first-child {
+    border-top: none;
+  }
+
+  .prices-hero__empty {
+    margin-top: 4rem;
+    font-size: 2rem;
+    font-weight: 400;
+    line-height: 120%;
+    letter-spacing: -0.02rem;
+    color: #161616;
+  }
+}

@@ -46,6 +46,21 @@
     }
   }
 
+  .clinic-services-horizontal-card--no-doctors {
+    grid-template-areas: "title text price";
+
+    @include media.canHover {
+      &:hover .clinic-services-horizontal-card__title,
+      &:hover .clinic-services-horizontal-card__text {
+        transform: translateX(4rem);
+      }
+
+      &:hover .clinic-services-horizontal-card__price {
+        transform: translateX(-4rem);
+      }
+    }
+  }
+
   .clinic-services-horizontal-card__doctors {
     grid-area: doctors;
     display: flex;
@@ -92,6 +107,7 @@
     text-transform: uppercase;
     grid-area: title;
     color: #222;
+    transition: transform 0.2s;
 
     @include media.breakpoint(mobile) {
       font-size: 2rem;
@@ -106,6 +122,10 @@
     }
   }
 
+  .clinic-services-horizontal-card--no-doctors .clinic-services-horizontal-card__title {
+    max-width: 100%;
+  }
+
   .clinic-services-horizontal-card__text {
     font-size: 1.8rem;
     font-style: normal;
@@ -113,6 +133,7 @@
     line-height: 140%;
     color: #222;
     grid-area: text;
+    transition: transform 0.2s;
 
     @include media.breakpoint(mobile) {
       display: none;

@@ -1,0 +1,58 @@
+<section class="prices-hero">
+    <div class="prices-hero__content">
+        {{> components/breadcrumbs items=pricesHero.breadcrumbs }}
+
+        <h1 class="prices-hero__title">
+            {{pricesHero.title}}
+        </h1>
+
+        <p class="prices-hero__lead">
+            {{pricesHero.lead}}
+        </p>
+
+        <form class="prices-hero__search" action="#" role="search" novalidate>
+            <label class="prices-hero__search-field">
+                <input type="search" name="service-search" placeholder="{{pricesHero.searchPlaceholder}}"
+                    aria-label="Найти услугу" data-prices-search>
+                <span class="prices-hero__search-icon" aria-hidden="true">
+                    <svg width="25" height="25" aria-hidden="true">
+                        <use xlink:href="#search"></use>
+                    </svg>
+                </span>
+            </label>
+        </form>
+
+        <fieldset class="tabs-nav prices-hero__tabs">
+            <legend class="prices-hero__legend">{{pricesHero.tabsLabel}}</legend>
+            <p class="prices-hero__tabs-caption">{{pricesHero.tabsLabel}}</p>
+            <ul class="tabs-nav__list">
+                {{#each pricesHero.tabs}}
+                <li class="tabs-nav__list-item">
+                    <button class="tabs-nav__btn{{#if active}} active{{/if}}" type="button" role="tab"
+                        aria-selected="{{#if active}}true{{else}}false{{/if}}" data-prices-tab-btn="{{id}}">
+                        {{title}}
+                    </button>
+                </li>
+                {{/each}}
+            </ul>
+        </fieldset>
+
+        {{#each pricesHero.tabs}}
+        <div class="prices-hero__panel{{#if active}} is-active{{/if}}" data-prices-panel="{{id}}" role="tabpanel"
+            aria-hidden="{{#if active}}false{{else}}true{{/if}}">
+            <ul class="prices-hero__list">
+                {{#each items}}
+                <li class="prices-hero__list-item" data-prices-item
+                    data-prices-search-text="{{title}} {{description}} {{price}}">
+                    {{> components/clinic-services-horizontal-card }}
+                </li>
+                {{/each}}
+            </ul>
+        </div>
+        {{/each}}
+
+        <p class="prices-hero__empty" hidden data-prices-empty>
+            Нет найденных результатов
+        </p>
+    </div>
+</section>
