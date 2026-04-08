@@ -7,6 +7,10 @@
     padding-top: 12rem;
     margin-bottom: 12rem;
 
+    &:has(+ .patients) {
+      margin-bottom: 0;
+    }
+
     &:not(:has(.video-preview)) {
       .about-clinic__list {
         margin-bottom: 0;

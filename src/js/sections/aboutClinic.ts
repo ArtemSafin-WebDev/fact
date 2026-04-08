@@ -9,6 +9,7 @@ export default function aboutClinic() {
   const sections = Array.from(
     document.querySelectorAll<HTMLElement>(".about-clinic"),
   );
+  const hasPricesHero = Boolean(document.querySelector(".prices-hero"));
 
   sections.forEach((section) => {
     const circle = section.querySelector<HTMLElement>(".about-clinic__circle");
@@ -23,7 +24,7 @@ export default function aboutClinic() {
 
     const mm = gsap.matchMedia();
 
-    if (circle) {
+    if (circle && !hasPricesHero) {
       mm.add("(min-width: 641px)", () => {
         const tween = gsap.to(circle, {
           y: -56,

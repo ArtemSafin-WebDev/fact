@@ -9,7 +9,7 @@
 
     @include media.breakpoint(mobile) {
       padding-top: 16.5rem;
-      padding-bottom: 6rem;
+      padding-bottom: 0;
     }
   }
 
@@ -191,7 +191,6 @@
 
     @include media.breakpoint(mobile) {
       width: auto;
-      height: 4rem;
       min-height: 4rem;
       padding: 0 1rem;
       border-width: 0.05rem;
@@ -277,7 +276,8 @@
     display: none;
   }
 
-  .prices-hero__list-item:not([hidden]) ~ .prices-hero__list-item:not([hidden]) {
+  .prices-hero__list-item:not([hidden])
+    ~ .prices-hero__list-item:not([hidden]) {
     border-top: 1px solid #d3d3d3;
   }
 

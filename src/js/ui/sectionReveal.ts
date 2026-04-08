@@ -28,6 +28,7 @@ function getSectionTargets(section: HTMLElement) {
   const candidates = Array.from(section.querySelectorAll<HTMLElement>("*")).filter(
     (element) => {
       if (!hasRevealClass(element)) return false;
+      if (element.matches(".about-clinic__content")) return false;
       if (element.closest("section") !== section) return false;
       if (getDepthFromSection(element, section) > 2) return false;
 
