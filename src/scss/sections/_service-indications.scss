@@ -15,7 +15,8 @@
       margin-bottom: 6rem;
     }
 
-    &:has(+ .service-contraindications) {
+    &:has(+ .service-contraindications),
+    &:has(+ .service-specialists) {
       margin-bottom: 0;
     }
   }

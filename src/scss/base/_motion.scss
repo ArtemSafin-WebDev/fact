@@ -1,0 +1,15 @@
+@layer base {
+  .title-reveal__line,
+  .title-reveal__line-mask {
+    display: block;
+  }
+
+  .title-reveal__line-mask {
+    padding-block: 0.12em;
+    margin-block: -0.12em;
+  }
+
+  .title-reveal__line {
+    transform-origin: center bottom;
+  }
+}

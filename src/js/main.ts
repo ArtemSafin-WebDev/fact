@@ -3,6 +3,8 @@ import "../scss/style.scss";
 import ui from "./ui";
 import sections from "./sections";
 import Validator from "./classes/Validator";
+import sectionReveal from "./ui/sectionReveal";
+import titleReveal from "./ui/titleReveal";
 
 declare global {
   interface Window {
@@ -15,6 +17,8 @@ window.Validator = Validator;
 document.addEventListener("DOMContentLoaded", () => {
   ui();
   sections();
+  sectionReveal();
+  titleReveal();
 });
 
 window.addEventListener("load", () => {

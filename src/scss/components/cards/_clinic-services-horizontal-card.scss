@@ -4,14 +4,26 @@
   .clinic-services-horizontal-card {
     padding: 4rem 0;
     grid-column: 1 / -1;
+    position: relative;
+    isolation: isolate;
     display: grid;
     grid-template-columns: subgrid;
     align-items: center;
     gap: 4rem;
     grid-template-areas: "doctors title text price";
     transition:
-      color 0.2s,
-      background-color 0.2s;
+      color 0.2s;
+
+    &::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      background-color: var(--green-300);
+      clip-path: inset(100% 0 0 0);
+      transition: clip-path 0.35s ease;
+      pointer-events: none;
+    }
 
     @include media.breakpoint(mobile) {
       padding: 0;
@@ -23,7 +35,9 @@
 
     @include media.canHover {
       &:hover {
-        background-color: var(--green-300);
+        &::before {
+          clip-path: inset(0 0 0 0);
+        }
       }
 
       &:hover .clinic-services-horizontal-card__price {

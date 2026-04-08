@@ -7,6 +7,12 @@
     padding-top: 12rem;
     margin-bottom: 12rem;
 
+    &:not(:has(.video-preview)) {
+      .about-clinic__list {
+        margin-bottom: 0;
+      }
+    }
+
     @include media.breakpoint(mobile) {
       padding-top: 6rem;
       margin-bottom: 0;
@@ -262,5 +268,4 @@
       }
     }
   }
-
 }

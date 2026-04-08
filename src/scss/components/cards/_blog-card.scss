@@ -24,7 +24,9 @@
         pointer-events: none;
         transition:
           opacity 0.2s,
-          visibility 0.2s;
+          visibility 0.2s,
+          background-color 0.2s,
+          color 0.2s;
       }
 
       &:hover .blog-card__bg {

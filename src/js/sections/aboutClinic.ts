@@ -1,6 +1,9 @@
 import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Swiper from "swiper";
 import { Navigation, Pagination } from "swiper/modules";
+
+gsap.registerPlugin(ScrollTrigger);
 
 export default function aboutClinic() {
   const sections = Array.from(
@@ -8,6 +11,7 @@ export default function aboutClinic() {
   );
 
   sections.forEach((section) => {
+    const circle = section.querySelector<HTMLElement>(".about-clinic__circle");
     const slider = section.querySelector<HTMLElement>(".about-clinic__slider");
     const list = section.querySelector<HTMLElement>(".about-clinic__list");
     const slides = Array.from(
@@ -17,9 +21,28 @@ export default function aboutClinic() {
       ".about-clinic__fraction",
     );
 
-    if (!slider || !list || slides.length === 0) return;
-
     const mm = gsap.matchMedia();
+
+    if (circle) {
+      mm.add("(min-width: 641px)", () => {
+        const tween = gsap.to(circle, {
+          y: -56,
+          ease: "none",
+          scrollTrigger: {
+            trigger: section,
+            start: "top bottom",
+            end: "bottom top",
+            scrub: 0.8,
+          },
+        });
+
+        return () => {
+          tween.kill();
+        };
+      });
+    }
+
+    if (!slider || !list || slides.length === 0) return;
 
     mm.add("(max-width: 640px)", () => {
       slider.classList.add("swiper");
