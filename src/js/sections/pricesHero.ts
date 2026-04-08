@@ -15,6 +15,10 @@ export default function pricesHero() {
       section.querySelector<HTMLInputElement>("[data-prices-search]");
     const emptyState =
       section.querySelector<HTMLElement>("[data-prices-empty]");
+    const defaultEmptyMessage =
+      emptyState?.textContent?.trim() ?? "Нет найденных результатов";
+    const otherTabsEmptyMessage =
+      "В этом разделе ничего не найдено. Результаты есть в других разделах.";
 
     let activeTarget =
       tabButtons.find((button) => button.classList.contains("active"))?.dataset
@@ -36,10 +40,27 @@ export default function pricesHero() {
       });
     };
 
+    const hideEmptyState = () => {
+      section.classList.remove("is-empty-results");
+      if (emptyState) {
+        emptyState.textContent = defaultEmptyMessage;
+        emptyState.setAttribute("hidden", "");
+      }
+    };
+
+    const showEmptyState = (message: string) => {
+      section.classList.add("is-empty-results");
+      if (emptyState) {
+        emptyState.textContent = message;
+        emptyState.removeAttribute("hidden");
+      }
+    };
+
     const applySearch = () => {
       const query = searchInput?.value.trim().toLowerCase() ?? "";
-      let firstMatchedTarget = "";
-      let hasMatches = false;
+      let hasMatchesInAnyTab = false;
+      let activePanelHasMatch = false;
+      let hasMatchesInOtherTabs = false;
 
       tabPanels.forEach((panel) => {
         const items = Array.from(
@@ -58,36 +79,41 @@ export default function pricesHero() {
 
           if (isMatch) {
             panelHasMatch = true;
-            hasMatches = true;
+            hasMatchesInAnyTab = true;
           }
         });
 
         const target = panel.dataset.pricesPanel ?? "";
-        if (query.length > 0 && panelHasMatch && !firstMatchedTarget) {
-          firstMatchedTarget = target;
+        const isActivePanel = target === activeTarget;
+
+        if (isActivePanel && panelHasMatch) {
+          activePanelHasMatch = true;
+        }
+
+        if (!isActivePanel && panelHasMatch) {
+          hasMatchesInOtherTabs = true;
         }
       });
 
       if (query.length === 0) {
-        section.classList.remove("is-empty-results");
-        emptyState?.setAttribute("hidden", "");
+        hideEmptyState();
         if (activeTarget) {
           setActiveTab(activeTarget);
         }
         return;
       }
 
-      if (firstMatchedTarget) {
-        section.classList.remove("is-empty-results");
-        emptyState?.setAttribute("hidden", "");
-        setActiveTab(firstMatchedTarget);
+      if (activePanelHasMatch) {
+        hideEmptyState();
         return;
       }
 
-      if (!hasMatches) {
-        section.classList.add("is-empty-results");
-        emptyState?.removeAttribute("hidden");
+      if (hasMatchesInAnyTab) {
+        showEmptyState(otherTabsEmptyMessage);
+        return;
       }
+
+      showEmptyState(defaultEmptyMessage);
     };
 
     if (activeTarget) {
@@ -98,14 +124,12 @@ export default function pricesHero() {
       button.addEventListener("click", () => {
         const target = button.dataset.pricesTabBtn;
         if (!target) return;
-        section.classList.remove("is-empty-results");
-        emptyState?.setAttribute("hidden", "");
         setActiveTab(target);
         applySearch();
       });
     });
 
-    searchInput?.addEventListener("input", applySearch);
+    searchInput?.addEventListener("input", () => applySearch());
     searchForm?.addEventListener("submit", (event) => {
       event.preventDefault();
     });

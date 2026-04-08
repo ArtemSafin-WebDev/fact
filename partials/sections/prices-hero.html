@@ -22,23 +22,34 @@
             </label>
         </form>
 
-        <fieldset class="tabs-nav prices-hero__tabs">
-            <legend class="prices-hero__legend">{{pricesHero.tabsLabel}}</legend>
-            <p class="prices-hero__tabs-caption">{{pricesHero.tabsLabel}}</p>
-            <ul class="tabs-nav__list">
-                {{#each pricesHero.tabs}}
-                <li class="tabs-nav__list-item">
-                    <button class="tabs-nav__btn{{#if active}} active{{/if}}" type="button" role="tab"
-                        aria-selected="{{#if active}}true{{else}}false{{/if}}" data-prices-tab-btn="{{id}}">
-                        {{title}}
-                    </button>
-                </li>
-                {{/each}}
-            </ul>
-        </fieldset>
+        <div class="tabs-nav prices-hero__tabs">
+            <p class="prices-hero__tabs-caption" id="prices-tabs-label">{{pricesHero.tabsLabel}}</p>
+            <div class="prices-hero__tabs-scroll">
+                <ul class="tabs-nav__list" role="tablist" aria-labelledby="prices-tabs-label">
+                    {{#each pricesHero.tabs}}
+                    <li class="tabs-nav__list-item">
+                        <button class="tabs-nav__btn{{#if active}} active{{/if}}" type="button" role="tab"
+                            id="prices-tab-{{id}}" aria-controls="prices-panel-{{id}}"
+                            aria-selected="{{#if active}}true{{else}}false{{/if}}" data-prices-tab-btn="{{id}}">
+                            {{title}}
+                        </button>
+                    </li>
+                    {{/each}}
+                </ul>
+            </div>
+        </div>
+        <p class="prices-hero__tabs-scroll-hint" aria-hidden="true">
+            <span class="prices-hero__tabs-scroll-hint-icon">
+                <svg aria-hidden="true">
+                    <use xlink:href="#scroll-helper"></use>
+                </svg>
+            </span>
+            Листайте влево/вправо чтобы просмотреть все методы
+        </p>
 
         {{#each pricesHero.tabs}}
-        <div class="prices-hero__panel{{#if active}} is-active{{/if}}" data-prices-panel="{{id}}" role="tabpanel"
+        <div class="prices-hero__panel{{#if active}} is-active{{/if}}" id="prices-panel-{{id}}"
+            data-prices-panel="{{id}}" role="tabpanel" aria-labelledby="prices-tab-{{id}}"
             aria-hidden="{{#if active}}false{{else}}true{{/if}}">
             <ul class="prices-hero__list">
                 {{#each items}}
