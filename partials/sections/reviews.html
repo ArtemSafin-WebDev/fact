@@ -81,9 +81,9 @@
                 Листайте влево/вправо чтобы просмотреть все методы
             </p>
 
-            <div class="reviews__videos">
+            <ul class="reviews__videos">
                 {{#each reviewsPage.videoReviews}}
-                <article class="reviews__videos-item" data-reviews-card data-reviews-category="{{category}}">
+                <li class="reviews__videos-item" data-reviews-card data-reviews-category="{{category}}">
                     <a href="{{href}}" class="video-review-card">
                         <div class="video-review-card__media">
                             <div class="video-review-card__bg">
@@ -122,9 +122,9 @@
                             <div class="video-review-card__text">{{text}}</div>
                         </div>
                     </a>
-                </article>
+                </li>
                 {{/each}}
-            </div>
+            </ul>
 
             <button class="btn btn--mobile-large reviews__show-more" type="button">{{reviewsPage.showMoreText}}</button>
         </div>
