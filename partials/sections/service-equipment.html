@@ -1,33 +1,38 @@
 <section class="service-equipment{{#if className}} {{className}}{{/if}}">
     <div class="service-equipment__content">
+        {{#unless hideTitle}}
         <h2 class="service-equipment__title">
             Оборудование
         </h2>
-        <p class="service-equipment__subtitle">
-            Используем передовое оборудование из&nbsp;Германии и&nbsp;США
-        </p>
+        {{/unless}}
 
-        <div class="service-equipment__controls">
-            <div class="service-equipment__fraction" aria-hidden="true"></div>
-            <div class="slider-nav service-equipment__slider-nav">
-                <button class="slider-nav__arrow slider-nav__arrow--prev" type="button"
-                    aria-label="Предыдущее оборудование">
-                    <svg width="14" height="14" aria-hidden="true">
-                        <use xlink:href="#arrow-left"></use>
-                    </svg>
-                    <svg class="slider-nav__arrow-icon--bold" aria-hidden="true">
-                        <use xlink:href="#arrow-left-bold"></use>
-                    </svg>
-                </button>
-                <button class="slider-nav__arrow slider-nav__arrow--next" type="button"
-                    aria-label="Следующее оборудование">
-                    <svg width="14" height="14" aria-hidden="true">
-                        <use xlink:href="#arrow-right"></use>
-                    </svg>
-                    <svg class="slider-nav__arrow-icon--bold" aria-hidden="true">
-                        <use xlink:href="#arrow-right-bold"></use>
-                    </svg>
-                </button>
+        <div class="service-equipment__top">
+            <p class="service-equipment__subtitle">
+                Используем передовое оборудование из&nbsp;Германии и&nbsp;США
+            </p>
+
+            <div class="service-equipment__controls">
+                <div class="service-equipment__fraction" aria-hidden="true"></div>
+                <div class="slider-nav service-equipment__slider-nav">
+                    <button class="slider-nav__arrow slider-nav__arrow--prev" type="button"
+                        aria-label="Предыдущее оборудование">
+                        <svg width="14" height="14" aria-hidden="true">
+                            <use xlink:href="#arrow-left"></use>
+                        </svg>
+                        <svg class="slider-nav__arrow-icon--bold" aria-hidden="true">
+                            <use xlink:href="#arrow-left-bold"></use>
+                        </svg>
+                    </button>
+                    <button class="slider-nav__arrow slider-nav__arrow--next" type="button"
+                        aria-label="Следующее оборудование">
+                        <svg width="14" height="14" aria-hidden="true">
+                            <use xlink:href="#arrow-right"></use>
+                        </svg>
+                        <svg class="slider-nav__arrow-icon--bold" aria-hidden="true">
+                            <use xlink:href="#arrow-right-bold"></use>
+                        </svg>
+                    </button>
+                </div>
             </div>
         </div>
 

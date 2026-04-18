@@ -1,0 +1,31 @@
+<section class="patents-page">
+    <div class="patents-page__content">
+        <div class="patents-page__head">
+            {{> components/breadcrumbs items=patentsPage.breadcrumbs }}
+
+            <h1 class="patents-page__title">
+                {{patentsPage.title}}
+            </h1>
+        </div>
+
+        <ul class="patents-page__list">
+            {{#each patentsPage.items}}
+            <li class="patents-page__item">
+                <div class="patents-page__item-text">
+                    <h2 class="patents-page__item-title">
+                        {{title}}
+                    </h2>
+                    <p class="patents-page__item-meta">
+                        {{meta}}
+                    </p>
+                </div>
+                <a class="patents-page__download" href="{{href}}" aria-label="Скачать {{title}}">
+                    <svg width="16" height="16" aria-hidden="true">
+                        <use xlink:href="#download"></use>
+                    </svg>
+                </a>
+            </li>
+            {{/each}}
+        </ul>
+    </div>
+</section>

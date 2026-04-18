@@ -1,0 +1,228 @@
+@use "utils";
+@use "media";
+
+@layer sections {
+  .patents-page {
+    @include utils.blockWrapper;
+    padding-top: 20.4rem;
+    margin-bottom: 12rem;
+    background-color: #fff;
+
+    @include media.breakpoint(mobile) {
+      padding-top: 16.5rem;
+      margin-bottom: 6rem;
+    }
+  }
+
+  .patents-page__content {
+    @include utils.blockContent;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    min-width: 0;
+
+    @include media.breakpoint(mobile) {
+      grid-template-columns: minmax(0, 1fr);
+    }
+  }
+
+  .patents-page__head {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+  }
+
+  .patents-page__title {
+    margin-top: 4rem;
+    color: var(--text-color);
+    font-size: 8rem;
+    font-style: normal;
+    font-weight: 900;
+    line-height: 100%;
+    letter-spacing: -0.08rem;
+    text-transform: uppercase;
+
+    @include media.breakpoint(mobile) {
+      margin-top: 0;
+      font-size: 4rem;
+      letter-spacing: -0.04rem;
+    }
+  }
+
+  .patents-page__list {
+    display: flex;
+    flex-direction: column;
+    grid-column: 2 / 3;
+    margin-top: 5.3rem;
+
+    @include media.breakpoint(mobile) {
+      grid-column: 1 / -1;
+      margin-top: 4.9rem;
+    }
+  }
+
+  .patents-page__item {
+    display: grid;
+    grid-template-columns: minmax(0, 70rem) 6rem;
+    align-items: start;
+    justify-content: space-between;
+    column-gap: 6rem;
+    padding-bottom: 4rem;
+    border-bottom: 1px solid #eaeaea;
+
+    &:not(:first-child) {
+      padding-top: 4rem;
+    }
+
+    &:last-child {
+      padding-bottom: 0;
+      border-bottom: 0;
+    }
+
+    @include media.breakpoint(mobile) {
+      grid-template-columns: minmax(0, 1fr) 4rem;
+      column-gap: 0.7rem;
+      padding-bottom: 2rem;
+
+      &:not(:first-child) {
+        padding-top: 2rem;
+      }
+    }
+  }
+
+  .patents-page__item-text {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    min-width: 0;
+
+    @include media.breakpoint(mobile) {
+      gap: 2rem;
+    }
+  }
+
+  .patents-page__item-title {
+    color: var(--text-color);
+    font-size: 2rem;
+    font-style: normal;
+    font-weight: 900;
+    line-height: 140%;
+    letter-spacing: -0.04rem;
+    text-transform: uppercase;
+
+    @include media.breakpoint(mobile) {
+      font-size: 1.5rem;
+      line-height: 120%;
+      letter-spacing: -0.03rem;
+    }
+  }
+
+  .patents-page__item-meta {
+    color: var(--text-color);
+    font-size: 1.8rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%;
+
+    @include media.breakpoint(mobile) {
+      font-size: 1.4rem;
+    }
+  }
+
+  .patents-page__download {
+    display: grid;
+    place-items: center;
+    width: 6rem;
+    aspect-ratio: 1;
+    color: var(--text-color);
+    border: 1px solid #eaeaea;
+    transition:
+      color 0.2s,
+      border-color 0.2s,
+      background-color 0.2s;
+
+    svg {
+      width: 1.6rem;
+      height: 1.6rem;
+      fill: currentColor;
+    }
+
+    @include media.canHover {
+      &:hover {
+        background-color: var(--green-300);
+        border-color: var(--green-300);
+      }
+    }
+
+    @include media.breakpoint(mobile) {
+      width: 4rem;
+
+      svg {
+        width: 1.4rem;
+        height: 1.4rem;
+      }
+    }
+  }
+
+  .patents-page .breadcrumbs {
+    @include media.breakpoint(mobile) {
+      display: none;
+    }
+  }
+
+  .page-main--patents {
+    @include media.breakpoint(mobile) {
+      .first-visit {
+        margin-bottom: 4rem;
+      }
+
+      .first-visit__content {
+        display: flex;
+        flex-direction: column;
+        row-gap: 0;
+        padding-top: 6rem;
+        padding-bottom: 3.1rem;
+      }
+
+      .first-visit__left {
+        gap: 1.5rem;
+      }
+
+      .first-visit__title {
+        max-width: 27.2rem;
+        font-size: 4rem;
+        line-height: 100%;
+        letter-spacing: -0.04rem;
+      }
+
+      .first-visit__description {
+        max-width: 27.2rem;
+      }
+
+      .first-visit__right {
+        margin-top: 2.3rem;
+      }
+
+      .first-visit__form {
+        gap: 2.5rem;
+      }
+
+      .first-visit__form-fields {
+        gap: 2.5rem;
+      }
+
+      .first-visit__form-actions {
+        gap: 2.4rem;
+      }
+
+      .first-visit__form-input {
+        padding-bottom: 1.7rem;
+      }
+
+      .first-visit__form-submit {
+        font-size: 1.5rem;
+        padding-top: 2.25rem;
+        padding-bottom: 2.25rem;
+      }
+    }
+  }
+}

@@ -324,6 +324,12 @@
     &:visited {
       color: #161616;
     }
+
+    &[href^="mailto:"] {
+      @include media.breakpoint(mobile) {
+        text-transform: none;
+      }
+    }
   }
 
   .page-footer__schedule {

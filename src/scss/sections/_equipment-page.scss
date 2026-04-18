@@ -1,0 +1,44 @@
+@use "utils";
+@use "media";
+
+@layer sections {
+  .equipment-page-hero {
+    @include utils.blockWrapper;
+    padding-top: 20.4rem;
+    margin-bottom: 9.4rem;
+    background-color: #fff;
+
+    @include media.breakpoint(mobile) {
+      padding-top: 16.5rem;
+      margin-bottom: 6rem;
+    }
+  }
+
+  .equipment-page-hero .breadcrumbs {
+    @include media.breakpoint(mobile) {
+      display: none;
+    }
+  }
+
+  .equipment-page-hero__content {
+    @include utils.blockContent;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .equipment-page-hero__title {
+    margin-top: 4rem;
+    color: var(--text-color);
+    font-size: 8rem;
+    font-weight: 900;
+    line-height: 100%;
+    letter-spacing: -0.08rem;
+    text-transform: uppercase;
+
+    @include media.breakpoint(mobile) {
+      margin-top: 0;
+      font-size: 4rem;
+      letter-spacing: -0.04rem;
+    }
+  }
+}

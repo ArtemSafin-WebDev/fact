@@ -1,0 +1,29 @@
+<section class="legal-info">
+    <div class="legal-info__content">
+        <div class="legal-info__heading">
+            {{> components/breadcrumbs items=legalInfo.breadcrumbs }}
+
+            <h1 class="legal-info__title">
+                {{{legalInfo.title}}}
+            </h1>
+        </div>
+
+        <div class="legal-info__body">
+            {{#each legalInfo.groups}}
+            <section class="legal-info__group">
+                <h2 class="legal-info__group-title">
+                    {{title}}
+                </h2>
+
+                <ul class="legal-info__list">
+                    {{#each items}}
+                    <li class="legal-info__item">
+                        {{this}}
+                    </li>
+                    {{/each}}
+                </ul>
+            </section>
+            {{/each}}
+        </div>
+    </div>
+</section>

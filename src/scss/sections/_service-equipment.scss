@@ -25,6 +25,10 @@
     container-type: inline-size;
   }
 
+  .service-equipment__top {
+    display: contents;
+  }
+
   .service-equipment__title {
     font-size: 11.9cqw;
     font-weight: 900;
@@ -314,5 +318,31 @@
     @include media.breakpoint(mobile) {
       display: none;
     }
+  }
+
+  .service-equipment--equipment-page {
+    margin-bottom: 12rem;
+  }
+
+  .service-equipment--equipment-page .service-equipment__top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 4rem;
+  }
+
+  .service-equipment--equipment-page .service-equipment__subtitle {
+    margin-top: 0;
+    text-align: left;
+  }
+
+  .service-equipment--equipment-page .service-equipment__controls {
+    flex-shrink: 0;
+    margin-top: 0;
+    margin-left: 0;
+  }
+
+  .service-equipment--equipment-page .service-equipment__slider {
+    margin-top: 4rem;
   }
 }
