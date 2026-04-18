@@ -1,0 +1,97 @@
+@use "utils";
+@use "media";
+
+@layer sections {
+  .licenses-page {
+    --licenses-page-bg: #eaeaea;
+    --licenses-page-border-color: #eaeaea;
+
+    @include utils.blockWrapper;
+    padding-top: 20.4rem;
+    padding-bottom: 9.2rem;
+    margin-bottom: 10rem;
+    background-color: var(--licenses-page-bg);
+
+    @include media.breakpoint(mobile) {
+      padding-top: 16.5rem;
+      padding-bottom: 4rem;
+      margin-bottom: 6rem;
+    }
+  }
+
+  .licenses-page__content {
+    @include utils.blockContent;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+  }
+
+  .licenses-page__title {
+    margin-top: 4rem;
+    color: var(--text-color);
+    font-size: 8rem;
+    font-weight: 900;
+    line-height: 100%;
+    letter-spacing: -0.08rem;
+    text-transform: uppercase;
+
+    @include media.breakpoint(mobile) {
+      margin-top: 0;
+      font-size: 4rem;
+      line-height: 100%;
+      letter-spacing: -0.1rem;
+    }
+  }
+
+  .licenses-page__grid {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    margin-top: 9.4rem;
+    border-top: 1px solid var(--licenses-page-border-color);
+    border-left: 1px solid var(--licenses-page-border-color);
+    background-color: #fff;
+
+    @include media.breakpoint(mobile) {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      margin-top: 1.5rem;
+    }
+  }
+
+  .licenses-page__item {
+    display: flex;
+    aspect-ratio: 1;
+    border-right: 1px solid var(--licenses-page-border-color);
+    border-bottom: 1px solid var(--licenses-page-border-color);
+    background-color: #fff;
+  }
+
+  .licenses-page__item[hidden] {
+    display: none;
+  }
+
+  .licenses-page__item .license-card {
+    flex: 1 1 auto;
+  }
+
+  .licenses-page__more {
+    width: 44rem;
+    margin-top: 8rem;
+
+    @include media.breakpoint(mobile) {
+      width: 100%;
+      margin-top: 3.7rem;
+      padding: 2.3rem 3rem;
+      text-transform: uppercase;
+    }
+  }
+
+  .licenses-page__more[hidden] {
+    display: none;
+  }
+
+  .licenses-page .breadcrumbs {
+    @include media.breakpoint(mobile) {
+      display: none;
+    }
+  }
+}

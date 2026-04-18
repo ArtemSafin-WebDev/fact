@@ -1,0 +1,29 @@
+<section class="licenses-page" data-licenses-page>
+    <div class="licenses-page__content">
+        {{> components/breadcrumbs items=licensesPage.breadcrumbs }}
+
+        <h1 class="licenses-page__title">
+            {{licensesPage.title}}
+        </h1>
+
+        <ul class="licenses-page__grid">
+            {{#each licensesPage.items}}
+            <li class="licenses-page__item" data-license-page-card{{#if hidden}} hidden{{/if}}>
+                <a href="{{src}}" class="license-card" data-fancybox="licenses-page">
+                    <span class="license-card__media license-card__media--{{orientation}}">
+                        <img src="{{src}}" alt="{{alt}}" loading="lazy">
+                    </span>
+                </a>
+            </li>
+            {{/each}}
+        </ul>
+
+        {{#if licensesPage.hasMore}}
+        <button class="btn licenses-page__more" type="button" data-licenses-page-more
+            data-mobile-initial="{{licensesPage.mobileInitialVisible}}"
+            data-step="{{licensesPage.showMoreStep}}">
+            показать еще
+        </button>
+        {{/if}}
+    </div>
+</section>
