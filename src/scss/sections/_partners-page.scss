@@ -1,0 +1,47 @@
+@use "utils";
+
+@layer sections {
+  .partners-page {
+    @include utils.blockWrapper;
+    padding-top: 20.4rem;
+    padding-bottom: 12rem;
+  }
+
+  .partners-page__content {
+    @include utils.blockContent;
+    display: flex;
+    min-width: 0;
+    flex-direction: column;
+  }
+
+  .partners-page__title {
+    margin-top: 4rem;
+    color: var(--text-color);
+    font-size: 8rem;
+    font-weight: 900;
+    line-height: 100%;
+    letter-spacing: -0.08rem;
+    text-transform: uppercase;
+  }
+
+  .partners-page__list {
+    display: grid;
+    grid-template-columns: repeat(8, minmax(0, 1fr));
+    margin-top: 9.4rem;
+    border-top: 1px solid #cbcbcb;
+    border-left: 1px solid #cbcbcb;
+  }
+
+  .partners-page__item {
+    display: flex;
+    aspect-ratio: 1;
+    min-width: 0;
+    border-right: 1px solid #cbcbcb;
+    border-bottom: 1px solid #cbcbcb;
+    background-color: #fff;
+  }
+
+  .partners-page__item .partner-card {
+    flex: 1 1 auto;
+  }
+}

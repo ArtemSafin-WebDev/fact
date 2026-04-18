@@ -1,0 +1,17 @@
+<section class="partners-page">
+    <div class="partners-page__content">
+        {{> components/breadcrumbs items=partnersPage.breadcrumbs }}
+
+        <h1 class="partners-page__title">
+            {{partnersPage.title}}
+        </h1>
+
+        <ul class="partners-page__list">
+            {{#each partnersPage.items}}
+            <li class="partners-page__item">
+                {{> components/partner-card }}
+            </li>
+            {{/each}}
+        </ul>
+    </div>
+</section>

@@ -1,0 +1,70 @@
+@use "media";
+
+@layer components {
+  .partner-card {
+    display: grid;
+    width: 100%;
+    aspect-ratio: 1;
+    overflow: hidden;
+    color: var(--text-color);
+    background-color: #fff;
+  }
+
+  .partner-card__layer {
+    grid-area: 1 / 1;
+    min-width: 0;
+  }
+
+  .partner-card__layer--front {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 3.5rem 2.5rem 3.4rem;
+  }
+
+  .partner-card__logo {
+    width: auto;
+    height: 7.1rem;
+    object-fit: contain;
+    object-position: left center;
+  }
+
+  .partner-card__title {
+    max-width: 16.7rem;
+    font-size: 1.5rem;
+    font-weight: 400;
+    line-height: 100%;
+    letter-spacing: -0.015rem;
+  }
+
+  .partner-card__layer--hover {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 2.5rem;
+    background-color: var(--green-300);
+    opacity: 0;
+    visibility: hidden;
+    transition:
+      opacity 0.2s,
+      visibility 0.2s;
+  }
+
+  .partner-card__description {
+    max-width: 100%;
+    font-size: 1.3rem;
+    font-weight: 400;
+    line-height: 115%;
+    letter-spacing: -0.015rem;
+  }
+
+  .partner-card {
+    @include media.canHover {
+      &:hover .partner-card__layer--hover {
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+  }
+}
