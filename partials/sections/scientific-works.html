@@ -1,0 +1,43 @@
+<section class="scientific-works" data-scientific-works>
+    <div class="scientific-works__content">
+        {{> components/breadcrumbs items=scientificWorks.breadcrumbs }}
+
+        <h1 class="scientific-works__title">
+            {{scientificWorks.title}}
+        </h1>
+
+        <div class="scientific-works__groups">
+            {{#each scientificWorks.groups}}
+            <section class="scientific-works__group" data-scientific-works-group>
+                <h2 class="scientific-works__group-title">
+                    {{title}}
+                </h2>
+
+                <ul class="scientific-works__list">
+                    {{#each items}}
+                    <li class="scientific-works__item">
+                        <h3 class="scientific-works__item-title">
+                            {{title}}
+                        </h3>
+                        <p class="scientific-works__item-description">
+                            {{description}}
+                        </p>
+                        <time class="scientific-works__item-period">
+                            {{period}}
+                        </time>
+                    </li>
+                    {{/each}}
+                </ul>
+            </section>
+            {{/each}}
+        </div>
+
+        {{#if scientificWorks.hasMore}}
+        <button class="btn scientific-works__more" type="button" data-scientific-works-more
+            data-mobile-initial="{{scientificWorks.mobileInitialVisibleGroups}}"
+            data-step="{{scientificWorks.showMoreStep}}">
+            показать еще
+        </button>
+        {{/if}}
+    </div>
+</section>
