@@ -10,7 +10,7 @@
 
     @include media.breakpoint(mobile) {
       padding-top: 16.5rem;
-      margin-bottom: 7.9rem;
+      margin-bottom: 4rem;
     }
   }
 
@@ -39,63 +39,6 @@
       margin-top: 0;
       font-size: 4rem;
       letter-spacing: -0.04rem;
-    }
-  }
-
-  .page-main--equipment {
-    @include media.breakpoint(mobile) {
-      .first-visit {
-        margin-bottom: 0;
-      }
-
-      .first-visit__content {
-        display: flex;
-        flex-direction: column;
-        row-gap: 0;
-        padding-top: 6rem;
-        padding-bottom: 3.1rem;
-      }
-
-      .first-visit__left {
-        gap: 1.5rem;
-      }
-
-      .first-visit__title {
-        max-width: 27.2rem;
-        font-size: 4rem;
-        line-height: 100%;
-        letter-spacing: -0.04rem;
-      }
-
-      .first-visit__description {
-        max-width: 27.2rem;
-      }
-
-      .first-visit__right {
-        margin-top: 2.2rem;
-      }
-
-      .first-visit__form {
-        gap: 2.5rem;
-      }
-
-      .first-visit__form-fields {
-        gap: 2.5rem;
-      }
-
-      .first-visit__form-actions {
-        gap: 2.4rem;
-      }
-
-      .first-visit__form-input {
-        padding-bottom: 1.7rem;
-      }
-
-      .first-visit__form-submit {
-        font-size: 1.5rem;
-        padding-top: 2.25rem;
-        padding-bottom: 2.25rem;
-      }
     }
   }
 }

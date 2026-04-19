@@ -112,6 +112,10 @@
 
     @include media.breakpoint(mobile) {
       overflow: visible;
+
+      &::after {
+        content: none;
+      }
     }
   }
 
