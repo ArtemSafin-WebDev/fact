@@ -95,13 +95,14 @@
   .legal-info__list {
     display: flex;
     flex-direction: column;
-    gap: 2rem;
+    gap: 1.6rem;
   }
 
   .legal-info__item {
+    position: relative;
     display: flex;
     align-items: center;
-    gap: 2rem;
+    padding-left: 2.7rem;
     color: var(--text-color);
     font-size: 1.8rem;
     font-style: normal;
@@ -115,7 +116,9 @@
 
   .legal-info__item::before {
     content: "";
-    flex: 0 0 auto;
+    position: absolute;
+    left: 0;
+    top: 0.75rem;
     width: 0.7rem;
     aspect-ratio: 1;
     border-radius: 50%;
@@ -141,14 +144,14 @@
       }
 
       .first-visit__title {
-        max-width: 27.2rem;
+        max-width: none;
         font-size: 4rem;
         line-height: 100%;
         letter-spacing: -0.04rem;
       }
 
       .first-visit__description {
-        max-width: 27.2rem;
+        max-width: none;
       }
 
       .first-visit__right {
@@ -175,6 +178,10 @@
         font-size: 1.5rem;
         padding-top: 2.25rem;
         padding-bottom: 2.25rem;
+      }
+
+      .legal-info__item::before {
+        top: 0.28em;
       }
     }
   }
