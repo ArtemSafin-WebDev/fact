@@ -32,7 +32,6 @@
     text-transform: uppercase;
 
     @include media.breakpoint(mobile) {
-      max-width: 27.2rem;
       margin-top: 0;
       font-size: 4rem;
       letter-spacing: -0.04rem;
@@ -87,7 +86,7 @@
 
   .scientific-works__item {
     display: grid;
-    grid-template-columns: minmax(44rem, 1fr) minmax(60rem, 83.3rem) max-content;
+    grid-template-columns: minmax(0, 71rem) minmax(0, 1fr) minmax(10rem, auto);
     align-items: center;
     column-gap: 6rem;
     padding: 4rem 0;
@@ -98,10 +97,9 @@
     }
 
     @include media.breakpoint(mobile) {
-      grid-template-columns: minmax(0, 18.7rem) max-content;
+      grid-template-columns: minmax(0, 1fr) max-content;
       justify-content: space-between;
       column-gap: 2rem;
-      height: 10rem;
       padding: 2rem 0;
     }
   }
