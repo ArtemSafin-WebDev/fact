@@ -21,7 +21,7 @@
     flex-direction: column;
     align-items: flex-start;
     justify-content: space-between;
-    padding: 3.5rem 2.5rem 3.4rem;
+    padding: 2.5rem;
 
     @include media.breakpoint(mobile) {
       padding: 2rem;
@@ -55,8 +55,9 @@
 
   .partner-card__layer--hover {
     display: flex;
-    align-items: flex-start;
-    justify-content: flex-start;
+
+    justify-content: center;
+    flex-direction: column;
     padding: 2.5rem;
     background-color: var(--green-300);
     opacity: 0;
