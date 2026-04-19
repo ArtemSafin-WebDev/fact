@@ -13,6 +13,7 @@
   .partner-card__layer {
     grid-area: 1 / 1;
     min-width: 0;
+    min-height: 0;
   }
 
   .partner-card__layer--front {
@@ -21,6 +22,10 @@
     align-items: flex-start;
     justify-content: space-between;
     padding: 3.5rem 2.5rem 3.4rem;
+
+    @include media.breakpoint(mobile) {
+      padding: 2rem;
+    }
   }
 
   .partner-card__logo {
@@ -28,6 +33,10 @@
     height: 7.1rem;
     object-fit: contain;
     object-position: left center;
+
+    @include media.breakpoint(mobile) {
+      max-width: 7.5rem;
+    }
   }
 
   .partner-card__title {
@@ -36,6 +45,12 @@
     font-weight: 400;
     line-height: 100%;
     letter-spacing: -0.015rem;
+
+    @include media.breakpoint(mobile) {
+      max-width: 13rem;
+      font-size: 1.4rem;
+      letter-spacing: -0.014rem;
+    }
   }
 
   .partner-card__layer--hover {
@@ -49,6 +64,10 @@
     transition:
       opacity 0.2s,
       visibility 0.2s;
+
+    @include media.breakpoint(mobile) {
+      padding: 2rem;
+    }
   }
 
   .partner-card__description {

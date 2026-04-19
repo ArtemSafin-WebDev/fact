@@ -22,6 +22,7 @@ import tax from "./tax";
 import pricesHero from "./pricesHero";
 import licensesPage from "./licensesPage";
 import scientificWorks from "./scientificWorks";
+import partnersPage from "./partnersPage";
 
 const initContactsHero = () => {
   if (!document.querySelector(".contacts-hero")) return;
@@ -57,6 +58,7 @@ export default function sections() {
   pricesHero();
   licensesPage();
   scientificWorks();
+  partnersPage();
   initContactsHero();
   licenses();
   ratings();

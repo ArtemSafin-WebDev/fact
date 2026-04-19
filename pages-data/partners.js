@@ -10,6 +10,12 @@ const partner = {
     "Если вашему ребенку требуется сложное хирургическое лечение и вам необходима финансовая поддержка, вы можете обратиться к нашему партнеру - в Благотворительный Фонд «Своими глазами».",
 };
 
+const initialVisiblePartners = 8;
+const partners = Array.from({ length: 16 }, (_, index) => ({
+  ...partner,
+  hidden: index >= initialVisiblePartners,
+}));
+
 const partnersPageData = {
   "/partners.html": {
     title: "Партнеры",
@@ -20,7 +26,9 @@ const partnersPageData = {
         { title: "Партнеры", isCurrent: true },
       ],
       title: "партнеры",
-      items: Array.from({ length: 16 }, () => ({ ...partner })),
+      items: partners,
+      hasMore: partners.length > initialVisiblePartners,
+      showMoreText: "Показать еще",
     },
   },
 };

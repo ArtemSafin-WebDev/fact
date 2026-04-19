@@ -1,4 +1,4 @@
-<section class="partners-page">
+<section class="partners-page" data-partners-page>
     <div class="partners-page__content">
         {{> components/breadcrumbs items=partnersPage.breadcrumbs }}
 
@@ -8,10 +8,16 @@
 
         <ul class="partners-page__list">
             {{#each partnersPage.items}}
-            <li class="partners-page__item">
+            <li class="partners-page__item" data-partners-page-card{{#if hidden}} hidden{{/if}}>
                 {{> components/partner-card }}
             </li>
             {{/each}}
         </ul>
+
+        {{#if partnersPage.hasMore}}
+        <button class="btn partners-page__more" type="button" data-partners-page-more>
+            {{partnersPage.showMoreText}}
+        </button>
+        {{/if}}
     </div>
 </section>

@@ -47,9 +47,7 @@
     display: grid;
     grid-template-columns: repeat(5, minmax(0, 1fr));
     margin-top: 9.4rem;
-    border-top: 1px solid var(--licenses-page-border-color);
-    border-left: 1px solid var(--licenses-page-border-color);
-    background-color: #fff;
+    overflow: hidden;
 
     @include media.breakpoint(mobile) {
       grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -60,8 +58,8 @@
   .licenses-page__item {
     display: flex;
     aspect-ratio: 1;
-    border-right: 1px solid var(--licenses-page-border-color);
-    border-bottom: 1px solid var(--licenses-page-border-color);
+    margin: -1px 0 0 -1px;
+    border: 1px solid var(--licenses-page-border-color);
     background-color: #fff;
   }
 
