@@ -11,10 +11,7 @@ const partner = {
 };
 
 const initialVisiblePartners = 8;
-const partners = Array.from({ length: 16 }, (_, index) => ({
-  ...partner,
-  hidden: index >= initialVisiblePartners,
-}));
+const partners = Array.from({ length: 16 }, () => ({ ...partner }));
 
 const partnersPageData = {
   "/partners.html": {

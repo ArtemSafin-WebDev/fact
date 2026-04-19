@@ -26,12 +26,10 @@ const sourceLicenses = [
   },
 ];
 
-const visibleCount = 20;
 const totalCount = 24;
 
 const items = Array.from({ length: totalCount }, (_, index) => ({
   ...sourceLicenses[index % sourceLicenses.length],
-  hidden: index >= visibleCount,
 }));
 
 const licensesPageData = {
@@ -45,9 +43,7 @@ const licensesPageData = {
       ],
       title: "лицензии и сертификаты",
       items,
-      hasMore: items.some((item) => item.hidden),
-      mobileInitialVisible: 8,
-      showMoreStep: 10,
+      hasMore: items.length > 8,
     },
   },
 };

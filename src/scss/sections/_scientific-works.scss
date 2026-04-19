@@ -5,7 +5,7 @@
   .scientific-works {
     @include utils.blockWrapper;
     padding-top: 20.4rem;
-    margin-bottom: 42.8rem;
+    margin-bottom: 12rem;
     background-color: #fff;
 
     @include media.breakpoint(mobile) {
@@ -57,6 +57,13 @@
 
   .scientific-works__group[hidden] {
     display: none;
+  }
+
+  @include media.breakpoint(mobile) {
+    .scientific-works:not(.scientific-works--expanded)
+      .scientific-works__group:nth-child(n + 3) {
+      display: none;
+    }
   }
 
   .scientific-works__group-title {

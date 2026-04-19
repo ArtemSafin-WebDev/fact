@@ -1,4 +1,6 @@
 export default function licensesPage() {
+  const desktopInitialVisible = 20;
+  const mobileInitialVisible = 8;
   const sections = Array.from(
     document.querySelectorAll<HTMLElement>("[data-licenses-page]"),
   );
@@ -13,43 +15,28 @@ export default function licensesPage() {
 
     if (cards.length === 0) return;
 
-    const revealStep = Number(button?.dataset.step) || 10;
-    const desktopInitialVisible = cards.findIndex((card) => card.hidden);
-    const mobileInitialVisible = Number(button?.dataset.mobileInitial) || 8;
     const mobileQuery = window.matchMedia("(max-width: 640px)");
-    const visibleByMode = {
-      desktop: desktopInitialVisible === -1 ? cards.length : desktopInitialVisible,
-      mobile: button ? Math.min(mobileInitialVisible, cards.length) : cards.length,
-    };
-    const getMode = (): "mobile" | "desktop" =>
-      mobileQuery.matches ? "mobile" : "desktop";
-    const updateCards = () => {
-      const visibleCount = visibleByMode[getMode()];
+    let isExpanded = section.classList.contains("licenses-page--expanded");
 
-      cards.forEach((card, index) => {
-        card.hidden = index >= visibleCount;
-      });
+    const getInitialVisible = () =>
+      mobileQuery.matches ? mobileInitialVisible : desktopInitialVisible;
 
+    const updateButton = () => {
       if (button) {
-        button.hidden = visibleCount >= cards.length;
+        button.hidden = isExpanded || cards.length <= getInitialVisible();
       }
     };
 
-    updateCards();
+    updateButton();
 
     if (button) {
       button.addEventListener("click", () => {
-        const mode = getMode();
-
-        visibleByMode[mode] = Math.min(
-          cards.length,
-          visibleByMode[mode] + revealStep,
-        );
-
-        updateCards();
+        isExpanded = true;
+        section.classList.add("licenses-page--expanded");
+        updateButton();
       });
     }
 
-    mobileQuery.addEventListener("change", updateCards);
+    mobileQuery.addEventListener("change", updateButton);
   });
 }

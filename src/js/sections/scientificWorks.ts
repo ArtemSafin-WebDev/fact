@@ -1,4 +1,5 @@
 export default function scientificWorks() {
+  const mobileInitialVisibleGroups = 2;
   const sections = Array.from(
     document.querySelectorAll<HTMLElement>("[data-scientific-works]"),
   );
@@ -14,36 +15,23 @@ export default function scientificWorks() {
     if (!button || groups.length === 0) return;
 
     const mobileQuery = window.matchMedia("(max-width: 640px)");
-    const revealStep = Number(button.dataset.step) || 2;
-    const mobileInitialVisible = Math.min(
-      Number(button.dataset.mobileInitial) || groups.length,
-      groups.length,
-    );
-    let visibleGroups = mobileInitialVisible;
+    let isExpanded = section.classList.contains("scientific-works--expanded");
 
-    const updateGroups = () => {
-      if (!mobileQuery.matches) {
-        groups.forEach((group) => {
-          group.hidden = false;
-        });
-        button.hidden = true;
-        return;
-      }
-
-      groups.forEach((group, index) => {
-        group.hidden = index >= visibleGroups;
-      });
-
-      button.hidden = visibleGroups >= groups.length;
+    const updateButton = () => {
+      button.hidden =
+        !mobileQuery.matches ||
+        isExpanded ||
+        groups.length <= mobileInitialVisibleGroups;
     };
 
-    updateGroups();
+    updateButton();
 
     button.addEventListener("click", () => {
-      visibleGroups = Math.min(groups.length, visibleGroups + revealStep);
-      updateGroups();
+      isExpanded = true;
+      section.classList.add("scientific-works--expanded");
+      updateButton();
     });
 
-    mobileQuery.addEventListener("change", updateGroups);
+    mobileQuery.addEventListener("change", updateButton);
   });
 }

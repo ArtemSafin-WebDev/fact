@@ -8,7 +8,7 @@
 
         <ul class="licenses-page__grid">
             {{#each licensesPage.items}}
-            <li class="licenses-page__item" data-license-page-card{{#if hidden}} hidden{{/if}}>
+            <li class="licenses-page__item" data-license-page-card>
                 <a href="{{src}}" class="license-card" data-fancybox="licenses-page">
                     <span class="license-card__media license-card__media--{{orientation}}">
                         <img src="{{src}}" alt="{{alt}}" loading="lazy">
@@ -19,10 +19,8 @@
         </ul>
 
         {{#if licensesPage.hasMore}}
-        <button class="btn licenses-page__more" type="button" data-licenses-page-more
-            data-mobile-initial="{{licensesPage.mobileInitialVisible}}"
-            data-step="{{licensesPage.showMoreStep}}">
-            показать еще
+        <button class="btn licenses-page__more" type="button" data-licenses-page-more>
+            Показать еще
         </button>
         {{/if}}
     </div>

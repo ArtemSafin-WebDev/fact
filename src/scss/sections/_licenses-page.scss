@@ -67,6 +67,16 @@
     display: none;
   }
 
+  .licenses-page:not(.licenses-page--expanded) .licenses-page__item:nth-child(n + 21) {
+    display: none;
+  }
+
+  @include media.breakpoint(mobile) {
+    .licenses-page:not(.licenses-page--expanded) .licenses-page__item:nth-child(n + 9) {
+      display: none;
+    }
+  }
+
   .licenses-page__item .license-card {
     flex: 1 1 auto;
   }

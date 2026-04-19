@@ -10,20 +10,12 @@ export default function partnersPage() {
 
     if (!button) return;
 
-    const cards = Array.from(
-      section.querySelectorAll<HTMLElement>("[data-partners-page-card]"),
-    );
+    const cardsCount = section.querySelectorAll(".partners-page__item").length;
 
-    const hasHiddenCards = () => cards.some((card) => card.hidden);
-
-    button.hidden = !hasHiddenCards();
+    if (cardsCount <= 8) return;
 
     button.addEventListener("click", () => {
-      cards.forEach((card) => {
-        card.hidden = false;
-      });
-
-      button.hidden = true;
+      section.classList.add("partners-page--expanded");
     });
   });
 }

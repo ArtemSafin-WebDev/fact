@@ -23,8 +23,6 @@ const scientificWorksPageData = {
       title: "научные работы",
       groups,
       hasMore: groups.length > mobileInitialVisibleGroups,
-      mobileInitialVisibleGroups,
-      showMoreStep: 2,
     },
   },
 };

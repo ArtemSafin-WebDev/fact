@@ -59,8 +59,11 @@
     background-color: #fff;
   }
 
-  .partners-page__item[hidden] {
-    display: none;
+  .partners-page:not(.partners-page--expanded)
+    .partners-page__item:nth-child(n + 9) {
+    @include media.breakpoint(mobile) {
+      display: none;
+    }
   }
 
   .partners-page__item .partner-card {
@@ -68,18 +71,21 @@
   }
 
   .partners-page__more {
+    display: none;
     width: 44rem;
     margin-top: 8rem;
     text-transform: none;
 
     @include media.breakpoint(mobile) {
+      display: block;
       width: 100%;
       margin-top: 3.7rem;
       padding: 2.3rem 3rem;
+      text-transform: uppercase;
     }
   }
 
-  .partners-page__more[hidden] {
+  .partners-page--expanded .partners-page__more {
     display: none;
   }
 
