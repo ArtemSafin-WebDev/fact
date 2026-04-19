@@ -11,18 +11,14 @@ export default function servicesMenu() {
   if (!header) return;
   const mobileMediaQuery = window.matchMedia("(width <= 640px)");
 
-  const toggle = header.querySelector<HTMLButtonElement>(
-    "[data-services-menu-toggle]",
-  );
-  const menu = header.querySelector<HTMLElement>("[data-services-menu]");
-  const tabs = Array.from(
-    header.querySelectorAll<ServicesMenuTab>("[data-services-menu-tab]"),
-  );
-  const panes = Array.from(
-    header.querySelectorAll<ServicesMenuPane>("[data-services-menu-pane]"),
+  const toggles = Array.from(
+    header.querySelectorAll<HTMLButtonElement>("[data-services-menu-toggle]"),
   );
 
-  if (!toggle || !menu || !tabs.length || !panes.length) return;
+  if (!toggles.length) return;
+
+  let currentActiveToggle: HTMLButtonElement | null = null;
+  let currentActiveMenu: HTMLElement | null = null;
 
   const syncBodyMenuState = () => {
     document.body.classList.toggle(
@@ -32,67 +28,109 @@ export default function servicesMenu() {
     );
   };
 
-  const setActiveTab = (target?: string) => {
-    if (!target) return;
+  const closeMenu = () => {
+    if (!currentActiveMenu || !currentActiveToggle) return;
 
-    tabs.forEach((tab) => {
-      tab.classList.toggle("is-active", tab.dataset.servicesMenuTab === target);
-    });
+    header.classList.remove("is-services-open");
+    syncBodyMenuState();
 
-    panes.forEach((pane) => {
-      pane.classList.toggle(
-        "is-active",
-        pane.dataset.servicesMenuPane === target,
-      );
-    });
+    currentActiveToggle.setAttribute("aria-expanded", "false");
+    currentActiveMenu.setAttribute("aria-hidden", "true");
+
+    currentActiveToggle = null;
+    currentActiveMenu = null;
   };
 
-  const openMenu = () => {
+  const openMenu = (toggle: HTMLButtonElement, menu: HTMLElement) => {
+    if (currentActiveMenu && currentActiveMenu !== menu) {
+      closeMenu();
+    }
+
+    currentActiveToggle = toggle;
+    currentActiveMenu = menu;
+
     header.classList.add("is-services-open");
     syncBodyMenuState();
+
     toggle.setAttribute("aria-expanded", "true");
     menu.setAttribute("aria-hidden", "false");
   };
 
-  const closeMenu = () => {
-    header.classList.remove("is-services-open");
-    syncBodyMenuState();
-    toggle.setAttribute("aria-expanded", "false");
-    menu.setAttribute("aria-hidden", "true");
-  };
+  toggles.forEach((toggle) => {
+    const menuId = toggle.getAttribute("aria-controls");
+    if (!menuId) return;
 
-  const initialTab = tabs.find((tab) => tab.classList.contains("is-active"));
-  setActiveTab(initialTab?.dataset.servicesMenuTab ?? tabs[0].dataset.servicesMenuTab);
+    const menu =
+      document.getElementById(menuId) ||
+      header.querySelector<HTMLElement>(`#${menuId}`);
+    if (!menu) return;
 
-  toggle.addEventListener("click", () => {
-    if (mobileMediaQuery.matches) return;
+    const tabs = Array.from(
+      menu.querySelectorAll<ServicesMenuTab>("[data-services-menu-tab]"),
+    );
+    const panes = Array.from(
+      menu.querySelectorAll<ServicesMenuPane>("[data-services-menu-pane]"),
+    );
 
-    if (header.classList.contains("is-services-open")) {
-      closeMenu();
-      return;
-    }
+    const setActiveTab = (target?: string) => {
+      if (!target) return;
 
-    openMenu();
-  });
+      tabs.forEach((tab) => {
+        tab.classList.toggle(
+          "is-active",
+          tab.dataset.servicesMenuTab === target,
+        );
+      });
 
-  tabs.forEach((tab) => {
-    const activateTab = () => {
-      setActiveTab(tab.dataset.servicesMenuTab);
+      panes.forEach((pane) => {
+        pane.classList.toggle(
+          "is-active",
+          pane.dataset.servicesMenuPane === target,
+        );
+      });
     };
 
-    tab.addEventListener("mouseenter", activateTab);
-    tab.addEventListener("focus", activateTab);
-    tab.addEventListener("click", activateTab);
-  });
+    if (tabs.length && panes.length) {
+      const initialTab = tabs.find((tab) =>
+        tab.classList.contains("is-active"),
+      );
+      setActiveTab(
+        initialTab?.dataset.servicesMenuTab ?? tabs[0].dataset.servicesMenuTab,
+      );
 
-  menu.addEventListener("click", (event) => {
-    if (event.target === menu) {
-      closeMenu();
+      tabs.forEach((tab) => {
+        const activateTab = () => {
+          setActiveTab(tab.dataset.servicesMenuTab);
+        };
+
+        tab.addEventListener("mouseenter", activateTab);
+        tab.addEventListener("focus", activateTab);
+        tab.addEventListener("click", activateTab);
+      });
     }
+
+    toggle.addEventListener("click", () => {
+      if (mobileMediaQuery.matches) return;
+
+      if (currentActiveToggle === toggle) {
+        closeMenu();
+      } else {
+        openMenu(toggle, menu);
+      }
+    });
+
+    menu.addEventListener("click", (event) => {
+      if (event.target === menu) {
+        closeMenu();
+      }
+    });
   });
 
   document.addEventListener("keydown", (event) => {
-    if (event.key === "Escape" && header.classList.contains("is-services-open")) {
+    if (
+      event.key === "Escape" &&
+      header.classList.contains("is-services-open")
+    ) {
       closeMenu();
     }
   });
