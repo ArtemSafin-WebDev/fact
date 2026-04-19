@@ -94,7 +94,8 @@
 
     @include media.breakpoint(mobile) {
       grid-template-columns: minmax(0, 1fr) 4rem;
-      column-gap: 0.7rem;
+      row-gap: 1rem;
+      column-gap: 2rem;
       padding-bottom: 2rem;
 
       .patents-page__item:not(:first-child) & {
@@ -110,7 +111,7 @@
     min-width: 0;
 
     @include media.breakpoint(mobile) {
-      gap: 2rem;
+      display: contents;
     }
   }
 
@@ -141,6 +142,7 @@
 
     @include media.breakpoint(mobile) {
       font-size: 1.4rem;
+      grid-column: 1 / -1;
     }
   }
 
@@ -163,6 +165,8 @@
     }
 
     @include media.breakpoint(mobile) {
+      grid-column: 2 / 3;
+      grid-row: 1 / 2;
       width: 4rem;
 
       svg {
