@@ -52,6 +52,8 @@ function getSectionStaggerTargets(section: HTMLElement) {
   ).filter((element) => {
     if (element.closest("section") !== section) return false;
     if (element.hidden) return false;
+    if (element.closest("[hidden]")) return false;
+    if (element.closest(".wysiwyg")) return false;
 
     const styles = window.getComputedStyle(element);
 
