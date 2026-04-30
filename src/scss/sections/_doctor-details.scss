@@ -48,11 +48,15 @@
   }
 
   .doctor-details__media-column {
+    position: sticky;
+    top: 10rem;
     display: flex;
     flex-direction: column;
     grid-column: 1 / 4;
 
     @include media.breakpoint(mobile) {
+      position: static;
+      top: auto;
       order: 3;
       margin-top: 4rem;
     }

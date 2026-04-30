@@ -1,0 +1,634 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - generic [ref=e4]:
+      - link "Версия для слабовидящих" [ref=e5] [cursor=pointer]:
+        - /url: "#"
+        - generic [ref=e6]: Версия для слабовидящих
+        - img [ref=e7]
+      - generic [ref=e9]:
+        - button "Пятигорск" [ref=e10] [cursor=pointer]
+        - paragraph [ref=e11]: 8:30—19:00
+      - link "8 800 333—4603" [ref=e12] [cursor=pointer]:
+        - /url: tel:+78003334603
+    - generic [ref=e14]:
+      - link [ref=e15] [cursor=pointer]:
+        - /url: /
+      - generic [ref=e16]:
+        - button "Услуги" [ref=e17] [cursor=pointer]:
+          - generic [ref=e18]: Услуги
+        - navigation [ref=e20]:
+          - list [ref=e21]:
+            - listitem [ref=e22]:
+              - link "Врачи" [ref=e23] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=e24]:
+              - link "Цены" [ref=e25] [cursor=pointer]:
+                - /url: /prices.html
+            - listitem [ref=e26]:
+              - link "Статьи" [ref=e27] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=e28]:
+              - link "О клинике" [ref=e29] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=e30]:
+              - link "Контакты" [ref=e31] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=e32]:
+              - link "Клиника года" [ref=e33] [cursor=pointer]:
+                - /url: "#"
+        - generic [ref=e34]:
+          - list [ref=e35]:
+            - listitem [ref=e36]:
+              - link [ref=e37] [cursor=pointer]:
+                - /url: "#"
+                - img [ref=e38]
+            - listitem [ref=e40]:
+              - link [ref=e41] [cursor=pointer]:
+                - /url: "#"
+                - img [ref=e42]
+          - link "Записаться" [ref=e44] [cursor=pointer]:
+            - /url: "#feedback-modal"
+  - main [ref=e45]:
+    - generic [ref=e47]:
+      - navigation "Хлебные крошки" [ref=e48]:
+        - list [ref=e49]:
+          - listitem [ref=e50]:
+            - link "Главная" [ref=e51] [cursor=pointer]:
+              - /url: /
+          - listitem [ref=e52]:
+            - link "Наши врачи" [ref=e53] [cursor=pointer]:
+              - /url: /catalog-doctors.html
+          - listitem [ref=e54]:
+            - generic [ref=e55]: Сергиенко Алексей Анатольевич
+      - generic [ref=e56]:
+        - generic [ref=e57]:
+          - link "Сергиенко Алексей Анатольевич Смотреть видео о враче" [ref=e58] [cursor=pointer]:
+            - /url: "#"
+            - img "Сергиенко Алексей Анатольевич" [ref=e60]
+            - button "Смотреть видео о враче" [ref=e61]:
+              - img [ref=e62]
+          - link "Записаться" [ref=e64] [cursor=pointer]:
+            - /url: "#feedback-modal"
+        - generic [ref=e65]:
+          - generic [ref=e66]:
+            - generic [ref=e67]:
+              - generic [ref=e68]:
+                - img [ref=e69]
+                - text: Пятигорск
+              - generic [ref=e71]:
+                - img [ref=e72]
+                - text: Краснодар
+            - generic [ref=e74]:
+              - img "Рейтинг врача на Продокторов" [ref=e75]
+              - img [ref=e76]
+              - generic [ref=e78]: "5.0"
+          - heading "Сергиенко Алексей Анатольевич" [level=1] [ref=e81]:
+            - generic [ref=e82]: Сергиенко Алексей
+            - generic [ref=e83]: Анатольевич
+          - paragraph [ref=e84]: Врач-офтальмолог, детский офтальмохирург, врач высшей категории, кандидат медицинских наук
+          - generic [ref=e86]:
+            - paragraph [ref=e87]: 2012 Член европейского общества специалистов сетчатки European Society of Retina Specialists (EURETINA)
+            - paragraph [ref=e88]: 2020 - 2025 Ведущий специалист по Краснодарскому краю в неинтервенционном исследовании «Регистр пациентов с наследственными дистрофиями сетчатки, вызванными подтвержденными биаллельными мутациями генов RPE65 и RLBP1 в России (Российский регистр НДС, REGINA)»
+          - generic [ref=e89]:
+            - generic [ref=e90]:
+              - generic [ref=e91]: "Стаж:"
+              - generic [ref=e92]: 26 лет
+            - generic [ref=e93]:
+              - generic [ref=e94]: "Консультация:"
+              - generic [ref=e95]: от 2 990 ₽
+            - generic [ref=e96]:
+              - generic [ref=e97]: "Кол-во операций:"
+              - generic [ref=e98]: 20 000
+          - generic [ref=e99]:
+            - heading "Услуги :" [level=2] [ref=e100]
+            - list [ref=e101]:
+              - listitem [ref=e102]:
+                - link "Детская хирургия" [ref=e103] [cursor=pointer]:
+                  - /url: "#"
+              - listitem [ref=e104]:
+                - link "Диагностика зрения детям" [ref=e105] [cursor=pointer]:
+                  - /url: "#"
+              - listitem [ref=e106]:
+                - link "Пересадка хрусталика" [ref=e107] [cursor=pointer]:
+                  - /url: "#"
+              - listitem [ref=e108]:
+                - link "Лазерная коррекция зрения" [ref=e109] [cursor=pointer]:
+                  - /url: "#"
+          - generic [ref=e110]:
+            - heading "Специализация :" [level=2] [ref=e111]
+            - list [ref=e112]:
+              - listitem [ref=e113]: Хирургия врожденной катаракты любой степени сложности у детей
+              - listitem [ref=e114]: Лазерная и витреоретинальная хирургия детям, хирургия глаукомы (в том числе с дренажная)
+            - button "Показать полностью" [ref=e115] [cursor=pointer]
+          - generic [ref=e116]:
+            - heading "Образование :" [level=2] [ref=e117]
+            - list [ref=e118]:
+              - listitem [ref=e119]: 1997 Окончил Кубанскую государственную медицинскую академию по специальности “Лечебное дело”
+              - listitem [ref=e120]: 1998 Окончил интернатуру Кубанской государственной медицинской академии на базе Детской краевой больницы г.Краснодара.
+            - button "Показать полностью" [ref=e121] [cursor=pointer]
+          - generic [ref=e122]:
+            - heading "Опыт работы :" [level=2] [ref=e123]
+            - list [ref=e124]:
+              - listitem [ref=e125]: 1998 - 2020 Врач-офтальмолог в Детской краевой больнице г.Краснодара
+              - listitem [ref=e126]: 2020 - 2021 Врач-офтальмолог краевого перинатального центра, г.Краснодар
+            - button "Показать полностью" [ref=e127] [cursor=pointer]
+          - generic [ref=e128]:
+            - heading "Научные работы :" [level=2] [ref=e129]
+            - list [ref=e130]:
+              - listitem [ref=e131]: Выпущено методическое пособие “Применение антиоксидантов при отслойке сетчатки у детей”, г.Краснодар
+              - listitem [ref=e132]: "Разработано учебное пособие для студентов мед. специальностей по курсу «Офтальмология» и клинических ординаторов по специальности «Глазные болезни». – Майкоп: АО «Полиграф-ЮГ», 2023. – 104 стр. ISBN987-5-7992-1101-1. А.В.Малышев, А.А.Сергиенко, А.Ф.Тешев."
+            - button "Показать полностью" [ref=e133] [cursor=pointer]
+          - generic [ref=e134]:
+            - heading "Дипломы и сертификаты :" [level=2] [ref=e136]
+            - generic [ref=e139]:
+              - link "Диплом врача" [ref=e141] [cursor=pointer]:
+                - /url: /images/license-card/1.webp
+                - img "Диплом врача" [ref=e143]
+              - link "Сертификат врача" [ref=e145] [cursor=pointer]:
+                - /url: /images/license-card/4.webp
+                - img "Сертификат врача" [ref=e147]
+              - link "Сертификат о повышении квалификации" [ref=e149] [cursor=pointer]:
+                - /url: /images/license-card/2.webp
+                - img "Сертификат о повышении квалификации" [ref=e151]
+              - link "Сертификат специалиста" [ref=e153] [cursor=pointer]:
+                - /url: /images/license-card/3.webp
+                - img "Сертификат специалиста" [ref=e155]
+      - generic [ref=e156]:
+        - heading "Статьи доктора" [level=2] [ref=e158]
+        - generic [ref=e161]:
+          - 'link "Методическое пособие по офтальмологии # методическое пособие методическое пособие: применение антиоксидантов при отслойке сетчатки у детей Учебное пособие для студентов мед специальностей по курсу «офтальмология» и клинических ординаторов по специальности ..." [ref=e163] [cursor=pointer]':
+            - /url: "#"
+            - img "Методическое пособие по офтальмологии" [ref=e165]
+            - generic [ref=e166]:
+              - generic [ref=e168]: "# методическое пособие"
+              - 'heading "методическое пособие: применение антиоксидантов при отслойке сетчатки у детей" [level=3] [ref=e169]'
+              - generic [ref=e171]: Учебное пособие для студентов мед специальностей по курсу «офтальмология» и клинических ординаторов по специальности ...
+          - link "Работа офтальмологического оборудования" [ref=e173] [cursor=pointer]:
+            - /url: "#"
+            - img "Работа офтальмологического оборудования" [ref=e175]
+            - img [ref=e177]
+          - 'link "Методическое пособие по офтальмологии # методическое пособие методическое пособие: применение антиоксидантов при отслойке сетчатки у детей Учебное пособие для студентов мед специальностей по курсу «офтальмология» и клинических ординаторов по специальности ..." [ref=e180] [cursor=pointer]':
+            - /url: "#"
+            - img "Методическое пособие по офтальмологии" [ref=e182]
+            - generic [ref=e183]:
+              - generic [ref=e185]: "# методическое пособие"
+              - 'heading "методическое пособие: применение антиоксидантов при отслойке сетчатки у детей" [level=3] [ref=e186]'
+              - generic [ref=e188]: Учебное пособие для студентов мед специальностей по курсу «офтальмология» и клинических ординаторов по специальности ...
+      - generic [ref=e189]:
+        - generic [ref=e190]:
+          - heading "Отзывы об Алексее" [level=2] [ref=e191]
+          - generic [ref=e192]:
+            - button "Предыдущий отзыв" [disabled] [ref=e193]:
+              - img [ref=e194]
+            - button "Следующий отзыв" [ref=e196] [cursor=pointer]:
+              - img [ref=e197]
+        - generic [ref=e201]:
+          - article [ref=e203]:
+            - generic [ref=e204]:
+              - generic [ref=e205]:
+                - heading "Марина" [level=3] [ref=e206]
+                - generic [ref=e207]: 18 марта 2026
+              - generic "5 из 5" [ref=e208]:
+                - img [ref=e209]
+                - img [ref=e211]
+                - img [ref=e213]
+                - img [ref=e215]
+                - img [ref=e217]
+            - generic [ref=e219]: Были в клинике с сыном. Остались очень довольны. Особенно хотелось бы отметить администратора Ангелину. Очень спокойная.
+            - link "Читать полностью" [ref=e220] [cursor=pointer]:
+              - /url: "#"
+              - generic [ref=e221]: Читать полностью
+          - article [ref=e223]:
+            - generic [ref=e224]:
+              - generic [ref=e225]:
+                - heading "Марина" [level=3] [ref=e226]
+                - generic [ref=e227]: 18 марта 2026
+              - generic "5 из 5" [ref=e228]:
+                - img [ref=e229]
+                - img [ref=e231]
+                - img [ref=e233]
+                - img [ref=e235]
+                - img [ref=e237]
+            - generic [ref=e239]: Были в клинике с сыном. Остались очень довольны. Особенно хотелось бы отметить администратора Ангелину. Очень спокойная.
+            - link "Читать полностью" [ref=e240] [cursor=pointer]:
+              - /url: "#"
+              - generic [ref=e241]: Читать полностью
+          - article [ref=e243]:
+            - generic [ref=e244]:
+              - generic [ref=e245]:
+                - heading "Марина" [level=3] [ref=e246]
+                - generic [ref=e247]: 18 марта 2026
+              - generic "5 из 5" [ref=e248]:
+                - img [ref=e249]
+                - img [ref=e251]
+                - img [ref=e253]
+                - img [ref=e255]
+                - img [ref=e257]
+            - generic [ref=e259]: Были в клинике с сыном. Остались очень довольны. Особенно хотелось бы отметить администратора Ангелину. Очень спокойная.
+            - link "Читать полностью" [ref=e260] [cursor=pointer]:
+              - /url: "#"
+              - generic [ref=e261]: Читать полностью
+          - article [ref=e263]:
+            - generic [ref=e264]:
+              - generic [ref=e265]:
+                - heading "Марина" [level=3] [ref=e266]
+                - generic [ref=e267]: 18 марта 2026
+              - generic "5 из 5" [ref=e268]:
+                - img [ref=e269]
+                - img [ref=e271]
+                - img [ref=e273]
+                - img [ref=e275]
+                - img [ref=e277]
+            - generic [ref=e279]: Были в клинике с сыном. Остались очень довольны. Особенно хотелось бы отметить администратора Ангелину. Очень спокойная.
+            - link "Читать полностью" [ref=e280] [cursor=pointer]:
+              - /url: "#"
+              - generic [ref=e281]: Читать полностью
+          - article [ref=e283]:
+            - generic [ref=e284]:
+              - generic [ref=e285]:
+                - heading "Марина" [level=3] [ref=e286]
+                - generic [ref=e287]: 18 марта 2026
+              - generic "5 из 5" [ref=e288]:
+                - img [ref=e289]
+                - img [ref=e291]
+                - img [ref=e293]
+                - img [ref=e295]
+                - img [ref=e297]
+            - generic [ref=e299]: Были в клинике с сыном. Остались очень довольны. Особенно хотелось бы отметить администратора Ангелину. Очень спокойная.
+            - link "Читать полностью" [ref=e300] [cursor=pointer]:
+              - /url: "#"
+              - generic [ref=e301]: Читать полностью
+      - generic [ref=e302]:
+        - heading "Коллеги по специальности" [level=2] [ref=e304]
+        - generic [ref=e307]:
+          - link "Михневич Константин Викторович Михневич Константин Викторович Главный врач. Врач-офтальмолог Записаться" [ref=e309] [cursor=pointer]:
+            - /url: /doctor-detail.html
+            - img "Михневич Константин Викторович" [ref=e312]
+            - generic [ref=e313]:
+              - heading "Михневич Константин Викторович" [level=3] [ref=e314]
+              - generic [ref=e315]:
+                - text: Главный врач.
+                - text: Врач-офтальмолог
+              - generic [ref=e316]: Записаться
+          - link "Михневич Константин Викторович Михневич Константин Викторович Главный врач. Врач-офтальмолог Записаться" [ref=e318] [cursor=pointer]:
+            - /url: /doctor-detail.html
+            - img "Михневич Константин Викторович" [ref=e321]
+            - generic [ref=e322]:
+              - heading "Михневич Константин Викторович" [level=3] [ref=e323]
+              - generic [ref=e324]:
+                - text: Главный врач.
+                - text: Врач-офтальмолог
+              - generic [ref=e325]: Записаться
+          - link "Михневич Константин Викторович Михневич Константин Викторович Главный врач. Врач-офтальмолог Записаться" [ref=e327] [cursor=pointer]:
+            - /url: /doctor-detail.html
+            - img "Михневич Константин Викторович" [ref=e330]
+            - generic [ref=e331]:
+              - heading "Михневич Константин Викторович" [level=3] [ref=e332]
+              - generic [ref=e333]:
+                - text: Главный врач.
+                - text: Врач-офтальмолог
+              - generic [ref=e334]: Записаться
+          - link "Михневич Константин Викторович Михневич Константин Викторович Главный врач. Врач-офтальмолог Записаться" [ref=e336] [cursor=pointer]:
+            - /url: /doctor-detail.html
+            - img "Михневич Константин Викторович" [ref=e339]
+            - generic [ref=e340]:
+              - heading "Михневич Константин Викторович" [level=3] [ref=e341]
+              - generic [ref=e342]:
+                - text: Главный врач.
+                - text: Врач-офтальмолог
+              - generic [ref=e343]: Записаться
+    - generic [ref=e345]:
+      - generic [ref=e346]:
+        - heading "Клиника факт" [level=2] [ref=e347]:
+          - generic [ref=e349]: Клиника факт
+        - generic [ref=e350]: О клинике
+      - heading "Применяем передовые практики мировой офтальмологии" [level=3] [ref=e351]:
+        - generic [ref=e353]: Применяем передовые практики
+        - generic [ref=e355]: мировой офтальмологии
+      - list [ref=e357]:
+        - listitem [ref=e358]:
+          - generic [ref=e359]:
+            - heading "кератопластика" [level=4] [ref=e361]
+            - generic [ref=e362]: Мы проводим все виды пересадки роговицы, в том числе послойную. При кератоконусе, дистрофии роговицы, травмах глаза
+        - listitem [ref=e363]:
+          - generic [ref=e364]:
+            - heading "Фемто-ФЭ" [level=4] [ref=e366]
+            - generic [ref=e367]: Метод лазерной хирургии катаракты с фемтосекундным сопровождением позволяет нам восстановить зрение пациентам в самых сложных случаях
+        - listitem [ref=e368]:
+          - generic [ref=e369]:
+            - heading "Комбинированная хирургия" [level=4] [ref=e371]
+            - generic [ref=e372]: Совмещение методов хирургии и решение нескольких проблем во время одного хирургического вмешательства
+        - listitem [ref=e373]:
+          - generic [ref=e374]:
+            - heading "Философия точного зрения" [level=4] [ref=e376]
+            - generic [ref=e377]: Наш стандарт — это углубленная диагностика, тщательный сбор анамнеза и индивидуальный выбор метода лечения для каждого пациента
+      - link "ролик о нашем подходе к работе 00:50" [ref=e378] [cursor=pointer]:
+        - /url: "#"
+        - generic [ref=e380]:
+          - img [ref=e382]
+          - generic [ref=e384]:
+            - generic [ref=e385]:
+              - text: ролик о нашем
+              - text: подходе к работе
+            - generic [ref=e386]: 00:50
+  - contentinfo [ref=e388]:
+    - generic [ref=e389]:
+      - generic [ref=e390]:
+        - generic [ref=e392]:
+          - link [ref=e393] [cursor=pointer]:
+            - /url: /
+          - link "Версия для слабовидящих" [ref=e394] [cursor=pointer]:
+            - /url: "#"
+            - text: Версия для слабовидящих
+            - img [ref=e395]
+        - navigation "Навигация по сайту" [ref=e397]:
+          - generic [ref=e398]:
+            - heading "Компания" [level=3] [ref=e399]
+            - list [ref=e400]:
+              - listitem [ref=e401]:
+                - link "О клинике" [ref=e402] [cursor=pointer]:
+                  - /url: "#"
+              - listitem [ref=e403]:
+                - link "Врачи" [ref=e404] [cursor=pointer]:
+                  - /url: "#"
+              - listitem [ref=e405]:
+                - link "Цены" [ref=e406] [cursor=pointer]:
+                  - /url: /prices.html
+              - listitem [ref=e407]:
+                - link "Отзывы" [ref=e408] [cursor=pointer]:
+                  - /url: "#"
+              - listitem [ref=e409]:
+                - link "Статьи" [ref=e410] [cursor=pointer]:
+                  - /url: "#"
+              - listitem [ref=e411]:
+                - link "Лицензии" [ref=e412] [cursor=pointer]:
+                  - /url: /licenses.html
+              - listitem [ref=e413]:
+                - link "Контакты" [ref=e414] [cursor=pointer]:
+                  - /url: "#"
+          - generic [ref=e415]:
+            - heading "Услуги" [level=3] [ref=e416]
+            - list [ref=e417]:
+              - listitem [ref=e418]:
+                - link "Диагностика" [ref=e419] [cursor=pointer]:
+                  - /url: "#"
+              - listitem [ref=e420]:
+                - link "Детское отделение" [ref=e421] [cursor=pointer]:
+                  - /url: "#"
+              - listitem [ref=e422]:
+                - link "Лазерная коррекция" [ref=e423] [cursor=pointer]:
+                  - /url: "#"
+              - listitem [ref=e424]:
+                - link "Глаукома" [ref=e425] [cursor=pointer]:
+                  - /url: "#"
+              - listitem [ref=e426]:
+                - link "Катаракта" [ref=e427] [cursor=pointer]:
+                  - /url: "#"
+              - listitem [ref=e428]:
+                - link "Кератоконус" [ref=e429] [cursor=pointer]:
+                  - /url: "#"
+              - listitem [ref=e430]:
+                - link "Окулопластика" [ref=e431] [cursor=pointer]:
+                  - /url: "#"
+        - generic [ref=e432]:
+          - generic [ref=e433]:
+            - heading "Свяжитесь с нами" [level=3] [ref=e434]
+            - list [ref=e435]:
+              - listitem [ref=e436]:
+                - link [ref=e437] [cursor=pointer]:
+                  - /url: "#"
+                  - img [ref=e438]
+              - listitem [ref=e440]:
+                - link [ref=e441] [cursor=pointer]:
+                  - /url: "#"
+                  - img [ref=e442]
+              - listitem [ref=e444]:
+                - link [ref=e445] [cursor=pointer]:
+                  - /url: "#"
+                  - img [ref=e446]
+          - generic [ref=e448]:
+            - heading "Мы в соц сетях:" [level=3] [ref=e449]
+            - list [ref=e450]:
+              - listitem [ref=e451]:
+                - link [ref=e452] [cursor=pointer]:
+                  - /url: "#"
+                  - img [ref=e453]
+              - listitem [ref=e455]:
+                - link [ref=e456] [cursor=pointer]:
+                  - /url: "#"
+                  - img [ref=e457]
+              - listitem [ref=e459]:
+                - link [ref=e460] [cursor=pointer]:
+                  - /url: "#"
+                  - img [ref=e461]
+              - listitem [ref=e463]:
+                - link [ref=e464] [cursor=pointer]:
+                  - /url: "#"
+                  - img [ref=e465]
+        - generic [ref=e467]:
+          - generic [ref=e468]:
+            - link "8 800 333—4603" [ref=e469] [cursor=pointer]:
+              - /url: tel:+78003334603
+            - link "Обратный звонок" [ref=e470] [cursor=pointer]:
+              - /url: tel:+78003334603
+          - generic [ref=e471]:
+            - link "mng@factmed.ru" [ref=e472] [cursor=pointer]:
+              - /url: mailto:mng@factmed.ru
+            - link "написать письмо" [ref=e473] [cursor=pointer]:
+              - /url: mailto:mng@factmed.ru
+          - generic [ref=e474]:
+            - generic [ref=e475]:
+              - text: г. Пятигорск,
+              - text: ул. Московская 105
+            - generic [ref=e476]: Ежедневно с 8:30 до 19:00
+            - link "смотреть на карте" [ref=e477] [cursor=pointer]:
+              - /url: "#"
+      - generic [ref=e478]:
+        - generic [ref=e479]:
+          - text: © ФАКТ, 2025. Все права защищены.
+          - text: Лицензия №Л041-01197-26/00380702
+        - generic [ref=e480]:
+          - link "Политика конфиденциальности" [ref=e481] [cursor=pointer]:
+            - /url: "#"
+          - link "Политика обработки персональных данных" [ref=e482] [cursor=pointer]:
+            - /url: "#"
+        - link "Mark Weber Дизайн и разработка сайта — Mark Weber" [ref=e483] [cursor=pointer]:
+          - /url: https://markweber.ru/
+          - img "Mark Weber" [ref=e484]
+          - text: Дизайн и разработка
+          - text: сайта — Mark Weber
+  - generic:
+    - dialog:
+      - button:
+        - img
+      - generic:
+        - heading [level=2]:
+          - text: Ваш город
+          - generic:
+            - img
+            - generic: Пятигорск
+            - text: "?"
+        - generic:
+          - button: Да
+          - button: выбрать другой
+  - generic:
+    - dialog:
+      - button:
+        - img
+      - generic:
+        - heading [level=2]: Выберите свой город
+        - generic:
+          - searchbox
+          - generic:
+            - img
+        - generic:
+          - generic:
+            - generic:
+              - list:
+                - listitem:
+                  - link:
+                    - /url: /
+                    - text: Москва
+                - listitem:
+                  - link:
+                    - /url: /
+                    - text: Краснодар
+                - listitem:
+                  - link:
+                    - /url: /
+                    - text: Ессентуки
+                - listitem:
+                  - link:
+                    - /url: /
+                    - text: Махачкала
+                - listitem:
+                  - link:
+                    - /url: /
+                    - text: Пермь
+            - generic:
+              - generic:
+                - heading [level=3]: А
+                - list:
+                  - listitem:
+                    - link:
+                      - /url: /
+                      - text: Анапа
+                  - listitem:
+                    - link:
+                      - /url: /
+                      - text: Армавир
+              - generic:
+                - heading [level=3]: Б
+                - list:
+                  - listitem:
+                    - link:
+                      - /url: /
+                      - text: Березники
+              - generic:
+                - heading [level=3]: Г
+                - list:
+                  - listitem:
+                    - link:
+                      - /url: /
+                      - text: Георгиевск
+                  - listitem:
+                    - link:
+                      - /url: /
+                      - text: Горячий ключ
+              - generic:
+                - heading [level=3]: Е
+                - list:
+                  - listitem:
+                    - link:
+                      - /url: /
+                      - text: Ейск
+              - generic:
+                - heading [level=3]: К
+                - list:
+                  - listitem:
+                    - link:
+                      - /url: /
+                      - text: Кропоткин
+                  - listitem:
+                    - link:
+                      - /url: /
+                      - text: Крымск
+              - generic:
+                - heading [level=3]: М
+                - list:
+                  - listitem:
+                    - link:
+                      - /url: /
+                      - text: Майкоп
+                  - listitem:
+                    - link:
+                      - /url: /
+                      - text: Минеральные воды
+                  - listitem:
+                    - link:
+                      - /url: /
+                      - text: Моздок
+              - generic:
+                - heading [level=3]: П
+                - list:
+                  - listitem:
+                    - link:
+                      - /url: /
+                      - text: Пятигорск
+              - generic:
+                - heading [level=3]: С
+                - list:
+                  - listitem:
+                    - link:
+                      - /url: /
+                      - text: Славянск-на- Кубани
+                  - listitem:
+                    - link:
+                      - /url: /
+                      - text: Соликамск
+                  - listitem:
+                    - link:
+                      - /url: /
+                      - text: Сочи
+              - generic:
+                - heading [level=3]: Т
+                - list:
+                  - listitem:
+                    - link:
+                      - /url: /
+                      - text: Темрюк
+                  - listitem:
+                    - link:
+                      - /url: /
+                      - text: Тимашевск
+  - dialog [ref=e486]:
+    - button [ref=e487] [cursor=pointer]:
+      - img [ref=e488]
+    - generic [ref=e490]:
+      - generic [ref=e491]:
+        - heading [level=2] [ref=e492]: Запишитесь на прием
+        - paragraph [ref=e493]: Заполните форму и мы свяжемся с вами в ближайшее время
+      - generic [ref=e494]:
+        - generic [ref=e495]:
+          - textbox [ref=e497]:
+            - /placeholder: Имя*
+          - textbox [ref=e499]:
+            - /placeholder: Телефон*
+        - generic [ref=e500]:
+          - paragraph [ref=e501]:
+            - text: Нажимая кнопку, вы соглашаетесь с условиями обработки персональных данных и
+            - link [ref=e502] [cursor=pointer]:
+              - /url: "#"
+              - text: Политикой конфиденциальности
+          - button [ref=e503] [cursor=pointer]: записаться на диагностику
+  - dialog [ref=e505]:
+    - link [ref=e506] [cursor=pointer]:
+      - /url: /
+      - img [ref=e507]
+    - button [ref=e508] [cursor=pointer]:
+      - img [ref=e509]
+    - generic [ref=e511]:
+      - img [ref=e513]
+      - heading [level=2] [ref=e515]: спасибо за доверие
+      - paragraph [ref=e517]: Наш специалист свяжется с вами и поможет выбрать удобную дату и время для визита в нашу клинику. Мы сделаем все, чтобы вы видели лучше! И это ФАКТ
+  - img
