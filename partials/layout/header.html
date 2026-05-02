@@ -190,9 +190,15 @@
                                 </a>
                             </li>
                             <li class="page-header__nav-list-item">
-                                <a href="#" class="page-header__nav-link">
-                                    О клинике
-                                </a>
+                                <button class="page-header__mobile-about-toggle" type="button" data-mobile-about-toggle
+                                    aria-expanded="false" aria-controls="header-mobile-about-list">
+                                    <span>О клинике</span>
+                                    <span class="page-header__mobile-about-toggle-icon" aria-hidden="true">
+                                        <svg width="12" height="19">
+                                            <use xlink:href="#arrow-right"></use>
+                                        </svg>
+                                    </span>
+                                </button>
                             </li>
                             <li class="page-header__nav-list-item">
                                 <a href="#" class="page-header__nav-link">
@@ -246,8 +252,52 @@
                             </li>
                         </ul>
                     </nav>
+                    <nav class="page-header__mobile-about" id="header-mobile-about-list" data-mobile-about-list
+                        aria-hidden="true">
+                        <button class="page-header__mobile-about-heading" type="button" data-mobile-about-toggle
+                            aria-expanded="false" aria-controls="header-mobile-about-list">
+                            <span>О клинике</span>
+                            <span class="page-header__mobile-about-heading-icon" aria-hidden="true">
+                                <svg width="24" height="24">
+                                    <use xlink:href="#arrow-down"></use>
+                                </svg>
+                            </span>
+                        </button>
+                        <ul class="page-header__mobile-about-list">
+                            <li class="page-header__mobile-about-item">
+                                <a href="#" class="page-header__mobile-about-link">
+                                    Оборудование
+                                </a>
+                            </li>
+                            <li class="page-header__mobile-about-item">
+                                <a href="#" class="page-header__mobile-about-link">
+                                    Новости
+                                </a>
+                            </li>
+                            <li class="page-header__mobile-about-item">
+                                <a href="#" class="page-header__mobile-about-link">
+                                    Клиника микрохирургии глаза
+                                </a>
+                            </li>
+                            <li class="page-header__mobile-about-item">
+                                <a href="#" class="page-header__mobile-about-link">
+                                    Вакансии
+                                </a>
+                            </li>
+                            <li class="page-header__mobile-about-item">
+                                <a href="#" class="page-header__mobile-about-link">
+                                    Партнеры
+                                </a>
+                            </li>
+                            <li class="page-header__mobile-about-item">
+                                <a href="#" class="page-header__mobile-about-link">
+                                    Документы
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
                     <a href="#feedback-modal" class="btn btn--mobile-large btn--green page-header__callback-btn">
-                        Записаться
+                        Записаться на приём
                     </a>
                 </div>
                 <section class="page-header__mobile-city-select" id="header-mobile-city-select" data-mobile-city-select

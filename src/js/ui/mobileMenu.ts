@@ -33,6 +33,12 @@ export default function mobileMenu() {
   const mobileServicesList = mobileMenu.querySelector<HTMLElement>(
     "[data-mobile-services-list]",
   );
+  const mobileAboutToggles = Array.from(
+    mobileMenu.querySelectorAll<HTMLButtonElement>("[data-mobile-about-toggle]"),
+  );
+  const mobileAboutList = mobileMenu.querySelector<HTMLElement>(
+    "[data-mobile-about-list]",
+  );
   const mobileMenuMain = mobileMenu.querySelector<HTMLElement>("[data-mobile-menu-main]");
   const mobileCitySelectToggle = mobileMenu.querySelector<HTMLButtonElement>(
     "[data-mobile-city-select-toggle]",
@@ -48,7 +54,7 @@ export default function mobileMenu() {
   );
   const closeOnClickLinks = Array.from(
     mobileMenu.querySelectorAll<HTMLAnchorElement>(
-      ".page-header__nav-link, .page-header__mobile-services-link, .page-header__callback-btn, [data-mobile-city-tab-link]",
+      ".page-header__nav-link, .page-header__mobile-services-link, .page-header__mobile-about-link, .page-header__callback-btn, [data-mobile-city-tab-link]",
     ),
   );
 
@@ -76,6 +82,15 @@ export default function mobileMenu() {
     mobileServicesList?.setAttribute("aria-hidden", isOpen ? "false" : "true");
   };
 
+  const setMobileAboutState = (isOpen: boolean) => {
+    header.classList.toggle("is-mobile-about-open", isOpen);
+    mobileAboutToggles.forEach((toggle) => {
+      toggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+    });
+    mobilePrimaryNav?.setAttribute("aria-hidden", isOpen ? "true" : "false");
+    mobileAboutList?.setAttribute("aria-hidden", isOpen ? "false" : "true");
+  };
+
   const syncMobileCityTabsState = () => {
     const isCitySelectOpen = header.classList.contains("is-mobile-city-select-open");
     const normalizedCurrentCity = normalize(currentCityName);
@@ -98,6 +113,7 @@ export default function mobileMenu() {
 
     if (isOpen) {
       setMobileServicesState(false);
+      setMobileAboutState(false);
       if (mobileCitySelectRoot) {
         document.dispatchEvent(
           new CustomEvent(CITY_PICKER_RESET_EVENT, {
@@ -119,6 +135,7 @@ export default function mobileMenu() {
     servicesToggle?.setAttribute("aria-expanded", "false");
     servicesMenu?.setAttribute("aria-hidden", "true");
     setMobileServicesState(false);
+    setMobileAboutState(false);
     setMobileCitySelectState(false);
     mobileMenu.setAttribute("aria-hidden", "false");
     setBurgerState(true);
@@ -128,6 +145,7 @@ export default function mobileMenu() {
   const closeMenu = () => {
     header.classList.remove("is-mobile-menu-open");
     setMobileServicesState(false);
+    setMobileAboutState(false);
     setMobileCitySelectState(false);
     mobileMenu.setAttribute("aria-hidden", "true");
     setBurgerState(false);
@@ -151,7 +169,20 @@ export default function mobileMenu() {
     }
 
     setMobileCitySelectState(false);
+    setMobileAboutState(false);
     setMobileServicesState(!header.classList.contains("is-mobile-services-open"));
+  });
+
+  mobileAboutToggles.forEach((toggle) => {
+    toggle.addEventListener("click", () => {
+      if (!mobileMediaQuery.matches || !header.classList.contains("is-mobile-menu-open")) {
+        return;
+      }
+
+      setMobileCitySelectState(false);
+      setMobileServicesState(false);
+      setMobileAboutState(!header.classList.contains("is-mobile-about-open"));
+    });
   });
 
   mobileCitySelectToggle?.addEventListener("click", () => {
@@ -205,6 +236,7 @@ export default function mobileMenu() {
 
   setBurgerState(false);
   setMobileServicesState(false);
+  setMobileAboutState(false);
   setMobileCitySelectState(false);
   mobileMenu.setAttribute("aria-hidden", "true");
 }
