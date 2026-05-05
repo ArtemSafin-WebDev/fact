@@ -521,49 +521,6 @@
     }
   }
 
-  .page-header.is-mobile-about-open .page-header__mobile-city-tabs {
-    @include media.breakpoint(mobile) {
-      display: flex;
-      align-items: center;
-      gap: 1.6rem;
-    }
-  }
-
-  .page-header.is-mobile-about-open
-    .page-header__mobile-city-tabs-item:nth-child(3) {
-    @include media.breakpoint(mobile) {
-      display: none;
-    }
-  }
-
-  .page-header.is-mobile-about-open .page-header__mobile-city-tab {
-    @include media.breakpoint(mobile) {
-      display: block;
-      width: auto;
-      height: auto;
-      border: 0;
-      background-color: transparent;
-      font-size: 1.4rem;
-      line-height: 140%;
-      font-weight: 400;
-      text-align: left;
-    }
-  }
-
-  .page-header.is-mobile-about-open .page-header__mobile-city-tab.is-active {
-    @include media.breakpoint(mobile) {
-      background-color: transparent;
-      border-color: transparent;
-      font-weight: 900;
-    }
-  }
-
-  .page-header.is-mobile-about-open .page-header__mobile-menu-body {
-    @include media.breakpoint(mobile) {
-      gap: 3.2rem;
-    }
-  }
-
   .page-header__mobile-nav {
     @include media.breakpoint(mobile) {
       display: block;
@@ -574,7 +531,7 @@
     display: none;
   }
 
-  .page-header__mobile-about {
+  .page-header__mobile-submenu {
     display: none;
   }
 
@@ -590,16 +547,17 @@
     }
   }
 
-  .page-header.is-mobile-about-open
+  .page-header.is-mobile-submenu-open
     .page-header__mobile-menu
     .page-header__services-link,
-  .page-header.is-mobile-about-open .page-header__mobile-nav {
+  .page-header.is-mobile-submenu-open .page-header__mobile-nav {
     @include media.breakpoint(mobile) {
       display: none;
     }
   }
 
-  .page-header.is-mobile-about-open .page-header__mobile-about {
+  .page-header.is-mobile-submenu-open
+    .page-header__mobile-submenu[aria-hidden="false"] {
     @include media.breakpoint(mobile) {
       display: block;
     }
@@ -626,13 +584,14 @@
     }
   }
 
-  .page-header__mobile-about-toggle,
-  .page-header__mobile-about-heading {
+  .page-header__mobile-submenu-toggle,
+  .page-header__mobile-submenu-heading {
     @include media.breakpoint(mobile) {
       display: flex;
       align-items: center;
       justify-content: space-between;
       width: 100%;
+      height: 4rem;
       border: 0;
       padding: 0 2rem;
       color: var(--text-color);
@@ -645,15 +604,15 @@
     }
   }
 
-  .page-header__mobile-about-heading {
+  .page-header__mobile-submenu-heading {
     @include media.breakpoint(mobile) {
       padding: 0;
       color: var(--green-300);
     }
   }
 
-  .page-header__mobile-about-toggle-icon,
-  .page-header__mobile-about-heading-icon {
+  .page-header__mobile-submenu-toggle-icon,
+  .page-header__mobile-submenu-heading-icon {
     @include media.breakpoint(mobile) {
       display: grid;
       place-items: center;
@@ -669,13 +628,13 @@
     }
   }
 
-  .page-header__mobile-about-heading-icon svg {
+  .page-header__mobile-submenu-heading-icon svg {
     @include media.breakpoint(mobile) {
       transform: rotate(180deg);
     }
   }
 
-  .page-header__mobile-about-list {
+  .page-header__mobile-submenu-list {
     @include media.breakpoint(mobile) {
       display: flex;
       flex-direction: column;
@@ -684,7 +643,7 @@
     }
   }
 
-  .page-header__mobile-about-link {
+  .page-header__mobile-submenu-link {
     @include media.breakpoint(mobile) {
       display: block;
       font-size: 1.5rem;
@@ -696,9 +655,9 @@
     }
   }
 
-  .page-header__mobile-about-link,
-  .page-header__mobile-about-toggle,
-  .page-header__mobile-about-heading {
+  .page-header__mobile-submenu-link,
+  .page-header__mobile-submenu-toggle,
+  .page-header__mobile-submenu-heading {
     @include media.canHover {
       &:hover {
         color: var(--green-300);
@@ -951,7 +910,7 @@
     @include media.breakpoint(mobile) {
       flex-direction: column;
       align-items: stretch;
-      gap: 3.2rem;
+      gap: 1.6rem;
     }
   }
 
@@ -965,6 +924,9 @@
     white-space: nowrap;
 
     @include media.breakpoint(mobile) {
+      display: flex;
+      align-items: center;
+      height: 4rem;
       font-size: 2rem;
       letter-spacing: -0.02rem;
       padding-left: 2rem;

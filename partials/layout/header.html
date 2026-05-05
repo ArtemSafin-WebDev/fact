@@ -11,8 +11,7 @@
                 </svg>
             </a>
             <div class="page-header__schedule">
-                <button class="city" type="button" data-modal-target="#city-modal" aria-haspopup="dialog"
-                    aria-controls="city-modal">
+                <button class="city" type="button" data-modal-target="#city-modal" aria-haspopup="dialog">
                     Пятигорск
                 </button>
                 <p class="time">
@@ -32,8 +31,7 @@
             <div class="page-header__bottom-wrapper">
 
 
-                <button class="page-header__services-link" type="button" data-services-menu-toggle aria-expanded="false"
-                    aria-controls="header-services-menu">
+                <button class="page-header__services-link" type="button" data-services-menu-toggle aria-expanded="false">
                     <span>Услуги</span>
                     <span class="page-header__services-link-dot" aria-hidden="true"></span>
                     <svg class="page-header__services-link-arrow" width="16" height="8" aria-hidden="true">
@@ -105,8 +103,7 @@
                         <use xlink:href="#eye"></use>
                     </svg>
                 </a>
-                <button class="page-header__burger" type="button" aria-label="Открыть меню" aria-expanded="false"
-                    aria-controls="header-mobile-menu">
+                <button class="page-header__burger" type="button" aria-label="Открыть меню" aria-expanded="false">
                     <span aria-hidden="true"></span>
                     <span aria-hidden="true"></span>
                     <span aria-hidden="true"></span>
@@ -116,8 +113,7 @@
     </div>
 
 
-    <div class="page-header__mobile-menu" id="header-mobile-menu" data-mobile-menu aria-hidden="true"
-        data-lenis-prevent>
+    <div class="page-header__mobile-menu" data-mobile-menu aria-hidden="true" data-lenis-prevent>
         <div class="page-header__mobile-menu-content">
             <div class="page-header__mobile-meta">
                 <a href="tel:+78003334603" class="page-header__mobile-phone">8 800 333—4603</a>
@@ -158,14 +154,14 @@
                     </li>
                     <li class="page-header__mobile-city-tabs-item">
                         <button class="page-header__mobile-city-tab" type="button" data-mobile-city-select-toggle
-                            aria-expanded="false" aria-controls="header-mobile-city-select">
+                            aria-expanded="false">
                             Другие города
                         </button>
                     </li>
                 </ul>
                 <div class="page-header__mobile-menu-main" data-mobile-menu-main>
                     <button class="page-header__services-link" type="button" data-mobile-services-toggle
-                        aria-expanded="false" aria-controls="header-mobile-services-list">
+                        aria-expanded="false">
                         <span>Услуги</span>
                         <span class="page-header__services-link-dot" aria-hidden="true"></span>
                         <svg class="page-header__services-link-arrow" width="16" height="8" aria-hidden="true">
@@ -190,10 +186,21 @@
                                 </a>
                             </li>
                             <li class="page-header__nav-list-item">
-                                <button class="page-header__mobile-about-toggle" type="button" data-mobile-about-toggle
-                                    aria-expanded="false" aria-controls="header-mobile-about-list">
+                                <button class="page-header__mobile-submenu-toggle" type="button"
+                                    data-mobile-submenu-open aria-expanded="false">
                                     <span>О клинике</span>
-                                    <span class="page-header__mobile-about-toggle-icon" aria-hidden="true">
+                                    <span class="page-header__mobile-submenu-toggle-icon" aria-hidden="true">
+                                        <svg width="12" height="19">
+                                            <use xlink:href="#arrow-right"></use>
+                                        </svg>
+                                    </span>
+                                </button>
+                            </li>
+                            <li class="page-header__nav-list-item">
+                                <button class="page-header__mobile-submenu-toggle" type="button"
+                                    data-mobile-submenu-open aria-expanded="false">
+                                    <span>Пациентам</span>
+                                    <span class="page-header__mobile-submenu-toggle-icon" aria-hidden="true">
                                         <svg width="12" height="19">
                                             <use xlink:href="#arrow-right"></use>
                                         </svg>
@@ -212,8 +219,7 @@
                             </li>
                         </ul>
                     </nav>
-                    <nav class="page-header__mobile-services" id="header-mobile-services-list" data-mobile-services-list
-                        aria-hidden="true">
+                    <nav class="page-header__mobile-services" data-mobile-services-list aria-hidden="true">
                         <ul class="page-header__mobile-services-list">
                             <li class="page-header__mobile-services-item">
                                 <a href="#" class="page-header__mobile-services-link">
@@ -252,46 +258,73 @@
                             </li>
                         </ul>
                     </nav>
-                    <nav class="page-header__mobile-about" id="header-mobile-about-list" data-mobile-about-list
-                        aria-hidden="true">
-                        <button class="page-header__mobile-about-heading" type="button" data-mobile-about-toggle
-                            aria-expanded="false" aria-controls="header-mobile-about-list">
+                    <nav class="page-header__mobile-submenu" data-mobile-submenu-panel aria-hidden="true">
+                        <button class="page-header__mobile-submenu-heading" type="button" data-mobile-submenu-close
+                            aria-expanded="false">
                             <span>О клинике</span>
-                            <span class="page-header__mobile-about-heading-icon" aria-hidden="true">
+                            <span class="page-header__mobile-submenu-heading-icon" aria-hidden="true">
                                 <svg width="24" height="24">
                                     <use xlink:href="#arrow-down"></use>
                                 </svg>
                             </span>
                         </button>
-                        <ul class="page-header__mobile-about-list">
-                            <li class="page-header__mobile-about-item">
-                                <a href="#" class="page-header__mobile-about-link">
+                        <ul class="page-header__mobile-submenu-list">
+                            <li class="page-header__mobile-submenu-item">
+                                <a href="#" class="page-header__mobile-submenu-link">
                                     Оборудование
                                 </a>
                             </li>
-                            <li class="page-header__mobile-about-item">
-                                <a href="#" class="page-header__mobile-about-link">
+                            <li class="page-header__mobile-submenu-item">
+                                <a href="#" class="page-header__mobile-submenu-link">
                                     Новости
                                 </a>
                             </li>
-                            <li class="page-header__mobile-about-item">
-                                <a href="#" class="page-header__mobile-about-link">
+                            <li class="page-header__mobile-submenu-item">
+                                <a href="#" class="page-header__mobile-submenu-link">
                                     Клиника микрохирургии глаза
                                 </a>
                             </li>
-                            <li class="page-header__mobile-about-item">
-                                <a href="#" class="page-header__mobile-about-link">
+                            <li class="page-header__mobile-submenu-item">
+                                <a href="#" class="page-header__mobile-submenu-link">
                                     Вакансии
                                 </a>
                             </li>
-                            <li class="page-header__mobile-about-item">
-                                <a href="#" class="page-header__mobile-about-link">
+                            <li class="page-header__mobile-submenu-item">
+                                <a href="#" class="page-header__mobile-submenu-link">
                                     Партнеры
                                 </a>
                             </li>
-                            <li class="page-header__mobile-about-item">
-                                <a href="#" class="page-header__mobile-about-link">
+                            <li class="page-header__mobile-submenu-item">
+                                <a href="#" class="page-header__mobile-submenu-link">
                                     Документы
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                    <nav class="page-header__mobile-submenu" data-mobile-submenu-panel aria-hidden="true">
+                        <button class="page-header__mobile-submenu-heading" type="button" data-mobile-submenu-close
+                            aria-expanded="false">
+                            <span>Пациентам</span>
+                            <span class="page-header__mobile-submenu-heading-icon" aria-hidden="true">
+                                <svg width="24" height="24">
+                                    <use xlink:href="#arrow-down"></use>
+                                </svg>
+                            </span>
+                        </button>
+                        <ul class="page-header__mobile-submenu-list">
+                            <li class="page-header__mobile-submenu-item">
+                                <a href="#" class="page-header__mobile-submenu-link">
+                                    Налоговый вычет
+                                </a>
+                            </li>
+                            <li class="page-header__mobile-submenu-item">
+                                <a href="#" class="page-header__mobile-submenu-link">
+                                    Обслуживание по ДМС
+                                </a>
+                            </li>
+                            <li class="page-header__mobile-submenu-item">
+                                <a href="#" class="page-header__mobile-submenu-link">
+                                    Отзывы пациентов
                                 </a>
                             </li>
                         </ul>
@@ -300,8 +333,7 @@
                         Записаться на приём
                     </a>
                 </div>
-                <section class="page-header__mobile-city-select" id="header-mobile-city-select" data-mobile-city-select
-                    aria-hidden="true">
+                <section class="page-header__mobile-city-select" data-mobile-city-select aria-hidden="true">
                     <div class="page-header__mobile-city-select-inner" data-city-select-root data-city-select-mobile>
                         <h2 class="city-select-modal__title">
                             Выберите свой город
@@ -322,8 +354,7 @@
             </div>
         </div>
     </div>
-    <div class="page-header__services-menu" id="header-services-menu" data-services-menu aria-hidden="true"
-        data-lenis-prevent>
+    <div class="page-header__services-menu" data-services-menu aria-hidden="true" data-lenis-prevent>
         <div class="page-header__services-menu-content">
             <div class="page-header__services-menu-grid">
                 <div class="page-header__services-menu-left">
