@@ -241,6 +241,7 @@
     padding-left: 1px;
     display: grid;
     grid-template-columns: repeat(4, minmax(0, 1fr));
+    grid-auto-rows: auto;
     gap: 0;
     list-style: none;
 
@@ -274,6 +275,27 @@
 
     @include media.breakpoint(mobile) {
       background-color: #e3e1de;
+    }
+  }
+
+  @supports (grid-template-rows: subgrid) {
+    .reviews__videos-item {
+      display: grid;
+      grid-row: span 3;
+      grid-template-rows: subgrid;
+    }
+
+    .reviews__videos-item .video-review-card {
+      display: grid;
+      grid-row: 1 / span 3;
+      grid-template-rows: subgrid;
+    }
+
+    .reviews__videos-item .video-review-card__content {
+      display: grid;
+      grid-row: 2 / span 2;
+      grid-template-rows: subgrid;
+      flex-grow: 0;
     }
   }
 
