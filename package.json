@@ -23,7 +23,7 @@
     "vite-plugin-svg-icons": "^2.0.1"
   },
   "dependencies": {
-    "@fancyapps/ui": "^6.1.10",
+    "@fancyapps/ui": "^6.1.14",
     "@yandex/ymaps3-default-ui-theme": "^0.0.24",
     "air-datepicker": "^3.6.0",
     "gsap": "^3.14.2",

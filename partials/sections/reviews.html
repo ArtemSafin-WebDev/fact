@@ -84,7 +84,9 @@
             <ul class="reviews__videos">
                 {{#each reviewsPage.videoReviews}}
                 <li class="reviews__videos-item" data-reviews-card data-reviews-category="{{category}}">
-                    <a href="{{href}}" class="video-review-card">
+                    <a href="{{href}}" class="video-review-card"{{#if fancybox}} data-fancybox="{{fancybox}}"{{/if}}
+                        {{#if videoType}} data-type="{{videoType}}"{{/if}}{{#if videoWidth}}
+                        data-width="{{videoWidth}}"{{/if}}{{#if videoHeight}} data-height="{{videoHeight}}"{{/if}}>
                         <div class="video-review-card__media">
                             <div class="video-review-card__bg">
                                 <img src="{{image}}" alt="">

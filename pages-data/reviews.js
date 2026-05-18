@@ -67,7 +67,11 @@ const reviewsPageData = {
       ],
       videoReviews: [
         {
-          href: "#",
+          href: "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4",
+          fancybox: "video-reviews",
+          videoType: "html5video",
+          videoWidth: "960",
+          videoHeight: "540",
           category: "laser",
           image: "/images/patients/figma-1.webp",
           name: "Сергей",
@@ -75,7 +79,11 @@ const reviewsPageData = {
           text: "Были в клинике с сыном. Остались очень довольны. Особенно хотелось бы отметить администратора Ангелину. Очень спокойная.",
         },
         {
-          href: "#",
+          href: "https://media.w3.org/2010/05/sintel/trailer.mp4",
+          fancybox: "video-reviews",
+          videoType: "html5video",
+          videoWidth: "960",
+          videoHeight: "540",
           category: "cataract",
           image: "/images/patients/figma-2.webp",
           name: "Сергей",
