@@ -9,11 +9,7 @@
         <ul class="licenses-page__grid">
             {{#each licensesPage.items}}
             <li class="licenses-page__item" data-license-page-card>
-                <a href="{{src}}" class="license-card" data-fancybox="licenses-page">
-                    <span class="license-card__media license-card__media--{{orientation}}">
-                        <img src="{{src}}" alt="{{alt}}" loading="lazy">
-                    </span>
-                </a>
+                {{> components/license-card fancybox="licenses-page" }}
             </li>
             {{/each}}
         </ul>

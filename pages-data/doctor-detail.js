@@ -134,6 +134,21 @@ const doctorDetailPageData = {
             src: "/images/license-card/3.webp",
             alt: "Сертификат специалиста",
           },
+          {
+            title: "Офтальмология",
+            dateStart: "25.03.2025",
+            dateEnd: "25.03.2030",
+          },
+          {
+            title: "Детская офтальмология",
+            dateStart: "14.06.2024",
+            dateEnd: "14.06.2029",
+          },
+          {
+            title: "Офтальмохирургия",
+            dateStart: "10.09.2023",
+            dateEnd: "10.09.2028",
+          },
         ],
       },
       articles: {

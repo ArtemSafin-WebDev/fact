@@ -1,0 +1,19 @@
+{{#if src}}
+<a href="{{src}}" class="license-card" data-fancybox="{{fancybox}}">
+    <span class="license-card__media{{#if orientation}} license-card__media--{{orientation}}{{/if}}">
+        <img src="{{src}}" alt="{{alt}}" loading="lazy">
+    </span>
+</a>
+{{else}}
+<div class="license-card license-card--empty" aria-label="{{title}}">
+    <span class="license-card__empty-content">
+        <img class="license-card__empty-icon" src="/images/license-card/empty-icon.svg" alt="" aria-hidden="true"
+            loading="lazy">
+        <span class="license-card__empty-text">
+            <span>{{title}}</span>
+            {{#if dateStart}}<span>{{dateStart}}-</span>{{/if}}
+            {{#if dateEnd}}<span>{{dateEnd}}</span>{{/if}}
+        </span>
+    </span>
+</div>
+{{/if}}

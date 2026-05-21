@@ -174,11 +174,7 @@
                             <div class="swiper-wrapper doctor-details__licenses-grid">
                                 {{#each doctorDetails.licenses.items}}
                                 <div class="swiper-slide">
-                                    <a href="{{src}}" class="license-card" data-fancybox="doctor-licenses">
-                                        <span class="license-card__media">
-                                            <img src="{{src}}" alt="{{alt}}">
-                                        </span>
-                                    </a>
+                                    {{> components/license-card fancybox="doctor-licenses" }}
                                 </div>
                                 {{/each}}
                             </div>

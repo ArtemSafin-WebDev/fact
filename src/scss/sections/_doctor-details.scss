@@ -577,6 +577,11 @@
     display: grid;
     grid-template-columns: repeat(4, minmax(0, 1fr));
 
+    @include media.breakpointMF(above-mobile) {
+      border-top: 1px solid #cbcbcb;
+      border-left: 1px solid #cbcbcb;
+    }
+
     @include media.breakpoint(mobile) {
       display: flex;
       flex-wrap: nowrap;
@@ -731,14 +736,21 @@
   }
 
   .doctor-details__licenses-slider .swiper-slide {
-    border: 1px solid #cbcbcb;
-    border-right: none;
+    border: 0;
 
-    &:last-child {
+    @include media.breakpointMF(above-mobile) {
       border-right: 1px solid #cbcbcb;
+      border-bottom: 1px solid #cbcbcb;
     }
+
     @include media.breakpoint(mobile) {
       width: 17.5rem;
+      border: 1px solid #cbcbcb;
+      border-right-color: transparent;
+
+      &:last-child {
+        border-right-color: #cbcbcb;
+      }
     }
   }
 }

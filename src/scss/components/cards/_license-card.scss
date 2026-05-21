@@ -46,6 +46,39 @@
     transition: filter 0.2s;
   }
 
+  .license-card--empty {
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 13px;
+    background-color: #eaeaea;
+  }
+
+  .license-card__empty-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+  }
+
+  .license-card__empty-icon {
+    display: block;
+    width: 35px;
+    height: 35px;
+  }
+
+  .license-card__empty-text {
+    display: flex;
+    flex-direction: column;
+    color: #161616;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.2;
+    overflow-wrap: break-word;
+    word-break: normal;
+  }
+
   .license-card {
     @include media.canHover {
       &:hover .license-card__media img {
