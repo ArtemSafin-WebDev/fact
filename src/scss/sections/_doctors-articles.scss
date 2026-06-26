@@ -1,0 +1,198 @@
+@use "utils";
+@use "media";
+
+@layer sections {
+  .doctors-articles {
+    @include utils.blockWrapper;
+    padding-top: 20rem;
+    padding-bottom: 8rem;
+    background-color: #eaeaea;
+
+    @include media.breakpoint(mobile) {
+      padding-top: 16.5rem;
+      padding-bottom: 6rem;
+    }
+  }
+
+  .doctors-articles .breadcrumbs {
+    @include media.breakpoint(mobile) {
+      display: none;
+    }
+  }
+
+  .doctors-articles__content {
+    @include utils.blockContent;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+  }
+
+  .doctors-articles__title {
+    margin: 4rem 0 0;
+    color: var(--text-color);
+    font-size: 8rem;
+    font-style: normal;
+    font-weight: 900;
+    line-height: 100%;
+    letter-spacing: 0;
+    text-transform: uppercase;
+
+    @include media.breakpoint(mobile) {
+      margin-top: 0;
+      font-size: 4rem;
+    }
+  }
+
+  .doctors-articles__categories {
+    margin-top: 8rem;
+    max-width: 110rem;
+
+    @include media.breakpoint(mobile) {
+      width: calc(100% + var(--content-padding) * 2);
+      max-width: none;
+      margin-top: 4rem;
+      margin-left: calc(var(--content-padding) * -1);
+      box-sizing: border-box;
+      padding-inline: var(--content-padding);
+      scroll-padding-inline: var(--content-padding);
+      overflow-x: auto;
+      @include utils.noScrollbar;
+    }
+  }
+
+  .doctors-articles__categories-list {
+    display: flex;
+  }
+
+  .doctors-articles__categories-list::after {
+    @include media.breakpoint(mobile) {
+      content: "";
+      flex: 0 0 var(--content-padding);
+    }
+  }
+
+  .doctors-articles__categories-item {
+    display: flex;
+    flex: 1 1 0;
+    min-width: 0;
+
+    @include media.breakpoint(mobile) {
+      flex: 0 0 auto;
+      min-width: 15.6rem;
+    }
+  }
+
+  .doctors-articles__categories-item:not(:first-child) {
+    margin-left: -1px;
+  }
+
+  .doctors-articles__category-link {
+    display: grid;
+    place-items: center;
+    width: 100%;
+    height: 6rem;
+    padding: 0 2rem;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    color: var(--text-color);
+    font-size: 1.5rem;
+    font-style: normal;
+    font-weight: 900;
+    line-height: 100%;
+    text-align: center;
+    transition:
+      background-color 0.2s,
+      border-color 0.2s;
+
+    @include media.breakpoint(mobile) {
+      padding: 0 1.4rem;
+      font-size: 1.2rem;
+    }
+  }
+
+  .doctors-articles__category-link:link,
+  .doctors-articles__category-link:visited {
+    color: var(--text-color);
+  }
+
+  .doctors-articles__category-link.is-active {
+    position: relative;
+    z-index: 1;
+    background-color: var(--green-300);
+    border-color: var(--green-300);
+  }
+
+  .doctors-articles__list {
+    margin-top: 8rem;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+
+    @include media.breakpoint(mobile) {
+      margin-top: 3.2rem;
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
+  .doctors-articles__list-item {
+    display: flex;
+    min-width: 0;
+    background-color: #fff;
+    border-right: 1px solid #cbcbcb;
+    border-bottom: 1px solid #cbcbcb;
+
+    @include media.breakpoint(mobile) {
+      border-right: none;
+      border-bottom-color: #d3d3d3;
+    }
+  }
+
+  .doctors-articles__list-item:nth-child(3n + 1) {
+    border-left: 1px solid #cbcbcb;
+
+    @include media.breakpoint(mobile) {
+      border-left: none;
+    }
+  }
+
+  .doctors-articles__list-item:nth-child(-n + 3) {
+    border-top: 1px solid #cbcbcb;
+
+    @include media.breakpoint(mobile) {
+      border-top: none;
+    }
+  }
+
+  .doctors-articles__list-item:last-child {
+    @include media.breakpoint(mobile) {
+      border-bottom: none;
+    }
+  }
+
+  .doctors-articles__list-item > .blog-card {
+    width: 100%;
+  }
+
+  .doctors-articles .blog-card__bottom {
+    @include media.breakpoint(mobile) {
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 1.2rem;
+    }
+  }
+
+  .doctors-articles .blog-card__desc {
+    @include media.breakpoint(mobile) {
+      max-width: 23.5rem;
+      font-size: 1.4rem;
+      line-height: 120%;
+    }
+  }
+
+  .doctors-articles .blog-card__btn {
+    @include media.breakpoint(mobile) {
+      opacity: 1;
+      visibility: visible;
+      pointer-events: auto;
+    }
+  }
+}

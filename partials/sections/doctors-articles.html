@@ -1,0 +1,39 @@
+<section class="doctors-articles">
+    <div class="doctors-articles__content">
+        {{> components/breadcrumbs items=doctorsArticles.breadcrumbs }}
+
+        <h1 class="doctors-articles__title">
+            {{doctorsArticles.title}}
+        </h1>
+
+        <nav class="doctors-articles__categories" aria-label="Категории статей врачей">
+            <ul class="doctors-articles__categories-list">
+                {{#each doctorsArticles.categories}}
+                <li class="doctors-articles__categories-item">
+                    <a class="doctors-articles__category-link{{#if isActive}} is-active{{/if}}" href="{{href}}"
+                        {{#if isActive}}aria-current="page" {{/if}}>
+                        {{title}}
+                    </a>
+                </li>
+                {{/each}}
+            </ul>
+        </nav>
+
+        <ul class="doctors-articles__list" aria-label="Список статей врачей">
+            {{#each doctorsArticles.cards}}
+            <li class="doctors-articles__list-item">
+                {{> components/blog-card
+                href=href
+                imageDesktop=imageDesktop
+                imageAlt=imageAlt
+                tag=tag
+                title=title
+                description=description
+                showButton=showButton
+                buttonText=buttonText
+                }}
+            </li>
+            {{/each}}
+        </ul>
+    </div>
+</section>
