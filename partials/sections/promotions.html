@@ -1,0 +1,48 @@
+<section class="promotions">
+    <div class="promotions__content">
+        {{> components/breadcrumbs items=promotionsPage.breadcrumbs }}
+
+        <h1 class="promotions__title">
+            {{promotionsPage.title}}
+        </h1>
+
+        <ul class="promotions__list" aria-label="Список акций">
+            {{#each promotionsPage.cards}}
+            <li class="promotions__list-item{{#if itemClassName}} {{itemClassName}}{{/if}}">
+                <a href="{{href}}" class="promo-card promo-card--catalog{{#if cardClassName}} {{cardClassName}}{{/if}}">
+                    <div class="promo-card__bg">
+                        <img src="{{image}}" alt="">
+                    </div>
+                    <div class="promo-card__content">
+                        <div class="promo-card__date">
+                            {{date}}
+                        </div>
+                        <h2 class="h3 promo-card__title">
+                            {{title}}
+                        </h2>
+                        <div class="promo-card__bottom">
+                            <div class="promo-card__desc">
+                                {{description}}
+                            </div>
+                            <div class="btn btn--green promo-card__btn">
+                                <span class="promo-card__btn-text">
+                                    {{buttonText}}
+                                </span>
+                                <svg class="promo-card__btn-icon" width="13" height="13" viewBox="0 0 13 13"
+                                    aria-hidden="true">
+                                    <path
+                                        d="M12.5605 11.5H9.56055V5.12109L2.12109 12.5605L0 10.4395L7.43945 3H1.06055V0H12.5605V11.5Z" />
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </li>
+            {{/each}}
+        </ul>
+
+        <button class="btn promotions__more" type="button">
+            показать еще
+        </button>
+    </div>
+</section>

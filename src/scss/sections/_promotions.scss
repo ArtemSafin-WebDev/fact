@@ -1,0 +1,115 @@
+@use "utils";
+@use "media";
+
+@layer sections {
+  .promotions {
+    @include utils.blockWrapper;
+    padding-top: 20rem;
+    padding-bottom: 8rem;
+    background-color: #eaeaea;
+
+    @include media.breakpoint(mobile) {
+      padding-top: 16.5rem;
+      padding-bottom: 6rem;
+    }
+  }
+
+  .promotions .breadcrumbs {
+    @include media.breakpoint(mobile) {
+      display: none;
+    }
+  }
+
+  .promotions__content {
+    @include utils.blockContent;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+  }
+
+  .promotions__title {
+    margin: 4rem 0 0;
+    font-size: 8rem;
+    font-style: normal;
+    font-weight: 900;
+    line-height: 100%;
+    letter-spacing: -0.08rem;
+    text-transform: uppercase;
+    color: #161616;
+
+    @include media.breakpoint(mobile) {
+      margin-top: 0;
+      font-size: 4rem;
+      letter-spacing: -0.1rem;
+    }
+  }
+
+  .promotions__list {
+    margin-top: 8rem;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    border-right: 1px solid #cbcbcb;
+    border-bottom: 1px solid #cbcbcb;
+
+    @include media.breakpoint(mobile) {
+      margin-top: 3.2rem;
+      display: flex;
+      flex-direction: column;
+      border: 1px solid #cbcbcb;
+    }
+  }
+
+  .promotions__list-item {
+    display: flex;
+    min-width: 0;
+    background-color: #fff;
+    border-top: 1px solid #cbcbcb;
+    border-left: 1px solid #cbcbcb;
+
+    @include media.breakpoint(mobile) {
+      border: none;
+      border-bottom: 1px solid #d3d3d3;
+    }
+  }
+
+  .promotions__list-item--wide {
+    grid-column: span 2;
+
+    @include media.breakpoint(mobile) {
+      grid-column: auto;
+    }
+  }
+
+  .promotions__list-item:last-child {
+    @include media.breakpoint(mobile) {
+      border-bottom: none;
+    }
+  }
+
+  .promotions__list-item > .promo-card {
+    width: 100%;
+
+    @include media.breakpoint(mobile) {
+      border: none;
+    }
+  }
+
+  .promotions__more {
+    margin-top: 8rem;
+    align-self: center;
+    width: 44rem;
+
+    @include media.breakpoint(mobile) {
+      margin-top: 3rem;
+      align-self: stretch;
+      width: auto;
+      height: 6rem;
+      display: grid;
+      place-items: center;
+      padding: 0 3rem;
+      font-size: 1.4rem;
+      line-height: 100%;
+      text-transform: uppercase;
+    }
+  }
+}

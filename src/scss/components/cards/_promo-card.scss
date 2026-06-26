@@ -3,6 +3,7 @@
 
 @layer components {
   .promo-card {
+    position: relative;
     display: grid;
     grid-template-columns: minmax(0, 1fr);
     grid-template-areas: "stack";
@@ -39,6 +40,7 @@
   }
 
   .promo-card__bg {
+    position: relative;
     grid-area: stack;
     transition: opacity 0.2s;
     opacity: 0;
@@ -128,9 +130,132 @@
 
   .promo-card__btn {
     width: 100%;
+    align-self: flex-end;
+  }
+
+  .promo-card__btn-icon {
+    display: none;
+    width: 1.3rem;
+    height: 1.3rem;
+    fill: currentColor;
+  }
+
+  .promo-card--catalog {
+    aspect-ratio: 1;
+  }
+
+  .promo-card--catalog::before {
+    padding-bottom: 0;
+  }
+
+  .promo-card--wide {
+    aspect-ratio: 2 / 1;
+  }
+
+  .promo-card--catalog .promo-card__title {
+    max-width: 42rem;
+  }
+
+  .promo-card--wide .promo-card__title {
+    max-width: 66rem;
+  }
+
+  .promo-card--catalog .promo-card__btn {
+    width: 19.5rem;
+    opacity: 0;
+    transition: opacity 0.2s;
+  }
+
+  .promo-card--catalog:focus-visible {
+    outline: 0.2rem solid var(--green-300);
+    outline-offset: -0.2rem;
+  }
+
+  .promo-card--catalog:focus-visible .promo-card__bg,
+  .promo-card--catalog:focus-visible .promo-card__btn {
+    opacity: 1;
+  }
+
+  .promo-card--catalog:focus-visible {
+    color: white;
+  }
+
+  @include media.canHover {
+    .promo-card--catalog:hover .promo-card__btn {
+      opacity: 1;
+    }
   }
 
   @include media.breakpoint(mobile) {
+    .promo-card--catalog,
+    .promo-card--wide {
+      aspect-ratio: 343 / 225;
+    }
+
+    .promo-card--catalog .promo-card__title,
+    .promo-card--wide .promo-card__title {
+      max-width: none;
+    }
+
+    .promo-card--catalog .promo-card__date {
+      display: block;
+      justify-self: flex-start;
+      font-size: 1.4rem;
+      line-height: 120%;
+      letter-spacing: -0.014rem;
+    }
+
+    .promo-card--catalog .promo-card__content {
+      display: grid;
+      grid-template-rows: auto 1fr auto;
+      gap: 1.2rem;
+      padding: 2.5rem 1.6rem;
+    }
+
+    .promo-card--catalog .promo-card__title {
+      align-self: center;
+      font-size: 2rem;
+      line-height: 100%;
+      letter-spacing: -0.02rem;
+      margin: 0;
+    }
+
+    .promo-card--catalog .promo-card__desc {
+      max-width: 23.5rem;
+      font-size: 1.4rem;
+      line-height: 120%;
+      text-wrap: initial;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      display: -webkit-box;
+    }
+
+    .promo-card--catalog .promo-card__bottom {
+      align-items: flex-start;
+      gap: 1.2rem;
+      justify-content: space-between;
+    }
+
+    .promo-card--catalog .promo-card__btn {
+      display: grid;
+      flex-shrink: 0;
+      place-items: center;
+      width: 4.5rem;
+      height: 4.5rem;
+      padding: 0;
+      opacity: 1;
+      align-self: flex-end;
+    }
+
+    .promo-card--catalog .promo-card__btn-text {
+      display: none;
+    }
+
+    .promo-card--catalog .promo-card__btn-icon {
+      display: block;
+    }
+
     .promo__slider .swiper-slide-active .promo-card {
       color: white;
       border-color: transparent;
