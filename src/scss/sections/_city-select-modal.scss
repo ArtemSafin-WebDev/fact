@@ -81,6 +81,10 @@
     padding: 0 1.6rem;
   }
 
+  .city-select-modal__search[hidden] {
+    display: none;
+  }
+
   .city-select-modal__search-input {
     flex-grow: 1;
     min-width: 0;
@@ -153,6 +157,10 @@
     grid-template-columns: 10.2rem minmax(0, 1fr);
     align-items: start;
     column-gap: 6rem;
+  }
+
+  .city-select-modal__cities-layout--compact {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
   }
 
   .city-select-modal__featured {

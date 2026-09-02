@@ -5,7 +5,7 @@ const indexPageData = {
     title: "Главная страница",
     intro: {
       background: {
-        src: "/images/intro/bg.webp",
+        src: "/images/intro/bg-desktop.webp",
         mobileSrc: "/images/intro/bg-mobile.webp",
         alt: "",
       },
@@ -159,6 +159,36 @@ const indexPageData = {
         href: "#",
         text: "Смотреть всех врачей",
       },
+    },
+    contactsSocials: {
+      title: "Социальные сети",
+      lead: "Мы максимально открыты и подтверждаем экспертность в соц.сетях",
+      items: [
+        {
+          name: "YouTube",
+          href: "#",
+          followers: "2 500 подписчиков",
+          iconType: "youtube",
+        },
+        {
+          name: "ВКонтакте",
+          href: "#",
+          followers: "2 500 подписчиков",
+          iconType: "vk",
+        },
+        {
+          name: "RuTube",
+          href: "#",
+          followers: "2 500 подписчиков",
+          iconType: "rutube",
+        },
+        {
+          name: "Telegram",
+          href: "#",
+          followers: "2 500 подписчиков",
+          iconType: "telegram",
+        },
+      ],
     },
   },
 };

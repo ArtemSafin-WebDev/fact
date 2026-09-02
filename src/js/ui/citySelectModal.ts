@@ -1,4 +1,5 @@
 const CITY_PICKER_ROOT_SELECTOR = "[data-city-select-root]";
+const CITY_SEARCH_SELECTOR = ".city-select-modal__search";
 const CITY_SEARCH_INPUT_SELECTOR = "[data-city-search-input]";
 const CITY_FEATURED_COLUMN_SELECTOR = "[data-city-featured-column]";
 const CITY_GROUP_SELECTOR = "[data-city-letter-group]";
@@ -6,8 +7,11 @@ const CITY_ITEM_SELECTOR = "[data-city-name]";
 const CITY_MASONRY_SELECTOR = "[data-city-masonry]";
 const CITY_SEARCH_EMPTY_SELECTOR = "[data-city-search-empty]";
 const CITY_SEARCH_SCROLL_SELECTOR = "[data-city-search-scroll]";
+const CITY_LAYOUT_SELECTOR = ".city-select-modal__cities-layout";
+const CITY_LAYOUT_COMPACT_CLASS = "city-select-modal__cities-layout--compact";
 const CITY_SELECT_MODAL_SELECTOR = "#city-select-modal";
 const CITY_PICKER_RESET_EVENT = "city-picker:reset";
+const CITY_SEARCH_HIDDEN_MAX_ITEMS = 5;
 
 type ModalOpenEventDetail = {
   modal?: HTMLElement;
@@ -30,6 +34,7 @@ export default function citySelectModal() {
     const searchInput = pickerRoot.querySelector<HTMLInputElement>(
       CITY_SEARCH_INPUT_SELECTOR,
     );
+    const search = pickerRoot.querySelector<HTMLElement>(CITY_SEARCH_SELECTOR);
     const featuredColumn = pickerRoot.querySelector<HTMLElement>(
       CITY_FEATURED_COLUMN_SELECTOR,
     );
@@ -38,8 +43,22 @@ export default function citySelectModal() {
     const masonry = pickerRoot.querySelector<HTMLElement>(CITY_MASONRY_SELECTOR);
     const emptyState = pickerRoot.querySelector<HTMLElement>(CITY_SEARCH_EMPTY_SELECTOR);
     const scrollArea = pickerRoot.querySelector<HTMLElement>(CITY_SEARCH_SCROLL_SELECTOR);
+    const citiesLayout = pickerRoot.querySelector<HTMLElement>(CITY_LAYOUT_SELECTOR);
 
     if (!cityItems.length) return;
+
+    const cityNames = new Set(
+      cityItems.map((cityItem) =>
+        normalize(cityItem.dataset.cityName ?? cityItem.textContent ?? ""),
+      ),
+    );
+    const isSearchEnabled = cityNames.size > CITY_SEARCH_HIDDEN_MAX_ITEMS;
+
+    if (searchInput) {
+      searchInput.disabled = !isSearchEnabled;
+    }
+    search?.toggleAttribute("hidden", !isSearchEnabled);
+    citiesLayout?.classList.toggle(CITY_LAYOUT_COMPACT_CLASS, !isSearchEnabled);
 
     const modal = pickerRoot.closest<HTMLElement>(CITY_SELECT_MODAL_SELECTOR);
     const modalCloseButton = modal?.querySelector<HTMLButtonElement>(".js-modal-close");
@@ -100,9 +119,11 @@ export default function citySelectModal() {
       updateFilteredView("");
     };
 
-    searchInput?.addEventListener("input", () => {
-      updateFilteredView(normalize(searchInput.value));
-    });
+    if (isSearchEnabled) {
+      searchInput?.addEventListener("input", () => {
+        updateFilteredView(normalize(searchInput.value));
+      });
+    }
 
     pickerRoot.addEventListener("click", (event) => {
       const target = event.target as HTMLElement;

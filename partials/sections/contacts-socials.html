@@ -1,9 +1,9 @@
 <section class="contacts-socials">
     <div class="contacts-socials__content">
         <header class="contacts-socials__header">
-            <h1 class="contacts-socials__title">
+            <h2 class="contacts-socials__title">
                 {{contactsSocials.title}}
-            </h1>
+            </h2>
             <p class="contacts-socials__lead">
                 {{contactsSocials.lead}}
             </p>
@@ -12,11 +12,13 @@
         <ul class="contacts-socials__list">
             {{#each contactsSocials.items}}
             <li class="contacts-socials__item">
-                <a class="contacts-socials__card" href="{{href}}" aria-label="{{name}}">
+                <a class="contacts-socials__card contacts-socials__card--{{iconType}}" href="{{href}}" aria-label="{{name}}">
                     <span class="contacts-socials__icon">
-                        <img src="{{iconSrc}}" alt="{{iconAlt}}" loading="lazy">
+                        <svg aria-hidden="true">
+                            <use xlink:href="#social-{{iconType}}"></use>
+                        </svg>
                     </span>
-                    <h2 class="contacts-socials__name">{{name}}</h2>
+                    <h3 class="contacts-socials__name">{{name}}</h3>
                     <p class="contacts-socials__followers">{{followers}}</p>
                 </a>
             </li>

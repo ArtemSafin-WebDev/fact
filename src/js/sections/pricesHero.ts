@@ -4,10 +4,10 @@ export default function pricesHero() {
   );
 
   sections.forEach((section) => {
-    const tabButtons = Array.from(
-      section.querySelectorAll<HTMLButtonElement>("[data-prices-tab-btn]"),
+    const directionChoices = Array.from(
+      section.querySelectorAll<HTMLInputElement>("[data-prices-direction]"),
     );
-    const tabPanels = Array.from(
+    const panels = Array.from(
       section.querySelectorAll<HTMLElement>("[data-prices-panel]"),
     );
     const searchForm = section.querySelector<HTMLFormElement>(".prices-hero__search");
@@ -15,25 +15,26 @@ export default function pricesHero() {
       section.querySelector<HTMLInputElement>("[data-prices-search]");
     const emptyState =
       section.querySelector<HTMLElement>("[data-prices-empty]");
+    const resetButton =
+      section.querySelector<HTMLButtonElement>("[data-prices-reset]");
     const defaultEmptyMessage =
       emptyState?.textContent?.trim() ?? "Нет найденных результатов";
-    const otherTabsEmptyMessage =
+    const otherDirectionsEmptyMessage =
       "В этом разделе ничего не найдено. Результаты есть в других разделах.";
 
     let activeTarget =
-      tabButtons.find((button) => button.classList.contains("active"))?.dataset
-        .pricesTabBtn ?? tabButtons[0]?.dataset.pricesTabBtn ?? "";
+      directionChoices.find((choice) => choice.checked)?.value ??
+      directionChoices[0]?.value ??
+      "";
 
-    const setActiveTab = (target: string) => {
+    const setActiveDirection = (target: string) => {
       activeTarget = target;
 
-      tabButtons.forEach((button) => {
-        const isActive = button.dataset.pricesTabBtn === target;
-        button.classList.toggle("active", isActive);
-        button.setAttribute("aria-selected", isActive ? "true" : "false");
+      directionChoices.forEach((choice) => {
+        choice.checked = choice.value === target;
       });
 
-      tabPanels.forEach((panel) => {
+      panels.forEach((panel) => {
         const isActive = panel.dataset.pricesPanel === target;
         panel.classList.toggle("is-active", isActive);
         panel.setAttribute("aria-hidden", isActive ? "false" : "true");
@@ -58,11 +59,10 @@ export default function pricesHero() {
 
     const applySearch = () => {
       const query = searchInput?.value.trim().toLowerCase() ?? "";
-      let hasMatchesInAnyTab = false;
+      let hasMatchesInAnyDirection = false;
       let activePanelHasMatch = false;
-      let hasMatchesInOtherTabs = false;
 
-      tabPanels.forEach((panel) => {
+      panels.forEach((panel) => {
         const items = Array.from(
           panel.querySelectorAll<HTMLElement>("[data-prices-item]"),
         );
@@ -79,7 +79,7 @@ export default function pricesHero() {
 
           if (isMatch) {
             panelHasMatch = true;
-            hasMatchesInAnyTab = true;
+            hasMatchesInAnyDirection = true;
           }
         });
 
@@ -89,16 +89,12 @@ export default function pricesHero() {
         if (isActivePanel && panelHasMatch) {
           activePanelHasMatch = true;
         }
-
-        if (!isActivePanel && panelHasMatch) {
-          hasMatchesInOtherTabs = true;
-        }
       });
 
       if (query.length === 0) {
         hideEmptyState();
         if (activeTarget) {
-          setActiveTab(activeTarget);
+          setActiveDirection(activeTarget);
         }
         return;
       }
@@ -108,8 +104,8 @@ export default function pricesHero() {
         return;
       }
 
-      if (hasMatchesInAnyTab) {
-        showEmptyState(otherTabsEmptyMessage);
+      if (hasMatchesInAnyDirection) {
+        showEmptyState(otherDirectionsEmptyMessage);
         return;
       }
 
@@ -117,16 +113,27 @@ export default function pricesHero() {
     };
 
     if (activeTarget) {
-      setActiveTab(activeTarget);
+      setActiveDirection(activeTarget);
     }
 
-    tabButtons.forEach((button) => {
-      button.addEventListener("click", () => {
-        const target = button.dataset.pricesTabBtn;
-        if (!target) return;
-        setActiveTab(target);
+    directionChoices.forEach((choice) => {
+      choice.addEventListener("change", () => {
+        if (!choice.checked) return;
+        setActiveDirection(choice.value);
         applySearch();
       });
+    });
+
+    resetButton?.addEventListener("click", () => {
+      const defaultDirection = directionChoices[0];
+      if (!defaultDirection) return;
+
+      if (searchInput) {
+        searchInput.value = "";
+      }
+
+      defaultDirection.checked = true;
+      defaultDirection.dispatchEvent(new Event("change", { bubbles: true }));
     });
 
     searchInput?.addEventListener("input", () => applySearch());

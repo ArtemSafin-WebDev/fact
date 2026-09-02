@@ -22,34 +22,43 @@
             </label>
         </form>
 
-        <div class="tabs-nav prices-hero__tabs">
-            <p class="prices-hero__tabs-caption" id="prices-tabs-label">{{pricesHero.tabsLabel}}</p>
-            <div class="prices-hero__tabs-scroll">
-                <ul class="tabs-nav__list" role="tablist" aria-labelledby="prices-tabs-label">
-                    {{#each pricesHero.tabs}}
-                    <li class="tabs-nav__list-item">
-                        <button class="tabs-nav__btn{{#if active}} active{{/if}}" type="button" role="tab"
-                            id="prices-tab-{{id}}" aria-controls="prices-panel-{{id}}"
-                            aria-selected="{{#if active}}true{{else}}false{{/if}}" data-prices-tab-btn="{{id}}">
-                            {{title}}
-                        </button>
-                    </li>
-                    {{/each}}
-                </ul>
+        <div class="prices-hero__filters">
+            <p class="prices-hero__filters-caption" id="prices-direction-label">{{pricesHero.tabsLabel}}</p>
+
+            <div class="prices-hero__filters-row">
+                <div class="select prices-hero__select js-select" data-placeholder="Выберите направление">
+                    <button class="select__btn" type="button" aria-labelledby="prices-direction-label">
+                        <span class="select__btn-text js-btn-text">Выберите направление</span>
+                        <svg class="select__btn-arrow" width="12" height="8" aria-hidden="true">
+                            <use xlink:href="#select-arrow"></use>
+                        </svg>
+                    </button>
+
+                    <div class="select__dropdown">
+                        {{#each pricesHero.tabs}}
+                        <label class="select__option">
+                            <input type="radio" name="prices-direction" value="{{id}}" data-prices-direction
+                                {{#if active}}checked{{/if}}>
+                            <span>{{title}}</span>
+                        </label>
+                        {{/each}}
+                    </div>
+                </div>
+
+                <button class="prices-hero__reset" type="button" data-prices-reset>
+                    <span class="prices-hero__reset-icon" aria-hidden="true">
+                        <svg width="18" height="18" aria-hidden="true">
+                            <use xlink:href="#clear-filter"></use>
+                        </svg>
+                    </span>
+                    Сбросить фильтр
+                </button>
             </div>
         </div>
-        <p class="prices-hero__tabs-scroll-hint" aria-hidden="true">
-            <span class="prices-hero__tabs-scroll-hint-icon">
-                <svg aria-hidden="true">
-                    <use xlink:href="#scroll-helper"></use>
-                </svg>
-            </span>
-            Листайте влево/вправо чтобы просмотреть все методы
-        </p>
 
         {{#each pricesHero.tabs}}
         <div class="prices-hero__panel{{#if active}} is-active{{/if}}" id="prices-panel-{{id}}"
-            data-prices-panel="{{id}}" role="tabpanel" aria-labelledby="prices-tab-{{id}}"
+            data-prices-panel="{{id}}" role="region" aria-label="{{title}}"
             aria-hidden="{{#if active}}false{{else}}true{{/if}}">
             <ul class="prices-hero__list">
                 {{#each items}}

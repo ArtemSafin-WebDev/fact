@@ -1,0 +1,18 @@
+<div class="rating-card__stars" role="img" aria-label="Рейтинг {{rating}} из 5" style="--rating: {{rating}}">
+    <div class="rating-card__stars-track" aria-hidden="true">
+        {{#times 5}}
+        <svg>
+            <use xlink:href="#star"></use>
+        </svg>
+        {{/times}}
+    </div>
+    <div class="rating-card__stars-fill" aria-hidden="true">
+        <div class="rating-card__stars-row">
+            {{#times 5}}
+            <svg>
+                <use xlink:href="#star"></use>
+            </svg>
+            {{/times}}
+        </div>
+    </div>
+</div>

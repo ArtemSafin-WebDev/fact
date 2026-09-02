@@ -578,7 +578,6 @@
     grid-template-columns: repeat(4, minmax(0, 1fr));
 
     @include media.breakpointMF(above-mobile) {
-      border-top: 1px solid #cbcbcb;
       border-left: 1px solid #cbcbcb;
     }
 
@@ -741,6 +740,10 @@
     @include media.breakpointMF(above-mobile) {
       border-right: 1px solid #cbcbcb;
       border-bottom: 1px solid #cbcbcb;
+
+      &:nth-child(-n + 4) {
+        border-top: 1px solid #cbcbcb;
+      }
     }
 
     @include media.breakpoint(mobile) {

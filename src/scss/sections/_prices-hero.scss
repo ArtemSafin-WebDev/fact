@@ -117,18 +117,15 @@
     fill: currentColor;
   }
 
-  .prices-hero__tabs {
+  .prices-hero__filters {
     margin-top: 8.8rem;
-    border: none;
-    padding: 0;
-    min-width: 0;
 
     @include media.breakpoint(mobile) {
-      margin-top: 6rem;
+      margin-top: 5rem;
     }
   }
 
-  .prices-hero__tabs-caption {
+  .prices-hero__filters-caption {
     margin-bottom: 3.6rem;
     font-size: 1.8rem;
     font-weight: 400;
@@ -137,100 +134,113 @@
     color: #161616;
 
     @include media.breakpoint(mobile) {
-      margin-bottom: 3.1rem;
+      margin-bottom: 2rem;
       font-size: 1.5rem;
       line-height: 120%;
       letter-spacing: -0.015rem;
     }
   }
 
-  .prices-hero__tabs .tabs-nav__list {
-    width: 100%;
+  .prices-hero__filters-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 4rem;
 
     @include media.breakpoint(mobile) {
-      width: max-content;
-      overflow: visible;
+      flex-direction: column;
+      align-items: stretch;
+      gap: 1.5rem;
     }
   }
 
-  .prices-hero__tabs-scroll {
+  .prices-hero__select {
+    width: 58.6rem;
+    border: 1px solid #b3b3b3;
+
     @include media.breakpoint(mobile) {
-      margin-left: calc(-1 * var(--content-padding));
-      margin-right: calc(-1 * var(--content-padding));
-      width: calc(100% + (var(--content-padding) * 2));
-      padding-left: var(--content-padding);
-      padding-right: var(--content-padding);
-      box-sizing: border-box;
-      overflow-x: auto;
-      -webkit-overflow-scrolling: touch;
-      @include utils.noScrollbar;
+      width: 100%;
     }
   }
 
-  .prices-hero__tabs .tabs-nav__list-item {
-    flex: 1 1 0;
+  .prices-hero__select .select__btn {
+    height: 6rem;
+    padding: 0 2rem;
+    background-color: #fff;
 
     @include media.breakpoint(mobile) {
-      flex: 0 0 auto;
+      height: 5rem;
+      padding: 0 1.5rem;
+      font-size: 1.3rem;
+    }
+  }
 
-      &:not(:first-child) {
-        margin-left: -0.05rem;
+  .prices-hero__select .select__dropdown {
+    left: -1px;
+    right: -1px;
+    border: 1px solid #b3b3b3;
+    border-top: none;
+    max-height: 30rem;
+  }
+
+  .prices-hero__select .select__option span {
+    @include media.breakpoint(mobile) {
+      padding: 1.5rem;
+      font-size: 1.3rem;
+      line-height: 120%;
+    }
+  }
+
+  .prices-hero__reset {
+    display: inline-flex;
+    align-items: center;
+    gap: 1rem;
+    justify-content: flex-end;
+    color: #222;
+    font-size: 1.4rem;
+    font-weight: 500;
+    line-height: 120%;
+    letter-spacing: -0.028rem;
+    white-space: nowrap;
+    transition: opacity 0.2s ease;
+
+    @include media.breakpoint(mobile) {
+      align-self: flex-start;
+      justify-content: flex-start;
+      gap: 0.5rem;
+      font-size: 1.2rem;
+      letter-spacing: -0.012rem;
+    }
+
+    @include media.canHover {
+      &:hover {
+        opacity: 0.55;
       }
     }
   }
 
-  .prices-hero__tabs .tabs-nav__btn {
-    width: 100%;
-    min-width: 0;
-    min-height: 6rem;
-    padding: 2rem;
-    border-color: rgb(22 22 22 / 30%);
-    font-size: 1.5rem;
-    line-height: 100%;
-    letter-spacing: -0.015rem;
+  .prices-hero__reset-icon {
+    width: 1.8rem;
+    height: 1.8rem;
+    flex-shrink: 0;
+    display: grid;
+    place-items: center;
+    background-color: #161616;
 
     @include media.breakpoint(mobile) {
-      width: auto;
-      min-height: 4rem;
-      padding: 0 1rem;
-      border-width: 0.05rem;
-      font-size: 1rem;
-      letter-spacing: 0;
-      white-space: nowrap;
+      width: 1.4rem;
+      height: 1.4rem;
     }
   }
 
-  .prices-hero__tabs .tabs-nav__btn.active {
-    border-color: var(--green-300);
-  }
-
-  .prices-hero__tabs-scroll-hint {
-    display: none;
+  .prices-hero__reset-icon svg {
+    width: 0.8rem;
+    height: 0.8rem;
+    fill: #fff;
 
     @include media.breakpoint(mobile) {
-      margin-top: 2rem;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      font-size: 0.8rem;
-      font-weight: 500;
-      line-height: 130%;
-      color: #161616;
-    }
-  }
-
-  .prices-hero__tabs-scroll-hint-icon {
-    @include media.breakpoint(mobile) {
-      display: inline-flex;
-      align-items: center;
-    }
-  }
-
-  .prices-hero__tabs-scroll-hint-icon svg {
-    @include media.breakpoint(mobile) {
-      width: 1.5rem;
-      height: 1.5rem;
-      flex-shrink: 0;
+      width: 0.6rem;
+      height: 0.6rem;
     }
   }
 
@@ -239,7 +249,7 @@
     margin-top: 8rem;
 
     @include media.breakpoint(mobile) {
-      margin-top: 3.5rem;
+      margin-top: 4.5rem;
     }
   }
 

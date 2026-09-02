@@ -12,13 +12,14 @@ export default function servicesMenu() {
   const mobileMediaQuery = window.matchMedia("(width <= 640px)");
 
   const toggles = Array.from(
-    header.querySelectorAll<HTMLButtonElement>("[data-services-menu-toggle]"),
+    header.querySelectorAll<HTMLButtonElement>("[data-header-menu-toggle]"),
   );
 
   if (!toggles.length) return;
 
   let currentActiveToggle: HTMLButtonElement | null = null;
   let currentActiveMenu: HTMLElement | null = null;
+  let switchingFrame: number | null = null;
 
   const syncBodyMenuState = () => {
     document.body.classList.toggle(
@@ -32,18 +33,33 @@ export default function servicesMenu() {
     if (!currentActiveMenu || !currentActiveToggle) return;
 
     header.classList.remove("is-services-open");
+    header.classList.remove("is-desktop-menu-switching");
     syncBodyMenuState();
 
+    currentActiveToggle.classList.remove("is-active");
+    currentActiveMenu.classList.remove("is-active");
     currentActiveToggle.setAttribute("aria-expanded", "false");
     currentActiveMenu.setAttribute("aria-hidden", "true");
+
+    if (switchingFrame !== null) {
+      window.cancelAnimationFrame(switchingFrame);
+      switchingFrame = null;
+    }
 
     currentActiveToggle = null;
     currentActiveMenu = null;
   };
 
   const openMenu = (toggle: HTMLButtonElement, menu: HTMLElement) => {
-    if (currentActiveMenu && currentActiveMenu !== menu) {
-      closeMenu();
+    const isSwitchingMenu =
+      currentActiveMenu !== null && currentActiveMenu !== menu;
+
+    if (isSwitchingMenu) {
+      header.classList.add("is-desktop-menu-switching");
+      currentActiveToggle?.classList.remove("is-active");
+      currentActiveMenu?.classList.remove("is-active");
+      currentActiveToggle?.setAttribute("aria-expanded", "false");
+      currentActiveMenu?.setAttribute("aria-hidden", "true");
     }
 
     currentActiveToggle = toggle;
@@ -52,8 +68,24 @@ export default function servicesMenu() {
     header.classList.add("is-services-open");
     syncBodyMenuState();
 
+    toggle.classList.add("is-active");
+    menu.classList.add("is-active");
     toggle.setAttribute("aria-expanded", "true");
     menu.setAttribute("aria-hidden", "false");
+
+    if (isSwitchingMenu) {
+      if (switchingFrame !== null) {
+        window.cancelAnimationFrame(switchingFrame);
+      }
+
+      // Commit the new active menu while transitions are disabled. This keeps
+      // the common white layer visible and avoids overlapping opacity fades.
+      void menu.offsetWidth;
+      switchingFrame = window.requestAnimationFrame(() => {
+        header.classList.remove("is-desktop-menu-switching");
+        switchingFrame = null;
+      });
+    }
   };
 
   toggles.forEach((toggle) => {

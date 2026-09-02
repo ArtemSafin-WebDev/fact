@@ -31,7 +31,8 @@
             <div class="page-header__bottom-wrapper">
 
 
-                <button class="page-header__services-link" type="button" data-services-menu-toggle aria-expanded="false">
+                <button class="page-header__services-link" type="button" data-header-menu-toggle
+                    data-services-menu-toggle aria-expanded="false" aria-controls="header-services-menu">
                     <span>Услуги</span>
                     <span class="page-header__services-link-dot" aria-hidden="true"></span>
                     <svg class="page-header__services-link-arrow" width="16" height="8" aria-hidden="true">
@@ -41,33 +42,37 @@
                 <nav class="page-header__nav">
                     <ul class="page-header__nav-list">
                         <li class="page-header__nav-list-item">
-                            <a href="#" class="page-header__nav-link">
+                            <button class="page-header__nav-link page-header__nav-menu-toggle" type="button"
+                                data-header-menu-toggle aria-expanded="false" aria-controls="header-about-menu">
+                                <span>О клинике</span>
+                            </button>
+                        </li>
+                        <li class="page-header__nav-list-item">
+                            <button class="page-header__nav-link page-header__nav-menu-toggle" type="button"
+                                data-header-menu-toggle aria-expanded="false" aria-controls="header-patients-menu">
+                                <span>Пациентам</span>
+                            </button>
+                        </li>
+                        <li class="page-header__nav-list-item">
+                            <button class="page-header__nav-link page-header__nav-menu-toggle" type="button"
+                                data-header-menu-toggle aria-expanded="false" aria-controls="header-blog-menu">
+                                <span>Блог</span>
+                            </button>
+                        </li>
+                        <li class="page-header__nav-list-item">
+                            <button class="page-header__nav-link page-header__nav-menu-toggle" type="button"
+                                data-header-menu-toggle aria-expanded="false" aria-controls="header-prices-menu">
+                                <span>Цены</span>
+                            </button>
+                        </li>
+                        <li class="page-header__nav-list-item">
+                            <a href="/catalog-doctors.html" class="page-header__nav-link">
                                 Врачи
                             </a>
                         </li>
                         <li class="page-header__nav-list-item">
-                            <a href="/prices.html" class="page-header__nav-link">
-                                Цены
-                            </a>
-                        </li>
-                        <li class="page-header__nav-list-item">
-                            <a href="/doctors-articles.html" class="page-header__nav-link">
-                                Статьи
-                            </a>
-                        </li>
-                        <li class="page-header__nav-list-item">
-                            <a href="#" class="page-header__nav-link">
-                                О клинике
-                            </a>
-                        </li>
-                        <li class="page-header__nav-list-item">
-                            <a href="#" class="page-header__nav-link">
+                            <a href="/contacts.html" class="page-header__nav-link">
                                 Контакты
-                            </a>
-                        </li>
-                        <li class="page-header__nav-list-item">
-                            <a href="#" class="page-header__nav-link">
-                                Клиника года
                             </a>
                         </li>
                     </ul>
@@ -354,7 +359,8 @@
             </div>
         </div>
     </div>
-    <div class="page-header__services-menu" data-services-menu aria-hidden="true" data-lenis-prevent>
+    <div class="page-header__services-menu" id="header-services-menu" data-header-menu data-services-menu
+        aria-hidden="true" data-lenis-prevent>
         <div class="page-header__services-menu-content">
             <div class="page-header__services-menu-grid">
                 <div class="page-header__services-menu-left">
@@ -459,6 +465,80 @@
                             <img src="/images/about-clinic/preview.webp" alt="Окулопластика" loading="lazy">
                         </figure>
                     </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="page-header__services-menu page-header__services-menu--simple" id="header-about-menu"
+        data-header-menu aria-hidden="true" data-lenis-prevent>
+        <div class="page-header__services-menu-content">
+            <div class="page-header__services-menu-grid">
+                <div class="page-header__services-menu-left">
+                    <ul class="page-header__services-menu-list">
+                        <li class="page-header__services-menu-item">
+                            <a class="page-header__services-menu-btn" href="/about.html">О клинике</a>
+                        </li>
+                        <li class="page-header__services-menu-item">
+                            <a class="page-header__services-menu-btn" href="/equipment.html">Оборудование</a>
+                        </li>
+                        <li class="page-header__services-menu-item">
+                            <a class="page-header__services-menu-btn" href="/legal.html">Правовая информация</a>
+                        </li>
+                        <li class="page-header__services-menu-item">
+                            <a class="page-header__services-menu-btn" href="/news.html">Новости</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="page-header__services-menu page-header__services-menu--simple" id="header-patients-menu"
+        data-header-menu aria-hidden="true" data-lenis-prevent>
+        <div class="page-header__services-menu-content">
+            <div class="page-header__services-menu-grid">
+                <div class="page-header__services-menu-left">
+                    <ul class="page-header__services-menu-list">
+                        <li class="page-header__services-menu-item">
+                            <a class="page-header__services-menu-btn" href="/tax.html">Налоговый вычет</a>
+                        </li>
+                        <li class="page-header__services-menu-item">
+                            <a class="page-header__services-menu-btn" href="/dms.html">Обслуживание по ДМС</a>
+                        </li>
+                        <li class="page-header__services-menu-item">
+                            <a class="page-header__services-menu-btn" href="/reviews.html">Отзывы пациентов</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="page-header__services-menu page-header__services-menu--simple" id="header-blog-menu"
+        data-header-menu aria-hidden="true" data-lenis-prevent>
+        <div class="page-header__services-menu-content">
+            <div class="page-header__services-menu-grid">
+                <div class="page-header__services-menu-left">
+                    <ul class="page-header__services-menu-list">
+                        <li class="page-header__services-menu-item">
+                            <a class="page-header__services-menu-btn" href="/doctors-articles.html">Статьи врачей</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="page-header__services-menu page-header__services-menu--simple" id="header-prices-menu"
+        data-header-menu aria-hidden="true" data-lenis-prevent>
+        <div class="page-header__services-menu-content">
+            <div class="page-header__services-menu-grid">
+                <div class="page-header__services-menu-left">
+                    <ul class="page-header__services-menu-list">
+                        <li class="page-header__services-menu-item">
+                            <a class="page-header__services-menu-btn" href="/prices.html">Стоимость услуг</a>
+                        </li>
+                        <li class="page-header__services-menu-item">
+                            <a class="page-header__services-menu-btn" href="/promotions.html">Акции</a>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </div>

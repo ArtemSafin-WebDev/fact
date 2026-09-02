@@ -21,19 +21,55 @@
   }
 
   .rating-card__stars {
+    --rating: 0;
+
     grid-area: stars;
     justify-self: flex-start;
+    align-self: flex-start;
+    position: relative;
+    color: var(--yellow-300);
+  }
+
+  .rating-card__stars-track,
+  .rating-card__stars-row {
     display: flex;
     align-items: center;
-    gap: 0.4rem;
-    align-self: flex-start;
+    gap: 1rem;
+    width: max-content;
+
+    @include media.breakpoint(mobile) {
+      gap: 0.4rem;
+    }
+  }
+
+  .rating-card__stars-track {
+    color: #eaeaea;
+  }
+
+  .rating-card__stars-fill {
+    position: absolute;
+    inset: 0 auto 0 0;
+    width: clamp(0%, calc(var(--rating) / 5 * 100%), 100%);
+    overflow: hidden;
+    color: var(--yellow-300);
   }
 
   .rating-card__stars svg {
     flex-shrink: 0;
     width: 2rem;
     height: 2rem;
-    fill: var(--yellow-300);
+    fill: currentColor;
+
+    @include media.breakpoint(mobile) {
+      width: 2.5rem;
+      height: 2.5rem;
+    }
+  }
+
+  .rating-card__stars-track svg,
+  .rating-card__stars-row svg {
+    width: 4.1rem;
+    height: 4.1rem;
 
     @include media.breakpoint(mobile) {
       width: 2.5rem;

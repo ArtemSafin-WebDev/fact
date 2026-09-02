@@ -12,6 +12,10 @@
 
 .validation-error {
   margin-top: 1rem;
-  font-size: 1.4rem;
+  font-family: var(--inter);
+  font-size: 1.8rem;
+  font-style: italic;
+  font-weight: 600;
   line-height: 1.2;
+  letter-spacing: -0.018rem;
 }

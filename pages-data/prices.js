@@ -14,7 +14,7 @@ const pricesPageData = {
       tabs: [
         {
           id: "diagnostics",
-          title: "Диагностика",
+          title: "Детский глазной центр. Диагностика зрения",
           active: true,
           items: [
             {

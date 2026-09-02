@@ -42,6 +42,7 @@ export default function doctors() {
       if (!container) return;
       instance = new Swiper(container, {
         speed: 600,
+        loop: true,
         slidesPerView: "auto",
         watchOverflow: true,
         modules: [Navigation, Pagination],

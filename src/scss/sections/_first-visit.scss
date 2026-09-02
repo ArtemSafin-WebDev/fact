@@ -146,38 +146,83 @@
   .first-visit__form-actions {
     display: flex;
     flex-direction: column;
-    gap: 3.2rem;
+    gap: 4rem;
 
     @include media.breakpoint(mobile) {
       gap: 2rem;
     }
   }
 
-  .first-visit__form-policy {
-    font-size: 1.2rem;
+  .first-visit__form-agreements {
+    display: flex;
+    flex-direction: column;
+    gap: 1.6rem;
+  }
+
+  .first-visit__form-agreement {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1.6rem minmax(0, 1fr);
+    align-items: start;
+    gap: 1rem;
+    cursor: pointer;
+  }
+
+  .first-visit__form-agreement-input {
+    position: absolute;
+    width: 0.1rem;
+    height: 0.1rem;
+    margin: -0.1rem;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    white-space: nowrap;
+  }
+
+  .first-visit__form-agreement-box {
+    position: relative;
+    display: block;
+    width: 1.6rem;
+    height: 1.6rem;
+    margin-top: 0.04rem;
+    border: 0.1rem solid currentColor;
+  }
+
+  .first-visit__form-agreement-input:checked + .first-visit__form-agreement-box::after {
+    position: absolute;
+    top: 0.2rem;
+    left: 0.5rem;
+    width: 0.4rem;
+    height: 0.8rem;
+    border: solid currentColor;
+    border-width: 0 0.1rem 0.1rem 0;
+    content: "";
+    transform: rotate(45deg);
+  }
+
+  .first-visit__form-agreement-input:focus-visible + .first-visit__form-agreement-box {
+    outline: 0.2rem solid currentColor;
+    outline-offset: 0.3rem;
+  }
+
+  .first-visit__form-agreement-text {
+    font-size: 1.4rem;
     font-style: normal;
     font-weight: 400;
     line-height: 120%;
+  }
 
-    @include media.breakpoint(mobile) {
-      font-size: 1rem;
-      max-width: 34.3rem;
-    }
+  .first-visit__form-agreement-text a {
+    color: inherit;
+    text-decoration: underline;
+    text-decoration-thickness: 0.1rem;
+    text-underline-offset: 0.3rem;
+  }
 
-    a {
-      text-decoration: underline;
-      text-decoration-thickness: 1px;
-      text-decoration-skip-ink: none;
-      text-underline-offset: 1px;
-      transition:
-        color 0.2s,
-        text-decoration-color 0.2s;
-
-      @include media.canHover {
-        &:hover {
-          text-decoration-color: transparent;
-        }
-      }
+  @include media.canHover {
+    .first-visit__form-agreement-text a:hover {
+      text-decoration-color: transparent;
     }
   }
 

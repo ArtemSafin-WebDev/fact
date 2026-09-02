@@ -28,6 +28,11 @@
 
   .doctor-card__image-container img {
     object-fit: cover;
+    transition: transform 0.4s ease;
+  }
+
+  .doctor-card:hover .doctor-card__image-container img {
+    transform: scale(1.05);
   }
 
   .doctor-card__info {

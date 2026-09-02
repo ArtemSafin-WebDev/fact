@@ -5,6 +5,10 @@
   .tabs-nav {
     display: flex;
     flex-direction: column;
+
+    &:has(.tabs-nav__list > .tabs-nav__list-item:only-child) {
+      display: none;
+    }
   }
 
   .tabs-nav__list {
@@ -48,6 +52,13 @@
       font-style: normal;
       font-weight: 900;
       line-height: 100%;
+    }
+
+    &:not(.active):hover {
+      position: relative;
+      z-index: 1;
+      background-color: #fff;
+      border-color: #fff;
     }
 
     &.active {

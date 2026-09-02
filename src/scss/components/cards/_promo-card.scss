@@ -44,6 +44,13 @@
     grid-area: stack;
     transition: opacity 0.2s;
     opacity: 0;
+
+    &::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(22, 22, 22, 0.6);
+    }
   }
 
   .promo-card__bg img {

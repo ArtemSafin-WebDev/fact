@@ -109,6 +109,15 @@
       }
     }
 
+    @include media.breakpointMF(above-mobile) {
+      .swiper-wrapper:has(> .swiper-slide:nth-child(-n + 3):last-child) {
+        > .swiper-slide {
+          flex: 1 0 0;
+          width: auto;
+        }
+      }
+    }
+
     .swiper-slide {
       display: flex;
       flex-direction: column;

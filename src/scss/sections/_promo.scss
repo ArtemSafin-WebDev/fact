@@ -64,6 +64,13 @@
       box-sizing: border-box;
       width: 50%;
       border-right: 1px solid #d3d3d3;
+
+      @include media.breakpointMF(above-mobile) {
+        &:only-child {
+          width: 100%;
+        }
+      }
+
       &:last-child {
         border-right: none;
       }
